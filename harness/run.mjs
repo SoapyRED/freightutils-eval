@@ -4,7 +4,10 @@
 // --conditions A,B, --repeats N, --cap USD (default 80), --run NAME, --dry-run,
 // --questions v0.1 (the frozen set), --assume-from <summary.json> (per-question tokens measured
 // by a smoke run, used for the estimate and the cap hold-back), --spent-before USD (spend already
-// made in this run's budget: probes and smokes, counted against the cap), --out-root DIR.
+// made in this run's budget: probes and smokes, counted against the cap), --out-root DIR,
+// --max-minutes N (stop cleanly after N minutes and write the tables so far; run the same command
+// again to resume). Every answer is appended to results/raw/<run>/rows.jsonl as it lands, and a
+// re-run skips the answers already there, so a stopped run loses nothing.
 // Providers run one after another, cheapest first by the estimate; questions within a provider
 // run one at a time. HTTP 429 and 5xx back off 20 s, 60 s, 120 s, then the question is an error.
 import fs from 'node:fs';
@@ -32,6 +35,11 @@ const SPENT_BEFORE = Number(flag('spent-before', 0));
 const OUT_ROOT = flag('out-root', 'results');
 const ASSUME_FROM = flag('assume-from', null);
 const BACKOFF_S = [20, 60, 120];
+const MAX_MIN = Number(flag('max-minutes', 0)) || null;
+const T_START = Date.now();
+// An account out of credit answers 429 (OpenAI insufficient_quota), 403 (xAI) or 400 (Anthropic
+// "credit balance"): no backoff fixes that, so the provider is stopped and the reason recorded.
+const OUT_OF_CREDIT = /insufficient_quota|credit_balance|no credits remaining|credit balance is too low|used all available credits|spending limit|spend(ing)? cap/i;
 const MAX_TOOL_CALLS = 5;
 if (CONDITIONS.includes('C')) throw new Error('Condition C (web search) is not implemented in v0: see README.');
 
@@ -144,15 +152,25 @@ async function runTool(name, args) {
   }
 }
 
-let spent = SPENT_BEFORE;
+// Resume: answers already in the checkpoint are kept and not asked again; their cost counts.
+const CHECKPOINT = path.join(RAW, 'rows.jsonl');
+const keyOf = (r) => `${r.provider}|${r.condition}|${r.repeat}|${r.id}`;
+const prior = fs.existsSync(CHECKPOINT) ? fs.readFileSync(CHECKPOINT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+const done = new Map(prior.map((r) => [keyOf(r), r]));
+let spent = SPENT_BEFORE + prior.reduce((s, r) => s + (r.usd || 0), 0);
 const spentBy = Object.fromEntries(providers.map((p) => [p.id, 0]));
+for (const r of prior) spentBy[r.provider] = (spentBy[r.provider] || 0) + (r.usd || 0);
 let capped = false;
-const rows = [];
+let paused = false;
+const stopped = {};
+const rows = [...prior];
+if (prior.length) console.log(`resuming: ${prior.length} answers already in ${CHECKPOINT}`);
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function one(p, q, cond, rep) {
   // Stop before a call that could cross the cap: hold back the pessimistic cost of one question.
   if (capped || spent + holdBack(p, cond) > CAP) { capped = true; return null; }
+  if (stopped[p.id]) return null;
   const raws = [];
   let res, err;
   for (let attempt = 0; attempt <= BACKOFF_S.length; attempt++) {
@@ -168,6 +186,7 @@ async function one(p, q, cond, rep) {
       err = e;
       const usd = e.usage ? cost(p.price, e.usage) : 0;
       spent += usd; spentBy[p.id] += usd;
+      if (OUT_OF_CREDIT.test(e.message)) { stopped[p.id] = `out of credit at ${cond} ${q.id}: ${e.message.slice(0, 160)}`; console.log(`${p.id}: STOPPED, ${stopped[p.id]}`); return null; }
       if (!(e.status === 429 || e.status >= 500) || attempt === BACKOFF_S.length) break;
       console.log(`${p.id} ${cond} ${q.id}: HTTP ${e.status}, retry in ${BACKOFF_S[attempt]} s`);
       await sleep(BACKOFF_S[attempt] * 1000);
@@ -175,7 +194,7 @@ async function one(p, q, cond, rep) {
   }
   const safeId = `${p.id}-${cond}-${q.id}-r${rep}`;
   fs.writeFileSync(path.join(RAW, `${safeId}.json`), JSON.stringify({ question: q.id, provider: p.id, model: p.model, condition: cond, repeat: rep, exchanges: raws }, null, 1));
-  if (err) return { provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family, expected: q.expected, answer: '', outcome: 'error', error: err.message.slice(0, 200), tool_calls: 0, latency_ms: 0, input_tokens: 0, cached_tokens: 0, cache_write_tokens: 0, output_tokens: 0, usd: 0 };
+  if (err) return { provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family, expected: q.expected, answer: '', outcome: 'error', error: err.message.slice(0, 200), tool_calls: 0, latency_ms: null, input_tokens: 0, cached_tokens: 0, cache_write_tokens: 0, output_tokens: 0, usd: err.usage ? cost(p.price, err.usage) : 0 };
   const usd = cost(p.price, res.usage);
   spent += usd; spentBy[p.id] += usd;
   return {
@@ -188,15 +207,21 @@ async function one(p, q, cond, rep) {
 
 // One provider at a time, one question at a time: a provider's rate limit only delays its own
 // questions (backoff, then an error row), never another provider's.
-for (const p of providers) {
-  let done = 0;
+outer: for (const p of providers) {
+  let n = 0;
   for (const cond of CONDITIONS) for (let rep = 1; rep <= REPEATS; rep++) for (const q of questions) {
+    if (done.has(keyOf({ provider: p.id, condition: cond, repeat: rep, id: q.id }))) continue;
+    if (MAX_MIN && Date.now() - T_START > MAX_MIN * 60000) { paused = true; break outer; }
     const row = await one(p, q, cond, rep);
-    if (row) rows.push(row);
-    if (++done % 25 === 0) console.log(`${p.id}: ${done} done, spent $${spentBy[p.id].toFixed(2)} (run total $${spent.toFixed(2)})`);
+    if (row) { rows.push(row); fs.appendFileSync(CHECKPOINT, JSON.stringify(row) + '\n'); }
+    if (++n % 25 === 0) console.log(`${p.id}: ${n} more done, spent $${spentBy[p.id].toFixed(2)} (run total $${spent.toFixed(2)})`);
   }
-  console.log(`${p.id}: finished, spent $${spentBy[p.id].toFixed(2)}${capped ? ' (cap reached)' : ''}`);
+  console.log(`${p.id}: finished, spent $${spentBy[p.id].toFixed(2)}${capped ? ' (cap reached)' : ''}${stopped[p.id] ? ' (stopped: out of credit)' : ''}`);
 }
+if (paused) console.log(`PAUSED after ${MAX_MIN} min: ${rows.length} answers so far; run the same command again to resume`);
+// A provider that is not called in this invocation but has answers in the checkpoint (an earlier
+// part of the run) is still summarised.
+for (const r of prior) if (!providers.some((p) => p.id === r.provider)) providers.push({ id: r.provider, model: r.model, ...config.providers[r.provider], fromCheckpointOnly: true });
 
 // ------------------------------------------------------------------ summarise
 function summarise(list) {
@@ -207,7 +232,8 @@ function summarise(list) {
   return {
     n, errors: list.length - n,
     accuracy: n ? k('correct') / n : null, unknown_rate: n ? k('unknown') / n : null, confident_wrong_rate: n ? k('wrong') / n : null,
-    mean_tool_calls: mean('tool_calls'), mean_latency_ms: Math.round(mean('latency_ms')),
+    mean_tool_calls: mean('tool_calls'),
+    mean_latency_ms: (() => { const t = scored.filter((r) => r.latency_ms !== null && r.latency_ms !== undefined); return t.length ? Math.round(t.reduce((s, r) => s + r.latency_ms, 0) / t.length) : null; })(),
     input_tokens: list.reduce((s, r) => s + r.input_tokens, 0), cached_tokens: list.reduce((s, r) => s + r.cached_tokens, 0), cache_write_tokens: list.reduce((s, r) => s + (r.cache_write_tokens || 0), 0), output_tokens: list.reduce((s, r) => s + r.output_tokens, 0),
     usd: list.reduce((s, r) => s + r.usd, 0),
   };
@@ -233,6 +259,8 @@ for (const p of providers) for (const c of CONDITIONS) {
   }
 }
 summary.spend = { total_usd: spent, spent_before_run_usd: SPENT_BEFORE, this_run_usd: spent - SPENT_BEFORE, by_provider: spentBy, cap_usd: CAP, stopped_at_cap: capped };
+summary.complete = !paused;
+summary.providers_stopped = stopped;
 fs.writeFileSync(path.join(OUT, 'summary.json'), JSON.stringify(summary, null, 2) + '\n');
 
 const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'cache_write_tokens', 'output_tokens', 'usd', 'error'];
@@ -250,12 +278,14 @@ fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
   models: providers.map((p) => ({ provider: p.id, model: p.model, api: p.api, settings: p.settings, settings_note: p.settings_note, price_usd_per_mtok: p.price, price_note: p.price_note, pricing_url: p.pricing_url, docs: p.docs })),
   prices_read_on: config.read_on,
   skipped,
+  providers_stopped: stopped,
+  complete: !paused,
   spend: summary.spend,
 }, null, 2) + '\n');
 
 const pct = (x) => (x === null ? 'n/a' : `${(x * 100).toFixed(0)}%`);
 const lines = [`# Run ${date}-${RUN}`, '', `${questions.length} questions (${SAMPLE ? 'stratified sample of ' : ''}question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', `Each count and rate is given overall and, after the slash, excluding \`${EXCL}\` (no FreightUtils tool serves ADR 2027).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
-for (const [k, s] of Object.entries(summary.overall)) { const x = summary.overall_excluding_adr_2027_delta[k]; const [m, c] = k.split(' / '); lines.push(`| ${m} | ${c} | ${s.n} / ${x.n} | ${pct(s.accuracy)} / ${pct(x.accuracy)} | ${pct(s.unknown_rate)} / ${pct(x.unknown_rate)} | ${pct(s.confident_wrong_rate)} / ${pct(x.confident_wrong_rate)} | ${s.mean_tool_calls.toFixed(1)} | ${(s.mean_latency_ms / 1000).toFixed(1)} s | ${s.usd.toFixed(2)} |`); }
+for (const [k, s] of Object.entries(summary.overall)) { const x = summary.overall_excluding_adr_2027_delta[k]; const [m, c] = k.split(' / '); lines.push(`| ${m} | ${c} | ${s.n} / ${x.n} | ${pct(s.accuracy)} / ${pct(x.accuracy)} | ${pct(s.unknown_rate)} / ${pct(x.unknown_rate)} | ${pct(s.confident_wrong_rate)} / ${pct(x.confident_wrong_rate)} | ${s.mean_tool_calls.toFixed(1)} | ${s.mean_latency_ms === null ? 'n/a' : `${(s.mean_latency_ms / 1000).toFixed(1)} s`} | ${s.usd.toFixed(2)} |`); }
 lines.push('', '## Accuracy by family', '', `| Model / condition | ${families.join(' | ')} |`, `|---|${families.map(() => '---:').join('|')}|`);
 for (const [k, fam] of Object.entries(summary.by_family)) lines.push(`| ${k} | ${families.map((f) => `${pct(fam[f].accuracy)} (${fam[f].n})`).join(' | ')} |`);
 lines.push('', '## Confident-wrong rate by family', '', `| Model / condition | ${families.join(' | ')} |`, `|---|${families.map(() => '---:').join('|')}|`);
