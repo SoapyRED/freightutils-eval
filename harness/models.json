@@ -1,0 +1,41 @@
+{
+  "_comment": "One flagship per provider, the newest generally available model on the day (no preview or experimental IDs). Prices are USD per 1M tokens, standard tier, read from each provider's own pricing page on read_on. Settings are sent verbatim; temperature 0 wherever the model accepts it.",
+  "read_on": "2026-10-20",
+  "providers": {
+    "openai": {
+      "model": "gpt-6-astra",
+      "api": "Responses API (POST https://api.openai.com/v1/responses)",
+      "settings": {},
+      "settings_note": "temperature is refused by gpt-6-astra (HTTP 400 \"Unsupported parameter: 'temperature' is not supported with this model\"), so it runs at the provider default; reasoning effort left at the default.",
+      "price": { "input": 10.0, "cached_input": 1.0, "output": 50.0 },
+      "docs": ["https://developers.openai.com/api/docs/models", "https://developers.openai.com/api/docs/guides/function-calling"],
+      "pricing_url": "https://developers.openai.com/api/docs/pricing"
+    },
+    "google": {
+      "model": "gemini-4-argon",
+      "api": "generateContent (POST https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent)",
+      "settings": { "temperature": 0 },
+      "price": { "input": 2.0, "cached_input": 2.0, "output": 10.0 },
+      "price_note": "$2.00 / $10.00 through 30 Nov 2026 ($4.00 / $20.00 from 1 Dec 2026); no context-cache price applied (implicit cache hits billed as input, an overestimate).",
+      "docs": ["https://ai.google.dev/gemini-api/docs/models", "https://ai.google.dev/gemini-api/docs/function-calling"],
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing"
+    },
+    "xai": {
+      "model": "grok-4.7",
+      "api": "Responses API (POST https://api.x.ai/v1/responses)",
+      "settings": { "temperature": 0 },
+      "price": { "input": 2.0, "cached_input": 2.0, "output": 6.0 },
+      "price_note": "Prompts under 200k tokens; cached input billed at the input price here (the models page gives no cached price), an overestimate.",
+      "docs": ["https://docs.x.ai/docs/models", "https://docs.x.ai/docs/guides/function-calling"],
+      "pricing_url": "https://docs.x.ai/docs/models"
+    },
+    "anthropic": {
+      "model": "claude-fable-5-1",
+      "api": "Messages API (POST https://api.anthropic.com/v1/messages)",
+      "settings": { "temperature": 0 },
+      "price": { "input": 10.0, "cached_input": 0.25, "output": 50.0 },
+      "docs": ["https://platform.claude.com/docs/en/about-claude/models/overview"],
+      "pricing_url": "https://platform.claude.com/docs/en/about-claude/pricing"
+    }
+  }
+}
