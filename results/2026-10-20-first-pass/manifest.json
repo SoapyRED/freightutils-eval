@@ -1,0 +1,211 @@
+{
+  "run": "2026-10-20-first-pass",
+  "started": "2026-10-20",
+  "sample": 100,
+  "seed": "freightutils-eval-v0-sample",
+  "conditions": [
+    "A",
+    "B"
+  ],
+  "repeats": 1,
+  "max_tool_calls": 5,
+  "question_set": {
+    "version": "v0",
+    "sha256": "b58c9122df3c6d5240a106180fcc21da2b71073ffec0b638461db4185969bf7a",
+    "ids": [
+      "adr_2027_delta-002",
+      "adr_2027_delta-003",
+      "adr_2027_delta-006",
+      "adr_2027_delta-010",
+      "adr_2027_delta-012",
+      "adr_2027_delta-014",
+      "adr_2027_delta-015",
+      "adr_2027_delta-017",
+      "adr_2027_delta-020",
+      "adr_2027_delta-024",
+      "adr_exemption-001",
+      "adr_exemption-010",
+      "adr_exemption-011",
+      "adr_exemption-013",
+      "adr_exemption-015",
+      "adr_exemption-016",
+      "adr_exemption-020",
+      "adr_exemption-025",
+      "adr_exemption-027",
+      "adr_exemption-028",
+      "adr_table_a-001",
+      "adr_table_a-003",
+      "adr_table_a-004",
+      "adr_table_a-005",
+      "adr_table_a-009",
+      "adr_table_a-012",
+      "adr_table_a-025",
+      "adr_table_a-028",
+      "adr_table_a-030",
+      "adr_table_a-031",
+      "adr_table_a-032",
+      "adr_table_a-035",
+      "adr_table_a-037",
+      "adr_table_a-038",
+      "adr_table_a-039",
+      "adr_table_a-042",
+      "adr_table_a-045",
+      "adr_table_a-046",
+      "adr_table_a-052",
+      "adr_table_a-054",
+      "adr_table_a-062",
+      "adr_table_a-063",
+      "adr_table_a-067",
+      "freight_arithmetic-008",
+      "freight_arithmetic-009",
+      "freight_arithmetic-012",
+      "freight_arithmetic-014",
+      "freight_arithmetic-016",
+      "freight_arithmetic-018",
+      "freight_arithmetic-019",
+      "freight_arithmetic-022",
+      "freight_arithmetic-023",
+      "freight_arithmetic-024",
+      "freight_arithmetic-028",
+      "freight_arithmetic-029",
+      "freight_arithmetic-031",
+      "freight_arithmetic-040",
+      "freight_arithmetic-044",
+      "freight_arithmetic-045",
+      "freight_arithmetic-047",
+      "freight_arithmetic-048",
+      "freight_arithmetic-051",
+      "freight_arithmetic-056",
+      "hs_hierarchy-001",
+      "hs_hierarchy-002",
+      "hs_hierarchy-005",
+      "hs_hierarchy-011",
+      "hs_hierarchy-013",
+      "hs_hierarchy-015",
+      "hs_hierarchy-021",
+      "hs_hierarchy-023",
+      "hs_hierarchy-027",
+      "hs_hierarchy-033",
+      "hs_hierarchy-035",
+      "hs_hierarchy-036",
+      "hs_hierarchy-038",
+      "hs_hierarchy-039",
+      "hs_hierarchy-041",
+      "hs_hierarchy-048",
+      "hs_hierarchy-049",
+      "identifiers-002",
+      "identifiers-003",
+      "identifiers-004",
+      "identifiers-009",
+      "identifiers-011",
+      "identifiers-012",
+      "identifiers-014",
+      "identifiers-015",
+      "identifiers-018",
+      "identifiers-022",
+      "identifiers-023",
+      "identifiers-034",
+      "identifiers-041",
+      "identifiers-047",
+      "identifiers-048",
+      "identifiers-055",
+      "identifiers-056",
+      "identifiers-057",
+      "identifiers-058",
+      "identifiers-059"
+    ]
+  },
+  "system_prompts": {
+    "A": "You are answering a freight reference question. Answer from your own knowledge; if you do not know, say UNKNOWN. Give the answer in the format the question asks for, with nothing else.",
+    "B": "You are answering a freight reference question. Use the FreightUtils tools provided to look the answer up or compute it before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the tools do not give you the answer and you do not know it, say UNKNOWN."
+  },
+  "tools": {
+    "source": "hosted FreightUtils MCP tools/list (get_subscribe_link excluded)",
+    "count": 24,
+    "names": [
+      "cbm_calculator",
+      "chargeable_weight_calculator",
+      "ldm_calculator",
+      "adr_lookup",
+      "adr_exemption_calculator",
+      "airline_lookup",
+      "airport_lookup",
+      "nearest_airport",
+      "resolve_reference",
+      "container_lookup",
+      "hs_code_lookup",
+      "incoterms_lookup",
+      "pallet_fitting_calculator",
+      "unit_converter",
+      "consignment_calculator",
+      "unlocode_lookup",
+      "uk_duty_calculator",
+      "shipment_summary",
+      "uld_lookup",
+      "vehicle_lookup",
+      "adr_lq_eq_check",
+      "emissions_calculator",
+      "validate",
+      "ics2_check"
+    ],
+    "sha256": "764930e6a3e3ca63781eb17c353afbcc140e7586262add68c94462e7aa1c7c9c"
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "api": "Responses API (POST https://api.openai.com/v1/responses)",
+      "settings": {},
+      "settings_note": "temperature is refused by gpt-6-astra (HTTP 400 \"Unsupported parameter: 'temperature' is not supported with this model\"), so it runs at the provider default; reasoning effort left at the default.",
+      "price_usd_per_mtok": {
+        "input": 10,
+        "cached_input": 1,
+        "output": 50
+      },
+      "pricing_url": "https://developers.openai.com/api/docs/pricing",
+      "docs": [
+        "https://developers.openai.com/api/docs/models",
+        "https://developers.openai.com/api/docs/guides/function-calling"
+      ]
+    },
+    {
+      "provider": "xai",
+      "model": "grok-4.7",
+      "api": "Responses API (POST https://api.x.ai/v1/responses)",
+      "settings": {
+        "temperature": 0
+      },
+      "price_usd_per_mtok": {
+        "input": 2,
+        "cached_input": 2,
+        "output": 6
+      },
+      "price_note": "Prompts under 200k tokens; cached input billed at the input price here (the models page gives no cached price), an overestimate.",
+      "pricing_url": "https://docs.x.ai/docs/models",
+      "docs": [
+        "https://docs.x.ai/docs/models",
+        "https://docs.x.ai/docs/guides/function-calling"
+      ]
+    }
+  ],
+  "prices_read_on": "2026-10-20",
+  "skipped": [
+    {
+      "provider": "anthropic",
+      "reason": "key present but not scoped to a workspace (HTTP 400 asks for an anthropic-workspace-id header; no ANTHROPIC_WORKSPACE_ID set)"
+    },
+    {
+      "provider": "google",
+      "reason": "key present but the account's prepayment credits are depleted (HTTP 402)"
+    }
+  ],
+  "spend": {
+    "total_usd": 16.43084199999999,
+    "by_provider": {
+      "openai": 5.216627999999999,
+      "xai": 11.214213999999997
+    },
+    "cap_usd": 78,
+    "stopped_at_cap": false
+  }
+}
