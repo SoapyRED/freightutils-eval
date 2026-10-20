@@ -14,7 +14,31 @@ model grades another model.
   sha256 (`questions/v0.1/manifest.json`). The whole set is public: nothing is held out.
   `questions/v0` is kept as history: v0.1 differs from it only in the HS family (below).
 - **Harness**: Node, no framework, one adapter per provider over its own HTTP API.
-- **Results**: one directory per run under `results/` with the scored tables.
+- **Results**: one directory per run under `results/` with the scored tables. The current one
+  is the [v0.1 full pass](results/2026-10-20-full-pass/) (see "Results" below).
+
+## Results
+
+**[Full pass, 20 October 2026](results/2026-10-20-full-pass/README.md)**: all 300 v0.1 questions,
+conditions A and B, one repeat. Accuracy is given overall and, after the slash, excluding
+`adr_2027_delta` (no FreightUtils tool serves ADR 2027):
+
+| Model | Condition | n | Accuracy | Unknown | Confident wrong |
+|---|---|---:|---:|---:|---:|
+| `claude-fable-5-1` | A, alone | 300 / 270 | 86% / 89% | 9% / 8% | 6% / 3% |
+| `claude-fable-5-1` | B, with the tools | 299 / 269 | 90% / 99.6% | 10% / 0% | 0.3% / 0.4% |
+| `gpt-6-astra` | A, alone | 300 / 270 | 84% / 94% | 11% / 1% | 4% / 5% |
+| `gemini-4-argon` | A, alone | 300 / 270 | 84% / 93% | 15% / 5% | 2% / 2% |
+| `gemini-4-argon` | B, with the tools | 210 / 180 | 85% / 99% | 14% / 0% | 0.5% / 0.6% |
+
+Gemini B stopped at 210 questions (the project's spend cap) and GPT-6 Astra B at 30 (the
+account ran out of credit); xAI was not run. The run's README has the latency and cost
+columns, the per-family tables, a like-for-like comparison and every confident-wrong answer,
+each checked against its primary source. Spend: $41.02.
+
+The v0 first pass (100 questions, two models) is kept in
+[`results/2026-10-20-first-pass-v0/`](results/2026-10-20-first-pass-v0/), marked superseded: its
+HS figures were depressed by the wording artefact that v0.1 removes.
 
 ## Conditions
 
@@ -136,7 +160,18 @@ node harness/run.mjs --models openai,xai --conditions B            # the full 30
 - `--cap USD` is a hard spend cap. Spend is counted from the usage fields each API returns,
   priced by `harness/models.json`. Before every call the harness holds back the assumed cost
   of one question. At the cap it stops and writes what it has.
-- `--skip provider:reason` leaves a provider out and records why.
+- `--skip provider:reason` leaves a provider out and records why (reasons without commas;
+  separate several with commas).
+- `--assume-from <summary.json>` uses the tokens a smoke run measured (first call and steady
+  state, with a 25% margin) for the estimate and the hold-back, instead of the built-in
+  assumption. `--spent-before USD` counts earlier spend (probes, smokes) against the cap.
+- Providers run one after another, cheapest first by the estimate, and questions one at a
+  time. HTTP 429 and 5xx back off 20 s, 60 s, 120 s, then the question is an error; an account
+  out of credit or over its spend cap stops that provider and records why.
+- Every answer is appended to `results/raw/<run>/rows.jsonl` as it lands. Running the same
+  command again resumes; `--max-minutes N` stops cleanly after N minutes and writes the tables
+  so far. `harness/salvage.mjs` rebuilds rows from saved raw exchanges for a provider that can
+  no longer be asked (latency is not in the raw files, so it is n/a).
 
 Keys are read only from the environment: `OPENAI_API_KEY`, `GOOGLE_API_KEY`, `XAI_API_KEY`,
 `ANTHROPIC_API_KEY`, plus `ANTHROPIC_WORKSPACE_ID` when the Anthropic key is not scoped to a
@@ -158,9 +193,9 @@ provider's pricing page:
 | Provider | Model | Input | Cached input | Output | Note | Pricing page |
 |---|---|---:|---:|---:|---|---|
 | OpenAI | `gpt-6-astra` | 10.00 | 1.00 | 50.00 | refuses `temperature`: runs at the provider default | https://developers.openai.com/api/docs/pricing |
-| Google | `gemini-4-argon` | 2.00 | (2.00) | 10.00 | to 30 Nov 2026 | https://ai.google.dev/gemini-api/docs/pricing |
+| Google | `gemini-4-argon` | 2.00 | 0.10 | 10.00 | to 30 Nov 2026 (then 4.00 / 0.20 / 20.00); implicit caching only | https://ai.google.dev/gemini-api/docs/pricing |
 | xAI | `grok-4.7` | 2.00 | (2.00) | 6.00 | prompts under 200k tokens | https://docs.x.ai/docs/models |
-| Anthropic | `claude-fable-5-1` | 10.00 | 0.25 | 50.00 | | https://platform.claude.com/docs/en/about-claude/pricing |
+| Anthropic | `claude-fable-5-1` | 10.00 | 0.25 | 50.00 | cache writes 12.50 (5-minute); refuses `temperature`: runs at the provider default | https://platform.claude.com/docs/en/about-claude/pricing |
 
 A cached price in brackets means the page gives none, so cached tokens are billed at the input
 price. That overestimates the cost.
@@ -176,8 +211,11 @@ price. That overestimates the cost.
 - **The prompts are fixed.** Different wording, or a different system prompt, would give
   different numbers.
 - **Models change.** A run measures the model IDs in its manifest, on its date.
-- **The set is a sample.** 300 questions, and a first pass of 100. The family sizes are small,
-  so a per-family figure moves a lot on one answer.
+- **The set is a sample.** 300 questions, one repeat. The family sizes are small, so a
+  per-family figure moves a lot on one answer.
+- **One question is faulty in v0.1.** `identifiers-051` asks for the RKN ULD's base length, but
+  the served value is its overall length; the models' 156 cm is right. It is scored as is and
+  listed in the full pass; v0.2 drops or rewords it.
 - **HS is scored on structure, not wording (v0.1).** See "v0.1: what changed from v0". The v0
   first pass scored HS titles against the served UNSD wording and is kept, marked superseded.
 - **ADR 2027 has no tool.** The FreightUtils tools serve ADR 2025. In B, the `adr_2027_delta`
