@@ -1,5 +1,9 @@
 // Deterministic scoring: per-rule normalisers, no model judge.
 // Outcome per answer: correct | wrong | unknown.
+import fs from 'node:fs';
+
+// Alternative place names the text rule accepts (questions/aliases.json, hand-reviewed, sourced).
+const ALIASES = JSON.parse(fs.readFileSync(new URL('../questions/aliases.json', import.meta.url), 'utf8')).entries;
 
 const UNKNOWN_RE = /^(unknown|i don'?t know|i do not know|not sure|cannot determine|can'?t determine|unable to determine|n\/a)\b/i;
 const NO_CHANGE_RE = /^(no change|unchanged|no(?:,? it does not change)?|does not change|not changed|remains? (?:the same|unchanged))\.?$/i;
@@ -79,7 +83,15 @@ export function matches(expected, answer, accept) {
     const tol = Math.max(Math.abs(Number(expected)) * (accept.tolerance_pct || 0) / 100, accept.tolerance_pct ? 0.005 : 0);
     return Math.abs(n - Number(expected)) <= tol + 1e-9;
   }
-  if (rule === 'text') return textMatch(String(expected), a);
+  if (rule === 'text') {
+    // v0.2 (place names): the expected name or a listed alternative of it, matched against the
+    // whole answer or either part of a bracketed or comma alternative ("Torino (Turin)",
+    // "Turin, Italy").
+    const names = [String(expected), ...(ALIASES[String(expected)]?.accept || [])];
+    const bracket = a.match(/^(.+?)\s*\((.+)\)$/);
+    const parts = [a, ...(bracket ? [bracket[1], bracket[2]] : []), ...(a.includes(',') ? a.split(',') : [])].map((x) => x.trim()).filter(Boolean);
+    return names.some((n) => parts.some((p) => textMatch(n, p)));
+  }
   const norm = normalisers[rule];
   if (!norm) throw new Error(`unknown accept rule ${rule}`);
   return norm(String(expected)) === norm(a);

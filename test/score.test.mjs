@@ -93,3 +93,32 @@ test('text: token-set similarity, not paraphrase', () => {
   assert.ok(!matches('Nickel and articles thereof', 'Copper and articles thereof', { rule: 'text' }));
   assert.ok(!matches('Delevan', 'Delavan', { rule: 'text' }));
 });
+
+test('place names: a listed alternative, and either part of a bracketed or comma alternative', () => {
+  const t = { rule: 'text' };
+  assert.ok(matches('Torino', 'Turin', t));
+  assert.ok(matches('Torino', 'Torino (Turin)', t));
+  assert.ok(matches('Torino', 'Turin (Torino)', t));
+  assert.ok(matches('Torino', 'Turin, Italy', t));
+  assert.ok(matches('Torino', 'Torino, Piedmont, Italy', t));
+  assert.ok(matches('Delevan', 'Delevan, New York', t));
+  assert.ok(matches('Meeruse', 'Meeruse (Estonia)', t));
+  // an alias belongs to its own place only, and a wrong name stays wrong in any wrapping
+  assert.ok(!matches('Delevan', 'Turin', t));
+  assert.ok(!matches('Delevan', 'Danville', t));
+  assert.ok(!matches('Delevan', 'Danville, Illinois', t));
+  assert.ok(!matches('Meeruse', 'Mereküla', t));
+  assert.ok(!matches('Kihara', 'Kohari', t));
+  assert.ok(!matches('Ihota', 'Iho', t));
+});
+
+test('aliases.json stays small, sourced, and about places in the set', async () => {
+  const fs = await import('node:fs');
+  const { entries } = JSON.parse(fs.readFileSync('questions/aliases.json', 'utf8'));
+  const ids = JSON.parse(fs.readFileSync('questions/v0.2/identifiers.json', 'utf8'));
+  assert.ok(Object.keys(entries).length <= 10);
+  for (const [name, e] of Object.entries(entries)) {
+    assert.ok(e.source && e.accept?.length && e.record, name);
+    for (const id of e.questions) assert.equal(ids.find((q) => q.id === id)?.expected, name, `${name} ${id}`);
+  }
+});

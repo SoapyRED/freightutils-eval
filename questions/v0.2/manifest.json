@@ -1,0 +1,41 @@
+{
+  "version": "v0.2",
+  "frozen_at": "2026-10-20",
+  "generator": "generator/generate.mjs",
+  "seed": "freightutils-eval-v0",
+  "data_source": {
+    "repository": "SoapyRED/freighttools (FreightUtils reference data)",
+    "commit": "9264d1012bab80ec9e19a146039f607023b19d5b"
+  },
+  "verified_against": "https://www.freightutils.com (generator/verify-live.mjs, keyed, zero mismatches at freeze)",
+  "changes_from": {
+    "version": "v0.1",
+    "replaced": {
+      "identifiers-051": "v0.1 asked for the RKN ULD base length; the site serves RKN's overall contoured length (200 cm) while the base is the LD3 base (~156 cm), so the question had two defensible answers. Replaced by the maximum gross weight of a ULD drawn by the generator's seed from the records whose maxGrossWeight has one basis (manufacturer structural rating, no deck split, a primary source confirming it, no conflict flagged): pool AKE, DPE; drawn DPE, 1225 kg. No ULD record on the site is provenance-verified (all are pending), so that bar could not be used."
+    },
+    "scoring": "text rule (place names): the expected name or a listed alternative (questions/aliases.json) is accepted, matched against the whole answer or either part of a bracketed or comma alternative. No other scoring change.",
+    "note": "The other 299 questions are byte-identical to v0.1."
+  },
+  "scoring_aliases": {
+    "file": "questions/aliases.json",
+    "sha256": "aabef32eed5383c14afb1f8b95f172b5c65cb92074cf0352d48a2d994655940b"
+  },
+  "total": 300,
+  "counts": {
+    "adr_2027_delta": 30,
+    "adr_exemption": 30,
+    "adr_table_a": 70,
+    "freight_arithmetic": 60,
+    "hs_hierarchy": 50,
+    "identifiers": 60
+  },
+  "files": {
+    "adr_2027_delta.json": "195d4154adb3130591dc77742288d9a8aed4955bbcb6fc604b9ae5529bc3cb70",
+    "adr_exemption.json": "db45302a8ed3591f0243ecf48d9ffe2d9492e3def9e03fde6e7d0338162320b5",
+    "adr_table_a.json": "ab11f4883cb93dff320f63687dbecab5516bd67f96281a0321cdb79ee4f8f7d1",
+    "freight_arithmetic.json": "834c3142a0c7d0d4757d9a43ec7aa7d731f11ba9aafbaea1d7f2eafe9a7519f9",
+    "hs_hierarchy.json": "d5f9dba0dd2c9e1298c9be5cbd1135118fea0d7f3af48c1bfb9b0a1fff15d407",
+    "identifiers.json": "67b7363573ccf8f8af48ba48c8dd855498ed57ba87332a851407519b53a9a639"
+  },
+  "sha256": "43570a01fbf479f9aedcd391384276d773ab731de90cb208a73b7b7422bd0c5c"
+}

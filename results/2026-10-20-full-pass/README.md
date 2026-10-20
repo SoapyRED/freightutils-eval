@@ -1,3 +1,5 @@
+> Superseded by [../2026-10-21-full-pass/](../2026-10-21-full-pass/) (v0.2 scoring + completion).
+
 # Full pass, 20 October 2026 (question set v0.1)
 
 All 300 questions of [question set v0.1](../../questions/v0.1/manifest.json) (sha256

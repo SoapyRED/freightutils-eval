@@ -1,6 +1,6 @@
 // Freezes questions/<version>: writes manifest.json with a sha256 per family file and one over the
 // set. `node generator/freeze.mjs --check` (in npm test) checks every frozen version and fails if
-// any file no longer matches. Usage: node generator/freeze.mjs [--version v0.1] [--check]
+// any file no longer matches. Usage: node generator/freeze.mjs [--version v0.2] [--check]
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -30,10 +30,15 @@ if (process.argv.includes('--check')) {
       console.error(`questions/${v} does not match its manifest: ${bad.join(', ') || 'file list or set hash'}`);
       process.exit(1);
     }
+    // A set scored with the place-name alternatives also freezes the alternatives list.
+    if (m.scoring_aliases && sha(fs.readFileSync(m.scoring_aliases.file, 'utf8').replace(/\r\n/g, '\n')) !== m.scoring_aliases.sha256) {
+      console.error(`questions/${v}: ${m.scoring_aliases.file} does not match its sha256 in the manifest`);
+      process.exit(1);
+    }
     console.log(`questions/${v} frozen: ${Object.values(counts).reduce((a, b) => a + b, 0)} questions, sha256 ${setSha}`);
   }
 } else {
-  const VERSION = process.argv.includes('--version') ? process.argv[process.argv.indexOf('--version') + 1] : 'v0.1';
+  const VERSION = process.argv.includes('--version') ? process.argv[process.argv.indexOf('--version') + 1] : 'v0.2';
   const { MANIFEST, perFile, setSha, counts } = hashDir(VERSION);
   let dataCommit = null;
   try { dataCommit = execFileSync('git', ['-C', DATA_ROOT, 'rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(); } catch { /* not available */ }
@@ -45,6 +50,15 @@ if (process.argv.includes('--check')) {
     data_source: { repository: 'SoapyRED/freighttools (FreightUtils reference data)', commit: dataCommit },
     verified_against: 'https://www.freightutils.com (generator/verify-live.mjs, keyed, zero mismatches at freeze)',
     ...(VERSION === 'v0.1' ? { changes_from: { version: 'v0', note: 'hs_hierarchy scored on structure only (heading and chapter numbers, digits); the 37 wording questions are dropped. The other five families are byte-identical to v0.' } } : {}),
+    ...(VERSION === 'v0.2' ? {
+      changes_from: {
+        version: 'v0.1',
+        replaced: { 'identifiers-051': "v0.1 asked for the RKN ULD base length; the site serves RKN's overall contoured length (200 cm) while the base is the LD3 base (~156 cm), so the question had two defensible answers. Replaced by the maximum gross weight of a ULD drawn by the generator's seed from the records whose maxGrossWeight has one basis (manufacturer structural rating, no deck split, a primary source confirming it, no conflict flagged): pool AKE, DPE; drawn DPE, 1225 kg. No ULD record on the site is provenance-verified (all are pending), so that bar could not be used." },
+        scoring: 'text rule (place names): the expected name or a listed alternative (questions/aliases.json) is accepted, matched against the whole answer or either part of a bracketed or comma alternative. No other scoring change.',
+        note: 'The other 299 questions are byte-identical to v0.1.',
+      },
+      scoring_aliases: { file: 'questions/aliases.json', sha256: sha(fs.readFileSync('questions/aliases.json', 'utf8').replace(/\r\n/g, '\n')) },
+    } : {}),
     total: Object.values(counts).reduce((a, b) => a + b, 0),
     counts,
     files: perFile,

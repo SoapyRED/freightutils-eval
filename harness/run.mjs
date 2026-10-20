@@ -2,11 +2,12 @@
 //   node harness/run.mjs --sample 100 --conditions A,B --repeats 1 --run first-pass --dry-run
 // Flags: --sample N (stratified by family, deterministic by --seed), --models openai,xai,...,
 // --conditions A,B, --repeats N, --cap USD (default 80), --run NAME, --dry-run,
-// --questions v0.1 (the frozen set), --assume-from <summary.json> (per-question tokens measured
+// --questions v0.2 (the frozen set), --assume-from <summary.json> (per-question tokens measured
 // by a smoke run, used for the estimate and the cap hold-back), --spent-before USD (spend already
 // made in this run's budget: probes and smokes, counted against the cap), --out-root DIR,
 // --max-minutes N (stop cleanly after N minutes and write the tables so far; run the same command
-// again to resume). Every answer is appended to results/raw/<run>/rows.jsonl as it lands, and a
+// again to resume), --dir-name NAME (the results and raw directory name instead of <date>-<run>).
+// Every answer is appended to results/raw/<run>/rows.jsonl as it lands, and a
 // re-run skips the answers already there, so a stopped run loses nothing.
 // Providers run one after another, cheapest first by the estimate; questions within a provider
 // run one at a time. HTTP 429 and 5xx back off 20 s, 60 s, 120 s, then the question is an error.
@@ -36,6 +37,7 @@ const OUT_ROOT = flag('out-root', 'results');
 const ASSUME_FROM = flag('assume-from', null);
 const BACKOFF_S = [20, 60, 120];
 const MAX_MIN = Number(flag('max-minutes', 0)) || null;
+const DIR_NAME = flag('dir-name', null);
 const T_START = Date.now();
 // An account out of credit answers 429 (OpenAI insufficient_quota), 403 (xAI) or 400 (Anthropic
 // "credit balance"): no backoff fixes that, so the provider is stopped and the reason recorded.
@@ -58,7 +60,7 @@ const SYSTEM = {
 };
 
 // ------------------------------------------------------------------ questions
-const QDIR = `questions/${flag('questions', 'v0.1')}`;
+const QDIR = `questions/${flag('questions', 'v0.2')}`;
 const qManifest = JSON.parse(fs.readFileSync(path.join(QDIR, 'manifest.json'), 'utf8'));
 const families = Object.keys(qManifest.counts);
 const all = families.flatMap((f) => JSON.parse(fs.readFileSync(path.join(QDIR, `${f}.json`), 'utf8')));
@@ -133,8 +135,9 @@ if (DRY) process.exit(0);
 
 // ------------------------------------------------------------------ run
 const date = new Date().toISOString().slice(0, 10);
-const OUT = path.join(OUT_ROOT, `${date}-${RUN}`);
-const RAW = path.join(OUT_ROOT, 'raw', `${date}-${RUN}`);
+const RUN_ID = DIR_NAME || `${date}-${RUN}`;
+const OUT = path.join(OUT_ROOT, RUN_ID);
+const RAW = path.join(OUT_ROOT, 'raw', RUN_ID);
 fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(RAW, { recursive: true });
 
@@ -157,9 +160,13 @@ const CHECKPOINT = path.join(RAW, 'rows.jsonl');
 const keyOf = (r) => `${r.provider}|${r.condition}|${r.repeat}|${r.id}`;
 const prior = fs.existsSync(CHECKPOINT) ? fs.readFileSync(CHECKPOINT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
 const done = new Map(prior.map((r) => [keyOf(r), r]));
-let spent = SPENT_BEFORE + prior.reduce((s, r) => s + (r.usd || 0), 0);
+// Rows carried from an earlier run (harness/rescore.mjs marks them carried_from) were paid for in
+// that run: they are kept and scored, but their cost does not count against this run's cap.
+const fresh = (r) => !r.carried_from;
+let spent = SPENT_BEFORE + prior.filter(fresh).reduce((s, r) => s + (r.usd || 0), 0);
 const spentBy = Object.fromEntries(providers.map((p) => [p.id, 0]));
-for (const r of prior) spentBy[r.provider] = (spentBy[r.provider] || 0) + (r.usd || 0);
+for (const r of prior.filter(fresh)) spentBy[r.provider] = (spentBy[r.provider] || 0) + (r.usd || 0);
+const carriedUsd = prior.filter((r) => !fresh(r)).reduce((s, r) => s + (r.usd || 0), 0);
 let capped = false;
 let paused = false;
 const stopped = {};
@@ -241,7 +248,7 @@ function summarise(list) {
 // adr_2027_delta has no FreightUtils tool (the tools serve ADR 2025), so every table gives
 // accuracy both overall and without it.
 const EXCL = 'adr_2027_delta';
-const summary = { run: `${date}-${RUN}`, overall: {}, overall_excluding_adr_2027_delta: {}, by_family: {}, per_question_tokens: {} };
+const summary = { run: RUN_ID, overall: {}, overall_excluding_adr_2027_delta: {}, by_family: {}, per_question_tokens: {} };
 for (const p of providers) for (const c of CONDITIONS) {
   const key = `${p.model} / ${c}`;
   const list = rows.filter((r) => r.provider === p.id && r.condition === c);
@@ -258,18 +265,21 @@ for (const p of providers) for (const c of CONDITIONS) {
     summary.per_question_tokens[`${p.id}/${p.model}/${c}`] = { n: ok.length, ...mean(ok), first: mean(ok.slice(0, 1)), steady: ok.length > 1 ? mean(ok.slice(1)) : mean(ok) };
   }
 }
-summary.spend = { total_usd: spent, spent_before_run_usd: SPENT_BEFORE, this_run_usd: spent - SPENT_BEFORE, by_provider: spentBy, cap_usd: CAP, stopped_at_cap: capped };
+summary.spend = { total_usd: spent, spent_before_run_usd: SPENT_BEFORE, this_run_usd: spent - SPENT_BEFORE, by_provider: spentBy, cap_usd: CAP, stopped_at_cap: capped, carried_rows_usd_not_counted: carriedUsd };
+const carriedCount = {};
+for (const r of rows) { const k = `${r.provider}/${r.condition}`; carriedCount[k] ||= { carried: 0, new: 0 }; carriedCount[k][r.carried_from ? 'carried' : 'new']++; }
+summary.rows_carried_and_new = carriedCount;
 summary.complete = !paused;
 summary.providers_stopped = stopped;
 fs.writeFileSync(path.join(OUT, 'summary.json'), JSON.stringify(summary, null, 2) + '\n');
 
-const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'cache_write_tokens', 'output_tokens', 'usd', 'error'];
+const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'cache_write_tokens', 'output_tokens', 'usd', 'error', 'carried_from'];
 const csvCell = (v) => { const s = v === undefined || v === null ? '' : typeof v === 'number' && !Number.isInteger(v) ? String(Math.round(v * 1e6) / 1e6) : String(v); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 rows.sort((a, b) => a.provider.localeCompare(b.provider) || a.condition.localeCompare(b.condition) || a.id.localeCompare(b.id) || a.repeat - b.repeat);
 fs.writeFileSync(path.join(OUT, 'per-question.csv'), [cols.join(','), ...rows.map((r) => cols.map((c) => csvCell(r[c])).join(','))].join('\n') + '\n');
 
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
-  run: `${date}-${RUN}`, started: date, sample: questions.length, seed: SAMPLE ? SEED : null, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
+  run: RUN_ID, started: date, sample: questions.length, seed: SAMPLE ? SEED : null, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
   order: 'providers one after another, cheapest first by the estimate; questions one at a time', backoff_s: BACKOFF_S,
   estimate: { assume_from: ASSUME_FROM, by_provider: estimate },
   question_set: { version: qManifest.version, sha256: qManifest.sha256, ids: questions.map((q) => q.id) },
@@ -281,10 +291,12 @@ fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
   providers_stopped: stopped,
   complete: !paused,
   spend: summary.spend,
+  rows_carried_and_new: summary.rows_carried_and_new,
+  carried_from: [...new Set(rows.map((r) => r.carried_from).filter(Boolean))],
 }, null, 2) + '\n');
 
 const pct = (x) => (x === null ? 'n/a' : `${(x * 100).toFixed(0)}%`);
-const lines = [`# Run ${date}-${RUN}`, '', `${questions.length} questions (${SAMPLE ? 'stratified sample of ' : ''}question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', `Each count and rate is given overall and, after the slash, excluding \`${EXCL}\` (no FreightUtils tool serves ADR 2027).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
+const lines = [`# Run ${RUN_ID}`, '', `${questions.length} questions (${SAMPLE ? 'stratified sample of ' : ''}question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', `Each count and rate is given overall and, after the slash, excluding \`${EXCL}\` (no FreightUtils tool serves ADR 2027).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
 for (const [k, s] of Object.entries(summary.overall)) { const x = summary.overall_excluding_adr_2027_delta[k]; const [m, c] = k.split(' / '); lines.push(`| ${m} | ${c} | ${s.n} / ${x.n} | ${pct(s.accuracy)} / ${pct(x.accuracy)} | ${pct(s.unknown_rate)} / ${pct(x.unknown_rate)} | ${pct(s.confident_wrong_rate)} / ${pct(x.confident_wrong_rate)} | ${s.mean_tool_calls.toFixed(1)} | ${s.mean_latency_ms === null ? 'n/a' : `${(s.mean_latency_ms / 1000).toFixed(1)} s`} | ${s.usd.toFixed(2)} |`); }
 lines.push('', '## Accuracy by family', '', `| Model / condition | ${families.join(' | ')} |`, `|---|${families.map(() => '---:').join('|')}|`);
 for (const [k, fam] of Object.entries(summary.by_family)) lines.push(`| ${k} | ${families.map((f) => `${pct(fam[f].accuracy)} (${fam[f].n})`).join(' | ')} |`);

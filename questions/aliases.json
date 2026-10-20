@@ -1,0 +1,11 @@
+{
+  "_comment": "Alternative names the text rule accepts for a place-name answer, keyed by the expected (UN/LOCODE) name. Hand-reviewed; at most 10 entries; only places that appear in the question set; each with its source. Read by harness/score.mjs.",
+  "entries": {
+    "Torino": {
+      "record": "ITTRN",
+      "questions": ["identifiers-034"],
+      "accept": ["Turin"],
+      "source": "English exonym. GeoNames 3165524 (https://www.geonames.org/3165524/turin.html) gives the place's English name as Turin and its Italian administrative name as Torino (ADM3 001272), read 2026-10-20. UN/LOCODE's own convention gives an English name as a \"=\" reference entry pointing at the national name; the FreightUtils parse of the code list does not carry those entries, and the UNECE pages answered 403 to scripted reads on the day, so this entry rests on the gazetteer."
+    }
+  }
+}

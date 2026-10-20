@@ -1,14 +1,16 @@
 // Builds questions/<version>/*.json from the FreightUtils reference data. Never edit the output
-// by hand: change this script and re-run it. Usage: node generator/generate.mjs [--version v0.1]
+// by hand: change this script and re-run it. Usage: node generator/generate.mjs [--version v0.2]
 // v0.1 differs from v0 only in the hs_hierarchy family (scored on structure, no wording); the
 // seed and every other family are unchanged, so the other five files are byte-identical to v0.
+// v0.2 differs from v0.1 only in identifiers-051 (a ULD maximum gross weight replaces the RKN
+// base length); its draw comes after every v0.1 draw, so the other 299 questions are unchanged.
 import fs from 'node:fs';
 import path from 'node:path';
 import { readJson, readText, rng, round } from './lib.mjs';
 
 const arg = (name, dflt) => (process.argv.includes(`--${name}`) ? process.argv[process.argv.indexOf(`--${name}`) + 1] : dflt);
-const VERSION = arg('version', 'v0.1');
-if (!['v0', 'v0.1'].includes(VERSION)) throw new Error(`unknown version ${VERSION}`);
+const VERSION = arg('version', 'v0.2');
+if (!['v0', 'v0.1', 'v0.2'].includes(VERSION)) throw new Error(`unknown version ${VERSION}`);
 const argSeed = arg('seed', 'freightutils-eval-v0');
 const R = rng(argSeed);
 const OUT = path.resolve(`questions/${VERSION}`);
@@ -352,13 +354,39 @@ function addressable(r) {
   const ulds = readJson('lib/data/ulds.json').filter((u) => u.externalDimensions?.length && u.externalDimensions?.width);
   const uq = [];
   for (const u of ulds) uq.push([u, 'length', u.externalDimensions.length], [u, 'width', u.externalDimensions.width]);
-  for (const [u, dim, v] of R.shuffle(uq).slice(0, 10)) add('identifiers', {
+  const uldDraw = R.shuffle(uq).slice(0, 10);
+  for (const [u, dim, v] of uldDraw) add('identifiers', {
     prompt: `What is the base ${dim === 'length' ? 'length (the longer base side)' : 'width (the shorter base side)'} of the ${u.code} ULD${u.name && u.name !== u.code ? ` (${u.name})` : ''}, in centimetres? Answer with the number only, e.g. 156.`,
     expected: v, accept: { rule: 'numeric', tolerance_pct: 0.5 },
     source: { dataset: 'ULD specifications', edition: 'as served', publisher: 'ULD manufacturers and carriers (IATA ULD Regulations)', record: u.code, field: `externalDimensions.${dim}` },
     tool: { name: 'uld_lookup', arguments: { type: u.code } },
     check: { kind: 'tool_numeric', path: `result.externalDimensions.${dim}` },
   });
+  // v0.2: identifiers-051 asked for the RKN base length, but RKN serves its overall contoured
+  // length (200 cm), so the question had two defensible answers. It is replaced by a maximum gross
+  // weight, a field with one basis on the records drawn from: the manufacturer's structural rating
+  // (no carrier operational figure, no deck split), confirmed by a primary source, and with no
+  // conflict, divergence or inheritance flagged on the record. No ULD record on the site is
+  // provenance-verified (all 16 are pending), so that bar cannot be used; this is the closest one.
+  // Drawn after every v0.1 draw, so the RNG stream for everything above is unchanged.
+  if (VERSION === 'v0.2') {
+    const idx = questions.identifiers.length - uldDraw.length;
+    if (uldDraw[0][0].code !== 'RKN') throw new Error('v0.2: the first ULD draw is no longer RKN; re-check identifiers-051');
+    const oneBasis = ulds.filter((u) => u.maxGrossWeightBasis === 'structural-mgw-manufacturer'
+      && !(u.deckLimits || []).length
+      && (u.provenance?.sources || []).some((s) => s.sourceClass?.startsWith('primary') && s.verdict === 'CONFIRMED' && (s.fieldsConfirmed || []).includes('maxGrossWeight'))
+      && !/conflict|flagged|divergen|inherited|materially/i.test(u.maxGrossWeightBasisQualifier || ''))
+      .sort((a, b) => a.code.localeCompare(b.code));
+    const u = R.pick(oneBasis);
+    questions.identifiers[idx] = {
+      id: questions.identifiers[idx].id, family: 'identifiers',
+      prompt: `What is the maximum gross weight of the ${u.code} ULD${u.name && u.name !== u.code ? ` (${u.name})` : ''}, in kilograms, as the manufacturer's structural rating (the unit's tare included)? Answer with the number only, e.g. 2500.`,
+      expected: u.maxGrossWeight, accept: { rule: 'numeric', tolerance_pct: 0.5 },
+      source: { dataset: 'ULD specifications', edition: 'as served', publisher: 'ULD manufacturers and carriers (IATA ULD Regulations)', record: u.code, field: 'maxGrossWeight', basis: u.maxGrossWeightBasis, pool: oneBasis.map((x) => x.code), replaces: 'v0.1 identifiers-051 (RKN base length: the served value is the overall contoured length)' },
+      tool: { name: 'uld_lookup', arguments: { type: u.code } },
+      check: { kind: 'tool_numeric', path: 'result.maxGrossWeight' },
+    };
+  }
 }
 
 // ---------------------------------------------------------------- write

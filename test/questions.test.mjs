@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { matches } from '../harness/score.mjs';
 
-const DIR = 'questions/v0.1';
+const DIR = 'questions/v0.2';
 const WANT = { adr_table_a: 70, adr_2027_delta: 30, adr_exemption: 30, freight_arithmetic: 60, hs_hierarchy: 50, identifiers: 60 };
 const all = Object.keys(WANT).flatMap((f) => JSON.parse(fs.readFileSync(path.join(DIR, `${f}.json`), 'utf8')));
 
@@ -30,7 +30,7 @@ test('every question is complete', () => {
   }
 });
 
-test('v0.1 hs_hierarchy is structure only: digits answers, no wording', () => {
+test('hs_hierarchy is structure only: digits answers, no wording', () => {
   const hs = all.filter((q) => q.family === 'hs_hierarchy');
   for (const q of hs) {
     assert.equal(q.accept.rule, 'digits', q.id);
@@ -42,4 +42,27 @@ test('v0.1 hs_hierarchy is structure only: digits answers, no wording', () => {
 
 test('every expected value matches itself under its accept rule', () => {
   for (const q of all) assert.ok(matches(q.expected, String(q.expected), q.accept), q.id);
+});
+
+test('v0.2 replaces only identifiers-051, with a one-basis ULD maximum gross weight', () => {
+  const v01 = Object.keys(WANT).flatMap((f) => JSON.parse(fs.readFileSync(path.join('questions/v0.1', `${f}.json`), 'utf8')));
+  const old = new Map(v01.map((q) => [q.id, JSON.stringify(q)]));
+  const changed = all.filter((q) => old.get(q.id) !== JSON.stringify(q)).map((q) => q.id);
+  assert.deepEqual(changed, ['identifiers-051']);
+  const q = all.find((x) => x.id === 'identifiers-051');
+  assert.equal(q.source.field, 'maxGrossWeight');
+  assert.equal(q.source.basis, 'structural-mgw-manufacturer');
+  assert.equal(q.check.path, 'result.maxGrossWeight');
+  assert.notEqual(q.source.record, 'RKN');
+  // The example in the prompt is not the answer.
+  assert.ok(!q.prompt.includes(`e.g. ${q.expected}`));
+});
+
+test('the replaced question scores kilograms within 0.5% and nothing else', () => {
+  const q = all.find((x) => x.id === 'identifiers-051');
+  const ok = (a) => matches(q.expected, a, q.accept);
+  assert.equal(q.expected, 1225);
+  for (const a of ['1225', '1,225', '1225 kg', '1,225 kg (2,700 lb)', '1224']) assert.ok(ok(a), a);
+  // pounds, the operational and LD3 figures, and the old RKN answers are wrong
+  for (const a of ['2700', '2,700 lb', '1588', '1134', '200', '156']) assert.ok(!ok(a), a);
 });

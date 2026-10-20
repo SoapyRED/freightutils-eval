@@ -1,5 +1,5 @@
 // lint:questions-live — checks every expected value in questions/<version> (QUESTIONS_DIR,
-// default questions/v0.1) against the live site
+// default questions/v0.2) against the live site
 // (keyed calls to the hosted MCP tools and the public pages). A mismatch is a bug in the
 // generator, not the site: fix the generator. --annotate writes the site's own citation text
 // into each question's source (run before freezing).
@@ -9,7 +9,7 @@ import { callTool, SITE } from '../harness/lib/mcp.mjs';
 import { freightutilsKey } from '../harness/lib/env.mjs';
 import { matches, normalisers } from '../harness/score.mjs';
 
-const DIR = path.resolve(process.env.QUESTIONS_DIR || 'questions/v0.1');
+const DIR = path.resolve(process.env.QUESTIONS_DIR || 'questions/v0.2');
 const annotate = process.argv.includes('--annotate');
 const only = process.argv.includes('--family') ? process.argv[process.argv.indexOf('--family') + 1] : null;
 
