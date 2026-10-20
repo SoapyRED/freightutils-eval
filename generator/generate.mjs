@@ -1,12 +1,17 @@
-// Builds questions/v0/*.json from the FreightUtils reference data. Never edit the output by
-// hand: change this script and re-run it. Usage: node generator/generate.mjs [--seed v0]
+// Builds questions/<version>/*.json from the FreightUtils reference data. Never edit the output
+// by hand: change this script and re-run it. Usage: node generator/generate.mjs [--version v0.1]
+// v0.1 differs from v0 only in the hs_hierarchy family (scored on structure, no wording); the
+// seed and every other family are unchanged, so the other five files are byte-identical to v0.
 import fs from 'node:fs';
 import path from 'node:path';
 import { readJson, readText, rng, round } from './lib.mjs';
 
-const argSeed = process.argv.includes('--seed') ? process.argv[process.argv.indexOf('--seed') + 1] : 'freightutils-eval-v0';
+const arg = (name, dflt) => (process.argv.includes(`--${name}`) ? process.argv[process.argv.indexOf(`--${name}`) + 1] : dflt);
+const VERSION = arg('version', 'v0.1');
+if (!['v0', 'v0.1'].includes(VERSION)) throw new Error(`unknown version ${VERSION}`);
+const argSeed = arg('seed', 'freightutils-eval-v0');
 const R = rng(argSeed);
-const OUT = path.resolve('questions/v0');
+const OUT = path.resolve(`questions/${VERSION}`);
 
 const SITE = 'https://www.freightutils.com';
 const ADR_SOURCE = { dataset: 'ADR 2025 Table A (3.2.1)', edition: 'ADR 2025 (ECE/TRANS/352)', publisher: 'UNECE', citation: 'UNECE ADR 2025 (ECE/TRANS/352), Table A', url: 'https://unece.org/adr-2025-files' };
@@ -250,17 +255,37 @@ function addressable(r) {
   const six = R.shuffle(hs.filter((c) => c.level === 6 && byCode.get(c.parent)));
   const four = R.shuffle(hs.filter((c) => c.level === 4 && byCode.get(c.parent)));
   let i6 = 0, i4 = 0;
-  const hsQ = (prompt, expected, rule, code, field) => add('hs_hierarchy', {
-    prompt, expected, accept: { rule },
-    source: { ...HS_SOURCE, record: code, field },
-    tool: { name: 'hs_code_lookup', arguments: { code } },
-    check: field === 'description' ? { kind: 'tool_field', path: 'result.description' } : field === 'parent' ? { kind: 'tool_field', path: 'result.parent' } : { kind: 'tool_ancestor', level: field === 'heading_title' ? 4 : 2, path: 'result.ancestors[].description' },
-  });
-  for (let k = 0; k < 8; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), which 4-digit heading does subheading ${c.hscode} belong to? Answer with the 4 digits only, e.g. 0101.`, c.parent, 'digits', c.hscode, 'parent'); }
-  for (let k = 0; k < 12; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), what is the title of the heading that subheading ${c.hscode} belongs to? Answer with the heading title only, as worded in the nomenclature.`, byCode.get(c.parent).description, 'text', c.hscode, 'heading_title'); }
-  for (let k = 0; k < 5; k++) { const c = four[i4++]; hsQ(`In the Harmonized System (HS 2022), which 2-digit chapter does heading ${c.hscode} belong to? Answer with the 2 digits only, e.g. 01.`, c.parent, 'digits', c.hscode, 'parent'); }
-  for (let k = 0; k < 10; k++) { const c = four[i4++]; hsQ(`In the Harmonized System (HS 2022), what is the title of chapter ${c.parent}, which contains heading ${c.hscode}? Answer with the chapter title only, as worded in the nomenclature.`, byCode.get(c.parent).description, 'text', c.hscode, 'chapter_title'); }
-  for (let k = 0; k < 15; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), what is the description of subheading ${c.hscode}? Answer with the description only, as worded in the nomenclature.`, c.description, 'text', c.hscode, 'description'); }
+  if (VERSION === 'v0') {
+    const hsQ = (prompt, expected, rule, code, field) => add('hs_hierarchy', {
+      prompt, expected, accept: { rule },
+      source: { ...HS_SOURCE, record: code, field },
+      tool: { name: 'hs_code_lookup', arguments: { code } },
+      check: field === 'description' ? { kind: 'tool_field', path: 'result.description' } : field === 'parent' ? { kind: 'tool_field', path: 'result.parent' } : { kind: 'tool_ancestor', level: field === 'heading_title' ? 4 : 2, path: 'result.ancestors[].description' },
+    });
+    for (let k = 0; k < 8; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), which 4-digit heading does subheading ${c.hscode} belong to? Answer with the 4 digits only, e.g. 0101.`, c.parent, 'digits', c.hscode, 'parent'); }
+    for (let k = 0; k < 12; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), what is the title of the heading that subheading ${c.hscode} belongs to? Answer with the heading title only, as worded in the nomenclature.`, byCode.get(c.parent).description, 'text', c.hscode, 'heading_title'); }
+    for (let k = 0; k < 5; k++) { const c = four[i4++]; hsQ(`In the Harmonized System (HS 2022), which 2-digit chapter does heading ${c.hscode} belong to? Answer with the 2 digits only, e.g. 01.`, c.parent, 'digits', c.hscode, 'parent'); }
+    for (let k = 0; k < 10; k++) { const c = four[i4++]; hsQ(`In the Harmonized System (HS 2022), what is the title of chapter ${c.parent}, which contains heading ${c.hscode}? Answer with the chapter title only, as worded in the nomenclature.`, byCode.get(c.parent).description, 'text', c.hscode, 'chapter_title'); }
+    for (let k = 0; k < 15; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), what is the description of subheading ${c.hscode}? Answer with the description only, as worded in the nomenclature.`, c.description, 'text', c.hscode, 'description'); }
+  } else {
+    // v0.1: structure only, digits answers, no wording. The served descriptions are the UN
+    // Statistics Division's condensed text, so a model quoting the WCO legal text was right and
+    // scored wrong in v0. The wording questions are dropped, not kept unscored (README).
+    // Same two shuffles as v0 and no further draws, so the RNG stream for the identifiers
+    // family is unchanged.
+    const hsQ = (prompt, expected, code, field, check) => add('hs_hierarchy', {
+      prompt, expected, accept: { rule: 'digits' },
+      source: { ...HS_SOURCE, record: code, field },
+      tool: { name: 'hs_code_lookup', arguments: { code } },
+      check,
+    });
+    const chapterOf = (c) => byCode.get(c.parent).parent;
+    // A 6-digit subheading: its heading (20) and its chapter (15).
+    for (let k = 0; k < 20; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), which 4-digit heading does subheading ${c.hscode} belong to? Answer with the 4 digits only, e.g. 0101.`, c.parent, c.hscode, 'parent', { kind: 'tool_field', path: 'result.parent' }); }
+    for (let k = 0; k < 15; k++) { const c = six[i6++]; hsQ(`In the Harmonized System (HS 2022), which 2-digit chapter does subheading ${c.hscode} belong to? Answer with the 2 digits only, e.g. 01.`, chapterOf(c), c.hscode, 'chapter', { kind: 'tool_ancestor', level: 2, field: 'hscode', path: 'result.ancestors[].hscode' }); }
+    // A 4-digit heading: its chapter (15).
+    for (let k = 0; k < 15; k++) { const c = four[i4++]; hsQ(`In the Harmonized System (HS 2022), which 2-digit chapter does heading ${c.hscode} belong to? Answer with the 2 digits only, e.g. 01.`, c.parent, c.hscode, 'parent', { kind: 'tool_field', path: 'result.parent' }); }
+  }
 }
 
 // ---------------------------------------------------------------- 6. identifiers (60)

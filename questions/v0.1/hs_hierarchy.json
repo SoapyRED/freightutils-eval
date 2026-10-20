@@ -1,0 +1,1432 @@
+[
+  {
+    "id": "hs_hierarchy-001",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 350510 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "3505",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "350510",
+      "field": "parent",
+      "site_citation": "350510 — Dextrins and other modified starches (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "350510"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-002",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 721632 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "7216",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "721632",
+      "field": "parent",
+      "site_citation": "721632 — Iron or non-alloy steel; I sections, hot-rolled, hot-drawn or extruded, of a height of 80mm or more (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "721632"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-003",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 391510 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "3915",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "391510",
+      "field": "parent",
+      "site_citation": "391510 — Ethylene polymers; waste, parings and scrap (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "391510"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-004",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 844331 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "8443",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "844331",
+      "field": "parent",
+      "site_citation": "844331 — Printing, copying, and facsimile machines; machines which perform two or more of the functions of printing, copying or facsimile transmission, capable of connecting to an automatic data processing machine or to a network (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "844331"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-005",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 510510 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "5105",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "510510",
+      "field": "parent",
+      "site_citation": "510510 — Wool; carded (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "510510"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-006",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 850990 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "8509",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "850990",
+      "field": "parent",
+      "site_citation": "850990 — Electro-mechanical domestic appliances; parts for the appliances of heading no. 8509 (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "850990"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-007",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 090922 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "0909",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "090922",
+      "field": "parent",
+      "site_citation": "090922 — Spices; coriander seeds, crushed or ground (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "090922"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-008",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 810299 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "8102",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "810299",
+      "field": "parent",
+      "site_citation": "810299 — Molybdenum; articles n.e.c. in heading no. 8102 (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "810299"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-009",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 270111 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "2701",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "270111",
+      "field": "parent",
+      "site_citation": "270111 — Coal; anthracite, whether or not pulverised, but not agglomerated (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "270111"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-010",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 843830 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "8438",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "843830",
+      "field": "parent",
+      "site_citation": "843830 — Machinery; industrial, for sugar manufacture (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "843830"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-011",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 291570 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "2915",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "291570",
+      "field": "parent",
+      "site_citation": "291570 — Acids; saturated acyclic monocarboxylic acids; palmitic acid, stearic acid, their salts and esters (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "291570"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-012",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 230650 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "2306",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "230650",
+      "field": "parent",
+      "site_citation": "230650 — Oil-cake and other solid residues; whether or not ground or in the form of pellets, resulting from the extraction of coconut or copra seed oils (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "230650"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-013",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 850433 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "8504",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "850433",
+      "field": "parent",
+      "site_citation": "850433 — Transformers; n.e.c. in item no. 8504.2, having a power handling capacity exceeding 16kVA but not exceeding 500kVA (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "850433"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-014",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 010410 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "0104",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "010410",
+      "field": "parent",
+      "site_citation": "010410 — Sheep; live (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "010410"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-015",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 291260 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "2912",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "291260",
+      "field": "parent",
+      "site_citation": "291260 — Paraformaldehyde (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "291260"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-016",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 020745 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "0207",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "020745",
+      "field": "parent",
+      "site_citation": "020745 — Meat and edible offal; of ducks, cuts and offal, excluding fatty livers, frozen (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "020745"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-017",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 901050 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "9010",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "901050",
+      "field": "parent",
+      "site_citation": "901050 — Photographic laboratory apparatus and equipment; n.e.c. in item no. 9010.10, for photographic (including cinematographic) laboratories; negatoscopes (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "901050"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-018",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 020753 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "0207",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "020753",
+      "field": "parent",
+      "site_citation": "020753 — Meat and edible offal; of geese, fatty livers (foie gras), fresh or chilled (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "020753"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-019",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 520532 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "5205",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "520532",
+      "field": "parent",
+      "site_citation": "520532 — Cotton yarn; (not sewing thread), multiple or cabled, of uncombed fibres, 85% or more by weight of cotton, 714.28 to 232.56 decitex (15 to 43 metric number) per single yarn, not for retail sale (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "520532"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-020",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 4-digit heading does subheading 081110 belong to? Answer with the 4 digits only, e.g. 0101.",
+    "expected": "0811",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "081110",
+      "field": "parent",
+      "site_citation": "081110 — Fruit, edible; strawberries, uncooked or cooked by steaming or boiling in water, frozen, whether or not containing added sugar or other sweetening matter (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "081110"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-021",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 841920 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "84",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "841920",
+      "field": "chapter",
+      "site_citation": "841920 — Sterilizers; for medical, surgical or laboratory use, not used for domestic purposes (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "841920"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-022",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 901010 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "90",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "901010",
+      "field": "chapter",
+      "site_citation": "901010 — Photographic laboratory apparatus and equipment; for automatically developing photographic (including cinematographic) film or paper in rolls or for automatically exposing developed film to rolls of paper (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "901010"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-023",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 970610 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "97",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "970610",
+      "field": "chapter",
+      "site_citation": "970610 — Antiques; of an age exceeding 250 years (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "970610"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-024",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 300630 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "30",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "300630",
+      "field": "chapter",
+      "site_citation": "300630 — Pharmaceutical goods; opacifying preparations for x-ray examinations, diagnostic reagents designed to be administered to the patient (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "300630"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-025",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 382520 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "38",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "382520",
+      "field": "chapter",
+      "site_citation": "382520 — Residual products of the chemical or allied industries, not elsewhere specified or included; sewage sludge (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "382520"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-026",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 581099 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "58",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "581099",
+      "field": "chapter",
+      "site_citation": "581099 — Embroidery; with visible ground, of textile materials (other than cotton and man-made fibres), in the piece, in strips or in motifs (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "581099"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-027",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 950300 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "95",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "950300",
+      "field": "chapter",
+      "site_citation": "950300 — Tricycles, scooters, pedal cars and similar wheeled toys; dolls' carriages; dolls; other toys; reduced-size (scale) models and similar recreational models, working or not; puzzles of all kinds (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "950300"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-028",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 285310 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "28",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "285310",
+      "field": "chapter",
+      "site_citation": "285310 — Inorganic compounds; cyanogen chloride (chlorcyan) (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "285310"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-029",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 621440 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "62",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "621440",
+      "field": "chapter",
+      "site_citation": "621440 — Shawls, scarves, mufflers, mantillas, veils and the like; of artificial fibres (not knitted or crocheted) (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "621440"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-030",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 732392 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "73",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "732392",
+      "field": "chapter",
+      "site_citation": "732392 — Cast iron; table, kitchen and other household articles and parts thereof, of cast iron, enamelled (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "732392"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-031",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 843359 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "84",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "843359",
+      "field": "chapter",
+      "site_citation": "843359 — Harvesting machinery; n.e.c. in heading no. 8433 (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "843359"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-032",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 282110 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "28",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "282110",
+      "field": "chapter",
+      "site_citation": "282110 — Iron oxides and hydroxides (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "282110"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-033",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 290944 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "29",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "290944",
+      "field": "chapter",
+      "site_citation": "290944 — Ether-alcohols and their halogenated, sulphonated, nitrated or nitrosated derivatives; monoalkylethers of ethylene glycol or of diethylene glycol n.e.c. in heading no. 2909 (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "290944"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-034",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 441241 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "44",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "441241",
+      "field": "chapter",
+      "site_citation": "441241 — Plywood, veneered panels and similar laminated wood; laminated veneered lumber (LVL); with at least one outer ply of tropical wood (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "441241"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-035",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does subheading 844811 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "84",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "844811",
+      "field": "chapter",
+      "site_citation": "844811 — Machinery, auxiliary; dobbies and jacquards, card reducing, copying, punching or assembling machines for use therewith (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "844811"
+      }
+    },
+    "check": {
+      "kind": "tool_ancestor",
+      "level": 2,
+      "field": "hscode",
+      "path": "result.ancestors[].hscode"
+    }
+  },
+  {
+    "id": "hs_hierarchy-036",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 4821 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "48",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "4821",
+      "field": "parent",
+      "site_citation": "4821 — Paper or paperboard labels of all kinds, whether or not printed (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "4821"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-037",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 6112 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "61",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "6112",
+      "field": "parent",
+      "site_citation": "6112 — Track suits, ski suits and swimwear; knitted or crocheted (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "6112"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-038",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 1904 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "19",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "1904",
+      "field": "parent",
+      "site_citation": "1904 — Prepared foods obtained by swelling or roasting cereals or cereal products (e.g. corn flakes); cereals (other than maize (corn)) in grain form or in the form of flakes or other worked grains (not flour and meal), pre-cooked or otherwise prepared, n.e.c. (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "1904"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-039",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 5509 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "55",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "5509",
+      "field": "parent",
+      "site_citation": "5509 — Yarn (other than sewing thread) of synthetic staple fibres, not put up for retail sale (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "5509"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-040",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 8431 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "84",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "8431",
+      "field": "parent",
+      "site_citation": "8431 — Machinery parts; used solely or principally with the machinery of heading no. 8425 to 8430 (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "8431"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-041",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 7508 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "75",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "7508",
+      "field": "parent",
+      "site_citation": "7508 — Nickel; articles thereof n.e.c. in chapter 75 (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "7508"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-042",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 7110 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "71",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "7110",
+      "field": "parent",
+      "site_citation": "7110 — Platinum; unwrought or in semi-manufactured forms, or in powder form (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "7110"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-043",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 2809 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "28",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "2809",
+      "field": "parent",
+      "site_citation": "2809 — Diphosphorus pentaoxide; phosphoric acid; polyphosphoric acids, whether or not chemically defined (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "2809"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-044",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 6004 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "60",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "6004",
+      "field": "parent",
+      "site_citation": "6004 — Fabrics; knitted or crocheted fabrics of a width exceeding 30 cm, other than those of heading 60.01, containing by weight 5% or more of elastomeric yarn or rubber thread (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "6004"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-045",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 7010 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "70",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "7010",
+      "field": "parent",
+      "site_citation": "7010 — Carboys, bottles, flasks, jars, pots, phials, ampoules, containers of glass of a kind used for the conveyance or packing of goods; preserving jars of glass; stoppers, lids and other closures of glass (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "7010"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-046",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 7216 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "72",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "7216",
+      "field": "parent",
+      "site_citation": "7216 — Iron or non-alloy steel, angles, shapes and sections (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "7216"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-047",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 8703 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "87",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "8703",
+      "field": "parent",
+      "site_citation": "8703 — Motor cars and other motor vehicles; principally designed for the transport of persons (other than those of heading no. 8702), including station wagons and racing cars (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "8703"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-048",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 8601 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "86",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "8601",
+      "field": "parent",
+      "site_citation": "8601 — Rail locomotives; powered from an external source of electricity or by electric accumulators (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "8601"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-049",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 9617 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "96",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "9617",
+      "field": "parent",
+      "site_citation": "9617 — Vacuum flasks and other vacuum vessels, complete with cases; parts thereof other than glass inners (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "9617"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  },
+  {
+    "id": "hs_hierarchy-050",
+    "family": "hs_hierarchy",
+    "prompt": "In the Harmonized System (HS 2022), which 2-digit chapter does heading 8104 belong to? Answer with the 2 digits only, e.g. 01.",
+    "expected": "81",
+    "accept": {
+      "rule": "digits"
+    },
+    "source": {
+      "dataset": "Harmonized System nomenclature",
+      "edition": "HS 2022",
+      "publisher": "World Customs Organization (via UN Statistics Division)",
+      "citation": "World Customs Organization (HS 2022)",
+      "record": "8104",
+      "field": "parent",
+      "site_citation": "8104 — Magnesium; articles thereof, including waste and scrap (WCO HS 2022)."
+    },
+    "tool": {
+      "name": "hs_code_lookup",
+      "arguments": {
+        "code": "8104"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.parent"
+    }
+  }
+]

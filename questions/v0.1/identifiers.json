@@ -1,0 +1,1772 @@
+[
+  {
+    "id": "identifiers-001",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 421? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "S7",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "S7 Cargo (S7 Airlines)",
+      "url": "https://cargo.s7.ru/help-center/kak-otsledit-otpravlennyi-gruz",
+      "record": "s7-airlines",
+      "field": "awb_prefix",
+      "site_citation": "S7 Airlines — AWB prefix 421."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "421"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "s7-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-002",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 205? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "NH",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "ANA Cargo",
+      "url": "https://www.anacargo.jp/en/news/starting_on-line_applicationpre-claim_and_formal_claim.html",
+      "record": "all-nippon-airways",
+      "field": "awb_prefix",
+      "site_citation": "All Nippon Airways — AWB prefix 205."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "205"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "all-nippon-airways"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-003",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 512? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "RJ",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Royal Jordanian",
+      "url": "https://fly.rj.com/Cargo/TrackAndTrace.aspx",
+      "record": "royal-jordanian",
+      "field": "awb_prefix",
+      "site_citation": "Royal Jordanian — AWB prefix 512."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "512"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "royal-jordanian"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-004",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 297? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "CI",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "China Airlines Cargo",
+      "url": "https://cargo.china-airlines.com/ccnetv2/content/home/index.aspx",
+      "record": "china-airlines",
+      "field": "awb_prefix",
+      "site_citation": "China Airlines — AWB prefix 297."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "297"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "china-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-005",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 607? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "EY",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Etihad Cargo",
+      "url": "https://www.etihadcargo.com/en/e-services/shipment-tracking",
+      "record": "etihad-airways",
+      "field": "awb_prefix",
+      "site_citation": "Etihad Airways — AWB prefix 607."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "607"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "etihad-airways"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-006",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 501? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "7L",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Silk Way West Airlines",
+      "url": "https://www.silkwaywest.com/e-services/shipment-tracking/",
+      "record": "silk-way-west-airlines",
+      "field": "awb_prefix",
+      "site_citation": "Silk Way West Airlines — AWB prefix 501."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "501"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "silk-way-west-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-007",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 147? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "AT",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Royal Air Maroc Cargo (trace page embedded as the iframe on cargo.royalairmaroc.com/web/guest/shipment-tracking)",
+      "url": "https://ebooking.champ.aero/trace/AT/trace.asp",
+      "record": "royal-air-maroc",
+      "field": "awb_prefix",
+      "site_citation": "Royal Air Maroc — AWB prefix 147."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "147"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "royal-air-maroc"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-008",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 988? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "OZ",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Asiana Cargo (carrier site)",
+      "url": "https://www.asianacargo.com/tracking/viewTraceAirWaybill.do?lang=en",
+      "record": "asiana-airlines",
+      "field": "awb_prefix",
+      "site_citation": "Asiana Airlines — AWB prefix 988."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "988"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "asiana-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-009",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 006? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "DL",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Delta Cargo (deltacargo.com User Guide)",
+      "url": "https://www.deltacargo.com/content/dam/cargo/images/pdf/User_Guide.pdf",
+      "record": "delta-air-lines",
+      "field": "awb_prefix",
+      "site_citation": "Delta Air Lines — AWB prefix 006."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "006"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "delta-air-lines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-010",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 876? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "3U",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Sichuan Airlines (旅客、行李国内运输总条件)",
+      "url": "https://flights.sichuanair.com/3uair/ibe/static/pdf/NO3U052.pdf",
+      "record": "sichuan-airlines",
+      "field": "awb_prefix",
+      "site_citation": "Sichuan Airlines — AWB prefix 876."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "876"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "sichuan-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-011",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 350? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "YP",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Air Premia Cargo",
+      "url": "https://cargo.airpremia.com/",
+      "record": "air-premia",
+      "field": "awb_prefix",
+      "site_citation": "Air Premia — AWB prefix 350."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "350"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "air-premia"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-012",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 731? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "MF",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Xiamen Airlines (cargo site, conditions of carriage definitions)",
+      "url": "https://cargo.xiamenair.com/Cargo/DF/AboutusCompany.html?status=1",
+      "record": "xiamen-airlines",
+      "field": "awb_prefix",
+      "site_citation": "Xiamen Airlines — AWB prefix 731."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "731"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "xiamen-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-013",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 403? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "PO",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Polar Air Cargo",
+      "url": "https://www.polaraircargo.com/our-company/overview/",
+      "record": "polar-air-cargo",
+      "field": "awb_prefix",
+      "site_citation": "Polar Air Cargo — AWB prefix 403."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "403"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "polar-air-cargo"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-014",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 160? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "CX",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Cathay Cargo (Cathay Pacific's cargo brand)",
+      "url": "https://www.cathaycargo.com/en-us/track-and-trace.html",
+      "record": "cathay-pacific",
+      "field": "awb_prefix",
+      "site_citation": "Cathay Pacific — AWB prefix 160."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "160"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "cathay-pacific"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-015",
+    "family": "identifiers",
+    "prompt": "Which airline uses the air waybill (AWB) prefix 422? Answer with the airline's two-character IATA designator only, e.g. EK.",
+    "expected": "F9",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Frontier Airlines",
+      "url": "https://www.flyfrontier.com/travel-agents",
+      "record": "frontier-airlines",
+      "field": "awb_prefix",
+      "site_citation": "Frontier Airlines — AWB prefix 422."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "prefix": "422"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "frontier-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-016",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is 5X (United Parcel Service)? Answer with the code only, e.g. UAE.",
+    "expected": "UPS",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3 (machine-checked)",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_3.html",
+      "record": "united-parcel-service",
+      "field": "icao_code",
+      "site_citation": "United Parcel Service — IATA 5X."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "5X"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "united-parcel-service"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-017",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is M6 (Amerijet International)? Answer with the code only, e.g. UAE.",
+    "expected": "AJT",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/",
+      "record": "amerijet-international",
+      "field": "icao_code",
+      "site_citation": "Amerijet International — IATA M6."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "M6"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "amerijet-international"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-018",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is SS (Corsairfly)? Answer with the code only, e.g. UAE.",
+    "expected": "CRL",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3 (machine-checked)",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/",
+      "record": "corsairfly",
+      "field": "icao_code",
+      "site_citation": "Corsairfly — IATA SS."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "SS"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "corsairfly"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-019",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is W8 (Cargojet Airways)? Answer with the code only, e.g. UAE.",
+    "expected": "CJT",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/",
+      "record": "cargojet-airways",
+      "field": "icao_code",
+      "site_citation": "Cargojet Airways — IATA W8."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "W8"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "cargojet-airways"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-020",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is A9 (Georgian Airways)? Answer with the code only, e.g. UAE.",
+    "expected": "TGZ",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "Georgian Airways",
+      "url": "https://georgian-airways.com/en/information/conditions-of-carriage",
+      "record": "tgz-georgian-airways",
+      "field": "icao_code",
+      "site_citation": "Georgian Airways — IATA A9."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "A9"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "tgz-georgian-airways"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-021",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is CM (Copa Airlines)? Answer with the code only, e.g. UAE.",
+    "expected": "CMP",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3 (machine-checked)",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/",
+      "record": "copa-airlines",
+      "field": "icao_code",
+      "site_citation": "Copa Airlines — IATA CM."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "CM"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "copa-airlines"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-022",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is JX (Starlux Airlines)? Answer with the code only, e.g. UAE.",
+    "expected": "SJX",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA Order JO 7340.2P Chg 3 (eff 2026-07-09), Chapter 3",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_2.html",
+      "record": "starlux-airlines",
+      "field": "icao_code",
+      "site_citation": "IATA JX is held by 2 records — Starlux Airlines, Jett8 Airlines Cargo — the designator alone does not identify one carrier."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "JX"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "starlux-airlines"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-023",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is VS (Virgin Atlantic)? Answer with the code only, e.g. UAE.",
+    "expected": "VIR",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3 (machine-checked)",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_3.html",
+      "record": "virgin-atlantic",
+      "field": "icao_code",
+      "site_citation": "Virgin Atlantic — IATA VS."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "VS"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "virgin-atlantic"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-024",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is PX (Air Niugini)? Answer with the code only, e.g. UAE.",
+    "expected": "ANG",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA Order JO 7340.2P Chg 3 (eff 2026-07-09), Chapter 3",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_2.html",
+      "record": "air-niugini",
+      "field": "icao_code",
+      "site_citation": "Air Niugini — IATA PX."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "PX"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "air-niugini"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-025",
+    "family": "identifiers",
+    "prompt": "What is the three-letter ICAO airline designator of the airline whose IATA designator is TK (Turkish Airlines)? Answer with the code only, e.g. UAE.",
+    "expected": "THY",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "FAA JO 7340.2P Change 3 (machine-checked)",
+      "url": "https://www.faa.gov/air_traffic/publications/atpubs/cnt_html/chap3_section_3.html",
+      "record": "turkish-airlines",
+      "field": "icao_code",
+      "site_citation": "Turkish Airlines — IATA TK."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "iata": "TK"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "turkish-airlines"
+      },
+      "path": "result.results[].icao_code"
+    }
+  },
+  {
+    "id": "identifiers-026",
+    "family": "identifiers",
+    "prompt": "What is the two-character IATA airline designator of the airline whose ICAO designator is VOI (Volaris)? Answer with the code only, e.g. EK.",
+    "expected": "Y4",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "IATA (free code search, tie-break spot check)",
+      "url": "https://www.iata.org/en/publications/directories/code-search/?airline.search=Y4",
+      "record": "volaris",
+      "field": "iata_code",
+      "site_citation": "Volaris — ICAO VOI."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "icao": "VOI"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "volaris"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-027",
+    "family": "identifiers",
+    "prompt": "What is the two-character IATA airline designator of the airline whose ICAO designator is CSS (SF Airlines)? Answer with the code only, e.g. EK.",
+    "expected": "O3",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "IATA (free code search, tie-break spot check)",
+      "url": "https://www.iata.org/en/publications/directories/code-search/?airline.search=O3",
+      "record": "sf-airlines",
+      "field": "iata_code",
+      "site_citation": "SF Airlines — ICAO CSS."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "icao": "CSS"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "sf-airlines"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-028",
+    "family": "identifiers",
+    "prompt": "What is the two-character IATA airline designator of the airline whose ICAO designator is THA (Thai Airways International)? Answer with the code only, e.g. EK.",
+    "expected": "TG",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "THAI Cargo (carrier site)",
+      "url": "https://www.thaicargo.com/en/main",
+      "record": "thai-airways-international",
+      "field": "iata_code",
+      "site_citation": "Thai Airways International — ICAO THA."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "icao": "THA"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "thai-airways-international"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-029",
+    "family": "identifiers",
+    "prompt": "What is the two-character IATA airline designator of the airline whose ICAO designator is EVA (EVA Air)? Answer with the code only, e.g. EK.",
+    "expected": "BR",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "IATA (free code search, tie-break spot check)",
+      "url": "https://www.iata.org/en/publications/directories/code-search/?airline.search=BR",
+      "record": "eva-air",
+      "field": "iata_code",
+      "site_citation": "EVA Air — ICAO EVA."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "icao": "EVA"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "eva-air"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-030",
+    "family": "identifiers",
+    "prompt": "What is the two-character IATA airline designator of the airline whose ICAO designator is HKE (Hong Kong Express Airways)? Answer with the code only, e.g. EK.",
+    "expected": "UO",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "Airline codes (verified records)",
+      "edition": "status_checked_at 2026-08-11",
+      "publisher": "HK Express",
+      "url": "https://www.hkexpress.com/en-hk/",
+      "record": "hong-kong-express-airways",
+      "field": "iata_code",
+      "site_citation": "Hong Kong Express Airways — ICAO HKE."
+    },
+    "tool": {
+      "name": "airline_lookup",
+      "arguments": {
+        "icao": "HKE"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "slug": "hong-kong-express-airways"
+      },
+      "path": "result.results[].iata_code"
+    }
+  },
+  {
+    "id": "identifiers-031",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE USDVA designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Delevan",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "USDVA",
+      "field": "name",
+      "site_citation": "USDVA — Delevan, NY (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "USDVA"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-032",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE JPIHO designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Ihota",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "JPIHO",
+      "field": "name",
+      "site_citation": "JPIHO — Ihota, 35 (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "JPIHO"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-033",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE USRG6 designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "River Grove",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "USRG6",
+      "field": "name",
+      "site_citation": "USRG6 — River Grove, IL (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "USRG6"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-034",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE ITTRN designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Torino",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "ITTRN",
+      "field": "name",
+      "site_citation": "ITTRN — Torino (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "ITTRN"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-035",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE EEMRS designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Meeruse",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "EEMRS",
+      "field": "name",
+      "site_citation": "EEMRS — Meeruse, 37 (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "EEMRS"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-036",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE ESTRF designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Tarifa",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "ESTRF",
+      "field": "name",
+      "site_citation": "ESTRF — Tarifa, CA (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "ESTRF"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-037",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE JPYSS designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Yoshiase",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "JPYSS",
+      "field": "name",
+      "site_citation": "JPYSS — Yoshiase, 34 (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "JPYSS"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-038",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE CNDEZ designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Dezhou",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "CNDEZ",
+      "field": "name",
+      "site_citation": "CNDEZ — Dezhou, SD (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "CNDEZ"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-039",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE USFOX designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Fox",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "USFOX",
+      "field": "name",
+      "site_citation": "USFOX — Fox, AK (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "USFOX"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-040",
+    "family": "identifiers",
+    "prompt": "Which place does the UN/LOCODE JPKHR designate? Answer with the place name only, e.g. Rotterdam.",
+    "expected": "Kihara",
+    "accept": {
+      "rule": "text"
+    },
+    "source": {
+      "dataset": "UN/LOCODE",
+      "edition": "UN/LOCODE 2025-1",
+      "publisher": "UNECE",
+      "url": "https://unece.org/trade/cefact/unlocode-code-list-country-and-territory",
+      "record": "JPKHR",
+      "field": "name",
+      "site_citation": "JPKHR — Kihara, 34 (UN/LOCODE 2025-1)."
+    },
+    "tool": {
+      "name": "unlocode_lookup",
+      "arguments": {
+        "code": "JPKHR"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.name"
+    }
+  },
+  {
+    "id": "identifiers-041",
+    "family": "identifiers",
+    "prompt": "What is the external width of a 40ft High Cube ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 244,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "40ft-high-cube",
+      "field": "externalWidthCm",
+      "site_citation": "40ft High Cube (ISO 45G1) — 76.3 CBM, 26540 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "40ft-high-cube"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalWidthCm"
+    }
+  },
+  {
+    "id": "identifiers-042",
+    "family": "identifiers",
+    "prompt": "What is the external height of a 20ft Standard ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 259,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "20ft-standard",
+      "field": "externalHeightCm",
+      "site_citation": "20ft Standard (ISO 22G1) — 33.2 CBM, 28180 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "20ft-standard"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalHeightCm"
+    }
+  },
+  {
+    "id": "identifiers-043",
+    "family": "identifiers",
+    "prompt": "What is the external length of a 40ft Standard ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 1219,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "40ft-standard",
+      "field": "externalLengthCm",
+      "site_citation": "40ft Standard (ISO 42G1) — 67.7 CBM, 26730 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "40ft-standard"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalLengthCm"
+    }
+  },
+  {
+    "id": "identifiers-044",
+    "family": "identifiers",
+    "prompt": "What is the external width of a 40ft Open Top ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 244,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "40ft-open-top",
+      "field": "externalWidthCm",
+      "site_citation": "40ft Open Top (ISO 42U1) — 67.3 CBM, 26580 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "40ft-open-top"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalWidthCm"
+    }
+  },
+  {
+    "id": "identifiers-045",
+    "family": "identifiers",
+    "prompt": "What is the external width of a 20ft Open Top ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 244,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "20ft-open-top",
+      "field": "externalWidthCm",
+      "site_citation": "20ft Open Top (ISO 22U1) — 32.9 CBM, 28120 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "20ft-open-top"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalWidthCm"
+    }
+  },
+  {
+    "id": "identifiers-046",
+    "family": "identifiers",
+    "prompt": "What is the external height of a 45ft High Cube ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 290,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "45ft-high-cube",
+      "field": "externalHeightCm",
+      "site_citation": "45ft High Cube (ISO L5G1) — 85.9 CBM, 27700 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "45ft-high-cube"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalHeightCm"
+    }
+  },
+  {
+    "id": "identifiers-047",
+    "family": "identifiers",
+    "prompt": "What is the external height of a 20ft Reefer ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 259,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "20ft-reefer",
+      "field": "externalHeightCm",
+      "site_citation": "20ft Reefer (ISO 22R1) — 27 CBM, 27400 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "20ft-reefer"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalHeightCm"
+    }
+  },
+  {
+    "id": "identifiers-048",
+    "family": "identifiers",
+    "prompt": "What is the external width of a 40ft Reefer ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 244,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "40ft-reefer",
+      "field": "externalWidthCm",
+      "site_citation": "40ft Reefer (ISO 45R1) — 63.9 CBM, 25680 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "40ft-reefer"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalWidthCm"
+    }
+  },
+  {
+    "id": "identifiers-049",
+    "family": "identifiers",
+    "prompt": "What is the external length of a 40ft Open Top ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 1219,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "40ft-open-top",
+      "field": "externalLengthCm",
+      "site_citation": "40ft Open Top (ISO 42U1) — 67.3 CBM, 26580 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "40ft-open-top"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalLengthCm"
+    }
+  },
+  {
+    "id": "identifiers-050",
+    "family": "identifiers",
+    "prompt": "What is the external height of a 40ft Open Top ISO shipping container, in centimetres? Answer with the number only, e.g. 1219.",
+    "expected": 259,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "Container specifications",
+      "edition": "ISO 668:2020 series 1 (as served)",
+      "publisher": "ISO (ISO 668) / carriers",
+      "record": "40ft-open-top",
+      "field": "externalHeightCm",
+      "site_citation": "40ft Open Top (ISO 42U1) — 67.3 CBM, 26580 kg payload."
+    },
+    "tool": {
+      "name": "container_lookup",
+      "arguments": {
+        "type": "40ft-open-top"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalHeightCm"
+    }
+  },
+  {
+    "id": "identifiers-051",
+    "family": "identifiers",
+    "prompt": "What is the base length (the longer base side) of the RKN ULD (RKN (Envirotainer e1)), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 200,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "RKN",
+      "field": "externalDimensions.length",
+      "site_citation": "RKN — RKN (Envirotainer e1) (special, lower deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "RKN"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.length"
+    }
+  },
+  {
+    "id": "identifiers-052",
+    "family": "identifiers",
+    "prompt": "What is the base length (the longer base side) of the PGA ULD (PGA (20-ft pallet)), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 606,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "PGA",
+      "field": "externalDimensions.length",
+      "site_citation": "PGA — PGA (20-ft pallet) (pallet, main deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "PGA"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.length"
+    }
+  },
+  {
+    "id": "identifiers-053",
+    "family": "identifiers",
+    "prompt": "What is the base width (the shorter base side) of the PAG ULD, in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 224,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "PAG",
+      "field": "externalDimensions.width",
+      "site_citation": "PAG — PAG (pallet, both deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "PAG"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.width"
+    }
+  },
+  {
+    "id": "identifiers-054",
+    "family": "identifiers",
+    "prompt": "What is the base length (the longer base side) of the AAP ULD (LD9), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 318,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "AAP",
+      "field": "externalDimensions.length",
+      "site_citation": "AAP — LD9 (container, lower deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "AAP"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.length"
+    }
+  },
+  {
+    "id": "identifiers-055",
+    "family": "identifiers",
+    "prompt": "What is the base width (the shorter base side) of the AKE ULD (LD3), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 153,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "AKE",
+      "field": "externalDimensions.width",
+      "site_citation": "AKE — LD3 (container, lower deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "AKE"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.width"
+    }
+  },
+  {
+    "id": "identifiers-056",
+    "family": "identifiers",
+    "prompt": "What is the base width (the shorter base side) of the PLA ULD (PLA (half pallet)), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 153,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "PLA",
+      "field": "externalDimensions.width",
+      "site_citation": "PLA — PLA (half pallet) (pallet, both deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "PLA"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.width"
+    }
+  },
+  {
+    "id": "identifiers-057",
+    "family": "identifiers",
+    "prompt": "What is the base length (the longer base side) of the PMCQ7 ULD (P6P Q7 (tall variant)), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 318,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "PMCQ7",
+      "field": "externalDimensions.length",
+      "site_citation": "PMCQ7 — P6P Q7 (tall variant) (pallet, main deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "PMCQ7"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.length"
+    }
+  },
+  {
+    "id": "identifiers-058",
+    "family": "identifiers",
+    "prompt": "What is the base width (the shorter base side) of the PAJ ULD, in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 224,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "PAJ",
+      "field": "externalDimensions.width",
+      "site_citation": "PAJ — PAJ (pallet, both deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "PAJ"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.width"
+    }
+  },
+  {
+    "id": "identifiers-059",
+    "family": "identifiers",
+    "prompt": "What is the base length (the longer base side) of the AMJ ULD (M1), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 318,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "AMJ",
+      "field": "externalDimensions.length",
+      "site_citation": "AMJ — M1 (container, main deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "AMJ"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.length"
+    }
+  },
+  {
+    "id": "identifiers-060",
+    "family": "identifiers",
+    "prompt": "What is the base width (the shorter base side) of the AKH ULD (LD3-45), in centimetres? Answer with the number only, e.g. 156.",
+    "expected": 153,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "ULD specifications",
+      "edition": "as served",
+      "publisher": "ULD manufacturers and carriers (IATA ULD Regulations)",
+      "record": "AKH",
+      "field": "externalDimensions.width",
+      "site_citation": "AKH — LD3-45 (container, lower deck)."
+    },
+    "tool": {
+      "name": "uld_lookup",
+      "arguments": {
+        "type": "AKH"
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.externalDimensions.width"
+    }
+  }
+]

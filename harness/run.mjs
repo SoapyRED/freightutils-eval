@@ -42,7 +42,7 @@ const SYSTEM = {
 };
 
 // ------------------------------------------------------------------ questions
-const QDIR = 'questions/v0';
+const QDIR = `questions/${flag('questions', 'v0.1')}`;
 const qManifest = JSON.parse(fs.readFileSync(path.join(QDIR, 'manifest.json'), 'utf8'));
 const families = Object.keys(qManifest.counts);
 const all = families.flatMap((f) => JSON.parse(fs.readFileSync(path.join(QDIR, `${f}.json`), 'utf8')));

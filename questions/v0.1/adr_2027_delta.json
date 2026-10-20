@@ -1,0 +1,842 @@
+[
+  {
+    "id": "adr_2027_delta-001",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 3152 (POLYHALOGENATED BIPHENYLS, SOLID or HALOGENATED MONOMETHYLDIPHENYLMETHANES, S...)? Its ADR 2025 value is \"9\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3152 column (5)",
+      "adr_2025_value": "9",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/3152"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3152",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-002",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 3476 (FUEL CELL CARTRIDGES or FUEL CELL CARTRIDGES CONTAINED IN EQUIPMENT or FUEL C...)? Its ADR 2025 value is \"4.3\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3476 column (5)",
+      "adr_2025_value": "4.3",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/3476"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3476",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-003",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 0486 (ARTICLES, EXPLOSIVE, EXTREMELY INSENSITIVE (ARTICLES, EEI))? Its ADR 2025 value is \"1.6N\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 0486 column (3b)",
+      "adr_2025_value": "1.6N",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/0486"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/0486",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-004",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (7a) (limited quantity) change for UN 2330 (UNDECANE)? Its ADR 2025 value is \"5 L\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "limited_quantity",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2330 column (7a)",
+      "adr_2025_value": "5 L",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/2330"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2330",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-005",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (6) (special provisions) change for UN 3536 (LITHIUM BATTERIES INSTALLED IN CARGO TRANSPORT UNIT lithium ion batteries or ...)? Its ADR 2025 value is \"389\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "389 410",
+    "accept": {
+      "rule": "number_set",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3536 column (6)",
+      "adr_2025_value": "389",
+      "pages": [
+        "WP.15/274 p.16"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/3536"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3536",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-006",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (7a) (limited quantity) change for UN 2433 (CHLORONITROTOLUENES, LIQUID)? Its ADR 2025 value is \"5 L\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "limited_quantity",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2433 column (7a)",
+      "adr_2025_value": "5 L",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/2433"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2433",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-007",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 0382 (COMPONENTS, EXPLOSIVE TRAIN, N.O.S.)? Its ADR 2025 value is \"1.2B\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 0382 column (3b)",
+      "adr_2025_value": "1.2B",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/0382"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/0382",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-008",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 2529 (ISOBUTYRIC ACID)? Its ADR 2025 value is \"FC\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2529 column (3b)",
+      "adr_2025_value": "FC",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/2529"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2529",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-009",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (20) (hazard identification number) change for UN 1041 (ETHYLENE OXIDE AND CARBON DIOXIDE MIXTURE with more than 9 % but not more tha...)? Its ADR 2025 value is \"239\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "238",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1041 column (20)",
+      "adr_2025_value": "239",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/1041"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1041",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-010",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 1155 (DIETHYL ETHER (ETHYL ETHER))? Its ADR 2025 value is \"3\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1155 column (5)",
+      "adr_2025_value": "3",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/1155"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1155",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-011",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 1041 (ETHYLENE OXIDE AND CARBON DIOXIDE MIXTURE with more than 9 % but not more tha...)? Its ADR 2025 value is \"2.1\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "2.1 +8",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1041 column (5)",
+      "adr_2025_value": "2.1",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/1041"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1041",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-012",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 1041 (ETHYLENE OXIDE AND CARBON DIOXIDE MIXTURE with more than 9 % but not more tha...)? Its ADR 2025 value is \"2F\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "2FC",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1041 column (3b)",
+      "adr_2025_value": "2F",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/1041"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1041",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-013",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (6) (special provisions) change for UN 3551 (SODIUM ION BATTERIES with organic electrolyte)? Its ADR 2025 value is \"188 230 310 348 376 377 400 401 636 677\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "188 230 310 348 376 377 400 401 410 636 677 680",
+    "accept": {
+      "rule": "number_set",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3551 column (6)",
+      "adr_2025_value": "188 230 310 348 376 377 400 401 636 677",
+      "pages": [
+        "WP.15/274 p.16"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/3551"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3551",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-014",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (20) (hazard identification number) change for UN 2713 (ACRIDINE)? Its ADR 2025 value is \"60\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2713 column (20)",
+      "adr_2025_value": "60",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/2713"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2713",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-015",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 2372 (1,2-DI-(DIMETHYLAMINO) ETHANE)? Its ADR 2025 value is \"F1\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "FTC",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2372 column (3b)",
+      "adr_2025_value": "F1",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/2372"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2372",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-016",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (6) (special provisions) change for UN 3552 (SODIUM ION BATTERIES CONTAINED IN EQUIPMENT or SODIUM ION BATTERIES PACKED WI...)? Its ADR 2025 value is \"188 230 310 348 360 376 377 400 401 670 677\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "188 230 310 348 360 376 377 400 401 410 670 677 680",
+    "accept": {
+      "rule": "number_set",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3552 column (6)",
+      "adr_2025_value": "188 230 310 348 360 376 377 400 401 670 677",
+      "pages": [
+        "WP.15/274 p.16"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/3552"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3552",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-017",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 3300 (ETHYLENE OXIDE AND CARBON DIOXIDE MIXTURE with more than 87 % ethylene oxide)? Its ADR 2025 value is \"2TF\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "2TFC",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3300 column (3b)",
+      "adr_2025_value": "2TF",
+      "pages": [
+        "WP.15/274 p.16"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/3300"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3300",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-018",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (20) (hazard identification number) change for UN 2475 (VANADIUM TRICHLORIDE)? Its ADR 2025 value is \"80\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2475 column (20)",
+      "adr_2025_value": "80",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/2475"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2475",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-019",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 2372 (1,2-DI-(DIMETHYLAMINO) ETHANE)? Its ADR 2025 value is \"3\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "3 +6.1 +8",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2372 column (5)",
+      "adr_2025_value": "3",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/2372"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2372",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-020",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 0043 (BURSTERS, explosive)? Its ADR 2025 value is \"1\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 0043 column (5)",
+      "adr_2025_value": "1",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/0043"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/0043",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-021",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 3300 (ETHYLENE OXIDE AND CARBON DIOXIDE MIXTURE with more than 87 % ethylene oxide)? Its ADR 2025 value is \"2.3 +2.1\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "2.3 +2.1 +8",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 3300 column (5)",
+      "adr_2025_value": "2.3 +2.1",
+      "pages": [
+        "WP.15/274 p.16"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/3300"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/3300",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-022",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (7a) (limited quantity) change for UN 2016 (AMMUNITION, TOXIC, NON-EXPLOSIVE without burster or expelling charge, non-fuzed)? Its ADR 2025 value is \"0\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "limited_quantity",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2016 column (7a)",
+      "adr_2025_value": "0",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/2016"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2016",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-023",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (5) (danger labels) change for UN 1167 (DIVINYL ETHER, STABILIZED)? Its ADR 2025 value is \"3\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "labels",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1167 column (5)",
+      "adr_2025_value": "3",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/1167"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1167",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-024",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (7a) (limited quantity) change for UN 1498 (SODIUM NITRATE)? Its ADR 2025 value is \"5 kg\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "limited_quantity",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1498 column (7a)",
+      "adr_2025_value": "5 kg",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/1498"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1498",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-025",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (20) (hazard identification number) change for UN 1727 (AMMONIUM HYDROGENDIFLUORIDE, SOLID)? Its ADR 2025 value is \"80\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "86",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1727 column (20)",
+      "adr_2025_value": "80",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/1727"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1727",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-026",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 0501 (PROPELLANT, SOLID)? Its ADR 2025 value is \"1.4C\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "NO CHANGE",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 0501 column (3b)",
+      "adr_2025_value": "1.4C",
+      "note": "UN not named in any Table A instruction of the amendment documents",
+      "site_citation": "https://www.freightutils.com/adr/un/0501"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/0501",
+      "shows": "make no change to this entry's Table A columns"
+    }
+  },
+  {
+    "id": "adr_2027_delta-027",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (20) (hazard identification number) change for UN 2359 (DIALLYLAMINE)? Its ADR 2025 value is \"338\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "368",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2359 column (20)",
+      "adr_2025_value": "338",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/2359"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2359",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-028",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (20) (hazard identification number) change for UN 2372 (1,2-DI-(DIMETHYLAMINO) ETHANE)? Its ADR 2025 value is \"33\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "368",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2372 column (20)",
+      "adr_2025_value": "33",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/2372"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2372",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-029",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (3b) (classification code) change for UN 1727 (AMMONIUM HYDROGENDIFLUORIDE, SOLID)? Its ADR 2025 value is \"C2\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "CT2",
+    "accept": {
+      "rule": "code",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 1727 column (3b)",
+      "adr_2025_value": "C2",
+      "pages": [
+        "WP.15/274 p.15"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/1727"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/1727",
+      "shows": "ADR 2025 value → expected"
+    }
+  },
+  {
+    "id": "adr_2027_delta-030",
+    "family": "adr_2027_delta",
+    "prompt": "Under the ADR 2027 amendments, does Table A column (7a) (limited quantity) change for UN 2956 (5-tert-BUTYL-2,4,6-TRINITRO-m-XYLENE (MUSK XYLENE))? Its ADR 2025 value is \"5 kg\". If it changes, answer with the new ADR 2027 value only; if it does not change, answer NO CHANGE.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity",
+      "no_change_token": true
+    },
+    "source": {
+      "dataset": "ADR 2027 Table A amendments",
+      "edition": "ECE/TRANS/WP.15/274, /Add.1, /Corr.1 (accepted, C.N.395.2026; applies from 1 January 2027)",
+      "publisher": "UNECE",
+      "url": "https://documents.un.org/api/symbol/access?s=ECE/TRANS/WP.15/274&l=E",
+      "record": "UN 2956 column (7a)",
+      "adr_2025_value": "5 kg",
+      "pages": [
+        "WP.15/274 p.16"
+      ],
+      "site_citation": "https://www.freightutils.com/adr/un/2956"
+    },
+    "tool": null,
+    "tool_note": "No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.",
+    "check": {
+      "kind": "page_contains",
+      "path": "/adr/un/2956",
+      "shows": "ADR 2025 value → expected"
+    }
+  }
+]

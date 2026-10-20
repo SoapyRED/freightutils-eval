@@ -6,7 +6,7 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { matches } from '../harness/score.mjs';
 
-const DIR = 'questions/v0';
+const DIR = 'questions/v0.1';
 const WANT = { adr_table_a: 70, adr_2027_delta: 30, adr_exemption: 30, freight_arithmetic: 60, hs_hierarchy: 50, identifiers: 60 };
 const all = Object.keys(WANT).flatMap((f) => JSON.parse(fs.readFileSync(path.join(DIR, `${f}.json`), 'utf8')));
 
@@ -27,6 +27,16 @@ test('every question is complete', () => {
     assert.ok(q.source?.publisher || q.source?.dataset, `${q.id}: source`);
     assert.ok(q.tool === null ? q.tool_note : q.tool.name && q.tool.arguments, `${q.id}: tool or tool_note`);
     assert.ok(q.check?.kind, `${q.id}: check`);
+  }
+});
+
+test('v0.1 hs_hierarchy is structure only: digits answers, no wording', () => {
+  const hs = all.filter((q) => q.family === 'hs_hierarchy');
+  for (const q of hs) {
+    assert.equal(q.accept.rule, 'digits', q.id);
+    assert.match(String(q.expected), /^\d{2}$|^\d{4}$/, q.id);
+    // The answer is the code's own prefix: the heading is its first four digits, the chapter its first two.
+    assert.ok(q.source.record.startsWith(q.expected), q.id);
   }
 });
 
