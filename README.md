@@ -16,30 +16,35 @@ model grades another model.
   replaces one faulty question and accepts listed alternative place names (below).
 - **Harness**: Node, no framework, one adapter per provider over its own HTTP API.
 - **Results**: one directory per run under `results/` with the scored tables. The current one
-  is the [v0.1 full pass](results/2026-10-20-full-pass/) (see "Results" below).
+  is the [v0.2 full pass](results/2026-10-21-full-pass/) (see "Results" below).
 
 ## Results
 
-**[Full pass, 20 October 2026](results/2026-10-20-full-pass/README.md)**: all 300 v0.1 questions,
-conditions A and B, one repeat. Accuracy is given overall and, after the slash, excluding
-`adr_2027_delta` (no FreightUtils tool serves ADR 2027):
+**[Full pass, 21 October 2026](results/2026-10-21-full-pass/README.md)**: all 300 v0.2 questions,
+conditions A and B, one repeat, four providers. Accuracy is given overall and, after the slash,
+excluding `adr_2027_delta` (no FreightUtils tool serves ADR 2027):
 
 | Model | Condition | n | Accuracy | Unknown | Confident wrong |
 |---|---|---:|---:|---:|---:|
-| `claude-fable-5-1` | A, alone | 300 / 270 | 86% / 89% | 9% / 8% | 6% / 3% |
-| `claude-fable-5-1` | B, with the tools | 299 / 269 | 90% / 99.6% | 10% / 0% | 0.3% / 0.4% |
-| `gpt-6-astra` | A, alone | 300 / 270 | 84% / 94% | 11% / 1% | 4% / 5% |
-| `gemini-4-argon` | A, alone | 300 / 270 | 84% / 93% | 15% / 5% | 2% / 2% |
-| `gemini-4-argon` | B, with the tools | 210 / 180 | 85% / 99% | 14% / 0% | 0.5% / 0.6% |
+| `claude-fable-5-1` | A, alone | 300 / 270 | 86% / 90% | 9% / 8% | 5% / 2% |
+| `claude-fable-5-1` | B, with the tools | 300 / 270 | 90% / 100% | 10% / 0% | 0% / 0% |
+| `gpt-6-astra` | A, alone | 300 / 270 | 85% / 94% | 11% / 1% | 4% / 5% |
+| `gpt-6-astra` | B, with the tools | 300 / 270 | 90% / 100% | 10% / 0% | 0% / 0% |
+| `gemini-4-argon` | A, alone | 300 / 270 | 84% / 93% | 15% / 5% | 1% / 1% |
+| `gemini-4-argon` | B, with the tools | 300 / 270 | 90% / 99.6% | 10% / 0% | 0.3% / 0.4% |
+| `grok-4.7` | A, alone | 299 / 269 | 85% / 95% | 13% / 4% | 1% / 1% |
 
-Gemini B stopped at 210 questions (the project's spend cap) and GPT-6 Astra B at 30 (the
-account ran out of credit); xAI was not run. The run's README has the latency and cost
-columns, the per-family tables, a like-for-like comparison and every confident-wrong answer,
-each checked against its primary source. Spend: $41.02.
+`grok-4.7` condition B was not run: it would need about $29.93, against about $5.60 of xAI
+credit left after condition A. The run carries the 2026-10-20 answers, re-scored under v0.2, and
+fills the gaps that run left. Its README has the latency and cost columns, the per-family tables,
+a like-for-like comparison and every confident-wrong answer, each checked against its primary
+source. Spend: $23.89 for this run, $64.91 across all runs.
 
-The v0 first pass (100 questions, two models) is kept in
-[`results/2026-10-20-first-pass-v0/`](results/2026-10-20-first-pass-v0/), marked superseded: its
-HS figures were depressed by the wording artefact that v0.1 removes.
+Earlier runs are kept as history, each marked superseded:
+[`results/2026-10-20-full-pass/`](results/2026-10-20-full-pass/) (v0.1; Gemini B stopped at 210
+and GPT-6 Astra B at 30) and [`results/2026-10-20-first-pass-v0/`](results/2026-10-20-first-pass-v0/)
+(100 questions, two models; its HS figures were depressed by the wording artefact that v0.1
+removes).
 
 ## Conditions
 
