@@ -1,5 +1,12 @@
 # Run 2026-10-20-first-pass
 
+> **v0 scoring; HS wording artefact; superseded by the v0.1 full pass below; kept for
+> transparency.** This first pass (100 questions, 2 providers) used question set v0, which scored
+> 37 HS questions against the UN Statistics Division's condensed wording; models that answered
+> with the WCO legal text were right and scored wrong, so its HS and overall figures understate
+> accuracy. The v0.1 full pass is in [`../2026-10-20-full-pass/`](../2026-10-20-full-pass/).
+> The run was written to `results/2026-10-20-first-pass/` and moved here unchanged.
+
 100 questions (stratified sample of question set v0, sha256 `b58c9122df3c…`), conditions A and B, 1 repeat(s). Scored deterministically (see the repository README).
 
 | Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |
