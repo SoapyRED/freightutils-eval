@@ -1,0 +1,19 @@
+{
+  "name": "freightutils-eval",
+  "version": "0.1.0",
+  "description": "Reproducible evaluation of frontier models on freight reference questions, alone and with the FreightUtils tools.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "test": "node --test test/*.test.mjs && node generator/freeze.mjs --check && node scripts/lint-keys.mjs",
+    "lint:keys": "node scripts/lint-keys.mjs",
+    "questions:generate": "node generator/generate.mjs",
+    "questions:verify": "node generator/verify-live.mjs",
+    "questions:freeze": "node generator/freeze.mjs",
+    "eval": "node harness/run.mjs"
+  }
+}

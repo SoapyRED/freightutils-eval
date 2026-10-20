@@ -1,0 +1,2028 @@
+[
+  {
+    "id": "freight_arithmetic-001",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 10 piece(s), each 59 × 119 × 38 cm, total gross weight 551.4 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 551.4,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 59×119×38/6000×10 = 444.663; chargeable = max(volumetric, 551.4)",
+      "site_citation": "Chargeable weight 551.4 kg (actual, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 59,
+        "width_cm": 119,
+        "height_cm": 38,
+        "gross_weight_kg": 551.4,
+        "pieces": 10,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-002",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 11 piece(s), each 159 × 58 × 60 cm, total gross weight 669.5 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 1014.42,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 159×58×60/6000×11 = 1014.42; chargeable = max(volumetric, 669.5)",
+      "site_citation": "Chargeable weight 1014.42 kg (volumetric, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 159,
+        "width_cm": 58,
+        "height_cm": 60,
+        "gross_weight_kg": 669.5,
+        "pieces": 11,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-003",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 4 piece(s), each 124 × 120 × 109 cm, total gross weight 1089.9 kg. Using a volumetric divisor of 5000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 1297.54,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 124×120×109/5000×4 = 1297.536; chargeable = max(volumetric, 1089.9)",
+      "site_citation": "Chargeable weight 1297.54 kg (volumetric, 5000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 124,
+        "width_cm": 120,
+        "height_cm": 109,
+        "gross_weight_kg": 1089.9,
+        "pieces": 4,
+        "factor": 5000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-004",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 5 piece(s), each 54 × 57 × 139 cm, total gross weight 593.6 kg. Using a volumetric divisor of 4000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 593.6,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 54×57×139/4000×5 = 534.803; chargeable = max(volumetric, 593.6)",
+      "site_citation": "Chargeable weight 593.6 kg (actual, 4000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 54,
+        "width_cm": 57,
+        "height_cm": 139,
+        "gross_weight_kg": 593.6,
+        "pieces": 5,
+        "factor": 4000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-005",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 3 piece(s), each 159 × 104 × 49 cm, total gross weight 328.2 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 405.13,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 159×104×49/6000×3 = 405.132; chargeable = max(volumetric, 328.2)",
+      "site_citation": "Chargeable weight 405.13 kg (volumetric, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 159,
+        "width_cm": 104,
+        "height_cm": 49,
+        "gross_weight_kg": 328.2,
+        "pieces": 3,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-006",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 3 piece(s), each 127 × 109 × 87 cm, total gross weight 451.6 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 602.17,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 127×109×87/6000×3 = 602.171; chargeable = max(volumetric, 451.6)",
+      "site_citation": "Chargeable weight 602.17 kg (volumetric, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 127,
+        "width_cm": 109,
+        "height_cm": 87,
+        "gross_weight_kg": 451.6,
+        "pieces": 3,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-007",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 11 piece(s), each 133 × 114 × 130 cm, total gross weight 4726.6 kg. Using a volumetric divisor of 5000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 4726.6,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 133×114×130/5000×11 = 4336.332; chargeable = max(volumetric, 4726.6)",
+      "site_citation": "Chargeable weight 4726.6 kg (actual, 5000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 133,
+        "width_cm": 114,
+        "height_cm": 130,
+        "gross_weight_kg": 4726.6,
+        "pieces": 11,
+        "factor": 5000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-008",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 6 piece(s), each 135 × 51 × 21 cm, total gross weight 134.5 kg. Using a volumetric divisor of 4000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 216.88,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 135×51×21/4000×6 = 216.878; chargeable = max(volumetric, 134.5)",
+      "site_citation": "Chargeable weight 216.88 kg (volumetric, 4000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 135,
+        "width_cm": 51,
+        "height_cm": 21,
+        "gross_weight_kg": 134.5,
+        "pieces": 6,
+        "factor": 4000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-009",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 1 piece(s), each 119 × 113 × 68 cm, total gross weight 205.7 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 205.7,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 119×113×68/6000×1 = 152.399; chargeable = max(volumetric, 205.7)",
+      "site_citation": "Chargeable weight 205.7 kg (actual, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 119,
+        "width_cm": 113,
+        "height_cm": 68,
+        "gross_weight_kg": 205.7,
+        "pieces": 1,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-010",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 11 piece(s), each 25 × 83 × 13 cm, total gross weight 33.1 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 49.45,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 25×83×13/6000×11 = 49.454; chargeable = max(volumetric, 33.1)",
+      "site_citation": "Chargeable weight 49.45 kg (volumetric, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 25,
+        "width_cm": 83,
+        "height_cm": 13,
+        "gross_weight_kg": 33.1,
+        "pieces": 11,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-011",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 5 piece(s), each 158 × 23 × 143 cm, total gross weight 306.6 kg. Using a volumetric divisor of 5000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 519.66,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 158×23×143/5000×5 = 519.662; chargeable = max(volumetric, 306.6)",
+      "site_citation": "Chargeable weight 519.66 kg (volumetric, 5000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 158,
+        "width_cm": 23,
+        "height_cm": 143,
+        "gross_weight_kg": 306.6,
+        "pieces": 5,
+        "factor": 5000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-012",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 9 piece(s), each 62 × 39 × 61 cm, total gross weight 458 kg. Using a volumetric divisor of 4000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 458,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 62×39×61/4000×9 = 331.871; chargeable = max(volumetric, 458)",
+      "site_citation": "Chargeable weight 458 kg (actual, 4000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 62,
+        "width_cm": 39,
+        "height_cm": 61,
+        "gross_weight_kg": 458,
+        "pieces": 9,
+        "factor": 4000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-013",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 6 piece(s), each 60 × 43 × 109 cm, total gross weight 407.8 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 407.8,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 60×43×109/6000×6 = 281.22; chargeable = max(volumetric, 407.8)",
+      "site_citation": "Chargeable weight 407.8 kg (actual, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 60,
+        "width_cm": 43,
+        "height_cm": 109,
+        "gross_weight_kg": 407.8,
+        "pieces": 6,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-014",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 2 piece(s), each 27 × 111 × 118 cm, total gross weight 62.5 kg. Using a volumetric divisor of 6000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 117.88,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 27×111×118/6000×2 = 117.882; chargeable = max(volumetric, 62.5)",
+      "site_citation": "Chargeable weight 117.88 kg (volumetric, 6000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 27,
+        "width_cm": 111,
+        "height_cm": 118,
+        "gross_weight_kg": 62.5,
+        "pieces": 2,
+        "factor": 6000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-015",
+    "family": "freight_arithmetic",
+    "prompt": "Air freight: 10 piece(s), each 74 × 88 × 150 cm, total gross weight 1465.2 kg. Using a volumetric divisor of 5000 (cm³ per kg), what is the chargeable weight in kg (the greater of total volumetric and gross weight)? Answer with the number only, e.g. 412.5.",
+    "expected": 1953.6,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "volumetric = 74×88×150/5000×10 = 1953.6; chargeable = max(volumetric, 1465.2)",
+      "site_citation": "Chargeable weight 1953.6 kg (volumetric, 5000 volumetric divisor, air) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "chargeable_weight_calculator",
+      "arguments": {
+        "length_cm": 74,
+        "width_cm": 88,
+        "height_cm": 150,
+        "gross_weight_kg": 1465.2,
+        "pieces": 10,
+        "factor": 5000
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.chargeableWeightKg"
+    }
+  },
+  {
+    "id": "freight_arithmetic-016",
+    "family": "freight_arithmetic",
+    "prompt": "17 carton(s) measuring 130 × 133 × 158 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 46.4409,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "130×133×158/1,000,000×17",
+      "site_citation": "Total CBM 46.4409 m³ (17 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 130,
+        "width_cm": 133,
+        "height_cm": 158,
+        "pieces": 17
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-017",
+    "family": "freight_arithmetic",
+    "prompt": "5 carton(s) measuring 41 × 38 × 21 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 0.1636,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "41×38×21/1,000,000×5",
+      "site_citation": "Total CBM 0.1636 m³ (5 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 41,
+        "width_cm": 38,
+        "height_cm": 21,
+        "pieces": 5
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-018",
+    "family": "freight_arithmetic",
+    "prompt": "17 carton(s) measuring 181 × 83 × 15 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 3.8309,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "181×83×15/1,000,000×17",
+      "site_citation": "Total CBM 3.8309 m³ (17 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 181,
+        "width_cm": 83,
+        "height_cm": 15,
+        "pieces": 17
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-019",
+    "family": "freight_arithmetic",
+    "prompt": "10 carton(s) measuring 125 × 111 × 204 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 28.305,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "125×111×204/1,000,000×10",
+      "site_citation": "Total CBM 28.305 m³ (10 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 125,
+        "width_cm": 111,
+        "height_cm": 204,
+        "pieces": 10
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-020",
+    "family": "freight_arithmetic",
+    "prompt": "14 carton(s) measuring 196 × 153 × 199 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 83.5466,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "196×153×199/1,000,000×14",
+      "site_citation": "Total CBM 83.5466 m³ (14 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 196,
+        "width_cm": 153,
+        "height_cm": 199,
+        "pieces": 14
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-021",
+    "family": "freight_arithmetic",
+    "prompt": "1 carton(s) measuring 104 × 138 × 159 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 2.282,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "104×138×159/1,000,000×1",
+      "site_citation": "Total CBM 2.282 m³ (1 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 104,
+        "width_cm": 138,
+        "height_cm": 159,
+        "pieces": 1
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-022",
+    "family": "freight_arithmetic",
+    "prompt": "38 carton(s) measuring 145 × 132 × 172 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 125.099,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "145×132×172/1,000,000×38",
+      "site_citation": "Total CBM 125.099 m³ (38 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 145,
+        "width_cm": 132,
+        "height_cm": 172,
+        "pieces": 38
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-023",
+    "family": "freight_arithmetic",
+    "prompt": "16 carton(s) measuring 31 × 60 × 130 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 3.8688,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "31×60×130/1,000,000×16",
+      "site_citation": "Total CBM 3.8688 m³ (16 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 31,
+        "width_cm": 60,
+        "height_cm": 130,
+        "pieces": 16
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-024",
+    "family": "freight_arithmetic",
+    "prompt": "23 carton(s) measuring 175 × 124 × 197 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 98.3227,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "175×124×197/1,000,000×23",
+      "site_citation": "Total CBM 98.3227 m³ (23 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 175,
+        "width_cm": 124,
+        "height_cm": 197,
+        "pieces": 23
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-025",
+    "family": "freight_arithmetic",
+    "prompt": "18 carton(s) measuring 151 × 75 × 198 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 40.3623,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "151×75×198/1,000,000×18",
+      "site_citation": "Total CBM 40.3623 m³ (18 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 151,
+        "width_cm": 75,
+        "height_cm": 198,
+        "pieces": 18
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-026",
+    "family": "freight_arithmetic",
+    "prompt": "10 carton(s) measuring 183 × 88 × 31 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 4.9922,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "183×88×31/1,000,000×10",
+      "site_citation": "Total CBM 4.9922 m³ (10 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 183,
+        "width_cm": 88,
+        "height_cm": 31,
+        "pieces": 10
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-027",
+    "family": "freight_arithmetic",
+    "prompt": "34 carton(s) measuring 206 × 39 × 162 cm each. What is the total volume in cubic metres (CBM)? Answer with the number only, e.g. 2.88.",
+    "expected": 44.2513,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "206×39×162/1,000,000×34",
+      "site_citation": "Total CBM 44.2513 m³ (34 piece(s)) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "cbm_calculator",
+      "arguments": {
+        "length_cm": 206,
+        "width_cm": 39,
+        "height_cm": 162,
+        "pieces": 34
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totalCbm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-028",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 12 Euro pallets (1200 × 800 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 4.8,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×0.8/2.4×12",
+      "site_citation": "4.8 LDM on 13.6m Artic Trailer (35.29% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 12,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-029",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 13 UK standard pallets (1200 × 1000 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 6.5,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×1/2.4×13",
+      "site_citation": "6.5 LDM on 13.6m Artic Trailer (47.79% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 13,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-030",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 5 pallets of 1300 × 1000 mm, not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 2.708,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.3×1/2.4×5",
+      "site_citation": "2.7083 LDM on 13.6m Artic Trailer (19.91% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "length_mm": 1300,
+        "width_mm": 1000,
+        "quantity": 5,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-031",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 7 Euro pallets (1200 × 800 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 2.8,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×0.8/2.4×7",
+      "site_citation": "2.8 LDM on 13.6m Artic Trailer (20.59% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 7,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-032",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 17 UK standard pallets (1200 × 1000 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 8.5,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×1/2.4×17",
+      "site_citation": "8.5 LDM on 13.6m Artic Trailer (62.5% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 17,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-033",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 9 pallets of 2000 × 1140 mm, not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 8.55,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "2×1.14/2.4×9",
+      "site_citation": "8.55 LDM on 13.6m Artic Trailer (62.87% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "length_mm": 2000,
+        "width_mm": 1140,
+        "quantity": 9,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-034",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 12 Euro pallets (1200 × 800 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 4.8,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×0.8/2.4×12",
+      "site_citation": "4.8 LDM on 13.6m Artic Trailer (35.29% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 12,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-035",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 21 UK standard pallets (1200 × 1000 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 10.5,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×1/2.4×21",
+      "site_citation": "10.5 LDM on 13.6m Artic Trailer (77.21% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 21,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-036",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 22 pallets of 1300 × 1000 mm, not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 11.917,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.3×1/2.4×22",
+      "site_citation": "11.9167 LDM on 13.6m Artic Trailer (87.62% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "length_mm": 1300,
+        "width_mm": 1000,
+        "quantity": 22,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-037",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 22 Euro pallets (1200 × 800 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 8.8,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×0.8/2.4×22",
+      "site_citation": "8.8 LDM on 13.6m Artic Trailer (64.71% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 22,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-038",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 12 UK standard pallets (1200 × 1000 mm), not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 6,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.2×1/2.4×12",
+      "site_citation": "6 LDM on 13.6m Artic Trailer (44.12% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 12,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-039",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 11 pallets of 1300 × 1140 mm, not stackable, on a trailer with a 2.4 m internal width. How many loading metres (LDM) do they take, using LDM = (length × width ÷ 2.4) × quantity in metres? Answer with the number only, e.g. 4.4.",
+    "expected": 6.793,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "1.3×1.14/2.4×11",
+      "site_citation": "6.7925 LDM on 13.6m Artic Trailer (49.94% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "length_mm": 1300,
+        "width_mm": 1140,
+        "quantity": 11,
+        "stackable": false
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.ldm"
+    }
+  },
+  {
+    "id": "freight_arithmetic-040",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 11 Euro (1200 × 800 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 6,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(11/2)",
+      "site_citation": "2.2 LDM on 13.6m Artic Trailer (16.18% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 11,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-041",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 22 UK (1200 × 1000 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 11,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(22/2)",
+      "site_citation": "5.5 LDM on 13.6m Artic Trailer (40.44% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 22,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-042",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 15 Euro (1200 × 800 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 8,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(15/2)",
+      "site_citation": "3 LDM on 13.6m Artic Trailer (22.06% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 15,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-043",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 23 UK (1200 × 1000 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 12,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(23/2)",
+      "site_citation": "5.75 LDM on 13.6m Artic Trailer (42.28% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 23,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-044",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 29 Euro (1200 × 800 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 15,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(29/2)",
+      "site_citation": "5.8 LDM on 13.6m Artic Trailer (42.65% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 29,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-045",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 4 UK (1200 × 1000 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 2,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(4/2)",
+      "site_citation": "1 LDM on 13.6m Artic Trailer (7.35% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 4,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-046",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 11 Euro (1200 × 800 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 6,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(11/2)",
+      "site_citation": "2.2 LDM on 13.6m Artic Trailer (16.18% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 11,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-047",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 29 UK (1200 × 1000 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 15,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(29/2)",
+      "site_citation": "7.25 LDM on 13.6m Artic Trailer (53.31% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "uk",
+        "quantity": 29,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-048",
+    "family": "freight_arithmetic",
+    "prompt": "Road freight: 29 Euro (1200 × 800 mm) pallets that can be double-stacked (2 high). How many pallet floor positions do they occupy on the trailer? Answer with the number only, e.g. 12.",
+    "expected": 15,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "ceil(29/2)",
+      "site_citation": "5.8 LDM on 13.6m Artic Trailer (42.65% utilisation, fits: true) — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "ldm_calculator",
+      "arguments": {
+        "pallet": "euro",
+        "quantity": 29,
+        "stackable": true,
+        "stack_height": 2
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.palletSpaces.used"
+    }
+  },
+  {
+    "id": "freight_arithmetic-049",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 10 piece(s), each 142 × 89 × 178 cm and 770 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 22.4956,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(22.4956 m³, 7.7 t)",
+      "site_citation": "Consignment: 22495.64 kg chargeable (volume basis) across 1 line(s) / 10 piece(s), 22.4956 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 10,
+            "dims": {
+              "l": 142,
+              "w": 89,
+              "h": 178,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 770,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-050",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 10 piece(s), each 124 × 163 × 88 cm and 77 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 17.7866,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(17.7866 m³, 0.77 t)",
+      "site_citation": "Consignment: 17786.56 kg chargeable (volume basis) across 1 line(s) / 10 piece(s), 17.7866 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 10,
+            "dims": {
+              "l": 124,
+              "w": 163,
+              "h": 88,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 77,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-051",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 4 piece(s), each 113 × 189 × 99 cm and 888 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 8.4574,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(8.4574 m³, 3.552 t)",
+      "site_citation": "Consignment: 8457.37 kg chargeable (volume basis) across 1 line(s) / 4 piece(s), 8.4574 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 4,
+            "dims": {
+              "l": 113,
+              "w": 189,
+              "h": 99,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 888,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-052",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 7 piece(s), each 57 × 58 × 60 cm and 1079 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 7.553,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(1.3885 m³, 7.553 t)",
+      "site_citation": "Consignment: 7553 kg chargeable (weight basis) across 1 line(s) / 7 piece(s), 1.3885 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 7,
+            "dims": {
+              "l": 57,
+              "w": 58,
+              "h": 60,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 1079,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-053",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 3 piece(s), each 167 × 131 × 71 cm and 1289 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 4.6598,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(4.6598 m³, 3.867 t)",
+      "site_citation": "Consignment: 4659.8 kg chargeable (volume basis) across 1 line(s) / 3 piece(s), 4.6598 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 3,
+            "dims": {
+              "l": 167,
+              "w": 131,
+              "h": 71,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 1289,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-054",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 8 piece(s), each 189 × 66 × 194 cm and 1492 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 19.3596,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(19.3596 m³, 11.936 t)",
+      "site_citation": "Consignment: 19359.65 kg chargeable (volume basis) across 1 line(s) / 8 piece(s), 19.3596 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 8,
+            "dims": {
+              "l": 189,
+              "w": 66,
+              "h": 194,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 1492,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-055",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 9 piece(s), each 193 × 169 × 98 cm and 453 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 28.7682,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(28.7682 m³, 4.077 t)",
+      "site_citation": "Consignment: 28768.19 kg chargeable (volume basis) across 1 line(s) / 9 piece(s), 28.7682 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 9,
+            "dims": {
+              "l": 193,
+              "w": 169,
+              "h": 98,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 453,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-056",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 2 piece(s), each 209 × 56 × 158 cm and 1361 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 3.6985,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(3.6985 m³, 2.722 t)",
+      "site_citation": "Consignment: 3698.46 kg chargeable (volume basis) across 1 line(s) / 2 piece(s), 3.6985 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 2,
+            "dims": {
+              "l": 209,
+              "w": 56,
+              "h": 158,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 1361,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-057",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 9 piece(s), each 113 × 156 × 74 cm and 874 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 11.7402,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(11.7402 m³, 7.866 t)",
+      "site_citation": "Consignment: 11740.25 kg chargeable (volume basis) across 1 line(s) / 9 piece(s), 11.7402 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 9,
+            "dims": {
+              "l": 113,
+              "w": 156,
+              "h": 74,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 874,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-058",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 1 piece(s), each 69 × 109 × 31 cm and 582 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 0.582,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(0.2332 m³, 0.582 t)",
+      "site_citation": "Consignment: 582 kg chargeable (weight basis) across 1 line(s) / 1 piece(s), 0.2332 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 1,
+            "dims": {
+              "l": 69,
+              "w": 109,
+              "h": 31,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 582,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-059",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 7 piece(s), each 226 × 130 × 152 cm and 1058 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 31.2603,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(31.2603 m³, 7.406 t)",
+      "site_citation": "Consignment: 31260.32 kg chargeable (volume basis) across 1 line(s) / 7 piece(s), 31.2603 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 7,
+            "dims": {
+              "l": 226,
+              "w": 130,
+              "h": 152,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 1058,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  },
+  {
+    "id": "freight_arithmetic-060",
+    "family": "freight_arithmetic",
+    "prompt": "Sea freight LCL: 2 piece(s), each 50 × 169 × 33 cm and 1004 kg. On a W/M basis (1 m³ = 1,000 kg), how many revenue tonnes are charged? Answer with the number only, e.g. 5.4.",
+    "expected": 2.008,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0.5
+    },
+    "source": {
+      "dataset": "computed",
+      "edition": "n/a",
+      "publisher": "FreightUtils published methodology",
+      "url": "https://www.freightutils.com/methodology",
+      "method": "max(0.5577 m³, 2.008 t)",
+      "site_citation": "Consignment: 2008 kg chargeable (weight basis) across 1 line(s) / 2 piece(s), 0.5577 CBM — computed per FreightUtils published methodology."
+    },
+    "tool": {
+      "name": "consignment_calculator",
+      "arguments": {
+        "mode": "sea",
+        "lines": [
+          {
+            "quantity": 2,
+            "dims": {
+              "l": 50,
+              "w": 169,
+              "h": 33,
+              "unit": "cm"
+            },
+            "weight": {
+              "value": 1004,
+              "unit": "kg"
+            }
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_numeric",
+      "path": "result.totals.revenue_tonnes"
+    }
+  }
+]
