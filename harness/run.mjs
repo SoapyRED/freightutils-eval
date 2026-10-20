@@ -118,9 +118,19 @@ const assumeFor = (p, c) => {
 for (const p of providers) p.assume = Object.fromEntries(CONDITIONS.map((c) => [c, assumeFor(p, c)]));
 // Held back before every call: the larger of the two, so the cap is never crossed.
 const holdBack = (p, c) => Math.max(cost(p.price, p.assume[c].first), cost(p.price, p.assume[c].steady));
+// The checkpoint is read before the estimate, so a resumed run (or one seeded by rescore.mjs)
+// prices only the answers still missing.
+const date = new Date().toISOString().slice(0, 10);
+const RUN_ID = DIR_NAME || `${date}-${RUN}`;
+const OUT = path.join(OUT_ROOT, RUN_ID);
+const RAW = path.join(OUT_ROOT, 'raw', RUN_ID);
+const CHECKPOINT = path.join(RAW, 'rows.jsonl');
+const keyOf = (r) => `${r.provider}|${r.condition}|${r.repeat}|${r.id}`;
+const prior = fs.existsSync(CHECKPOINT) ? fs.readFileSync(CHECKPOINT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+const done = new Map(prior.map((r) => [keyOf(r), r]));
+const missing = (p, c) => { let k = 0; for (let rep = 1; rep <= REPEATS; rep++) for (const q of questions) if (!done.has(keyOf({ provider: p.id, condition: c, repeat: rep, id: q.id }))) k++; return k; };
 const estimate = providers.map((p) => {
-  const n = questions.length * REPEATS;
-  const per = CONDITIONS.map((c) => ({ c, usd: cost(p.price, p.assume[c].first) + cost(p.price, p.assume[c].steady) * (n - 1), measured: Boolean(measured[`${p.id}/${p.model}/${c}`]) }));
+  const per = CONDITIONS.map((c) => { const n = missing(p, c); return { c, n, usd: n ? cost(p.price, p.assume[c].first) + cost(p.price, p.assume[c].steady) * (n - 1) : 0, measured: Boolean(measured[`${p.id}/${p.model}/${c}`]) }; });
   return { provider: p.id, model: p.model, per, usd: per.reduce((s, x) => s + x.usd, 0) };
 });
 // Cheapest provider first: if the cap is reached, it is the most expensive provider that is cut.
@@ -128,16 +138,12 @@ providers.sort((a, b) => estimate.find((e) => e.provider === a.id).usd - estimat
 estimate.sort((a, b) => a.usd - b.usd);
 const estTotal = estimate.reduce((s, e) => s + e.usd, 0);
 console.log(`questions ${questions.length} × conditions ${CONDITIONS.join(',')} × repeats ${REPEATS}; cap $${CAP} (spent before this run $${SPENT_BEFORE.toFixed(2)}, so $${(CAP - SPENT_BEFORE).toFixed(2)} left)`);
-for (const e of estimate) console.log(`  ${e.provider} ${e.model}: ${e.per.map((x) => `${x.c} $${x.usd.toFixed(2)}${x.measured ? '' : ' (default assumption)'}`).join(', ')} = $${e.usd.toFixed(2)}`);
+for (const e of estimate) console.log(`  ${e.provider} ${e.model}: ${e.per.map((x) => `${x.c} ${x.n} to ask $${x.usd.toFixed(2)}${x.measured ? '' : ' (default assumption)'}`).join(', ')} = $${e.usd.toFixed(2)}`);
 for (const s of skipped) console.log(`  skipped ${s.provider}: ${s.reason}`);
 console.log(`estimated total (assumed tokens per question, see ASSUME in harness/run.mjs): $${estTotal.toFixed(2)}`);
 if (DRY) process.exit(0);
 
 // ------------------------------------------------------------------ run
-const date = new Date().toISOString().slice(0, 10);
-const RUN_ID = DIR_NAME || `${date}-${RUN}`;
-const OUT = path.join(OUT_ROOT, RUN_ID);
-const RAW = path.join(OUT_ROOT, 'raw', RUN_ID);
 fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(RAW, { recursive: true });
 
@@ -155,11 +161,8 @@ async function runTool(name, args) {
   }
 }
 
-// Resume: answers already in the checkpoint are kept and not asked again; their cost counts.
-const CHECKPOINT = path.join(RAW, 'rows.jsonl');
-const keyOf = (r) => `${r.provider}|${r.condition}|${r.repeat}|${r.id}`;
-const prior = fs.existsSync(CHECKPOINT) ? fs.readFileSync(CHECKPOINT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
-const done = new Map(prior.map((r) => [keyOf(r), r]));
+// Resume: answers already in the checkpoint (read above) are kept and not asked again; their cost
+// counts unless they were carried from an earlier run.
 // Rows carried from an earlier run (harness/rescore.mjs marks them carried_from) were paid for in
 // that run: they are kept and scored, but their cost does not count against this run's cap.
 const fresh = (r) => !r.carried_from;
