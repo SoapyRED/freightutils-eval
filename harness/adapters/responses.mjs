@@ -9,13 +9,16 @@ export function makeResponsesAdapter({ provider, baseUrl, envKey }) {
       const key = secret(envKey);
       const headers = { 'Content-Type': 'application/json', Authorization: `Bearer ${key}` };
       const fnTools = tools ? tools.map((t) => ({ type: 'function', name: t.name, description: t.description, parameters: t.inputSchema, strict: false })) : undefined;
-      const usage = { input: 0, cachedInput: 0, output: 0 };
+      const usage = { input: 0, cachedInput: 0, cacheWrite: 0, output: 0 };
       const toolCalls = [];
       let input = [{ role: 'system', content: system }, { role: 'user', content: user }];
       let previous = null;
       const t0 = Date.now();
       for (let turn = 0; turn <= maxToolCalls + 1; turn++) {
         const body = { model, input, ...settings };
+        // OpenAI caches a repeated prefix automatically; a stable cache key routes the calls of one
+        // condition to the same cache. xAI caches automatically and takes no key.
+        if (provider === 'openai') body.prompt_cache_key = `freightutils-eval-${fnTools ? 'B' : 'A'}`;
         if (fnTools) body.tools = fnTools;
         if (previous) body.previous_response_id = previous;
         // Out of tool budget: the model must answer now.

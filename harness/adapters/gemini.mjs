@@ -9,7 +9,9 @@ export const gemini = {
   async ask({ model, system, user, tools, maxToolCalls, callTool, settings = {}, onRaw }) {
     const headers = { 'Content-Type': 'application/json', 'x-goog-api-key': secret('GOOGLE_API_KEY') };
     const decls = tools ? tools.map((t) => ({ name: t.name, description: t.description, parametersJsonSchema: t.inputSchema })) : null;
-    const usage = { input: 0, cachedInput: 0, output: 0 };
+    // Gemini caches a repeated prefix implicitly (no explicit cache for this model); the tools and
+    // the system instruction come first in every request, so the prefix is identical across calls.
+    const usage = { input: 0, cachedInput: 0, cacheWrite: 0, output: 0 };
     const toolCalls = [];
     const contents = [{ role: 'user', parts: [{ text: user }] }];
     const t0 = Date.now();

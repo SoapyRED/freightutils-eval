@@ -1,7 +1,12 @@
 // The eval runner. Example:
 //   node harness/run.mjs --sample 100 --conditions A,B --repeats 1 --run first-pass --dry-run
 // Flags: --sample N (stratified by family, deterministic by --seed), --models openai,xai,...,
-// --conditions A,B, --repeats N, --cap USD (default 80), --run NAME, --dry-run, --concurrency N.
+// --conditions A,B, --repeats N, --cap USD (default 80), --run NAME, --dry-run,
+// --questions v0.1 (the frozen set), --assume-from <summary.json> (per-question tokens measured
+// by a smoke run, used for the estimate and the cap hold-back), --spent-before USD (spend already
+// made in this run's budget: probes and smokes, counted against the cap), --out-root DIR.
+// Providers run one after another, cheapest first by the estimate; questions within a provider
+// run one at a time. HTTP 429 and 5xx back off 20 s, 60 s, 120 s, then the question is an error.
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
@@ -23,7 +28,10 @@ const REPEATS = Number(flag('repeats', 1));
 const CAP = Number(flag('cap', 80));
 const RUN = flag('run', 'run');
 const DRY = has('dry-run');
-const CONC = Number(flag('concurrency', 4));
+const SPENT_BEFORE = Number(flag('spent-before', 0));
+const OUT_ROOT = flag('out-root', 'results');
+const ASSUME_FROM = flag('assume-from', null);
+const BACKOFF_S = [20, 60, 120];
 const MAX_TOOL_CALLS = 5;
 if (CONDITIONS.includes('C')) throw new Error('Condition C (web search) is not implemented in v0: see README.');
 
@@ -75,29 +83,50 @@ for (const s of skipList) {
   if (i >= 0) { providers.splice(i, 1); skipped.push({ provider: p, reason: why.join(':') || 'skipped by --skip' }); }
 }
 
-const cost = (price, u) => ((u.input - u.cachedInput) * price.input + u.cachedInput * price.cached_input + u.output * price.output) / 1e6;
+// usage.input counts every input token; cachedInput (cache reads) and cacheWrite (Anthropic cache
+// writes) are the parts of it billed at their own prices.
+const cost = (price, u) => ((u.input - u.cachedInput - (u.cacheWrite || 0)) * price.input + u.cachedInput * price.cached_input + (u.cacheWrite || 0) * (price.cache_write ?? price.input) + u.output * price.output) / 1e6;
 
 // ------------------------------------------------------------------ dry run
 // Assumed tokens per question, from the measured smoke calls on 2026-10-20 (A: ~60 in, ~25 out;
 // B: two calls of ~18.5k each, the second cached on OpenAI) with margin: A 500 in / 800 out;
 // B 45k in of which 18k cached / 1,000 out. The same figure is held back before every call, so
 // the cap is never crossed even when a question runs long.
-const ASSUME = { A: { input: 500, cachedInput: 0, output: 800 }, B: { input: 45000, cachedInput: 18000, output: 1000 } };
+const ASSUME_DEFAULT = { A: { input: 500, cachedInput: 0, cacheWrite: 0, output: 800 }, B: { input: 45000, cachedInput: 18000, cacheWrite: 0, output: 1000 } };
+// --assume-from: the mean tokens per question each provider and condition used in a smoke run,
+// with a 25% margin on the uncached input, cache writes and output. A provider or condition the
+// smoke did not cover keeps the default.
+const measured = ASSUME_FROM ? JSON.parse(fs.readFileSync(ASSUME_FROM, 'utf8')).per_question_tokens || {} : {};
+// The first call of a provider and condition writes the prompt cache; the later ones read it. The
+// smoke records both (first, steady), so the estimate is one first call plus steady-state calls.
+const margin = (m) => ({ input: m.cachedInput + (m.input - m.cachedInput) * 1.25, cachedInput: m.cachedInput, cacheWrite: m.cacheWrite * 1.25, output: m.output * 1.25 });
+const assumeFor = (p, c) => {
+  const m = measured[`${p.id}/${p.model}/${c}`];
+  if (!m) return { first: ASSUME_DEFAULT[c], steady: ASSUME_DEFAULT[c] };
+  return { first: margin(m.first || m), steady: margin(m.steady || m) };
+};
+for (const p of providers) p.assume = Object.fromEntries(CONDITIONS.map((c) => [c, assumeFor(p, c)]));
+// Held back before every call: the larger of the two, so the cap is never crossed.
+const holdBack = (p, c) => Math.max(cost(p.price, p.assume[c].first), cost(p.price, p.assume[c].steady));
 const estimate = providers.map((p) => {
-  const per = CONDITIONS.map((c) => ({ c, usd: cost(p.price, ASSUME[c]) * questions.length * REPEATS }));
+  const n = questions.length * REPEATS;
+  const per = CONDITIONS.map((c) => ({ c, usd: cost(p.price, p.assume[c].first) + cost(p.price, p.assume[c].steady) * (n - 1), measured: Boolean(measured[`${p.id}/${p.model}/${c}`]) }));
   return { provider: p.id, model: p.model, per, usd: per.reduce((s, x) => s + x.usd, 0) };
 });
+// Cheapest provider first: if the cap is reached, it is the most expensive provider that is cut.
+providers.sort((a, b) => estimate.find((e) => e.provider === a.id).usd - estimate.find((e) => e.provider === b.id).usd);
+estimate.sort((a, b) => a.usd - b.usd);
 const estTotal = estimate.reduce((s, e) => s + e.usd, 0);
-console.log(`questions ${questions.length} × conditions ${CONDITIONS.join(',')} × repeats ${REPEATS}; cap $${CAP}`);
-for (const e of estimate) console.log(`  ${e.provider} ${e.model}: ${e.per.map((x) => `${x.c} $${x.usd.toFixed(2)}`).join(', ')} = $${e.usd.toFixed(2)}`);
+console.log(`questions ${questions.length} × conditions ${CONDITIONS.join(',')} × repeats ${REPEATS}; cap $${CAP} (spent before this run $${SPENT_BEFORE.toFixed(2)}, so $${(CAP - SPENT_BEFORE).toFixed(2)} left)`);
+for (const e of estimate) console.log(`  ${e.provider} ${e.model}: ${e.per.map((x) => `${x.c} $${x.usd.toFixed(2)}${x.measured ? '' : ' (default assumption)'}`).join(', ')} = $${e.usd.toFixed(2)}`);
 for (const s of skipped) console.log(`  skipped ${s.provider}: ${s.reason}`);
 console.log(`estimated total (assumed tokens per question, see ASSUME in harness/run.mjs): $${estTotal.toFixed(2)}`);
 if (DRY) process.exit(0);
 
 // ------------------------------------------------------------------ run
 const date = new Date().toISOString().slice(0, 10);
-const OUT = path.join('results', `${date}-${RUN}`);
-const RAW = path.join('results', 'raw', `${date}-${RUN}`);
+const OUT = path.join(OUT_ROOT, `${date}-${RUN}`);
+const RAW = path.join(OUT_ROOT, 'raw', `${date}-${RUN}`);
 fs.mkdirSync(OUT, { recursive: true });
 fs.mkdirSync(RAW, { recursive: true });
 
@@ -115,7 +144,7 @@ async function runTool(name, args) {
   }
 }
 
-let spent = 0;
+let spent = SPENT_BEFORE;
 const spentBy = Object.fromEntries(providers.map((p) => [p.id, 0]));
 let capped = false;
 const rows = [];
@@ -123,10 +152,10 @@ const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 async function one(p, q, cond, rep) {
   // Stop before a call that could cross the cap: hold back the pessimistic cost of one question.
-  if (capped || spent + cost(p.price, ASSUME[cond]) > CAP) { capped = true; return null; }
+  if (capped || spent + holdBack(p, cond) > CAP) { capped = true; return null; }
   const raws = [];
   let res, err;
-  for (let attempt = 0; attempt < 2; attempt++) {
+  for (let attempt = 0; attempt <= BACKOFF_S.length; attempt++) {
     try {
       res = await p.ad.ask({
         model: p.model, system: SYSTEM[cond], user: q.prompt,
@@ -139,39 +168,35 @@ async function one(p, q, cond, rep) {
       err = e;
       const usd = e.usage ? cost(p.price, e.usage) : 0;
       spent += usd; spentBy[p.id] += usd;
-      if (!(e.status === 429 || e.status >= 500) || attempt) break;
-      await sleep(20000);
+      if (!(e.status === 429 || e.status >= 500) || attempt === BACKOFF_S.length) break;
+      console.log(`${p.id} ${cond} ${q.id}: HTTP ${e.status}, retry in ${BACKOFF_S[attempt]} s`);
+      await sleep(BACKOFF_S[attempt] * 1000);
     }
   }
   const safeId = `${p.id}-${cond}-${q.id}-r${rep}`;
   fs.writeFileSync(path.join(RAW, `${safeId}.json`), JSON.stringify({ question: q.id, provider: p.id, model: p.model, condition: cond, repeat: rep, exchanges: raws }, null, 1));
-  if (err) return { provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family, expected: q.expected, answer: '', outcome: 'error', error: err.message.slice(0, 200), tool_calls: 0, latency_ms: 0, input_tokens: 0, cached_tokens: 0, output_tokens: 0, usd: 0 };
+  if (err) return { provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family, expected: q.expected, answer: '', outcome: 'error', error: err.message.slice(0, 200), tool_calls: 0, latency_ms: 0, input_tokens: 0, cached_tokens: 0, cache_write_tokens: 0, output_tokens: 0, usd: 0 };
   const usd = cost(p.price, res.usage);
   spent += usd; spentBy[p.id] += usd;
   return {
     provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family,
     expected: q.expected, answer: res.answer, outcome: scoreAnswer(q, res.answer),
     tools_used: res.toolCalls.map((t) => t.name).join(' '), tool_calls: res.toolCalls.length,
-    latency_ms: res.latencyMs, input_tokens: res.usage.input, cached_tokens: res.usage.cachedInput, output_tokens: res.usage.output, usd,
+    latency_ms: res.latencyMs, input_tokens: res.usage.input, cached_tokens: res.usage.cachedInput, cache_write_tokens: res.usage.cacheWrite || 0, output_tokens: res.usage.output, usd,
   };
 }
 
-const jobs = [];
-for (const p of providers) for (const cond of CONDITIONS) for (let rep = 1; rep <= REPEATS; rep++) for (const q of questions) jobs.push({ p, q, cond, rep });
-// Each provider gets its own lane of CONC workers so a slow provider does not stall the others.
-await Promise.all(providers.map(async (p) => {
-  const mine = jobs.filter((j) => j.p === p);
+// One provider at a time, one question at a time: a provider's rate limit only delays its own
+// questions (backoff, then an error row), never another provider's.
+for (const p of providers) {
   let done = 0;
-  const worker = async () => {
-    while (mine.length) {
-      const j = mine.shift();
-      const row = await one(j.p, j.q, j.cond, j.rep);
-      if (row) rows.push(row);
-      if (++done % 20 === 0) console.log(`${p.id}: ${done} done, spent $${spentBy[p.id].toFixed(2)} (total $${spent.toFixed(2)})`);
-    }
-  };
-  await Promise.all(Array.from({ length: CONC }, worker));
-}));
+  for (const cond of CONDITIONS) for (let rep = 1; rep <= REPEATS; rep++) for (const q of questions) {
+    const row = await one(p, q, cond, rep);
+    if (row) rows.push(row);
+    if (++done % 25 === 0) console.log(`${p.id}: ${done} done, spent $${spentBy[p.id].toFixed(2)} (run total $${spent.toFixed(2)})`);
+  }
+  console.log(`${p.id}: finished, spent $${spentBy[p.id].toFixed(2)}${capped ? ' (cap reached)' : ''}`);
+}
 
 // ------------------------------------------------------------------ summarise
 function summarise(list) {
@@ -183,27 +208,42 @@ function summarise(list) {
     n, errors: list.length - n,
     accuracy: n ? k('correct') / n : null, unknown_rate: n ? k('unknown') / n : null, confident_wrong_rate: n ? k('wrong') / n : null,
     mean_tool_calls: mean('tool_calls'), mean_latency_ms: Math.round(mean('latency_ms')),
-    input_tokens: list.reduce((s, r) => s + r.input_tokens, 0), cached_tokens: list.reduce((s, r) => s + r.cached_tokens, 0), output_tokens: list.reduce((s, r) => s + r.output_tokens, 0),
+    input_tokens: list.reduce((s, r) => s + r.input_tokens, 0), cached_tokens: list.reduce((s, r) => s + r.cached_tokens, 0), cache_write_tokens: list.reduce((s, r) => s + (r.cache_write_tokens || 0), 0), output_tokens: list.reduce((s, r) => s + r.output_tokens, 0),
     usd: list.reduce((s, r) => s + r.usd, 0),
   };
 }
-const summary = { run: `${date}-${RUN}`, overall: {}, by_family: {} };
+// adr_2027_delta has no FreightUtils tool (the tools serve ADR 2025), so every table gives
+// accuracy both overall and without it.
+const EXCL = 'adr_2027_delta';
+const summary = { run: `${date}-${RUN}`, overall: {}, overall_excluding_adr_2027_delta: {}, by_family: {}, per_question_tokens: {} };
 for (const p of providers) for (const c of CONDITIONS) {
   const key = `${p.model} / ${c}`;
   const list = rows.filter((r) => r.provider === p.id && r.condition === c);
   summary.overall[key] = summarise(list);
+  summary.overall_excluding_adr_2027_delta[key] = summarise(list.filter((r) => r.family !== EXCL));
   summary.by_family[key] = Object.fromEntries(families.map((f) => [f, summarise(list.filter((r) => r.family === f))]));
+  // rows are still in call order here: ok[0] is the call that wrote the cache.
+  const ok = list.filter((r) => r.outcome !== 'error');
+  if (ok.length) {
+    const mean = (xs) => {
+      const m = (f) => xs.reduce((s, r) => s + (r[f] || 0), 0) / xs.length;
+      return { input: m('input_tokens'), cachedInput: m('cached_tokens'), cacheWrite: m('cache_write_tokens'), output: m('output_tokens'), usd: m('usd') };
+    };
+    summary.per_question_tokens[`${p.id}/${p.model}/${c}`] = { n: ok.length, ...mean(ok), first: mean(ok.slice(0, 1)), steady: ok.length > 1 ? mean(ok.slice(1)) : mean(ok) };
+  }
 }
-summary.spend = { total_usd: spent, by_provider: spentBy, cap_usd: CAP, stopped_at_cap: capped };
+summary.spend = { total_usd: spent, spent_before_run_usd: SPENT_BEFORE, this_run_usd: spent - SPENT_BEFORE, by_provider: spentBy, cap_usd: CAP, stopped_at_cap: capped };
 fs.writeFileSync(path.join(OUT, 'summary.json'), JSON.stringify(summary, null, 2) + '\n');
 
-const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'output_tokens', 'usd', 'error'];
+const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'cache_write_tokens', 'output_tokens', 'usd', 'error'];
 const csvCell = (v) => { const s = v === undefined || v === null ? '' : typeof v === 'number' && !Number.isInteger(v) ? String(Math.round(v * 1e6) / 1e6) : String(v); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 rows.sort((a, b) => a.provider.localeCompare(b.provider) || a.condition.localeCompare(b.condition) || a.id.localeCompare(b.id) || a.repeat - b.repeat);
 fs.writeFileSync(path.join(OUT, 'per-question.csv'), [cols.join(','), ...rows.map((r) => cols.map((c) => csvCell(r[c])).join(','))].join('\n') + '\n');
 
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
-  run: `${date}-${RUN}`, started: date, sample: questions.length, seed: SEED, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
+  run: `${date}-${RUN}`, started: date, sample: questions.length, seed: SAMPLE ? SEED : null, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
+  order: 'providers one after another, cheapest first by the estimate; questions one at a time', backoff_s: BACKOFF_S,
+  estimate: { assume_from: ASSUME_FROM, by_provider: estimate },
   question_set: { version: qManifest.version, sha256: qManifest.sha256, ids: questions.map((q) => q.id) },
   system_prompts: SYSTEM,
   tools: { source: 'hosted FreightUtils MCP tools/list (get_subscribe_link excluded)', count: servedTools.length, names: servedTools.map((t) => t.name), sha256: toolsSha },
@@ -214,13 +254,13 @@ fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
 }, null, 2) + '\n');
 
 const pct = (x) => (x === null ? 'n/a' : `${(x * 100).toFixed(0)}%`);
-const lines = [`# Run ${date}-${RUN}`, '', `${questions.length} questions (stratified sample of question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
-for (const [k, s] of Object.entries(summary.overall)) { const [m, c] = k.split(' / '); lines.push(`| ${m} | ${c} | ${s.n} | ${pct(s.accuracy)} | ${pct(s.unknown_rate)} | ${pct(s.confident_wrong_rate)} | ${s.mean_tool_calls.toFixed(1)} | ${(s.mean_latency_ms / 1000).toFixed(1)} s | ${s.usd.toFixed(2)} |`); }
+const lines = [`# Run ${date}-${RUN}`, '', `${questions.length} questions (${SAMPLE ? 'stratified sample of ' : ''}question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', `Each count and rate is given overall and, after the slash, excluding \`${EXCL}\` (no FreightUtils tool serves ADR 2027).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
+for (const [k, s] of Object.entries(summary.overall)) { const x = summary.overall_excluding_adr_2027_delta[k]; const [m, c] = k.split(' / '); lines.push(`| ${m} | ${c} | ${s.n} / ${x.n} | ${pct(s.accuracy)} / ${pct(x.accuracy)} | ${pct(s.unknown_rate)} / ${pct(x.unknown_rate)} | ${pct(s.confident_wrong_rate)} / ${pct(x.confident_wrong_rate)} | ${s.mean_tool_calls.toFixed(1)} | ${(s.mean_latency_ms / 1000).toFixed(1)} s | ${s.usd.toFixed(2)} |`); }
 lines.push('', '## Accuracy by family', '', `| Model / condition | ${families.join(' | ')} |`, `|---|${families.map(() => '---:').join('|')}|`);
 for (const [k, fam] of Object.entries(summary.by_family)) lines.push(`| ${k} | ${families.map((f) => `${pct(fam[f].accuracy)} (${fam[f].n})`).join(' | ')} |`);
 lines.push('', '## Confident-wrong rate by family', '', `| Model / condition | ${families.join(' | ')} |`, `|---|${families.map(() => '---:').join('|')}|`);
 for (const [k, fam] of Object.entries(summary.by_family)) lines.push(`| ${k} | ${families.map((f) => pct(fam[f].confident_wrong_rate)).join(' | ')} |`);
-lines.push('', `Spend: $${spent.toFixed(2)} of a $${CAP} cap${capped ? ' (stopped at the cap: the tables cover what ran)' : ''}. ${Object.entries(spentBy).map(([p, v]) => `${p} $${v.toFixed(2)}`).join(', ')}.`);
+lines.push('', `Spend: $${(spent - SPENT_BEFORE).toFixed(2)} in this run${SPENT_BEFORE ? ` ($${spent.toFixed(2)} with the $${SPENT_BEFORE.toFixed(2)} of probes and smokes before it)` : ''}, against a $${CAP} cap${capped ? ' (stopped at the cap: the tables cover what ran)' : ''}. ${Object.entries(spentBy).map(([p, v]) => `${p} $${v.toFixed(2)}`).join(', ')}.`);
 if (skipped.length) lines.push('', `Not run: ${skipped.map((s) => `${s.provider} (${s.reason})`).join('; ')}.`);
 lines.push('', 'Files: `summary.json` (every figure above), `per-question.csv` (one row per answer), `manifest.json` (models, settings, prices, prompts, the sampled ids).', '');
 fs.writeFileSync(path.join(OUT, 'README.md'), lines.join('\n'));

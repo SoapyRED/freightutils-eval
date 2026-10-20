@@ -9,14 +9,18 @@ export const anthropic = {
     const headers = { 'Content-Type': 'application/json', 'x-api-key': secret('ANTHROPIC_API_KEY'), 'anthropic-version': '2023-06-01' };
     const ws = secret('ANTHROPIC_WORKSPACE_ID');
     if (ws) headers['anthropic-workspace-id'] = ws;
+    // Prompt caching: a breakpoint on the last tool definition and one on the system prompt, so
+    // the tool list (about 45k tokens) is written to the cache once and read on every later call.
     const defs = tools ? tools.map((t) => ({ name: t.name, description: t.description, input_schema: t.inputSchema })) : undefined;
-    const usage = { input: 0, cachedInput: 0, output: 0 };
+    if (defs?.length) defs[defs.length - 1] = { ...defs[defs.length - 1], cache_control: { type: 'ephemeral' } };
+    const systemBlocks = [{ type: 'text', text: system, cache_control: { type: 'ephemeral' } }];
+    const usage = { input: 0, cachedInput: 0, cacheWrite: 0, output: 0 };
     const toolCalls = [];
     const messages = [{ role: 'user', content: user }];
     const t0 = Date.now();
     const url = 'https://api.anthropic.com/v1/messages';
     for (let turn = 0; turn <= maxToolCalls + 1; turn++) {
-      const body = { model, system, messages, max_tokens: 4096, ...settings };
+      const body = { model, system: systemBlocks, messages, max_tokens: 16000, ...settings };
       if (defs) {
         body.tools = defs;
         if (toolCalls.length >= maxToolCalls) body.tool_choice = { type: 'none' };
@@ -33,6 +37,7 @@ export const anthropic = {
       const u = json.usage || {};
       usage.input += (u.input_tokens || 0) + (u.cache_read_input_tokens || 0) + (u.cache_creation_input_tokens || 0);
       usage.cachedInput += u.cache_read_input_tokens || 0;
+      usage.cacheWrite += u.cache_creation_input_tokens || 0;
       usage.output += u.output_tokens || 0;
       const calls = (json.content || []).filter((c) => c.type === 'tool_use');
       if (!calls.length || !callTool) {
