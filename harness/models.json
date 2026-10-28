@@ -69,6 +69,17 @@
       ],
       "pricing_url": "https://platform.claude.com/docs/en/about-claude/pricing",
       "price_note": "Cache writes at the 5-minute rate ($12.50); cache hits $0.25.",
+      "web_search": {
+        "tool": {
+          "type": "web_search_20260318",
+          "name": "web_search"
+        },
+        "max_uses": 5,
+        "price_usd_per_search": 0.01,
+        "read_on": "2026-10-28",
+        "docs": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool",
+        "note": "Condition C only. $10 per 1,000 searches plus standard token costs; search results are billed as input tokens; a search that errors is not billed. web_search_20260318 is the newest version on the day; its default allowed_callers runs searches through code execution (dynamic filtering), which carries no charge beyond tokens. response_inclusion left at the default (full), so every consulted URL is in the response. The Models API reported capabilities.server_tools.web_search.supported = true for claude-fable-5-1 on 2026-10-28."
+      },
       "settings_note": "temperature is refused by claude-fable-5-1 (HTTP 400 \"`temperature` is deprecated for this model\"), so it runs at the provider default; adaptive thinking is always on and effort is left at the default (high)."
     }
   }

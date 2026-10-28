@@ -43,7 +43,6 @@ const T_START = Date.now();
 // "credit balance"): no backoff fixes that, so the provider is stopped and the reason recorded.
 const OUT_OF_CREDIT = /insufficient_quota|credit_balance|no credits remaining|credit balance is too low|used all available credits|spending limit|spend(ing)? cap/i;
 const MAX_TOOL_CALLS = 5;
-if (CONDITIONS.includes('C')) throw new Error('Condition C (web search) is not implemented in v0: see README.');
 
 const config = JSON.parse(fs.readFileSync('harness/models.json', 'utf8'));
 const ADAPTERS = {
@@ -57,7 +56,15 @@ const wanted = flag('models', Object.keys(config.providers).join(',')).split(','
 const SYSTEM = {
   A: 'You are answering a freight reference question. Answer from your own knowledge; if you do not know, say UNKNOWN. Give the answer in the format the question asks for, with nothing else.',
   B: 'You are answering a freight reference question. Use the FreightUtils tools provided to look the answer up or compute it before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the tools do not give you the answer and you do not know it, say UNKNOWN.',
+  C: 'You are answering a freight reference question. Use web search to look the answer up before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the search does not give you the answer and you do not know it, say UNKNOWN.',
 };
+// Condition C (v0.3): the provider's own server-side web search tool, no FreightUtils tools.
+// Only a provider with a web_search block in models.json can run it.
+for (const p of wanted) if (CONDITIONS.includes('C') && !config.providers[p]?.web_search) throw new Error(`condition C: no web_search configured for ${p} in harness/models.json`);
+const domainOf = (u) => { try { return new URL(u).hostname.toLowerCase().replace(/^www\./, ''); } catch { return null; } };
+const SELF = 'freightutils.com';
+const isSelf = (d) => d === SELF || d.endsWith(`.${SELF}`);
+const INJECTION_RE = /(ignore (all |any )?(previous|prior|above) instructions|disregard (the |all )?(previous|prior|above)|you are an? (ai|llm|language model)[^.]{0,60}(must|should)|(post|send|reveal|share) (your|the) (api[ -]?key|system prompt|credentials)|as an ai (assistant|model) reading this)/i;
 
 // ------------------------------------------------------------------ questions
 const QDIR = `questions/${flag('questions', 'v0.2')}`;
@@ -75,7 +82,14 @@ function stratified(n) {
   for (const r of [...raw].sort((a, b) => (b.exact - b.n) - (a.exact - a.n) || a.f.localeCompare(b.f))) { if (left-- <= 0) break; r.n++; }
   return raw.flatMap((r) => R.shuffle(all.filter((q) => q.family === r.f)).slice(0, r.n).sort((a, b) => a.id.localeCompare(b.id)));
 }
-const questions = SAMPLE ? stratified(SAMPLE) : all;
+// --ids a,b,c: exactly these questions (a smoke). --first-per-family N: the first N ids of each
+// family in the frozen order (the v0.3 fallback subset when 300 do not fit the cap).
+const IDS = (flag('ids', '') || '').split(',').filter(Boolean);
+const FIRST_N = Number(flag('first-per-family', 0)) || null;
+const questions = IDS.length ? all.filter((q) => IDS.includes(q.id))
+  : FIRST_N ? families.flatMap((f) => all.filter((q) => q.family === f).slice(0, FIRST_N))
+  : SAMPLE ? stratified(SAMPLE) : all;
+if (IDS.length && questions.length !== IDS.length) throw new Error(`--ids: ${IDS.length - questions.length} id(s) not in the set`);
 
 // ------------------------------------------------------------------ providers
 const providers = [];
@@ -84,7 +98,9 @@ for (const p of wanted) {
   const ad = ADAPTERS[p];
   if (!ad || !config.providers[p]) throw new Error(`unknown provider ${p}`);
   if (!ad.available()) { skipped.push({ provider: p, reason: 'API key absent' }); continue; }
-  providers.push({ id: p, ad, ...config.providers[p] });
+  const cfg = config.providers[p];
+  // The per-search fee joins the price table so cost() sees it.
+  providers.push({ id: p, ad, ...cfg, price: { ...cfg.price, search: cfg.web_search?.price_usd_per_search || 0 } });
 }
 const skipList = (flag('skip', '') || '').split(',').filter(Boolean);
 for (const s of skipList) {
@@ -95,21 +111,24 @@ for (const s of skipList) {
 
 // usage.input counts every input token; cachedInput (cache reads) and cacheWrite (Anthropic cache
 // writes) are the parts of it billed at their own prices.
-const cost = (price, u) => ((u.input - u.cachedInput - (u.cacheWrite || 0)) * price.input + u.cachedInput * price.cached_input + (u.cacheWrite || 0) * (price.cache_write ?? price.input) + u.output * price.output) / 1e6;
+// Condition C adds the provider's per-search fee (price.search, USD per search).
+const cost = (price, u) => ((u.input - u.cachedInput - (u.cacheWrite || 0)) * price.input + u.cachedInput * price.cached_input + (u.cacheWrite || 0) * (price.cache_write ?? price.input) + u.output * price.output) / 1e6 + (u.searches || 0) * (price.search || 0);
 
 // ------------------------------------------------------------------ dry run
 // Assumed tokens per question, from the measured smoke calls on 2026-10-20 (A: ~60 in, ~25 out;
 // B: two calls of ~18.5k each, the second cached on OpenAI) with margin: A 500 in / 800 out;
 // B 45k in of which 18k cached / 1,000 out. The same figure is held back before every call, so
 // the cap is never crossed even when a question runs long.
-const ASSUME_DEFAULT = { A: { input: 500, cachedInput: 0, cacheWrite: 0, output: 800 }, B: { input: 45000, cachedInput: 18000, cacheWrite: 0, output: 1000 } };
+// C has no measured default: 60k input (search results are billed as input), 2,000 out and 5
+// searches (the max_uses limit); a smoke run's --assume-from replaces it.
+const ASSUME_DEFAULT = { A: { input: 500, cachedInput: 0, cacheWrite: 0, output: 800 }, B: { input: 45000, cachedInput: 18000, cacheWrite: 0, output: 1000 }, C: { input: 60000, cachedInput: 0, cacheWrite: 0, output: 2000, searches: 5 } };
 // --assume-from: the mean tokens per question each provider and condition used in a smoke run,
 // with a 25% margin on the uncached input, cache writes and output. A provider or condition the
 // smoke did not cover keeps the default.
 const measured = ASSUME_FROM ? JSON.parse(fs.readFileSync(ASSUME_FROM, 'utf8')).per_question_tokens || {} : {};
 // The first call of a provider and condition writes the prompt cache; the later ones read it. The
 // smoke records both (first, steady), so the estimate is one first call plus steady-state calls.
-const margin = (m) => ({ input: m.cachedInput + (m.input - m.cachedInput) * 1.25, cachedInput: m.cachedInput, cacheWrite: m.cacheWrite * 1.25, output: m.output * 1.25 });
+const margin = (m) => ({ input: m.cachedInput + (m.input - m.cachedInput) * 1.25, cachedInput: m.cachedInput, cacheWrite: m.cacheWrite * 1.25, output: m.output * 1.25, searches: (m.searches || 0) * 1.25 });
 const assumeFor = (p, c) => {
   const m = measured[`${p.id}/${p.model}/${c}`];
   if (!m) return { first: ASSUME_DEFAULT[c], steady: ASSUME_DEFAULT[c] };
@@ -127,6 +146,14 @@ const RAW = path.join(OUT_ROOT, 'raw', RUN_ID);
 const CHECKPOINT = path.join(RAW, 'rows.jsonl');
 const keyOf = (r) => `${r.provider}|${r.condition}|${r.repeat}|${r.id}`;
 const prior = fs.existsSync(CHECKPOINT) ? fs.readFileSync(CHECKPOINT, 'utf8').split('\n').filter(Boolean).map((l) => JSON.parse(l)) : [];
+// C: a "read" domain must also be one the search returned for that answer; a URL cut off in the
+// filter code's printed output (e.g. "en.wikipedi") is not a domain. Applied to checkpoint rows too.
+for (const r of prior) {
+  if (r.condition !== 'C' || r.read_domains === undefined) continue;
+  const consulted = new Set(String(r.consulted_domains || '').split(' ').filter(Boolean));
+  r.read_domains = String(r.read_domains || '').split(' ').filter((d) => consulted.has(d)).join(' ');
+  r.read_freightutils = r.read_domains.split(' ').some((d) => d && isSelf(d));
+}
 const done = new Map(prior.map((r) => [keyOf(r), r]));
 const missing = (p, c) => { let k = 0; for (let rep = 1; rep <= REPEATS; rep++) for (const q of questions) if (!done.has(keyOf({ provider: p.id, condition: c, repeat: rep, id: q.id }))) k++; return k; };
 const estimate = providers.map((p) => {
@@ -189,6 +216,7 @@ async function one(p, q, cond, rep) {
         model: p.model, system: SYSTEM[cond], user: q.prompt,
         tools: cond === 'B' ? servedTools : null, maxToolCalls: MAX_TOOL_CALLS,
         callTool: cond === 'B' ? runTool : null, settings: p.settings, onRaw: (r) => raws.push(r),
+        webSearch: cond === 'C' ? { tool: p.web_search.tool, maxUses: p.web_search.max_uses } : null,
       });
       err = null;
       break;
@@ -204,14 +232,25 @@ async function one(p, q, cond, rep) {
   }
   const safeId = `${p.id}-${cond}-${q.id}-r${rep}`;
   fs.writeFileSync(path.join(RAW, `${safeId}.json`), JSON.stringify({ question: q.id, provider: p.id, model: p.model, condition: cond, repeat: rep, exchanges: raws }, null, 1));
-  if (err) return { provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family, expected: q.expected, answer: '', outcome: 'error', error: err.message.slice(0, 200), tool_calls: 0, latency_ms: null, input_tokens: 0, cached_tokens: 0, cache_write_tokens: 0, output_tokens: 0, usd: err.usage ? cost(p.price, err.usage) : 0 };
+  if (err) return { provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family, expected: q.expected, answer: '', outcome: 'error', error: err.message.slice(0, 200), tool_calls: 0, latency_ms: null, input_tokens: 0, cached_tokens: 0, cache_write_tokens: 0, output_tokens: 0, searches: err.usage?.searches || 0, usd: err.usage ? cost(p.price, err.usage) : 0 };
   const usd = cost(p.price, res.usage);
   spent += usd; spentBy[p.id] += usd;
+  // C: tool_calls is the number of searches; the domains feed the cited-domains table.
+  const web = cond === 'C' ? (() => {
+    const cited = [...new Set((res.urls?.cited || []).map(domainOf).filter(Boolean))].sort();
+    const consulted = [...new Set((res.urls?.consulted || []).map(domainOf).filter(Boolean))].sort();
+    const read = [...new Set((res.urls?.read || []).map(domainOf).filter(Boolean))].filter((d) => consulted.includes(d)).sort();
+    // Outside content is data: text that reads as an instruction to the model is flagged for the
+    // README's "Injection attempts seen", never acted on.
+    const inj = [...(res.urls?.readText || []), ...(res.urls?.citedText || [])].join('\n').match(INJECTION_RE);
+    return { searches: res.usage.searches || 0, cited_domains: cited.join(' '), consulted_domains: consulted.join(' '), read_domains: read.join(' '), cites_freightutils: cited.some(isSelf), consulted_freightutils: consulted.some(isSelf), read_freightutils: read.some(isSelf), encrypted_outputs: res.urls?.encryptedOutputs || 0, injection_flag: inj ? inj[0].slice(0, 120) : '', stop_reason: res.stopReason };
+  })() : {};
   return {
     provider: p.id, model: p.model, condition: cond, repeat: rep, id: q.id, family: q.family,
     expected: q.expected, answer: res.answer, outcome: scoreAnswer(q, res.answer),
-    tools_used: res.toolCalls.map((t) => t.name).join(' '), tool_calls: res.toolCalls.length,
+    tools_used: cond === 'C' ? 'web_search' : res.toolCalls.map((t) => t.name).join(' '), tool_calls: cond === 'C' ? res.usage.searches || 0 : res.toolCalls.length,
     latency_ms: res.latencyMs, input_tokens: res.usage.input, cached_tokens: res.usage.cachedInput, cache_write_tokens: res.usage.cacheWrite || 0, output_tokens: res.usage.output, usd,
+    ...web,
   };
 }
 
@@ -246,7 +285,22 @@ function summarise(list) {
     mean_latency_ms: (() => { const t = scored.filter((r) => r.latency_ms !== null && r.latency_ms !== undefined); return t.length ? Math.round(t.reduce((s, r) => s + r.latency_ms, 0) / t.length) : null; })(),
     input_tokens: list.reduce((s, r) => s + r.input_tokens, 0), cached_tokens: list.reduce((s, r) => s + r.cached_tokens, 0), cache_write_tokens: list.reduce((s, r) => s + (r.cache_write_tokens || 0), 0), output_tokens: list.reduce((s, r) => s + r.output_tokens, 0),
     usd: list.reduce((s, r) => s + r.usd, 0),
+    ...(list.some((r) => r.condition === 'C') ? {
+      mean_searches: mean('searches'),
+      share_citing_freightutils: n ? scored.filter((r) => r.cites_freightutils).length / n : null,
+      share_consulting_freightutils: n ? scored.filter((r) => r.consulted_freightutils).length / n : null,
+      share_citing_any: n ? scored.filter((r) => r.cited_domains).length / n : null,
+      share_reading_freightutils: n ? scored.filter((r) => r.read_freightutils).length / n : null,
+      share_searching: n ? scored.filter((r) => r.searches > 0).length / n : null,
+    } : {}),
   };
+}
+// The share of scored answers that cite (or consulted) each domain, most-cited first.
+function domainTable(list, field) {
+  const scored = list.filter((r) => r.outcome !== 'error');
+  const k = {};
+  for (const r of scored) for (const d of String(r[field] || '').split(' ').filter(Boolean)) k[d] = (k[d] || 0) + 1;
+  return Object.entries(k).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0])).map(([domain, answers]) => ({ domain, answers, share: answers / scored.length }));
 }
 // adr_2027_delta has no FreightUtils tool (the tools serve ADR 2025), so every table gives
 // accuracy both overall and without it.
@@ -258,12 +312,20 @@ for (const p of providers) for (const c of CONDITIONS) {
   summary.overall[key] = summarise(list);
   summary.overall_excluding_adr_2027_delta[key] = summarise(list.filter((r) => r.family !== EXCL));
   summary.by_family[key] = Object.fromEntries(families.map((f) => [f, summarise(list.filter((r) => r.family === f))]));
+  if (c === 'C') {
+    summary.cited_domains ||= {}; summary.consulted_domains ||= {}; summary.read_domains ||= {};
+    summary.cited_domains[key] = domainTable(list, 'cited_domains');
+    summary.consulted_domains[key] = domainTable(list, 'consulted_domains');
+    summary.read_domains[key] = domainTable(list, 'read_domains');
+    summary.injection_flags ||= {};
+    summary.injection_flags[key] = list.filter((r) => r.injection_flag).map((r) => ({ id: r.id, text: r.injection_flag }));
+  }
   // rows are still in call order here: ok[0] is the call that wrote the cache.
   const ok = list.filter((r) => r.outcome !== 'error');
   if (ok.length) {
     const mean = (xs) => {
       const m = (f) => xs.reduce((s, r) => s + (r[f] || 0), 0) / xs.length;
-      return { input: m('input_tokens'), cachedInput: m('cached_tokens'), cacheWrite: m('cache_write_tokens'), output: m('output_tokens'), usd: m('usd') };
+      return { input: m('input_tokens'), cachedInput: m('cached_tokens'), cacheWrite: m('cache_write_tokens'), output: m('output_tokens'), searches: m('searches'), usd: m('usd') };
     };
     summary.per_question_tokens[`${p.id}/${p.model}/${c}`] = { n: ok.length, ...mean(ok), first: mean(ok.slice(0, 1)), steady: ok.length > 1 ? mean(ok.slice(1)) : mean(ok) };
   }
@@ -276,19 +338,19 @@ summary.complete = !paused;
 summary.providers_stopped = stopped;
 fs.writeFileSync(path.join(OUT, 'summary.json'), JSON.stringify(summary, null, 2) + '\n');
 
-const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'cache_write_tokens', 'output_tokens', 'usd', 'error', 'carried_from'];
+const cols = ['provider', 'model', 'condition', 'repeat', 'id', 'family', 'expected', 'answer', 'outcome', 'tools_used', 'tool_calls', 'latency_ms', 'input_tokens', 'cached_tokens', 'cache_write_tokens', 'output_tokens', 'usd', 'error', 'carried_from', ...(CONDITIONS.includes('C') ? ['searches', 'cited_domains', 'consulted_domains', 'read_domains', 'cites_freightutils', 'consulted_freightutils', 'read_freightutils', 'encrypted_outputs', 'injection_flag', 'stop_reason'] : [])];
 const csvCell = (v) => { const s = v === undefined || v === null ? '' : typeof v === 'number' && !Number.isInteger(v) ? String(Math.round(v * 1e6) / 1e6) : String(v); return /[",\n\r]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s; };
 rows.sort((a, b) => a.provider.localeCompare(b.provider) || a.condition.localeCompare(b.condition) || a.id.localeCompare(b.id) || a.repeat - b.repeat);
 fs.writeFileSync(path.join(OUT, 'per-question.csv'), [cols.join(','), ...rows.map((r) => cols.map((c) => csvCell(r[c])).join(','))].join('\n') + '\n');
 
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
-  run: RUN_ID, started: date, sample: questions.length, seed: SAMPLE ? SEED : null, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
+  run: RUN_ID, started: date, sample: questions.length, seed: SAMPLE && !IDS.length && !FIRST_N ? SEED : null, first_per_family: FIRST_N, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
   order: 'providers one after another, cheapest first by the estimate; questions one at a time', backoff_s: BACKOFF_S,
   estimate: { assume_from: ASSUME_FROM, by_provider: estimate },
   question_set: { version: qManifest.version, sha256: qManifest.sha256, ids: questions.map((q) => q.id) },
   system_prompts: SYSTEM,
   tools: { source: 'hosted FreightUtils MCP tools/list (get_subscribe_link excluded)', count: servedTools.length, names: servedTools.map((t) => t.name), sha256: toolsSha },
-  models: providers.map((p) => ({ provider: p.id, model: p.model, api: p.api, settings: p.settings, settings_note: p.settings_note, price_usd_per_mtok: p.price, price_note: p.price_note, pricing_url: p.pricing_url, docs: p.docs })),
+  models: providers.map((p) => ({ provider: p.id, model: p.model, api: p.api, settings: p.settings, settings_note: p.settings_note, price_usd_per_mtok: p.price, price_note: p.price_note, pricing_url: p.pricing_url, docs: p.docs, ...(CONDITIONS.includes('C') && p.web_search ? { web_search: p.web_search } : {}) })),
   prices_read_on: config.read_on,
   skipped,
   providers_stopped: stopped,

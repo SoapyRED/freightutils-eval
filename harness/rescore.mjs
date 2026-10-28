@@ -5,7 +5,7 @@
 // answers to a question whose prompt changed between the sets, and any --hold provider/condition
 // (those rows go to held.jsonl beside the checkpoint, to put back if the re-run is cut short).
 // Usage: node harness/rescore.mjs --from results/raw/<old run> --to results/raw/<new run>
-//   --questions v0.2 [--hold openai/A] [--csv results/<old run>/per-question.csv]
+//   --questions v0.2 [--hold openai/A] [--keep anthropic/A,anthropic/B] [--csv results/<old run>/per-question.csv]
 import fs from 'node:fs';
 import path from 'node:path';
 import { scoreAnswer } from './score.mjs';
@@ -17,6 +17,8 @@ const TO = flag('to');
 const QDIR = `questions/${flag('questions', 'v0.2')}`;
 const HOLD = (flag('hold', '') || '').split(',').filter(Boolean);
 const CSV = flag('csv', null);
+// --keep provider/condition,...: carry only these (v0.3 carries Fable's A and B into the C run).
+const KEEP = (flag('keep', '') || '').split(',').filter(Boolean);
 if (!FROM || !TO) throw new Error('usage: --from DIR --to DIR [--questions v0.2] [--hold provider/condition]');
 
 const qs = new Map(fs.readdirSync(QDIR).filter((f) => f !== 'manifest.json').flatMap((f) => JSON.parse(fs.readFileSync(path.join(QDIR, f), 'utf8'))).map((q) => [q.id, q]));
@@ -52,6 +54,7 @@ const oldQs = new Map(fs.readdirSync(oldQdir).filter((f) => f !== 'manifest.json
 
 const keep = [], held = [], dropped = {}, changed = [];
 for (const r of oldRows) {
+  if (KEEP.length && !KEEP.includes(`${r.provider}/${r.condition}`)) continue;
   const q = qs.get(r.id);
   const why = !q ? 'not in the new set' : r.outcome === 'error' ? 'error' : q.prompt !== oldQs.get(r.id)?.prompt ? 'question replaced' : null;
   if (why) { dropped[why] = [...(dropped[why] || []), `${r.provider}/${r.condition}/${r.id}`]; continue; }

@@ -15,10 +15,29 @@ model grades another model.
   `questions/v0` and `questions/v0.1` are kept as history: v0.1 changed the HS family, and v0.2
   replaces one faulty question and accepts listed alternative place names (below).
 - **Harness**: Node, no framework, one adapter per provider over its own HTTP API.
-- **Results**: one directory per run under `results/` with the scored tables. The current one
+- **Results**: one directory per run under `results/` with the scored tables. The latest is the
+  [v0.3 web-search run](results/2026-10-28-web-search/); the full A/B pass
   is the [v0.2 full pass](results/2026-10-21-full-pass/) (see "Results" below).
 
 ## Results
+
+**[v0.3: web search condition, 28 October 2026](results/2026-10-28-web-search/README.md)**:
+`claude-fable-5-1` with Anthropic's web search tool and no FreightUtils tools (condition C), all
+300 v0.2 questions, against its A and B answers from the full pass below. Overall / excluding
+`adr_2027_delta`:
+
+| Model | Condition | n | Accuracy | Unknown | Confident wrong | Cost per answer (USD) |
+|---|---|---:|---:|---:|---:|---:|
+| `claude-fable-5-1` | A, alone | 300 / 270 | 86% / 90% | 9% / 8% | 5% / 2% | 0.0071 |
+| `claude-fable-5-1` | B, with the tools | 300 / 270 | 90% / 100% | 10% / 0% | 0% / 0% | 0.0384 |
+| `claude-fable-5-1` | C, with web search | 300 / 270 | 97% / 99% | 0% / 0% | 3% / 1% | 0.0715 |
+
+With web search the model answered 268 of the 270 questions outside ADR 2027 and 23 of the 30 ADR
+2027 questions. The ADR 2027 values are on the web; no FreightUtils tool serves them yet. Five of its
+nine confident-wrong answers gave the right value and then a source line, which the unchanged scorer
+reads as the answer. It made 1.23 searches per answer. It cost about 1.9 times B per answer, and its
+latency was about three times B's. freightutils.com reached the model on 3% of the answers. Spend:
+$21.93 (cap $40), $86.84 across all runs.
 
 **[Full pass, 21 October 2026](results/2026-10-21-full-pass/README.md)**: all 300 v0.2 questions,
 conditions A and B, one repeat, four providers. Accuracy is given overall and, after the slash,
@@ -52,10 +71,25 @@ removes).
 |---|---|---|
 | **A** | the question only | answer from your own knowledge; if you do not know, say UNKNOWN |
 | **B** | the question and the FreightUtils tools, as served by the hosted MCP's `tools/list` (names, descriptions and input schemas as served; `get_subscribe_link` left out), at most 5 tool calls | use the tools, answer with the value only |
-| C | web search | **not in v0.** `--conditions C` stops with a message; a later version adds it |
+| **C** (v0.3) | the question and the provider's own server-side web search tool, at most 5 searches per question; **no** FreightUtils tools | use web search, answer with the value only |
 
 In B the tool results go back to the model verbatim: the text content the hosted MCP returned,
 errors included. Tool calls go to `https://www.freightutils.com/api/mcp/mcp`.
+
+In C the search runs on the provider's side and the harness only reads what comes back. v0.3 runs
+C on `claude-fable-5-1` only, with Anthropic's `web_search_20260318` tool (`max_uses` 5; read on
+2026-10-28 at https://platform.claude.com/docs/en/agents-and-tools/tool-use/web-search-tool,
+$10 per 1,000 searches plus tokens, search results billed as input). That version runs each search
+from inside code execution ("dynamic filtering": the model writes code that filters the results
+and reads only what the code prints), which is the tool's default. For each answer the harness
+records the number of searches and three sets of domains: **consulted** (every result the search
+returned), **read** (the result URLs that appear in the filter code's printed output, i.e. what
+reached the model; output the API returns encrypted cannot be read and is counted, not parsed) and
+**cited** (citation blocks in the answer text). Whether `freightutils.com` is among them is
+recorded separately: the site may be what the search finds, which is a finding, not a flaw. The
+system prompt and the answer format are A's and B's; scoring is unchanged. Search results are
+outside content: text in them that reads as an instruction is flagged in the results
+("injection_flag") and never acted on.
 
 ## The families
 
@@ -93,6 +127,14 @@ How the set was drawn (`generator/generate.mjs --version v0.2`, seed `freightuti
 - UN/LOCODEs are ports and airports with a plain place name.
 - Container external lengths of the 20 ft types are left out: the served value is under review
   against ISO 668.
+
+### Version history
+
+- v0: 300 questions, conditions A and B.
+- v0.1: the HS family scored on structure only.
+- v0.2: `identifiers-051` replaced; listed alternative place names accepted.
+- v0.3: condition C (provider web search, no FreightUtils tools), Fable only; A/B unchanged from v0.2.
+  No question changed: v0.3 runs on question set v0.2.
 
 ### v0.1: what changed from v0
 
@@ -185,6 +227,11 @@ node harness/run.mjs --sample 100 --conditions A,B --repeats 1 --run my-run --ca
 node harness/run.mjs --models openai,xai --conditions B            # the full 300
 ```
 
+- `--conditions C` (v0.3) needs a `web_search` block for the provider in `harness/models.json`
+  (only `anthropic` has one); the per-search fee is added to the cost. `--ids a,b,c` asks exactly
+  those questions (a smoke); `--first-per-family N` asks the first N ids of each family in the
+  frozen order. `harness/rescore.mjs --keep anthropic/A,anthropic/B` carries only those
+  provider/condition rows into a new run.
 - `--sample N` is stratified by family (largest remainder, in proportion to family size) and
   deterministic by `--seed`.
 - `--dry-run` prints the estimated cost from the question count, the price table and an
