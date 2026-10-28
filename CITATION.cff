@@ -1,11 +1,19 @@
 cff-version: 1.2.0
-message: "If you use this question set or these results, please cite them as below. A versioned DOI is minted for each GitHub release through Zenodo; the concept DOI is added here once the first release is archived."
+message: "If you use this question set or these results, please cite them as below. Each GitHub release is archived on Zenodo with its own DOI; the doi field is the concept DOI (latest version) and identifiers carries the version DOI."
 type: dataset
 title: "freightutils-eval: frontier language models on 300 freight reference questions — alone, with the FreightUtils tools, and with web search"
 authors:
   - family-names: Cristoiu
     given-names: Marius
     affiliation: FreightUtils
+doi: 10.5281/zenodo.23743608
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23743609
+    description: "Version DOI for v0.3.0"
+  - type: doi
+    value: 10.5281/zenodo.23743608
+    description: "Concept DOI, all versions"
 repository-code: "https://github.com/SoapyRED/freightutils-eval"
 url: "https://www.freightutils.com/eval"
 license:

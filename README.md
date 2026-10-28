@@ -1,5 +1,7 @@
 # freightutils-eval
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23743608.svg)](https://doi.org/10.5281/zenodo.23743608)
+
 A reproducible measurement of how often frontier language models get freight reference
 questions right on their own, and how often they get them right with the FreightUtils tools.
 
@@ -306,6 +308,18 @@ price. That overestimates the cost.
   family has no tool that answers it, so it measures whether the model reads the amendments
   right from what it knows. It stays scored (it is the clearest product signal in the set), and
   every results table gives accuracy both overall and excluding `adr_2027_delta`, side by side.
+
+## Cite
+
+Each GitHub release is archived on Zenodo with its own DOI; the concept DOI resolves to the latest
+version. Cite the version you used:
+
+> Cristoiu, M. (2026). *freightutils-eval: frontier language models on 300 freight reference
+> questions — alone, with the FreightUtils tools, and with web search* (v0.3.0) [Data set].
+> Zenodo. https://doi.org/10.5281/zenodo.23743609
+
+All versions: https://doi.org/10.5281/zenodo.23743608. `CITATION.cff` carries the same record for
+GitHub's "Cite this repository" button.
 
 ## Licence
 

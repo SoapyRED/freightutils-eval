@@ -23,6 +23,7 @@
     "web search"
   ],
   "related_identifiers": [
-    { "identifier": "https://www.freightutils.com/eval", "relation": "isSupplementTo" }
+    { "identifier": "https://www.freightutils.com/eval", "relation": "isSupplementTo" },
+    { "identifier": "https://github.com/SoapyRED/freightutils-eval", "relation": "isSupplementTo" }
   ]
 }
