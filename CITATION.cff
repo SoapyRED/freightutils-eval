@@ -1,0 +1,29 @@
+cff-version: 1.2.0
+message: "If you use this question set or these results, please cite them as below. A versioned DOI is minted for each GitHub release through Zenodo; the concept DOI is added here once the first release is archived."
+type: dataset
+title: "freightutils-eval: frontier language models on 300 freight reference questions — alone, with the FreightUtils tools, and with web search"
+authors:
+  - family-names: Cristoiu
+    given-names: Marius
+    affiliation: FreightUtils
+repository-code: "https://github.com/SoapyRED/freightutils-eval"
+url: "https://www.freightutils.com/eval"
+license:
+  - CC-BY-4.0
+  - MIT
+version: 0.3.0
+date-released: 2026-10-28
+abstract: "A reproducible measurement of how often frontier language models answer freight reference questions correctly on their own, with the FreightUtils tools (MCP and REST), and with a provider's web search in place of the tools. 300 questions in six families, each with one expected value and a deterministic string scorer; the frozen question set, the harness, the scoring rule and every run's per-question answers, summary figures and spend are in the archive. The question set is CC BY 4.0; the harness and scripts are MIT."
+keywords:
+  - freight
+  - dangerous goods
+  - ADR
+  - ADR 2027
+  - HS codes
+  - UN/LOCODE
+  - air cargo
+  - LLM evaluation
+  - benchmark
+  - tool use
+  - Model Context Protocol
+  - web search

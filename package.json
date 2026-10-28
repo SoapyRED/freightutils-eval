@@ -1,6 +1,6 @@
 {
   "name": "freightutils-eval",
-  "version": "0.1.0",
+  "version": "0.3.0",
   "description": "Reproducible evaluation of frontier models on freight reference questions, alone and with the FreightUtils tools.",
   "type": "module",
   "private": true,
