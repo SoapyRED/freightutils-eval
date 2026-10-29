@@ -5,7 +5,7 @@
 // answers to a question whose prompt changed between the sets, and any --hold provider/condition
 // (those rows go to held.jsonl beside the checkpoint, to put back if the re-run is cut short).
 // Usage: node harness/rescore.mjs --from results/raw/<old run> --to results/raw/<new run>
-//   --questions v0.2 [--hold openai/A] [--keep anthropic/A,anthropic/B] [--csv results/<old run>/per-question.csv]
+//   --questions v0.2.1 [--hold openai/A] [--keep anthropic/A,anthropic/B] [--csv results/<old run>/per-question.csv]
 import fs from 'node:fs';
 import path from 'node:path';
 import { scoreAnswer } from './score.mjs';
@@ -14,12 +14,12 @@ const argv = process.argv.slice(2);
 const flag = (name, dflt) => { const i = argv.indexOf(`--${name}`); return i < 0 ? dflt : argv[i + 1]; };
 const FROM = flag('from');
 const TO = flag('to');
-const QDIR = `questions/${flag('questions', 'v0.2')}`;
+const QDIR = `questions/${flag('questions', 'v0.2.1')}`;
 const HOLD = (flag('hold', '') || '').split(',').filter(Boolean);
 const CSV = flag('csv', null);
 // --keep provider/condition,...: carry only these (v0.3 carries Fable's A and B into the C run).
 const KEEP = (flag('keep', '') || '').split(',').filter(Boolean);
-if (!FROM || !TO) throw new Error('usage: --from DIR --to DIR [--questions v0.2] [--hold provider/condition]');
+if (!FROM || !TO) throw new Error('usage: --from DIR --to DIR [--questions v0.2.1] [--hold provider/condition]');
 
 const qs = new Map(fs.readdirSync(QDIR).filter((f) => f !== 'manifest.json').flatMap((f) => JSON.parse(fs.readFileSync(path.join(QDIR, f), 'utf8'))).map((q) => [q.id, q]));
 const oldRun = path.basename(FROM);
