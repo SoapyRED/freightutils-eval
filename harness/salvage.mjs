@@ -3,7 +3,7 @@
 // and token usage are read from the saved responses exactly as the adapter reads them, and scored
 // by score.mjs; latency was not saved in the raw files, so it is null (reported as n/a).
 // Usage: node harness/salvage.mjs --from results/raw/<stopped run> --to results/raw/<run> --provider openai
-//   [--questions v0.2]
+//   [--questions v0.2.1]
 // Only the Responses-API shape (OpenAI, xAI) is handled: that is the only salvage needed so far.
 import fs from 'node:fs';
 import path from 'node:path';
@@ -14,7 +14,7 @@ const flag = (name, dflt) => { const i = argv.indexOf(`--${name}`); return i < 0
 const FROM = flag('from');
 const TO = flag('to');
 const PROVIDER = flag('provider');
-const QDIR = `questions/${flag('questions', 'v0.2')}`;
+const QDIR = `questions/${flag('questions', 'v0.2.1')}`;
 if (!FROM || !TO || !['openai', 'xai'].includes(PROVIDER)) throw new Error('usage: --from DIR --to DIR --provider openai|xai');
 
 const config = JSON.parse(fs.readFileSync('harness/models.json', 'utf8'));

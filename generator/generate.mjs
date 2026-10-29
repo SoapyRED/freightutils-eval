@@ -1,16 +1,18 @@
 // Builds questions/<version>/*.json from the FreightUtils reference data. Never edit the output
-// by hand: change this script and re-run it. Usage: node generator/generate.mjs [--version v0.2]
+// by hand: change this script and re-run it. Usage: node generator/generate.mjs [--version v0.2.1]
 // v0.1 differs from v0 only in the hs_hierarchy family (scored on structure, no wording); the
 // seed and every other family are unchanged, so the other five files are byte-identical to v0.
 // v0.2 differs from v0.1 only in identifiers-051 (a ULD maximum gross weight replaces the RKN
 // base length); its draw comes after every v0.1 draw, so the other 299 questions are unchanged.
+// v0.2.1 differs from v0.2 only in check.shows of the 15 no-change adr_2027_delta questions: the
+// UN-page sentence the live lint matches (the site reworded it on 2026-10-28).
 import fs from 'node:fs';
 import path from 'node:path';
 import { readJson, readText, rng, round } from './lib.mjs';
 
 const arg = (name, dflt) => (process.argv.includes(`--${name}`) ? process.argv[process.argv.indexOf(`--${name}`) + 1] : dflt);
-const VERSION = arg('version', 'v0.2');
-if (!['v0', 'v0.1', 'v0.2'].includes(VERSION)) throw new Error(`unknown version ${VERSION}`);
+const VERSION = arg('version', 'v0.2.1');
+if (!['v0', 'v0.1', 'v0.2', 'v0.2.1'].includes(VERSION)) throw new Error(`unknown version ${VERSION}`);
 const argSeed = arg('seed', 'freightutils-eval-v0');
 const R = rng(argSeed);
 const OUT = path.resolve(`questions/${VERSION}`);
@@ -129,7 +131,7 @@ function addressable(r) {
       tool_note: 'No FreightUtils MCP tool serves ADR 2027 (the tools serve ADR 2025); the answer is on the UN page.',
       check: it.kind === 'changed'
         ? { kind: 'page_contains', path: `/adr/un/${it.un}`, shows: 'ADR 2025 value → expected' }
-        : { kind: 'page_contains', path: `/adr/un/${it.un}`, shows: "make no change to this entry's Table A columns" },
+        : { kind: 'page_contains', path: `/adr/un/${it.un}`, shows: VERSION === 'v0.2.1' ? 'no Table A change for this entry' : "make no change to this entry's Table A columns" },
     });
   }
 }
@@ -369,7 +371,7 @@ function addressable(r) {
   // conflict, divergence or inheritance flagged on the record. No ULD record on the site is
   // provenance-verified (all 16 are pending), so that bar cannot be used; this is the closest one.
   // Drawn after every v0.1 draw, so the RNG stream for everything above is unchanged.
-  if (VERSION === 'v0.2') {
+  if (VERSION === 'v0.2' || VERSION === 'v0.2.1') {
     const idx = questions.identifiers.length - uldDraw.length;
     if (uldDraw[0][0].code !== 'RKN') throw new Error('v0.2: the first ULD draw is no longer RKN; re-check identifiers-051');
     const oneBasis = ulds.filter((u) => u.maxGrossWeightBasis === 'structural-mgw-manufacturer'

@@ -1,0 +1,40 @@
+{
+  "version": "v0.2.1",
+  "frozen_at": "2026-10-29",
+  "generator": "generator/generate.mjs",
+  "seed": "freightutils-eval-v0",
+  "data_source": {
+    "repository": "SoapyRED/freighttools (FreightUtils reference data)",
+    "commit": "9264d1012bab80ec9e19a146039f607023b19d5b",
+    "note": "carried over from v0.2; only check.shows re-anchored"
+  },
+  "verified_against": "https://www.freightutils.com (generator/verify-live.mjs, keyed, zero mismatches at freeze)",
+  "changes_from": {
+    "version": "v0.2",
+    "changed": "check.shows of the 15 adr_2027_delta questions whose answer is NO CHANGE: the UN-page sentence the live lint matches, re-anchored from \"make no change to this entry's Table A columns\" to \"no Table A change for this entry\" (the site reworded it on 2026-10-28; the value it states is unchanged).",
+    "scoring": "No change. Prompts, expected values, accept rules, ids and questions/aliases.json are byte-identical to v0.2; results scored against v0.2 remain valid.",
+    "note": "The other five family files are byte-identical to v0.2."
+  },
+  "scoring_aliases": {
+    "file": "questions/aliases.json",
+    "sha256": "aabef32eed5383c14afb1f8b95f172b5c65cb92074cf0352d48a2d994655940b"
+  },
+  "total": 300,
+  "counts": {
+    "adr_2027_delta": 30,
+    "adr_exemption": 30,
+    "adr_table_a": 70,
+    "freight_arithmetic": 60,
+    "hs_hierarchy": 50,
+    "identifiers": 60
+  },
+  "files": {
+    "adr_2027_delta.json": "c8b818c7db121b6b58ba100351096eabdd5ff1fdb4d1af84ec657c54bffe3c71",
+    "adr_exemption.json": "db45302a8ed3591f0243ecf48d9ffe2d9492e3def9e03fde6e7d0338162320b5",
+    "adr_table_a.json": "ab11f4883cb93dff320f63687dbecab5516bd67f96281a0321cdb79ee4f8f7d1",
+    "freight_arithmetic.json": "834c3142a0c7d0d4757d9a43ec7aa7d731f11ba9aafbaea1d7f2eafe9a7519f9",
+    "hs_hierarchy.json": "d5f9dba0dd2c9e1298c9be5cbd1135118fea0d7f3af48c1bfb9b0a1fff15d407",
+    "identifiers.json": "67b7363573ccf8f8af48ba48c8dd855498ed57ba87332a851407519b53a9a639"
+  },
+  "sha256": "350aac8a8007e21dae68a40dd05658f5528c2d68efd4b7d2e18b4f1c457593e8"
+}

@@ -2,7 +2,7 @@
 //   node harness/run.mjs --sample 100 --conditions A,B --repeats 1 --run first-pass --dry-run
 // Flags: --sample N (stratified by family, deterministic by --seed), --models openai,xai,...,
 // --conditions A,B, --repeats N, --cap USD (default 80), --run NAME, --dry-run,
-// --questions v0.2 (the frozen set), --assume-from <summary.json> (per-question tokens measured
+// --questions v0.2.1 (the frozen set), --assume-from <summary.json> (per-question tokens measured
 // by a smoke run, used for the estimate and the cap hold-back), --spent-before USD (spend already
 // made in this run's budget: probes and smokes, counted against the cap), --out-root DIR,
 // --max-minutes N (stop cleanly after N minutes and write the tables so far; run the same command
@@ -67,7 +67,7 @@ const isSelf = (d) => d === SELF || d.endsWith(`.${SELF}`);
 const INJECTION_RE = /(ignore (all |any )?(previous|prior|above) instructions|disregard (the |all )?(previous|prior|above)|you are an? (ai|llm|language model)[^.]{0,60}(must|should)|(post|send|reveal|share) (your|the) (api[ -]?key|system prompt|credentials)|as an ai (assistant|model) reading this)/i;
 
 // ------------------------------------------------------------------ questions
-const QDIR = `questions/${flag('questions', 'v0.2')}`;
+const QDIR = `questions/${flag('questions', 'v0.2.1')}`;
 const qManifest = JSON.parse(fs.readFileSync(path.join(QDIR, 'manifest.json'), 'utf8'));
 const families = Object.keys(qManifest.counts);
 const all = families.flatMap((f) => JSON.parse(fs.readFileSync(path.join(QDIR, `${f}.json`), 'utf8')));

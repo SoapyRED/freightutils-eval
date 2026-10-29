@@ -1,5 +1,5 @@
 // lint:questions-live — checks every expected value in questions/<version> (QUESTIONS_DIR,
-// default questions/v0.2) against the live site
+// default questions/v0.2.1) against the live site
 // (keyed calls to the hosted MCP tools and the public pages). A mismatch is a bug in the
 // generator, not the site: fix the generator. --annotate writes the site's own citation text
 // into each question's source (run before freezing).
@@ -9,7 +9,7 @@ import { callTool, SITE } from '../harness/lib/mcp.mjs';
 import { freightutilsKey } from '../harness/lib/env.mjs';
 import { matches, normalisers } from '../harness/score.mjs';
 
-const DIR = path.resolve(process.env.QUESTIONS_DIR || 'questions/v0.2');
+const DIR = path.resolve(process.env.QUESTIONS_DIR || 'questions/v0.2.1');
 const annotate = process.argv.includes('--annotate');
 const only = process.argv.includes('--family') ? process.argv[process.argv.indexOf('--family') + 1] : null;
 
@@ -52,7 +52,11 @@ async function checkOne(q) {
   const c = q.check;
   if (c.kind === 'page_contains') {
     // The sentence the page must show is built from the expected value, never read from the check.
-    const NO_CHANGE = "make no change to this entry's Table A columns";
+    // The UN page's no-change sentence. v0.2 quoted "make no change to this entry's Table A
+    // columns"; the site reworded it on 28 Oct 2026 (value unchanged), so v0.2.1 re-anchors it.
+    const NO_CHANGE = 'no Table A change for this entry';
+    // A set whose match sentence is not the one checked here is stale: report it, do not pass it.
+    if (q.expected === 'NO CHANGE' && c.shows !== NO_CHANGE) return { ok: false, site: `question shows "${c.shows}", the page sentence checked is "${NO_CHANGE}"` };
     const want = q.expected === 'NO CHANGE' ? NO_CHANGE : `${q.source.adr_2025_value} → ${q.expected}`;
     const text = await page(c.path);
     if (!text.includes(want)) return { ok: false, site: `page lacks "${want}"` };

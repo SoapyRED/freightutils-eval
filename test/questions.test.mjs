@@ -6,9 +6,10 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { matches } from '../harness/score.mjs';
 
-const DIR = 'questions/v0.2';
+const DIR = 'questions/v0.2.1';
 const WANT = { adr_table_a: 70, adr_2027_delta: 30, adr_exemption: 30, freight_arithmetic: 60, hs_hierarchy: 50, identifiers: 60 };
-const all = Object.keys(WANT).flatMap((f) => JSON.parse(fs.readFileSync(path.join(DIR, `${f}.json`), 'utf8')));
+const load = (dir) => Object.keys(WANT).flatMap((f) => JSON.parse(fs.readFileSync(path.join(dir, `${f}.json`), 'utf8')));
+const all = load(DIR);
 
 test('300 questions in the stated family counts', () => {
   assert.equal(all.length, 300);
@@ -45,9 +46,8 @@ test('every expected value matches itself under its accept rule', () => {
 });
 
 test('v0.2 replaces only identifiers-051, with a one-basis ULD maximum gross weight', () => {
-  const v01 = Object.keys(WANT).flatMap((f) => JSON.parse(fs.readFileSync(path.join('questions/v0.1', `${f}.json`), 'utf8')));
-  const old = new Map(v01.map((q) => [q.id, JSON.stringify(q)]));
-  const changed = all.filter((q) => old.get(q.id) !== JSON.stringify(q)).map((q) => q.id);
+  const old = new Map(load('questions/v0.1').map((q) => [q.id, JSON.stringify(q)]));
+  const changed = load('questions/v0.2').filter((q) => old.get(q.id) !== JSON.stringify(q)).map((q) => q.id);
   assert.deepEqual(changed, ['identifiers-051']);
   const q = all.find((x) => x.id === 'identifiers-051');
   assert.equal(q.source.field, 'maxGrossWeight');
@@ -65,4 +65,22 @@ test('the replaced question scores kilograms within 0.5% and nothing else', () =
   for (const a of ['1225', '1,225', '1225 kg', '1,225 kg (2,700 lb)', '1224']) assert.ok(ok(a), a);
   // pounds, the operational and LD3 figures, and the old RKN answers are wrong
   for (const a of ['2700', '2,700 lb', '1588', '1134', '200', '156']) assert.ok(!ok(a), a);
+});
+
+test('v0.2.1 changes only the match sentence of the 15 NO CHANGE questions', () => {
+  const v02 = new Map(load('questions/v0.2').map((q) => [q.id, q]));
+  const changed = [];
+  for (const q of all) {
+    const o = v02.get(q.id);
+    const strip = (x) => JSON.stringify({ ...x, check: { ...x.check, shows: null } });
+    assert.equal(strip(q), strip(o), `${q.id}: only check.shows may change`);
+    if (q.check.shows !== o.check.shows) changed.push(q);
+  }
+  assert.equal(changed.length, 15);
+  for (const q of changed) {
+    assert.equal(q.expected, 'NO CHANGE', q.id);
+    assert.equal(o(q).check.shows, "make no change to this entry's Table A columns", q.id);
+    assert.equal(q.check.shows, 'no Table A change for this entry', q.id);
+  }
+  function o(q) { return v02.get(q.id); }
 });
