@@ -84,3 +84,36 @@ test('v0.2.1 changes only the match sentence of the 15 NO CHANGE questions', () 
   }
   function o(q) { return v02.get(q.id); }
 });
+
+test('v0.5 = v0.4 byte-identical plus adr_code_meaning (40), numeric and code rules only', () => {
+  const read = (v, f) => fs.readFileSync(path.join('questions', v, f), 'utf8').replace(/\r\n/g, '\n');
+  for (const f of Object.keys(WANT)) assert.equal(read('v0.5', `${f}.json`), read('v0.4', `${f}.json`), f);
+  const qs = JSON.parse(read('v0.5', 'adr_code_meaning.json'));
+  assert.equal(qs.length, 40);
+  assert.equal(new Set(qs.map((q) => q.id)).size, 40);
+  assert.equal(new Set(qs.map((q) => q.tool.arguments.un_number)).size, 40, 'distinct UN numbers');
+  for (const q of qs) {
+    assert.equal(q.family, 'adr_code_meaning', q.id);
+    assert.ok(['numeric', 'code'].includes(q.accept.rule), `${q.id}: ${q.accept.rule}`);
+    if (q.accept.rule === 'numeric') assert.equal(q.accept.tolerance_pct, 0, q.id);
+    assert.match(q.prompt, /^Under ADR 2025, UN \d{4} /, q.id);
+    assert.match(q.prompt, /Answer with the (number|letter) only/, q.id);
+    assert.ok(!q.prompt.includes(`e.g. ${q.expected}.`), `${q.id}: the example is not the answer`);
+    assert.deepEqual(Object.keys(q.tool.arguments).sort(), ['include_codes', 'un_number'], q.id);
+    assert.equal(q.tool.arguments.include_codes, 'compact', q.id);
+    assert.equal(q.check.kind, 'tool_code', q.id);
+    assert.equal(typeof q.check.stated_in_compact, 'boolean', q.id);
+    assert.ok(q.source.registry_record && q.source.volume && Number.isInteger(q.source.pdf_page), `${q.id}: cited to volume and PDF page`);
+    assert.ok(matches(q.expected, String(q.expected), q.accept), q.id);
+  }
+});
+
+test('v0.5 code answers: a number, a letter, and a near miss scored as the rules say', () => {
+  const qs = JSON.parse(fs.readFileSync('questions/v0.5/adr_code_meaning.json', 'utf8'));
+  const num = qs.find((q) => q.expected === 2.65);
+  for (const a of ['2.65', '2.65 bar', 'Answer: 2.65']) assert.ok(matches(num.expected, a, num.accept), a);
+  for (const a of ['2.6', '265', '4']) assert.ok(!matches(num.expected, a, num.accept), a);
+  const letter = qs.find((q) => q.expected === 'H');
+  for (const a of ['H', 'h', '"H"']) assert.ok(matches(letter.expected, a, letter.accept), a);
+  for (const a of ['N', 'HN']) assert.ok(!matches(letter.expected, a, letter.accept), a);
+});

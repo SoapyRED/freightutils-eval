@@ -1,0 +1,1642 @@
+[
+ {
+  "id": "adr_code_meaning-001",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1840 (ZINC CHLORIDE SOLUTION) carries packing instruction P001 in its Table A row (column 8). Under packing instruction P001, what is the maximum capacity of a glass inner packaging in a combination packaging? Answer with the number only, in litres, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P001, PDF p. 49",
+   "section": "4.1.4.1, P001",
+   "volume": "II",
+   "pdf_page": 49,
+   "registry_record": "pi:P001",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1840 column (8) P001"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1840",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1840 returns resolved_codes for the row's codes; for pi:P001 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P001",
+   "at": {
+    "threshold": "maximum per glass inner packaging"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-002",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1247 (METHYL METHACRYLATE MONOMER, STABILIZED) carries packing instruction P001 in its Table A row (column 8). Under packing instruction P001, what is the maximum capacity of a plastics inner packaging in a combination packaging? Answer with the number only, in litres, e.g. 7.",
+  "expected": 30,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P001, PDF p. 49",
+   "section": "4.1.4.1, P001",
+   "volume": "II",
+   "pdf_page": 49,
+   "registry_record": "pi:P001",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1247 column (8) P001"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1247",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1247 returns resolved_codes for the row's codes; for pi:P001 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P001",
+   "at": {
+    "threshold": "maximum per plastics inner packaging"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-003",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1739 (BENZYL CHLOROFORMATE) carries packing instruction P001 in its Table A row (column 8). Under packing instruction P001, what is the maximum capacity of a metal inner packaging in a combination packaging? Answer with the number only, in litres, e.g. 7.",
+  "expected": 40,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P001, PDF p. 49",
+   "section": "4.1.4.1, P001",
+   "volume": "II",
+   "pdf_page": 49,
+   "registry_record": "pi:P001",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1739 column (8) P001"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1739",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1739 returns resolved_codes for the row's codes; for pi:P001 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P001",
+   "at": {
+    "threshold": "maximum per metal inner packaging"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-004",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1473 (MAGNESIUM BROMATE) carries packing instruction P002 in its Table A row (column 8). Under packing instruction P002, what is the maximum net mass of a glass inner packaging in a combination packaging? Answer with the number only, in kg, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P002, PDF p. 51",
+   "section": "4.1.4.1, P002",
+   "volume": "II",
+   "pdf_page": 51,
+   "registry_record": "pi:P002",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1473 column (8) P002"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1473",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1473 returns resolved_codes for the row's codes; for pi:P002 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P002",
+   "at": {
+    "threshold": "maximum per glass inner packaging"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-005",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1895 (PHENYLMERCURIC NITRATE) carries packing instruction P002 in its Table A row (column 8). Under packing instruction P002, what is the maximum net mass of a plastics, metal, paper or fibre inner packaging in a combination packaging? Answer with the number only, in kg, e.g. 7.",
+  "expected": 50,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P002, PDF p. 51",
+   "section": "4.1.4.1, P002",
+   "volume": "II",
+   "pdf_page": 51,
+   "registry_record": "pi:P002",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1895 column (8) P002"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1895",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1895 returns resolved_codes for the row's codes; for pi:P002 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P002",
+   "at": {
+    "threshold": "maximum per plastics, metal, paper or fibre inner packaging"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-006",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3160 (LIQUEFIED GAS, TOXIC, FLAMMABLE, N.O.S.) carries packing instruction P200 in its Table A row (column 8). Under packing instruction P200, what is the minimum test pressure of any pressure receptacle? Answer with the number only, in bar, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P200, PDF p. 76",
+   "section": "4.1.4.1, P200",
+   "volume": "II",
+   "pdf_page": 76,
+   "registry_record": "pi:P200",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3160 column (8) P200"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3160",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3160 returns resolved_codes for the row's codes; for pi:P200 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P200",
+   "at": {
+    "threshold": "minimum test pressure of any pressure receptacle (1 MPa)"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-007",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2187 (CARBON DIOXIDE, REFRIGERATED LIQUID) carries packing instruction P203 in its Table A row (column 8). Under packing instruction P203, what is the maximum capacity of an open cryogenic receptacle? Answer with the number only, in litres, e.g. 7.",
+  "expected": 450,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P203, PDF p. 101",
+   "section": "4.1.4.1, P203",
+   "volume": "II",
+   "pdf_page": 101,
+   "registry_record": "pi:P203",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2187 column (8) P203"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2187",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2187 returns resolved_codes for the row's codes; for pi:P203 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P203",
+   "at": {
+    "threshold": "maximum capacity of an open cryogenic receptacle"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-008",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2546 (TITANIUM POWDER, DRY) carries packing instruction P404 in its Table A row (column 8). Under packing instruction P404, what is the maximum net mass of a glass inner receptacle in a combination packaging? Answer with the number only, in kg, e.g. 7.",
+  "expected": 1,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P404, PDF p. 111",
+   "section": "4.1.4.1, P404",
+   "volume": "II",
+   "pdf_page": 111,
+   "registry_record": "pi:P404",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2546 column (8) P404"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2546",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2546 returns resolved_codes for the row's codes; for pi:P404 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P404",
+   "at": {
+    "threshold": "maximum net mass per glass inner receptacle"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-009",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1752 (CHLOROACETYL CHLORIDE) carries packing instruction P602 in its Table A row (column 8). Under packing instruction P602, what is the maximum capacity of a glass inner packaging under option (1)? Answer with the number only, in litres, e.g. 7.",
+  "expected": 1,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P602, PDF p. 126",
+   "section": "4.1.4.1, P602",
+   "volume": "II",
+   "pdf_page": 126,
+   "registry_record": "pi:P602",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1752 column (8) P602"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1752",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1752 returns resolved_codes for the row's codes; for pi:P602 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P602",
+   "at": {
+    "threshold": "maximum per glass inner packaging, option (1)"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-010",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2809 (MERCURY) carries packing instruction P800 in its Table A row (column 8). Under packing instruction P800, what is the maximum capacity of a steel flask or bottle? Answer with the number only, in litres, e.g. 7.",
+  "expected": 3,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.1.4.1, P800, PDF p. 133",
+   "section": "4.1.4.1, P800",
+   "volume": "II",
+   "pdf_page": 133,
+   "registry_record": "pi:P800",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2809 column (8) P800"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2809",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2809 returns resolved_codes for the row's codes; for pi:P800 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "pi",
+   "code": "P800",
+   "at": {
+    "threshold": "maximum capacity of steel flasks or bottles"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-011",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3480 (LITHIUM ION BATTERIES (including lithium ion polymer batteries)) carries special provision 188 in its Table A row (column 6). Under special provision 188, what is the maximum watt-hour rating of a lithium ion cell? Answer with the number only, in Wh, e.g. 7.",
+  "expected": 20,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 188, PDF p. 611",
+   "section": "3.3.1, special provision 188",
+   "volume": "I",
+   "pdf_page": 611,
+   "registry_record": "sp:188",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3480 column (6) 188"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3480",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3480 returns resolved_codes for the row's codes; for sp:188 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "188",
+   "at": {
+    "threshold": "rating per lithium ion or sodium ion cell"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-012",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3481 (LITHIUM ION BATTERIES CONTAINED IN EQUIPMENT or LITHIUM ION BATTERIES PACKED WITH EQUIPMENT (including lithium ion polymer batteries)) carries special provision 188 in its Table A row (column 6). Under special provision 188, what is the maximum watt-hour rating of a lithium ion battery? Answer with the number only, in Wh, e.g. 7.",
+  "expected": 100,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 188, PDF p. 611",
+   "section": "3.3.1, special provision 188",
+   "volume": "I",
+   "pdf_page": 611,
+   "registry_record": "sp:188",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3481 column (6) 188"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3481",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3481 returns resolved_codes for the row's codes; for sp:188 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "188",
+   "at": {
+    "threshold": "rating per lithium ion or sodium ion battery"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-013",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3091 (LITHIUM METAL BATTERIES CONTAINED IN EQUIPMENT or LITHIUM METAL BATTERIES PACKED WITH EQUIPMENT (including lithium alloy batteries)) carries special provision 188 in its Table A row (column 6). Under special provision 188, what is the maximum lithium content of a lithium metal cell? Answer with the number only, in grams, e.g. 7.",
+  "expected": 1,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 188, PDF p. 611",
+   "section": "3.3.1, special provision 188",
+   "volume": "I",
+   "pdf_page": 611,
+   "registry_record": "sp:188",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3091 column (6) 188"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3091",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3091 returns resolved_codes for the row's codes; for sp:188 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "188",
+   "at": {
+    "threshold": "lithium content per lithium metal or lithium alloy cell"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-014",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3090 (LITHIUM METAL BATTERIES (including lithium alloy batteries)) carries special provision 188 in its Table A row (column 6). Under special provision 188, what is the maximum aggregate lithium content of a lithium metal battery? Answer with the number only, in grams, e.g. 7.",
+  "expected": 2,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 188, PDF p. 611",
+   "section": "3.3.1, special provision 188",
+   "volume": "I",
+   "pdf_page": 611,
+   "registry_record": "sp:188",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3090 column (6) 188"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3090",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3090 returns resolved_codes for the row's codes; for sp:188 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "188",
+   "at": {
+    "threshold": "aggregate lithium content per lithium metal or lithium alloy battery"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-015",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3551 (SODIUM ION BATTERIES with organic electrolyte) carries special provision 188 in its Table A row (column 6). Under special provision 188, what is the maximum gross mass of a package of cells or batteries not installed in or packed with equipment? Answer with the number only, in kg, e.g. 7.",
+  "expected": 30,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 188, PDF p. 611",
+   "section": "3.3.1, special provision 188",
+   "volume": "I",
+   "pdf_page": 611,
+   "registry_record": "sp:188",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3551 column (6) 188"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3551",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3551 returns resolved_codes for the row's codes; for sp:188 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "188",
+   "at": {
+    "threshold": "maximum gross mass per package, except cells or batteries installed in or packed with equipment"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-016",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3077 (ENVIRONMENTALLY HAZARDOUS SUBSTANCE, SOLID, N.O.S.) carries special provision 375 in its Table A row (column 6). Under special provision 375, what is the largest net quantity of a liquid per single or inner packaging for the provision to apply? Answer with the number only, in litres, e.g. 7.",
+  "expected": 5,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 375, PDF p. 632",
+   "section": "3.3.1, special provision 375",
+   "volume": "I",
+   "pdf_page": 632,
+   "registry_record": "sp:375",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3077 column (6) 375"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3077",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3077 returns resolved_codes for the row's codes; for sp:375 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "375",
+   "at": {
+    "threshold": "net quantity per single or inner packaging, liquids"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-017",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1950 (AEROSOLS, asphyxiant) carries special provision 190 in its Table A row (column 6). Under special provision 190, what is the largest capacity of an aerosol with only non-toxic constituents that is not subject to ADR? Answer with the number only, in ml, e.g. 7.",
+  "expected": 50,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 190, PDF p. 613",
+   "section": "3.3.1, special provision 190",
+   "volume": "I",
+   "pdf_page": 613,
+   "registry_record": "sp:190",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1950 column (6) 190"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1950",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1950 returns resolved_codes for the row's codes; for sp:190 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "190",
+   "at": {
+    "threshold": "maximum capacity of a non-toxic aerosol for exemption"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-018",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3530 (ENGINE, INTERNAL COMBUSTION or MACHINERY, INTERNAL COMBUSTION) carries special provision 363 in its Table A row (column 6). Under special provision 363, what is the highest pressure in a gaseous fuel tank at which a gas-fuelled engine or machine counts as empty? Answer with the number only, in bar, e.g. 7.",
+  "expected": 2,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 363, PDF p. 627",
+   "section": "3.3.1, special provision 363",
+   "volume": "I",
+   "pdf_page": 627,
+   "registry_record": "sp:363",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3530 column (6) 363"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3530",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3530 returns resolved_codes for the row's codes; for sp:363 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "363",
+   "at": {
+    "threshold": "maximum pressure in gaseous fuel tanks to count as empty"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-019",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3065 (ALCOHOLIC BEVERAGES, with more than 70 % alcohol by volume) carries special provision 144 in its Table A row (column 6). Under special provision 144, what is the highest alcohol content, by volume, of an aqueous solution that is not subject to ADR? Answer with the number only, in per cent, e.g. 7.",
+  "expected": 24,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 144, PDF p. 610",
+   "section": "3.3.1, special provision 144",
+   "volume": "I",
+   "pdf_page": 610,
+   "registry_record": "sp:144",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3065 column (6) 144"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3065",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3065 returns resolved_codes for the row's codes; for sp:144 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "144",
+   "at": {
+    "threshold": "maximum alcohol content for exemption"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-020",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1956 (COMPRESSED GAS, N.O.S.) carries special provision 378 in its Table A row (column 6). Under special provision 378, what is the maximum working pressure of each receptacle in a radiation detector? Answer with the number only, in bar, e.g. 7.",
+  "expected": 50,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 3.3.1, special provision 378, PDF p. 633",
+   "section": "3.3.1, special provision 378",
+   "volume": "I",
+   "pdf_page": 633,
+   "registry_record": "sp:378",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1956 column (6) 378"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1956",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1956 returns resolved_codes for the row's codes; for sp:378 only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "sp",
+   "code": "378",
+   "at": {
+    "threshold": "maximum working pressure per receptacle"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-021",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 0424 (PROJECTILES, inert with tracer) is in transport category 1 (Table A column 15). Under 1.1.3.6.3, what is the maximum total quantity of this entry per transport unit for the 1.1.3.6 exemption to apply? Answer with the number only (kg or litres), e.g. 100.",
+  "expected": 20,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "ADR 2025 1.1.3.6.3 (table and note a)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 1.1.3.6.3, PDF p. 30",
+   "section": "1.1.3.6.3",
+   "volume": "I",
+   "pdf_page": 30,
+   "registry_record": "transport_category:1",
+   "registry_owner": "lib/calculations/adr-transport-category.ts",
+   "record": "0424 transport category 1"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "0424",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 0424 returns resolved_codes for the row's codes; for transport category 1 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "transport_category",
+   "code": "1",
+   "at": {
+    "tc_max": true
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-022",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 0084 (EXPLOSIVE, BLASTING, TYPE D) is in transport category 1 (Table A column 15). Under 1.1.3.6.3, what is the maximum total quantity of this entry per transport unit for the 1.1.3.6 exemption to apply? Answer with the number only (kg or litres), e.g. 100.",
+  "expected": 50,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "ADR 2025 1.1.3.6.3 (table and note a)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 1.1.3.6.3, PDF p. 30",
+   "section": "1.1.3.6.3",
+   "volume": "I",
+   "pdf_page": 30,
+   "registry_record": "transport_category:1 (note a)",
+   "registry_owner": "lib/calculations/adr-transport-category.ts",
+   "record": "0084 transport category 1"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "0084",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 0084 returns resolved_codes for the row's codes; for transport category 1 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "transport_category",
+   "code": "1",
+   "at": {
+    "tc_max": true
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-023",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3415 (SODIUM FLUORIDE SOLUTION) is in transport category 2 (Table A column 15). Under 1.1.3.6.3, what is the maximum total quantity of this entry per transport unit for the 1.1.3.6 exemption to apply? Answer with the number only (kg or litres), e.g. 100.",
+  "expected": 333,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "ADR 2025 1.1.3.6.3 (table and note a)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 1.1.3.6.3, PDF p. 30",
+   "section": "1.1.3.6.3",
+   "volume": "I",
+   "pdf_page": 30,
+   "registry_record": "transport_category:2",
+   "registry_owner": "lib/calculations/adr-transport-category.ts",
+   "record": "3415 transport category 2"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3415",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3415 returns resolved_codes for the row's codes; for transport category 2 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "transport_category",
+   "code": "2",
+   "at": {
+    "tc_max": true
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-024",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1398 (ALUMINIUM SILICON POWDER, UNCOATED) is in transport category 3 (Table A column 15). Under 1.1.3.6.3, what is the maximum total quantity of this entry per transport unit for the 1.1.3.6 exemption to apply? Answer with the number only (kg or litres), e.g. 100.",
+  "expected": 1000,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "ADR 2025 1.1.3.6.3 (table and note a)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. I, 1.1.3.6.3, PDF p. 30",
+   "section": "1.1.3.6.3",
+   "volume": "I",
+   "pdf_page": 30,
+   "registry_record": "transport_category:3",
+   "registry_owner": "lib/calculations/adr-transport-category.ts",
+   "record": "1398 transport category 3"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1398",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1398 returns resolved_codes for the row's codes; for transport category 3 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "transport_category",
+   "code": "3",
+   "at": {
+    "tc_max": true
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-025",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3336 (MERCAPTANS, LIQUID, FLAMMABLE, N.O.S. or MERCAPTAN MIXTURE, LIQUID, FLAMMABLE, N.O.S.) carries tank code L1.5BN in its Table A row (column 12). What minimum calculation pressure does the second part of tank code L1.5BN state? Answer with the number only, in bar, e.g. 7.",
+  "expected": 1.5,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L1.5BN, PDF p. 217",
+   "section": "4.3.4.1.1, tank code L1.5BN",
+   "volume": "II",
+   "pdf_page": 217,
+   "registry_record": "tank_code:L1.5BN",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3336 column (12) L1.5BN"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3336",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3336 returns resolved_codes for the row's codes; for tank_code:L1.5BN the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L1.5BN",
+   "at": {
+    "part": "calculation_pressure"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-026",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1235 (METHYLAMINE, AQUEOUS SOLUTION) carries tank code L4BH in its Table A row (column 12). What minimum calculation pressure does the second part of tank code L4BH state? Answer with the number only, in bar, e.g. 7.",
+  "expected": 4,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L4BH, PDF p. 218",
+   "section": "4.3.4.1.1, tank code L4BH",
+   "volume": "II",
+   "pdf_page": 218,
+   "registry_record": "tank_code:L4BH",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1235 column (12) L4BH"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1235",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1235 returns resolved_codes for the row's codes; for tank_code:L4BH the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L4BH",
+   "at": {
+    "part": "calculation_pressure"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-027",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3005 (THIOCARBAMATE PESTICIDE, LIQUID, TOXIC, FLAMMABLE, flash-point not less than 23 °C) carries tank code L10CH in its Table A row (column 12). What minimum calculation pressure does the second part of tank code L10CH state? Answer with the number only, in bar, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L10CH, PDF p. 219",
+   "section": "4.3.4.1.1, tank code L10CH",
+   "volume": "II",
+   "pdf_page": 219,
+   "registry_record": "tank_code:L10CH",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3005 column (12) L10CH"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3005",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3005 returns resolved_codes for the row's codes; for tank_code:L10CH the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L10CH",
+   "at": {
+    "part": "calculation_pressure"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-028",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3387 (TOXIC BY INHALATION LIQUID, OXIDIZING, N.O.S.with an LC₅₀ lower than or equal to 200 ml/m³ and saturated vapour concentration greater than or equal to 500 LC₅₀) carries tank code L15CH in its Table A row (column 12). What minimum calculation pressure does the second part of tank code L15CH state? Answer with the number only, in bar, e.g. 7.",
+  "expected": 15,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L15CH, PDF p. 220",
+   "section": "4.3.4.1.1, tank code L15CH",
+   "volume": "II",
+   "pdf_page": 220,
+   "registry_record": "tank_code:L15CH",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3387 column (12) L15CH"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3387",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3387 returns resolved_codes for the row's codes; for tank_code:L15CH the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L15CH",
+   "at": {
+    "part": "calculation_pressure"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-029",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3394 (ORGANOMETALLIC SUBSTANCE, LIQUID, PYROPHORIC, WATER-REACTIVE) carries tank code L21DH in its Table A row (column 12). What minimum calculation pressure does the second part of tank code L21DH state? Answer with the number only, in bar, e.g. 7.",
+  "expected": 21,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L21DH, PDF p. 220",
+   "section": "4.3.4.1.1, tank code L21DH",
+   "volume": "II",
+   "pdf_page": 220,
+   "registry_record": "tank_code:L21DH",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3394 column (12) L21DH"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3394",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3394 returns resolved_codes for the row's codes; for tank_code:L21DH the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L21DH",
+   "at": {
+    "part": "calculation_pressure"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-030",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2783 (ORGANOPHOSPHORUS PESTICIDE, SOLID, TOXIC) carries tank code S10AH in its Table A row (column 12). What minimum calculation pressure does the second part of tank code S10AH state? Answer with the number only, in bar, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code S10AH, PDF p. 221",
+   "section": "4.3.4.1.1, tank code S10AH",
+   "volume": "II",
+   "pdf_page": 221,
+   "registry_record": "tank_code:S10AH",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2783 column (12) S10AH"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2783",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2783 returns resolved_codes for the row's codes; for tank_code:S10AH the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "S10AH",
+   "at": {
+    "part": "calculation_pressure"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-031",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2531 (METHACRYLIC ACID, STABILIZED) carries tank code L4BN in its Table A row (column 12). The third character of an ADR tank code states its filling and discharge openings. Which letter in that position means filling or discharge openings at the bottom with three closures? Answer with the letter only, e.g. X.",
+  "expected": "B",
+  "accept": {
+   "rule": "code"
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L4BN, PDF p. 218",
+   "section": "4.3.4.1.1, tank code L4BN",
+   "volume": "II",
+   "pdf_page": 218,
+   "registry_record": "tank_code:L4BN",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2531 column (12) L4BN"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2531",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2531 returns resolved_codes for the row's codes; for tank_code:L4BN only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L4BN",
+   "at": {
+    "letter": "openings",
+    "means": "bottom.*3 closures"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-032",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2444 (VANADIUM TETRACHLORIDE) carries tank code L10BH in its Table A row (column 12). The fourth character of an ADR tank code states its safety valves or devices. Which letter in that position means the tank is hermetically closed? Answer with the letter only, e.g. X.",
+  "expected": "H",
+  "accept": {
+   "rule": "code"
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.3.4.1.1, tank code L10BH, PDF p. 219",
+   "section": "4.3.4.1.1, tank code L10BH",
+   "volume": "II",
+   "pdf_page": 219,
+   "registry_record": "tank_code:L10BH",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2444 column (12) L10BH"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2444",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2444 returns resolved_codes for the row's codes; for tank_code:L10BH only the full answer carries it (the resolved_codes parameters); the compact summary does not state it.",
+  "check": {
+   "kind": "tool_code",
+   "family": "tank_code",
+   "code": "L10BH",
+   "at": {
+    "letter": "safety_valves",
+    "means": "^hermetically closed"
+   },
+   "stated_in_compact": false
+  }
+ },
+ {
+  "id": "adr_code_meaning-033",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3134 (WATER-REACTIVE SOLID, TOXIC, N.O.S.) carries portable tank instruction T1 in its Table A row (column 10). Under portable tank instruction T1, what is the minimum test pressure that T1 requires? Answer with the number only, in bar, e.g. 7.",
+  "expected": 1.5,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T1, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T1",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T1",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3134 column (10) T1"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3134",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3134 returns resolved_codes for the row's codes; for t:T1 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T1",
+   "at": {
+    "field": "test_pressure_bar"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-034",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 2667 (BUTYLTOLUENES) carries portable tank instruction T4 in its Table A row (column 10). Under portable tank instruction T4, what is the minimum test pressure that T4 requires? Answer with the number only, in bar, e.g. 7.",
+  "expected": 2.65,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T4, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T4",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T4",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "2667 column (10) T4"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "2667",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 2667 returns resolved_codes for the row's codes; for t:T4 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T4",
+   "at": {
+    "field": "test_pressure_bar"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-035",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3399 (ORGANOMETALLIC SUBSTANCE, LIQUID, WATER-REACTIVE, FLAMMABLE) carries portable tank instruction T7 in its Table A row (column 10). Under portable tank instruction T7, what is the minimum test pressure that T7 requires? Answer with the number only, in bar, e.g. 7.",
+  "expected": 4,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T7, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T7",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T7",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3399 column (10) T7"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3399",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3399 returns resolved_codes for the row's codes; for t:T7 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T7",
+   "at": {
+    "field": "test_pressure_bar"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-036",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3278 (ORGANOPHOSPHORUS COMPOUND, LIQUID, TOXIC, N.O.S.) carries portable tank instruction T11 in its Table A row (column 10). Under portable tank instruction T11, what is the minimum test pressure that T11 requires? Answer with the number only, in bar, e.g. 7.",
+  "expected": 6,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T11, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T11",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T11",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3278 column (10) T11"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3278",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3278 returns resolved_codes for the row's codes; for t:T11 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T11",
+   "at": {
+    "field": "test_pressure_bar"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-037",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 1541 (ACETONE CYANOHYDRIN, STABILIZED) carries portable tank instruction T20 in its Table A row (column 10). Under portable tank instruction T20, what is the minimum test pressure that T20 requires? Answer with the number only, in bar, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T20, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T20",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T20",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "1541 column (10) T20"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "1541",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 1541 returns resolved_codes for the row's codes; for t:T20 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T20",
+   "at": {
+    "field": "test_pressure_bar"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-038",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3131 (WATER-REACTIVE SOLID, CORROSIVE, N.O.S.) carries portable tank instruction T9 in its Table A row (column 10). Under portable tank instruction T9, what is the minimum shell thickness (in mm of reference steel) that T9 requires? Answer with the number only, in mm, e.g. 7.",
+  "expected": 6,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T9, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T9",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T9",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3131 column (10) T9"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3131",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3131 returns resolved_codes for the row's codes; for t:T9 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T9",
+   "at": {
+    "field": "min_shell_thickness_mm"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-039",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3491 (TOXIC BY INHALATION LIQUID, WATER-REACTIVE, FLAMMABLE, N.O.S. with an LC₅₀ lower than or equal to 1000 ml/m³ and saturated vapour concentration greater than or equal to 10 LC₅₀) carries portable tank instruction T20 in its Table A row (column 10). Under portable tank instruction T20, what is the minimum shell thickness (in mm of reference steel) that T20 requires? Answer with the number only, in mm, e.g. 7.",
+  "expected": 8,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T20, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T20",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T20",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3491 column (10) T20"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3491",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3491 returns resolved_codes for the row's codes; for t:T20 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T20",
+   "at": {
+    "field": "min_shell_thickness_mm"
+   },
+   "stated_in_compact": true
+  }
+ },
+ {
+  "id": "adr_code_meaning-040",
+  "family": "adr_code_meaning",
+  "prompt": "Under ADR 2025, UN 3393 (ORGANOMETALLIC SUBSTANCE, SOLID, PYROPHORIC, WATER-REACTIVE) carries portable tank instruction T21 in its Table A row (column 10). Under portable tank instruction T21, what is the minimum shell thickness (in mm of reference steel) that T21 requires? Answer with the number only, in mm, e.g. 7.",
+  "expected": 10,
+  "accept": {
+   "rule": "numeric",
+   "tolerance_pct": 0
+  },
+  "source": {
+   "publication": "ECE/TRANS/352",
+   "edition": "ADR 2025 (ECE/TRANS/352)",
+   "publisher": "UNECE",
+   "url": "https://unece.org/adr-2025-files",
+   "dataset": "FreightUtils ADR code registry (ADR 2025 Table A codes)",
+   "citation": "UNECE ADR 2025 (ECE/TRANS/352) Vol. II, 4.2.5.2.6, portable tank instruction T21, PDF p. 190",
+   "section": "4.2.5.2.6, portable tank instruction T21",
+   "volume": "II",
+   "pdf_page": 190,
+   "registry_record": "t:T21",
+   "registry_status": "paraphrase_unreviewed",
+   "record": "3393 column (10) T21"
+  },
+  "tool": {
+   "name": "adr_lookup",
+   "arguments": {
+    "un_number": "3393",
+    "include_codes": "compact"
+   }
+  },
+  "tool_note": "adr_lookup on UN 3393 returns resolved_codes for the row's codes; for t:T21 the compact answer states it (the resolved_codes summary).",
+  "check": {
+   "kind": "tool_code",
+   "family": "t",
+   "code": "T21",
+   "at": {
+    "field": "min_shell_thickness_mm"
+   },
+   "stated_in_compact": true
+  }
+ }
+]

@@ -64,6 +64,7 @@ async function checkOne(q) {
     if (q.expected !== 'NO CHANGE' && text.includes(NO_CHANGE)) return { ok: false, site: 'page says no Table A change' };
     return { ok: true, site: want };
   }
+  if (c.kind === 'tool_code') return checkCode(q);
   const r = await callTool(q.tool.name, q.tool.arguments);
   if (r.isError) return { ok: false, site: `tool error: ${JSON.stringify(r.content).slice(0, 300)}` };
   const sc = r.structuredContent;
@@ -103,6 +104,42 @@ async function checkOne(q) {
     if (items.some((i) => i.state !== 'COUNTED')) return { ok: false, site: `item state ${items.map((i) => `${i.un_number}:${i.state}`).join(',')}`, cite };
   }
   return { ok: strict(q.expected, value, q.accept), site: value, cite };
+}
+
+// v0.5, adr_code_meaning: the value a code's meaning fixes, read from resolved_codes of the full answer
+// (the parameters), then the question's claim about the compact answer checked against the compact summary:
+// stated_in_compact true → the summary states the number; false → it does not (only full carries it).
+const fieldNumber = (v) => (typeof v === 'number' ? v : typeof v === 'string' && /^\d+(\.\d+)? mm$/.test(v) ? Number.parseFloat(v) : null);
+const statesNumber = (summary, value) => new RegExp(`(^|[^\\d.])${String(value).replace('.', '\\.')}(?![\\d.]*\\d)`).test(summary);
+async function codeEntry(q, mode) {
+  const r = await callTool('adr_lookup', { un_number: q.tool.arguments.un_number, include_codes: mode });
+  if (r.isError) throw new Error(`tool error (${mode}): ${JSON.stringify(r.content).slice(0, 200)}`);
+  const sc = r.structuredContent;
+  const e = (sc?.result?.resolved_codes || []).find((x) => x.family === q.check.family && x.code === q.check.code);
+  return { e, cite: sc?.citation?.text || null };
+}
+async function checkCode(q) {
+  const { at, stated_in_compact: inCompact } = q.check;
+  const { e, cite } = await codeEntry(q, 'full');
+  if (!e) return { ok: false, site: `no ${q.check.family}:${q.check.code} in resolved_codes (full)`, cite };
+  const p = e.parameters || {};
+  let value;
+  if (at.threshold) {
+    const th = (p.thresholds || []).filter((t) => t.applies_when === at.threshold);
+    value = th.length === 1 ? th[0].value : undefined;
+  } else if (at.field) value = fieldNumber(p[at.field]);
+  else if (at.part) value = Number(p.parts?.[at.part]?.value);
+  else if (at.letter) {
+    const part = p.parts?.[at.letter];
+    if (!part || !new RegExp(at.means).test(part.meaning)) return { ok: false, site: `${at.letter} meaning "${part?.meaning}" does not match /${at.means}/`, cite };
+    value = part.value;
+  } else if (at.tc_max) value = p.max_quantity_per_transport_unit;
+  if (value === undefined || value === null || Number.isNaN(value)) return { ok: false, site: `no value at ${JSON.stringify(at)}`, cite };
+  if (!strict(q.expected, String(value), q.accept)) return { ok: false, site: value, cite };
+  const { e: ce } = await codeEntry(q, 'compact');
+  if (!ce) return { ok: false, site: `no ${q.check.family}:${q.check.code} in resolved_codes (compact)`, cite };
+  if (!at.letter && statesNumber(ce.summary, value) !== inCompact) return { ok: false, site: `stated_in_compact ${inCompact}, but the compact summary ${inCompact ? 'does not state' : 'states'} ${value}: "${ce.summary}"`, cite };
+  return { ok: true, site: value, cite };
 }
 
 let bad = 0, n = 0;

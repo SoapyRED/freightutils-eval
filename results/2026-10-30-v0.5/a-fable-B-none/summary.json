@@ -1,0 +1,183 @@
+{
+  "run": "a-fable-B-none",
+  "overall": {
+    "claude-fable-5-1 / B": {
+      "n": 40,
+      "errors": 0,
+      "accuracy": 0.95,
+      "unknown_rate": 0.05,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1.55,
+      "mean_latency_ms": 5702,
+      "input_tokens": 4423832,
+      "cached_tokens": 4266341,
+      "cache_write_tokens": 42241,
+      "output_tokens": 8535,
+      "usd": 3.1738477500000006
+    }
+  },
+  "overall_excluding_adr_2027_delta": {
+    "claude-fable-5-1 / B": {
+      "n": 40,
+      "errors": 0,
+      "accuracy": 0.95,
+      "unknown_rate": 0.05,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1.55,
+      "mean_latency_ms": 5702,
+      "input_tokens": 4423832,
+      "cached_tokens": 4266341,
+      "cache_write_tokens": 42241,
+      "output_tokens": 8535,
+      "usd": 3.1738477500000006
+    }
+  },
+  "by_family": {
+    "claude-fable-5-1 / B": {
+      "adr_2027_delta": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_code_meaning": {
+        "n": 40,
+        "errors": 0,
+        "accuracy": 0.95,
+        "unknown_rate": 0.05,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.55,
+        "mean_latency_ms": 5702,
+        "input_tokens": 4423832,
+        "cached_tokens": 4266341,
+        "cache_write_tokens": 42241,
+        "output_tokens": 8535,
+        "usd": 3.1738477500000006
+      },
+      "adr_exemption": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_table_a": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "freight_arithmetic": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "hs_hierarchy": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "identifiers": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      }
+    }
+  },
+  "per_question_tokens": {
+    "anthropic/claude-fable-5-1/B": {
+      "n": 40,
+      "input": 110595.8,
+      "cachedInput": 106658.525,
+      "cacheWrite": 1056.025,
+      "output": 213.375,
+      "searches": 0,
+      "usd": 0.07934619375000002,
+      "first": {
+        "input": 129850,
+        "cachedInput": 84482,
+        "cacheWrite": 42241,
+        "output": 215,
+        "searches": 0,
+        "usd": 0.591153
+      },
+      "steady": {
+        "input": 110102.10256410256,
+        "cachedInput": 107227.15384615384,
+        "cacheWrite": 0,
+        "output": 213.33333333333334,
+        "searches": 0,
+        "usd": 0.06622294230769232
+      }
+    }
+  },
+  "spend": {
+    "total_usd": 3.5038477500000007,
+    "spent_before_run_usd": 0.33,
+    "this_run_usd": 3.1738477500000006,
+    "by_provider": {
+      "anthropic": 3.1738477500000006
+    },
+    "cap_usd": 15,
+    "stopped_at_cap": false,
+    "carried_rows_usd_not_counted": 0
+  },
+  "rows_carried_and_new": {
+    "anthropic/B": {
+      "carried": 0,
+      "new": 40
+    }
+  },
+  "complete": true,
+  "providers_stopped": {}
+}
