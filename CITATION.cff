@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-message: "If you use this question set or these results, please cite them as below. Each GitHub release is archived on Zenodo with its own DOI; the doi field is the concept DOI (latest version) and identifiers carries the version DOI."
+message: "If you use this question set or these results, please cite them as below. Each GitHub release is archived on Zenodo with its own DOI; the doi field is the concept DOI (latest version) and identifiers carries the version DOIs."
 type: dataset
 title: "freightutils-eval: frontier language models on 300 freight reference questions — alone, with the FreightUtils tools, and with web search"
 authors:
@@ -9,8 +9,11 @@ authors:
 doi: 10.5281/zenodo.23743608
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.23801448
+    description: "Version DOI for v0.4.0"
+  - type: doi
     value: 10.5281/zenodo.23743609
-    description: "Version DOI for v0.3.0 (v0.4.0's is added when Zenodo archives the release)"
+    description: "Version DOI for v0.3.0"
   - type: doi
     value: 10.5281/zenodo.23743608
     description: "Concept DOI, all versions"
