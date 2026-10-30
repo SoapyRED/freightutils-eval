@@ -1,0 +1,533 @@
+run,provider,model,condition,repeat,id,family,expected,answer,outcome,tools_used,tool_calls,latency_ms,input_tokens,cached_tokens,cache_write_tokens,output_tokens,usd,error,carried_from
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-001,adr_code_meaning,10,"Under P001, combination packagings: inner packagings glass 10 L, plastics 30 L, metal 40 L.
+
+10",correct,,0,2818,176,0,0,42,0.00386,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-002,adr_code_meaning,30,30,correct,,0,1662,184,0,0,48,0.00424,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-003,adr_code_meaning,40,"Under P001, combination packagings: inner packagings glass 10 L, plastics 30 L, metal 40 L.
+
+40",correct,,0,983,174,0,0,42,0.00384,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-004,adr_code_meaning,10,10,correct,,0,1924,172,0,0,136,0.00852,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-005,adr_code_meaning,50,50,correct,,0,4076,186,0,0,174,0.01056,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-006,adr_code_meaning,10,10,correct,,0,7208,186,0,0,525,0.02811,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-007,adr_code_meaning,450,"P203 requirements for open cryogenic receptacles: ""Open cryogenic receptacles shall have a maximum water capacity of 450 litres.""
+
+450",correct,,0,1375,180,0,0,52,0.0044,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-008,adr_code_meaning,1,1,correct,,0,4266,174,0,0,224,0.01294,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-009,adr_code_meaning,1,1,correct,,0,3595,173,0,0,243,0.01388,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-010,adr_code_meaning,3,3,correct,,0,2188,158,0,0,150,0.00908,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-011,adr_code_meaning,20,20,correct,,0,982,181,0,0,3,0.00196,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-012,adr_code_meaning,100,"Special provision 188 of ADR: lithium ion cells max 20 Wh, lithium ion batteries max 100 Wh.
+
+100",correct,,0,959,227,0,0,47,0.00462,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-013,adr_code_meaning,1,1,correct,,0,2328,223,0,0,3,0.00238,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-014,adr_code_meaning,2,2,correct,,0,1262,180,0,0,3,0.00195,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-015,adr_code_meaning,30,30,correct,,0,1960,182,0,0,129,0.00827,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-016,adr_code_meaning,5,"Special provision 375: liquids ≤ 5 L per single or inner packaging; solids ≤ 5 kg.
+
+5",correct,,0,2757,199,0,0,43,0.00414,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-017,adr_code_meaning,50,50,correct,,0,2485,177,0,0,171,0.01032,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-018,adr_code_meaning,2,2,correct,,0,4832,209,0,0,351,0.01964,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-019,adr_code_meaning,24,"Special provision 144: ""An aqueous solution containing not more than 24% alcohol by volume is not subject to ADR.""
+
+24",correct,,0,2627,194,0,0,43,0.00409,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-020,adr_code_meaning,50,50,correct,,0,3886,170,0,0,169,0.01015,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-021,adr_code_meaning,20,,unknown,,0,3576,184,0,0,95,0.00659,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-022,adr_code_meaning,50,,unknown,,0,596,191,0,0,0,0.00191,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-023,adr_code_meaning,333,"UN 3415 Sodium fluoride solution, Class 6.1, PG III, transport category 2 → max total quantity 333.
+
+333",correct,,0,2714,188,0,0,47,0.00423,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-024,adr_code_meaning,1000,"Transport category 3 → 1000 kg.
+
+1000",correct,,0,799,193,0,0,20,0.00293,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-025,adr_code_meaning,1.5,"Tank code L1.5BN: L = tank for liquids, 1.5 = minimum calculation pressure 1.5 bar, B = bottom filling/discharge with 3 closures, N = no safety valve, not hermetically closed.
+
+1.5",correct,,0,3032,217,0,0,83,0.00632,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-026,adr_code_meaning,4,"Tank code L4BH: L = liquid, 4 = minimum calculation pressure 4 bar, B = bottom filling/discharge openings with 3 closures, H = hermetically closed.
+
+4",correct,,0,2982,168,0,0,67,0.00503,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-027,adr_code_meaning,10,10,correct,,0,797,197,0,0,3,0.00212,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-028,adr_code_meaning,15,"Tank code L15CH: L = liquid, 15 = minimum calculation pressure in bar, C = top filling/discharge, H = hermetically closed.
+
+15",correct,,0,3917,229,0,0,55,0.00504,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-029,adr_code_meaning,21,,unknown,,0,1267,191,0,0,0,0.00191,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-030,adr_code_meaning,10,10,correct,,0,4015,178,0,0,158,0.00968,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-031,adr_code_meaning,B,"ADR tank code third character: A = bottom filling or discharge openings with two closures; B = bottom with three closures; C = top filling/discharge openings with three closures only above the liquid; D = top with three closures and cleaning openings below liquid... Actually for ADR 4.3.4.1.1: Part 3 (openings): A = tank with bottom filling or discharge openings with 2 closures; B = bottom with 3 closures; C = top filling and discharge openings with only cleaning openings below surface of liquid; D = top openings with no openings below the surface.
+
+B",correct,,0,4012,184,0,0,185,0.01109,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-032,adr_code_meaning,H,,unknown,,0,650,176,0,0,0,0.00176,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-033,adr_code_meaning,1.5,1.5,correct,,0,2443,181,0,0,5,0.00206,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-034,adr_code_meaning,2.65,"T4 portable tank instruction: minimum test pressure 2.65 bar, minimum shell thickness 6 mm, bottom opening requirements 4.3.2.3 (or similar), pressure-relief requirements normal.
+
+2.65",correct,,0,3441,165,0,0,80,0.00565,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-035,adr_code_meaning,4,4,correct,,0,7543,199,0,0,670,0.03549,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-036,adr_code_meaning,6,6,correct,,0,2338,193,0,0,144,0.00913,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-037,adr_code_meaning,10,"T20 portable tank instruction: minimum test pressure 10 bar, minimum shell thickness 8 mm, bottom openings not allowed, pressure relief requirements per 6.7.2.8.3.
+
+10",correct,,0,3124,176,0,0,72,0.00536,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-038,adr_code_meaning,6,6,correct,,0,9379,194,0,0,795,0.04169,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-039,adr_code_meaning,8,,unknown,,0,1232,261,0,0,0,0.00261,,
+a-fable-A,anthropic,claude-fable-5-1,A,1,adr_code_meaning-040,adr_code_meaning,10,,unknown,,0,1177,209,0,0,0,0.00209,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-001,adr_code_meaning,10,10,correct,adr_lookup,1,2844,87980,84482,0,147,0.063451,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-002,adr_code_meaning,30,30,correct,adr_lookup resolve_reference,2,4883,135350,126723,0,248,0.130351,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-003,adr_code_meaning,40,40,correct,resolve_reference adr_lookup,2,5621,131590,126723,0,264,0.093551,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-004,adr_code_meaning,10,10,correct,adr_lookup,1,3751,88543,84482,0,201,0.071781,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-005,adr_code_meaning,50,50,correct,adr_lookup,1,8380,88573,84482,0,191,0.071581,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-006,adr_code_meaning,10,10,correct,adr_lookup,1,26526,89210,84482,0,1919,0.164351,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-007,adr_code_meaning,450,450,correct,adr_lookup,1,2809,88379,84482,0,134,0.066791,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-008,adr_code_meaning,1,1,correct,adr_lookup,1,5600,90955,84482,0,107,0.091201,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-009,adr_code_meaning,1,"P602 option (1): combination packagings with glass inner packagings of max capacity 1 litre each (hermetically sealed, inert cushioning, in a tin-plate can), outer package max 15 kg gross.
+
+**1**",correct,adr_lookup,1,6739,88818,84482,0,187,0.073831,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-010,adr_code_meaning,3,3,correct,adr_lookup,1,7795,87513,84482,0,254,0.06413,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-011,adr_code_meaning,20,20,correct,adr_lookup,1,5410,89513,84482,0,129,0.077881,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-012,adr_code_meaning,100,100,correct,adr_lookup,1,3174,90044,84482,0,165,0.084991,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-013,adr_code_meaning,1,1,correct,adr_lookup,1,3130,89305,84482,0,137,0.076201,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-014,adr_code_meaning,2,2,correct,adr_lookup,1,4336,89403,84482,0,173,0.078981,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-015,adr_code_meaning,30,30,correct,adr_lookup resolve_reference,2,7148,137239,126723,0,445,0.159091,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-016,adr_code_meaning,5,5,correct,adr_lookup,1,2697,89890,84482,0,161,0.083251,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-017,adr_code_meaning,50,50,correct,resolve_reference,1,3101,85690,84482,0,143,0.040351,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-018,adr_code_meaning,2,2,correct,adr_lookup resolve_reference resolve_reference,3,8019,176391,168964,0,356,0.134311,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-019,adr_code_meaning,24,24,correct,adr_lookup,1,2432,89830,84482,0,137,0.081451,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-020,adr_code_meaning,50,50,correct,adr_lookup resolve_reference,2,10657,136217,126723,0,402,0.146721,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-021,adr_code_meaning,20,,unknown,,0,377,42435,42241,0,0,0.0125,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-022,adr_code_meaning,50,,unknown,,0,1484,42442,42241,0,0,0.01257,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-023,adr_code_meaning,333,333,correct,adr_exemption_calculator,1,2704,85560,84482,0,113,0.037551,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-024,adr_code_meaning,1000,1000,correct,adr_lookup,1,2180,88717,84482,0,113,0.069121,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-025,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,5828,92837,84482,0,185,0.113921,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-026,adr_code_meaning,4,4,correct,resolve_reference,1,5575,85696,84482,0,132,0.039861,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-027,adr_code_meaning,10,10,correct,adr_lookup,1,6639,92830,84482,0,182,0.113701,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-028,adr_code_meaning,15,15,correct,adr_lookup,1,6318,89148,84482,0,174,0.076481,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-029,adr_code_meaning,21,21,correct,resolve_reference,1,7747,85877,84482,0,267,0.048421,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-030,adr_code_meaning,10,10,correct,adr_lookup,1,6237,93397,84482,0,168,0.118671,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-031,adr_code_meaning,B,B,correct,resolve_reference,1,5498,85893,84482,0,297,0.050081,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-032,adr_code_meaning,H,H,correct,adr_lookup,1,5965,87543,84482,0,161,0.059781,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-033,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,3606,90462,84482,0,201,0.090971,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-034,adr_code_meaning,2.65,2.65,correct,adr_lookup,1,5792,88489,84482,0,137,0.068041,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-035,adr_code_meaning,4,4,correct,adr_lookup,1,6099,92081,84482,0,208,0.107511,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-036,adr_code_meaning,6,6,correct,resolve_reference,1,3072,85820,84482,0,152,0.042101,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-037,adr_code_meaning,10,10,correct,adr_lookup,1,2579,88708,84482,0,126,0.069681,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-038,adr_code_meaning,6,6,correct,adr_lookup,1,2521,91897,84482,0,135,0.102021,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-039,adr_code_meaning,8,8,correct,adr_lookup,1,5957,89471,84482,0,140,0.078011,,
+a-fable-B-compact,anthropic,claude-fable-5-1,B,1,adr_code_meaning-040,adr_code_meaning,10,10,correct,adr_lookup,1,5564,89239,84482,0,116,0.074491,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-001,adr_code_meaning,10,10,correct,resolve_reference adr_lookup,2,4144,140951,126723,0,210,0.184461,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-002,adr_code_meaning,30,30,correct,adr_lookup,1,2768,99729,84482,0,170,0.182091,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-003,adr_code_meaning,40,40,correct,adr_lookup,1,3110,94661,84482,0,124,0.12911,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-004,adr_code_meaning,10,10,correct,adr_lookup,1,5225,96807,84482,0,202,0.154471,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-005,adr_code_meaning,50,50,correct,adr_lookup,1,6242,97034,84482,0,199,0.156591,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-006,adr_code_meaning,10,10,correct,adr_lookup,1,9777,96476,84482,0,470,0.164561,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-007,adr_code_meaning,450,450,correct,adr_lookup,1,5083,93699,84482,0,156,0.121091,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-008,adr_code_meaning,1,1,correct,adr_lookup,1,5409,106192,84482,0,109,0.243671,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-009,adr_code_meaning,1,1,correct,adr_lookup resolve_reference,2,11622,96966,84482,0,626,0.177261,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-010,adr_code_meaning,3,3,correct,adr_lookup,1,5619,91402,84482,0,163,0.098471,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-011,adr_code_meaning,20,20,correct,adr_lookup,1,5727,103967,84482,0,129,0.222421,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-012,adr_code_meaning,100,100,correct,adr_lookup,1,2409,105054,84482,0,129,0.233291,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-013,adr_code_meaning,1,1,correct,adr_lookup,1,3817,104091,84482,0,129,0.223661,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-014,adr_code_meaning,2,2,correct,adr_lookup,1,3048,103565,84482,0,133,0.218601,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-015,adr_code_meaning,30,30,correct,adr_lookup,1,2875,103981,84482,0,137,0.222961,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-016,adr_code_meaning,5,5,correct,adr_lookup,1,3454,102933,84482,0,192,0.215231,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-017,adr_code_meaning,50,50,correct,adr_lookup,1,6350,108541,84482,0,263,0.274861,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-018,adr_code_meaning,2,2,correct,adr_lookup,1,3027,90264,84482,0,123,0.085091,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-019,adr_code_meaning,24,24,correct,adr_lookup,1,2593,102165,84482,0,132,0.204551,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-020,adr_code_meaning,50,50,correct,adr_lookup,1,5170,97253,84482,0,116,0.154631,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-021,adr_code_meaning,20,,unknown,,0,394,42435,42241,0,0,0.0125,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-022,adr_code_meaning,50,,unknown,,0,1285,42442,42241,0,0,0.01257,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-023,adr_code_meaning,333,333,correct,adr_lookup,1,2313,98160,84482,0,107,0.163251,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-024,adr_code_meaning,1000,1000,correct,adr_lookup,1,2007,97477,84482,0,109,0.156521,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-025,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,5881,109140,84482,0,191,0.277251,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-026,adr_code_meaning,4,4,correct,adr_lookup,1,6306,96590,84482,0,184,0.151401,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-027,adr_code_meaning,10,10,correct,resolve_reference,1,5874,85762,84482,0,140,0.040921,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-028,adr_code_meaning,15,15,correct,adr_lookup,1,6079,96229,84482,0,158,0.146491,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-029,adr_code_meaning,21,21,correct,adr_lookup,1,6469,95951,84482,0,191,0.145361,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-030,adr_code_meaning,10,10,correct,resolve_reference,1,5795,85713,84482,0,133,0.040081,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-031,adr_code_meaning,B,B,correct,adr_lookup,1,5215,98656,84482,0,314,0.178561,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-032,adr_code_meaning,H,H,correct,adr_lookup,1,5895,92165,84482,0,152,0.105551,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-033,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,2258,101597,84482,0,118,0.198171,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-034,adr_code_meaning,2.65,2.65,correct,adr_lookup,1,7665,98334,84482,0,343,0.176791,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-035,adr_code_meaning,4,4,correct,resolve_reference,1,6042,86169,84482,0,165,0.046241,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-036,adr_code_meaning,6,6,correct,adr_lookup,1,3191,108769,84482,0,193,0.273641,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-037,adr_code_meaning,10,10,correct,adr_lookup,1,2653,95297,84482,0,117,0.135121,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-038,adr_code_meaning,6,6,correct,adr_lookup,1,3305,106666,84482,0,143,0.250111,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-039,adr_code_meaning,8,8,correct,adr_lookup,1,5307,97511,84482,0,116,0.157211,,
+a-fable-B-full,anthropic,claude-fable-5-1,B,1,adr_code_meaning-040,adr_code_meaning,10,10,correct,adr_lookup,1,5963,96025,84482,0,134,0.143251,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-001,adr_code_meaning,10,10,correct,adr_lookup resolve_reference,2,4260,129850,84482,42241,215,0.591153,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-002,adr_code_meaning,30,30,correct,adr_lookup resolve_reference,2,3903,129954,126723,0,235,0.075741,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-003,adr_code_meaning,40,40,correct,adr_lookup resolve_reference,2,4267,129838,126723,0,229,0.074281,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-004,adr_code_meaning,10,10,correct,adr_lookup resolve_reference,2,5985,130001,126723,0,307,0.079811,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-005,adr_code_meaning,50,50,correct,adr_lookup resolve_reference,2,10387,129853,126723,0,379,0.081931,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-006,adr_code_meaning,10,10,correct,adr_lookup resolve_reference,2,12503,130439,126723,0,606,0.099141,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-007,adr_code_meaning,450,450,correct,adr_lookup resolve_reference,2,3888,129958,126723,0,215,0.074781,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-008,adr_code_meaning,1,1,correct,adr_lookup resolve_reference,2,8205,131909,126723,0,190,0.093041,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-009,adr_code_meaning,1,1,correct,adr_lookup resolve_reference,2,13098,129917,126723,0,537,0.090471,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-010,adr_code_meaning,3,3,correct,adr_lookup resolve_reference,2,8974,129784,126723,0,220,0.073291,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-011,adr_code_meaning,20,20,correct,adr_lookup resolve_reference,2,9174,131008,126723,0,203,0.084681,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-012,adr_code_meaning,100,100,correct,adr_lookup resolve_reference,2,3718,131225,126723,0,163,0.084851,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-013,adr_code_meaning,1,1,correct,adr_lookup resolve_reference,2,2940,130100,126723,0,160,0.073451,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-014,adr_code_meaning,2,2,correct,adr_lookup resolve_reference,2,3785,130881,126723,0,160,0.081261,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-015,adr_code_meaning,30,30,correct,adr_lookup,1,4855,85909,84482,0,277,0.049241,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-016,adr_code_meaning,5,5,correct,adr_lookup,1,3527,85903,84482,0,171,0.043881,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-017,adr_code_meaning,50,50,correct,resolve_reference,1,3083,85691,84482,0,144,0.040411,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-018,adr_code_meaning,2,2,correct,adr_lookup resolve_reference,2,5867,130056,126723,0,235,0.076761,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-019,adr_code_meaning,24,24,correct,adr_lookup resolve_reference,2,3568,131453,126723,0,187,0.088331,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-020,adr_code_meaning,50,50,correct,adr_lookup resolve_reference,2,10940,130516,126723,0,407,0.089961,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-021,adr_code_meaning,20,,unknown,,0,458,42435,42241,0,0,0.0125,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-022,adr_code_meaning,50,,unknown,,0,1393,42442,42241,0,0,0.01257,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-023,adr_code_meaning,333,333,correct,adr_lookup,1,2842,85783,84482,0,135,0.040881,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-024,adr_code_meaning,1000,1000,correct,adr_lookup,1,2779,85850,84482,0,181,0.043851,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-025,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,5776,87731,84482,0,188,0.063011,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-026,adr_code_meaning,4,4,correct,adr_lookup,1,5604,85762,84482,0,167,0.042271,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-027,adr_code_meaning,10,10,correct,resolve_reference,1,6046,85788,84482,0,166,0.042481,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-028,adr_code_meaning,15,15,correct,adr_lookup,1,6114,86078,84482,0,205,0.047331,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-029,adr_code_meaning,21,21,correct,adr_lookup,1,5786,85879,84482,0,151,0.042641,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-030,adr_code_meaning,10,10,correct,resolve_reference,1,5928,85713,84482,0,133,0.040081,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-031,adr_code_meaning,B,B,correct,resolve_reference,1,3806,85844,84482,0,248,0.047141,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-032,adr_code_meaning,H,H,correct,adr_lookup,1,6604,85797,84482,0,208,0.044671,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-033,adr_code_meaning,1.5,1.5,correct,adr_lookup resolve_reference,2,3497,132102,126723,0,195,0.095221,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-034,adr_code_meaning,2.65,2.65,correct,adr_lookup resolve_reference,2,8005,130205,126723,0,188,0.075901,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-035,adr_code_meaning,4,4,correct,adr_lookup resolve_reference,2,8275,132831,126723,0,216,0.103561,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-036,adr_code_meaning,6,6,correct,resolve_reference,1,2392,85780,84482,0,112,0.039701,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-037,adr_code_meaning,10,10,correct,adr_lookup resolve_reference,2,4261,129937,126723,0,186,0.073121,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-038,adr_code_meaning,6,6,correct,adr_lookup resolve_reference,2,4248,132907,126723,0,187,0.102871,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-039,adr_code_meaning,8,8,correct,adr_lookup resolve_reference,2,9360,130634,126723,0,246,0.083091,,
+a-fable-B-none,anthropic,claude-fable-5-1,B,1,adr_code_meaning-040,adr_code_meaning,10,10,correct,adr_lookup resolve_reference,2,7982,130089,126723,0,183,0.074491,,
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-001,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,5999,84672,41496,41496,109,0.551324,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-002,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,6841,85788,82992,0,225,0.059958,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-003,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,2977,84538,82992,0,109,0.041658,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-004,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,3265,85385,82992,0,206,0.054978,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-005,adr_2027_delta,389 410,389 410,correct,adr_lookup,1,5106,84504,82992,0,105,0.041118,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-006,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,3396,85499,82992,0,206,0.056118,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-007,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,3436,85527,82992,0,240,0.058098,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-008,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,3324,85438,82992,0,225,0.056458,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-009,adr_2027_delta,238,238,correct,adr_lookup,1,5374,84588,82992,0,103,0.041858,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-010,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,2696,84449,82992,0,109,0.040768,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-011,adr_2027_delta,2.1 +8,2.1 +8,correct,adr_lookup,1,5656,84588,82992,0,108,0.042108,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-012,adr_2027_delta,2FC,2FC,correct,adr_lookup,1,5432,84586,82992,0,105,0.041938,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-013,adr_2027_delta,188 230 310 348 376 377 400 401 410 636 677 680,188 230 310 348 376 377 400 401 410 636 677 680,correct,adr_lookup adr_lookup,2,3727,85557,82992,0,256,0.059198,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-014,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,2848,84442,82992,0,109,0.040698,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-015,adr_2027_delta,FTC,FTC,correct,adr_lookup,1,4829,84785,82992,0,105,0.043928,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-016,adr_2027_delta,188 230 310 348 360 376 377 400 401 410 670 677 680,188 230 310 348 360 376 377 400 401 410 670 677 680,correct,adr_lookup,1,2891,84664,82992,0,127,0.043818,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-017,adr_2027_delta,2TFC,2TFC,correct,adr_lookup adr_lookup,2,6199,85675,82992,0,237,0.059428,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-018,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,5949,85451,82992,0,206,0.055638,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-019,adr_2027_delta,3 +6.1 +8,3 +6.1 +8,correct,adr_lookup,1,4832,84783,82992,0,111,0.044208,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-020,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,2359,84402,82992,0,109,0.040298,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-021,adr_2027_delta,2.3 +2.1 +8,2.3 +2.1 +8,correct,adr_lookup adr_lookup,2,3611,85685,82992,0,244,0.059878,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-022,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,3392,85559,82992,0,206,0.056718,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-023,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,2137,84443,82992,0,109,0.040708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-024,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup adr_lookup,2,3638,85483,82992,0,206,0.055958,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-025,adr_2027_delta,86,86,correct,adr_lookup adr_lookup,2,3263,85497,82992,0,200,0.055798,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-026,adr_2027_delta,NO CHANGE,NO CHANGE,correct,adr_lookup,1,2322,84415,82992,0,109,0.040428,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-027,adr_2027_delta,368,368,correct,adr_lookup adr_lookup,2,6113,85431,82992,0,200,0.055138,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-028,adr_2027_delta,368,368,correct,adr_lookup adr_lookup,2,3726,85833,82992,0,234,0.060858,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-029,adr_2027_delta,CT2,CT2,correct,adr_lookup,1,2125,84484,82992,0,105,0.040918,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_2027_delta-030,adr_2027_delta,0,0,correct,adr_lookup adr_lookup,2,4065,85566,82992,0,200,0.056488,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-001,adr_code_meaning,10,10,correct,adr_lookup,1,2844,87980,84482,0,147,0.063451,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-002,adr_code_meaning,30,30,correct,adr_lookup resolve_reference,2,4883,135350,126723,0,248,0.130351,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-003,adr_code_meaning,40,40,correct,resolve_reference adr_lookup,2,5621,131590,126723,0,264,0.093551,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-004,adr_code_meaning,10,10,correct,adr_lookup,1,3751,88543,84482,0,201,0.071781,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-005,adr_code_meaning,50,50,correct,adr_lookup,1,8380,88573,84482,0,191,0.071581,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-006,adr_code_meaning,10,10,correct,adr_lookup,1,26526,89210,84482,0,1919,0.164351,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-007,adr_code_meaning,450,450,correct,adr_lookup,1,2809,88379,84482,0,134,0.066791,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-008,adr_code_meaning,1,1,correct,adr_lookup,1,5600,90955,84482,0,107,0.091201,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-009,adr_code_meaning,1,"P602 option (1): combination packagings with glass inner packagings of max capacity 1 litre each (hermetically sealed, inert cushioning, in a tin-plate can), outer package max 15 kg gross.
+
+**1**",correct,adr_lookup,1,6739,88818,84482,0,187,0.073831,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-010,adr_code_meaning,3,3,correct,adr_lookup,1,7795,87513,84482,0,254,0.06413,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-011,adr_code_meaning,20,20,correct,adr_lookup,1,5410,89513,84482,0,129,0.077881,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-012,adr_code_meaning,100,100,correct,adr_lookup,1,3174,90044,84482,0,165,0.084991,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-013,adr_code_meaning,1,1,correct,adr_lookup,1,3130,89305,84482,0,137,0.076201,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-014,adr_code_meaning,2,2,correct,adr_lookup,1,4336,89403,84482,0,173,0.078981,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-015,adr_code_meaning,30,30,correct,adr_lookup resolve_reference,2,7148,137239,126723,0,445,0.159091,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-016,adr_code_meaning,5,5,correct,adr_lookup,1,2697,89890,84482,0,161,0.083251,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-017,adr_code_meaning,50,50,correct,resolve_reference,1,3101,85690,84482,0,143,0.040351,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-018,adr_code_meaning,2,2,correct,adr_lookup resolve_reference resolve_reference,3,8019,176391,168964,0,356,0.134311,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-019,adr_code_meaning,24,24,correct,adr_lookup,1,2432,89830,84482,0,137,0.081451,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-020,adr_code_meaning,50,50,correct,adr_lookup resolve_reference,2,10657,136217,126723,0,402,0.146721,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-021,adr_code_meaning,20,,unknown,,0,377,42435,42241,0,0,0.0125,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-022,adr_code_meaning,50,,unknown,,0,1484,42442,42241,0,0,0.01257,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-023,adr_code_meaning,333,333,correct,adr_exemption_calculator,1,2704,85560,84482,0,113,0.037551,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-024,adr_code_meaning,1000,1000,correct,adr_lookup,1,2180,88717,84482,0,113,0.069121,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-025,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,5828,92837,84482,0,185,0.113921,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-026,adr_code_meaning,4,4,correct,resolve_reference,1,5575,85696,84482,0,132,0.039861,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-027,adr_code_meaning,10,10,correct,adr_lookup,1,6639,92830,84482,0,182,0.113701,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-028,adr_code_meaning,15,15,correct,adr_lookup,1,6318,89148,84482,0,174,0.076481,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-029,adr_code_meaning,21,21,correct,resolve_reference,1,7747,85877,84482,0,267,0.048421,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-030,adr_code_meaning,10,10,correct,adr_lookup,1,6237,93397,84482,0,168,0.118671,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-031,adr_code_meaning,B,B,correct,resolve_reference,1,5498,85893,84482,0,297,0.050081,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-032,adr_code_meaning,H,H,correct,adr_lookup,1,5965,87543,84482,0,161,0.059781,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-033,adr_code_meaning,1.5,1.5,correct,adr_lookup,1,3606,90462,84482,0,201,0.090971,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-034,adr_code_meaning,2.65,2.65,correct,adr_lookup,1,5792,88489,84482,0,137,0.068041,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-035,adr_code_meaning,4,4,correct,adr_lookup,1,6099,92081,84482,0,208,0.107511,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-036,adr_code_meaning,6,6,correct,resolve_reference,1,3072,85820,84482,0,152,0.042101,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-037,adr_code_meaning,10,10,correct,adr_lookup,1,2579,88708,84482,0,126,0.069681,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-038,adr_code_meaning,6,6,correct,adr_lookup,1,2521,91897,84482,0,135,0.102021,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-039,adr_code_meaning,8,8,correct,adr_lookup,1,5957,89471,84482,0,140,0.078011,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_code_meaning-040,adr_code_meaning,10,10,correct,adr_lookup,1,5564,89239,84482,0,116,0.074491,,2026-10-30-v0.5/a-fable-B-compact
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-001,adr_exemption,705,705,correct,adr_exemption_calculator,1,3330,84153,82992,0,152,0.039958,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-002,adr_exemption,360,360,correct,adr_exemption_calculator,1,3291,84174,82992,0,152,0.040168,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-003,adr_exemption,870,870,correct,adr_exemption_calculator,1,2688,84489,82992,0,159,0.043668,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-004,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,3331,84280,82992,0,176,0.042428,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-005,adr_exemption,YES,YES,correct,adr_exemption_calculator,1,2610,84292,82992,0,176,0.042548,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-006,adr_exemption,1570,1570,correct,adr_exemption_calculator,1,2324,84436,82992,0,146,0.042488,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-007,adr_exemption,1335,1335,correct,adr_exemption_calculator,1,3416,84224,82992,0,153,0.040718,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-008,adr_exemption,1470,1470,correct,adr_exemption_calculator,1,5526,84282,82992,0,153,0.041298,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-009,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,2847,84490,82992,0,159,0.043678,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-010,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,3507,84196,82992,0,153,0.040438,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-011,adr_exemption,1160,1160,correct,adr_exemption_calculator,1,2482,84275,82992,0,154,0.041278,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-012,adr_exemption,925,925,correct,adr_exemption_calculator,1,5511,84429,82992,0,145,0.042368,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-013,adr_exemption,850,850,correct,adr_exemption_calculator,1,3432,84176,82992,0,152,0.040188,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-014,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,2421,84178,82992,0,153,0.040258,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-015,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,2426,84573,82992,0,147,0.043908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-016,adr_exemption,1155,1155,correct,adr_exemption_calculator,1,2381,84227,82992,0,129,0.039548,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-017,adr_exemption,720,720,correct,adr_exemption_calculator,1,6709,84266,82992,0,175,0.042238,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-018,adr_exemption,825,825,correct,adr_exemption_calculator,1,2589,84377,82992,0,145,0.041848,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-019,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,2451,84190,82992,0,153,0.040378,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-020,adr_exemption,YES,YES,correct,adr_exemption_calculator,1,2532,84258,82992,0,153,0.041058,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-021,adr_exemption,1195,1195,correct,adr_exemption_calculator,1,3573,84438,82992,0,146,0.042508,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-022,adr_exemption,1200,1200,correct,adr_exemption_calculator,1,5638,84295,82992,0,153,0.041428,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-023,adr_exemption,1530,1530,correct,adr_exemption_calculator,1,2552,84241,82992,0,154,0.040938,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-024,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,2391,84478,82992,0,146,0.042908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-025,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,5716,84184,82992,0,153,0.040318,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-026,adr_exemption,1490,1490,correct,adr_exemption_calculator,1,5966,84272,82992,0,154,0.041248,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-027,adr_exemption,700,700,correct,adr_exemption_calculator,1,3591,84418,82992,0,145,0.042258,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-028,adr_exemption,900,900,correct,adr_exemption_calculator,1,3309,84231,82992,0,151,0.040688,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-029,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,29355,84420,82992,0,327,0.051378,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_exemption-030,adr_exemption,NO,NO,correct,adr_exemption_calculator,1,5721,84469,82992,0,147,0.042868,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-001,adr_table_a,7,7,correct,adr_lookup,1,2010,84223,82992,0,80,0.037058,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-002,adr_table_a,4.2,4.2,correct,adr_lookup,1,2065,84083,82992,0,82,0.035758,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-003,adr_table_a,6.2,6.2,correct,adr_lookup,1,2223,84295,82992,0,82,0.037878,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-004,adr_table_a,9,9,correct,adr_lookup,1,2153,84107,82992,0,80,0.035898,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-005,adr_table_a,6.1,6.1,correct,adr_lookup,1,4893,85517,82992,0,82,0.050098,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-006,adr_table_a,5.1,5.1,correct,adr_lookup,1,5438,84725,82992,0,82,0.042178,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-007,adr_table_a,2,2,correct,adr_lookup,1,5082,84074,82992,0,80,0.035568,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-008,adr_table_a,5.2,5.2,correct,adr_lookup,1,2407,84137,82992,0,82,0.036298,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-009,adr_table_a,4.1,4.1,correct,adr_lookup,1,2550,84136,82992,0,82,0.036288,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-010,adr_table_a,1,1,correct,adr_lookup,1,2212,84237,82992,0,103,0.038348,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-011,adr_table_a,C5,C5,correct,adr_lookup,1,2182,84876,82992,0,81,0.043638,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-012,adr_table_a,F1,F1,correct,adr_lookup,1,5618,84098,82992,0,81,0.035858,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-013,adr_table_a,9TF,9TF,correct,adr_lookup,1,2164,84111,82992,0,82,0.036038,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-014,adr_table_a,S2,S2,correct,adr_lookup,1,2458,84601,82992,0,81,0.040888,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-015,adr_table_a,WFC,WFC,correct,adr_lookup,1,2568,84136,82992,0,82,0.036288,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-016,adr_table_a,M11,M11,correct,adr_lookup,1,2620,84200,82992,0,104,0.038028,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-017,adr_table_a,F3,F3,correct,adr_lookup,1,2484,84670,82992,0,81,0.041578,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-018,adr_table_a,O2,O2,correct,adr_lookup,1,2462,84096,82992,0,81,0.035838,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-019,adr_table_a,T2,T2,correct,adr_lookup,1,2084,84214,82992,0,81,0.037018,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-020,adr_table_a,P2,P2,correct,adr_lookup,1,2555,84194,82992,0,81,0.036818,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-021,adr_table_a,II,II,correct,adr_lookup,1,5826,84075,82992,0,80,0.035578,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-022,adr_table_a,I,I,correct,adr_lookup,1,2409,84100,82992,0,80,0.035828,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-023,adr_table_a,I,I,correct,adr_lookup,1,2644,84130,82992,0,80,0.036128,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-024,adr_table_a,I,I,correct,adr_lookup,1,2659,84077,82992,0,80,0.035598,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-025,adr_table_a,II,II,correct,adr_lookup,1,1908,84100,82992,0,80,0.035828,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-026,adr_table_a,II,II,correct,adr_lookup,1,2562,84217,82992,0,80,0.036998,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-027,adr_table_a,II,II,correct,adr_lookup,1,5459,84336,82992,0,80,0.038188,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-028,adr_table_a,II,II,correct,adr_lookup,1,2078,84143,82992,0,80,0.036258,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-029,adr_table_a,III,III,correct,adr_lookup,1,2578,84114,82992,0,80,0.035968,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-030,adr_table_a,II,II,correct,adr_lookup,1,5257,84106,82992,0,80,0.035888,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-031,adr_table_a,(E),E,correct,adr_lookup,1,5485,84096,82992,0,80,0.035788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-032,adr_table_a,(E),E,correct,adr_lookup,1,8197,84114,82992,0,80,0.035968,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-033,adr_table_a,(E),E,correct,adr_lookup,1,8613,84213,82992,0,217,0.043808,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-034,adr_table_a,(E),E,correct,adr_lookup,1,3534,84241,82992,0,157,0.041088,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-035,adr_table_a,(E),E,correct,adr_lookup,1,5335,84181,82992,0,80,0.036638,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-036,adr_table_a,(E),E,correct,adr_lookup,1,2354,85435,82992,0,80,0.049178,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-037,adr_table_a,(C/E),C/E,correct,adr_lookup,1,2331,84103,82992,0,82,0.035958,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-038,adr_table_a,(D),(D),correct,adr_lookup,1,2457,84238,82992,0,82,0.037308,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-039,adr_table_a,(E),E,correct,adr_lookup,1,2274,85259,82992,0,80,0.047418,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-040,adr_table_a,(D),(D),correct,adr_lookup,1,2481,84098,82992,0,82,0.035908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-041,adr_table_a,0,0,correct,adr_lookup,1,1943,84175,82992,0,80,0.036578,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-042,adr_table_a,0,0,correct,adr_lookup,1,2925,85172,82992,0,80,0.046548,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-043,adr_table_a,5 kg,5 kg,correct,adr_lookup,1,3080,84149,82992,0,83,0.036468,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-044,adr_table_a,0,0,correct,adr_lookup,1,3113,85289,82992,0,80,0.047718,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-045,adr_table_a,5 kg,5 kg,correct,adr_lookup,1,2337,84126,82992,0,83,0.036238,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-046,adr_table_a,1 kg,1 kg,correct,adr_lookup,1,2186,84150,82992,0,83,0.036478,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-047,adr_table_a,5 L,5 L,correct,adr_lookup,1,6799,84178,82992,0,82,0.036708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-048,adr_table_a,0,0,correct,adr_lookup,1,5110,84364,82992,0,103,0.039618,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-049,adr_table_a,0,0,correct,adr_lookup,1,2491,84365,82992,0,80,0.038478,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-050,adr_table_a,0,0,correct,adr_lookup,1,2641,84291,82992,0,80,0.037738,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-051,adr_table_a,4.3 +4.2,4.3+4.2,correct,adr_lookup,1,3027,85417,82992,0,86,0.049298,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-052,adr_table_a,5.2 +1,5.2+1,correct,adr_lookup,1,2188,84170,82992,0,84,0.036728,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-053,adr_table_a,9,9,correct,adr_lookup,1,2281,84231,82992,0,80,0.037138,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-054,adr_table_a,8 +6.1,8+6.1,correct,adr_lookup,1,2495,85260,82992,0,84,0.047628,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-055,adr_table_a,4.1,4.1,correct,adr_lookup,1,4830,84170,82992,0,82,0.036628,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-056,adr_table_a,1,1,correct,adr_lookup,1,5542,84156,82992,0,80,0.036388,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-057,adr_table_a,7X +7E,7X+7E,correct,adr_lookup,1,3080,84253,82992,0,84,0.037558,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-058,adr_table_a,3,3,correct,adr_lookup,1,5318,84134,82992,0,80,0.036168,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-059,adr_table_a,4.2 +6.1,4.2+6.1,correct,adr_lookup,1,6570,84773,82992,0,86,0.042858,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-060,adr_table_a,6.1 +3,6.1+3,correct,adr_lookup,1,2261,85473,82992,0,84,0.049758,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-061,adr_table_a,X423,X423,correct,adr_lookup,1,2003,84650,82992,0,81,0.041378,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-062,adr_table_a,80,80,correct,adr_lookup,1,6117,84130,82992,0,80,0.036128,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-063,adr_table_a,40,40,correct,adr_lookup,1,2004,84187,82992,0,80,0.036698,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-064,adr_table_a,70,70,correct,adr_lookup,1,1886,84326,82992,0,80,0.038088,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-065,adr_table_a,66,66,correct,adr_lookup,1,5382,84141,82992,0,80,0.036238,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-066,adr_table_a,40,40,correct,adr_lookup,1,1969,84082,82992,0,80,0.035648,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-067,adr_table_a,23,23,correct,adr_lookup,1,2189,84164,82992,0,80,0.036468,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-068,adr_table_a,33,33,correct,adr_lookup,1,2390,84079,82992,0,80,0.035618,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-069,adr_table_a,90,90,correct,adr_lookup,1,5087,84266,82992,0,80,0.037488,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,adr_table_a-070,adr_table_a,539,539,correct,adr_lookup,1,2689,84245,82992,0,80,0.037278,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-001,freight_arithmetic,551.4,551.4,correct,chargeable_weight_calculator,1,2638,83834,82992,0,187,0.038518,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-002,freight_arithmetic,1014.42,1014.42,correct,chargeable_weight_calculator,1,3360,83840,82992,0,188,0.038628,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-003,freight_arithmetic,1297.54,1297.54,correct,chargeable_weight_calculator,1,6475,83844,82992,0,189,0.038718,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-004,freight_arithmetic,593.6,593.6,correct,chargeable_weight_calculator,1,5470,83834,82992,0,187,0.038518,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-005,freight_arithmetic,405.13,405.13,correct,chargeable_weight_calculator,1,3206,83837,82992,0,187,0.038548,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-006,freight_arithmetic,602.17,602.17,correct,chargeable_weight_calculator,1,3304,83836,82992,0,187,0.038538,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-007,freight_arithmetic,4726.6,4726.6,correct,chargeable_weight_calculator,1,6124,83840,82992,0,189,0.038678,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-008,freight_arithmetic,216.88,216.88,correct,chargeable_weight_calculator,1,2920,83838,82992,0,187,0.038558,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-009,freight_arithmetic,205.7,205.7,correct,chargeable_weight_calculator,1,2551,83834,82992,0,187,0.038518,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-010,freight_arithmetic,49.45,49.45,correct,chargeable_weight_calculator,1,2913,83838,82992,0,187,0.038558,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-011,freight_arithmetic,519.66,519.66,correct,chargeable_weight_calculator,1,2584,83838,82992,0,187,0.038558,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-012,freight_arithmetic,458,458,correct,chargeable_weight_calculator,1,6221,83822,82992,0,183,0.038198,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-013,freight_arithmetic,407.8,407.8,correct,chargeable_weight_calculator,1,3358,83833,82992,0,187,0.038508,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-014,freight_arithmetic,117.88,117.88,correct,chargeable_weight_calculator,1,3180,83837,82992,0,187,0.038548,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-015,freight_arithmetic,1953.6,1953.6,correct,chargeable_weight_calculator,1,3717,83843,82992,0,189,0.038708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-016,freight_arithmetic,46.4409,46.44,correct,cbm_calculator,1,6729,83681,82992,0,130,0.034138,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-017,freight_arithmetic,0.1636,0.1636,correct,cbm_calculator,1,2334,83680,82992,0,131,0.034178,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-018,freight_arithmetic,3.8309,3.83,correct,cbm_calculator,1,3220,83681,82992,0,130,0.034138,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-019,freight_arithmetic,28.305,28.305,correct,cbm_calculator,1,2662,83677,82992,0,130,0.034098,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-020,freight_arithmetic,83.5466,83.55,correct,cbm_calculator,1,5691,83683,82992,0,130,0.034158,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-021,freight_arithmetic,2.282,2.28,correct,cbm_calculator,1,2314,83678,82992,0,130,0.034108,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-022,freight_arithmetic,125.099,125.1,correct,cbm_calculator,1,2352,83680,82992,0,130,0.034128,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-023,freight_arithmetic,3.8688,3.8688,correct,cbm_calculator,1,2495,83681,82992,0,131,0.034188,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-024,freight_arithmetic,98.3227,98.32,correct,cbm_calculator,1,5468,83683,82992,0,130,0.034158,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-025,freight_arithmetic,40.3623,40.36,correct,cbm_calculator,1,3229,83683,82992,0,130,0.034158,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-026,freight_arithmetic,4.9922,4.99,correct,cbm_calculator,1,5504,83681,82992,0,130,0.034138,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-027,freight_arithmetic,44.2513,44.25,correct,cbm_calculator,1,2739,83683,82992,0,130,0.034158,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-028,freight_arithmetic,4.8,4.8,correct,ldm_calculator,1,2742,83963,82992,0,105,0.035708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-029,freight_arithmetic,6.5,6.5,correct,ldm_calculator,1,3459,83992,82992,0,130,0.037248,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-030,freight_arithmetic,2.708,2.7,correct,ldm_calculator,1,3075,83992,82992,0,131,0.037298,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-031,freight_arithmetic,2.8,2.8,correct,ldm_calculator,1,2544,83963,82992,0,105,0.035708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-032,freight_arithmetic,8.5,8.5,correct,ldm_calculator,1,2171,83967,82992,0,105,0.035748,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-033,freight_arithmetic,8.55,8.55,correct,ldm_calculator,1,2886,83990,82992,0,131,0.037278,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-034,freight_arithmetic,4.8,4.8,correct,ldm_calculator,1,2590,83963,82992,0,105,0.035708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-035,freight_arithmetic,10.5,10.5,correct,ldm_calculator,1,2435,83967,82992,0,105,0.035748,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-036,freight_arithmetic,11.917,11.92,correct,ldm_calculator,1,3267,84064,82992,0,156,0.039268,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-037,freight_arithmetic,8.8,8.8,correct,ldm_calculator,1,2026,83963,82992,0,105,0.035708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-038,freight_arithmetic,6,6,correct,ldm_calculator,1,3322,83988,82992,0,128,0.037108,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-039,freight_arithmetic,6.793,6.79,correct,ldm_calculator,1,5664,83992,82992,0,131,0.037298,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-040,freight_arithmetic,6,6,correct,ldm_calculator,1,2305,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-041,freight_arithmetic,11,11,correct,ldm_calculator,1,2238,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-042,freight_arithmetic,8,8,correct,ldm_calculator,1,5928,83944,82992,0,152,0.037868,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-043,freight_arithmetic,12,12,correct,ldm_calculator,1,2982,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-044,freight_arithmetic,15,15,correct,ldm_calculator,1,2963,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-045,freight_arithmetic,2,2,correct,ldm_calculator,1,3003,83944,82992,0,152,0.037868,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-046,freight_arithmetic,6,6,correct,ldm_calculator,1,2323,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-047,freight_arithmetic,15,15,correct,ldm_calculator,1,3165,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-048,freight_arithmetic,15,15,correct,ldm_calculator,1,3026,83948,82992,0,152,0.037908,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-049,freight_arithmetic,22.4956,22.496,correct,consignment_calculator,1,3079,84109,82992,0,138,0.038818,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-050,freight_arithmetic,17.7866,17.787,correct,consignment_calculator,1,2740,84107,82992,0,138,0.038798,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-051,freight_arithmetic,8.4574,8.457,correct,consignment_calculator,1,3756,84106,82992,0,138,0.038788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-052,freight_arithmetic,7.553,7.553,correct,consignment_calculator,1,2689,84216,82992,0,176,0.041788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-053,freight_arithmetic,4.6598,4.66,correct,consignment_calculator,1,3728,84159,82992,0,188,0.041818,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-054,freight_arithmetic,19.3596,19.36,correct,consignment_calculator,1,2648,84110,82992,0,139,0.038878,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-055,freight_arithmetic,28.7682,28.77,correct,consignment_calculator,1,2324,84108,82992,0,138,0.038808,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-056,freight_arithmetic,3.6985,3.698,correct,consignment_calculator,1,2526,84108,82992,0,139,0.038858,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-057,freight_arithmetic,11.7402,11.74,correct,consignment_calculator,1,2597,84106,82992,0,138,0.038788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-058,freight_arithmetic,0.582,0.582,correct,consignment_calculator,1,2953,84097,82992,0,138,0.038698,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-059,freight_arithmetic,31.2603,31.26,correct,consignment_calculator,1,5456,84112,82992,0,139,0.038898,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,freight_arithmetic-060,freight_arithmetic,2.008,2.008,correct,consignment_calculator,1,6686,84247,82992,0,282,0.047398,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-001,hs_hierarchy,3505,3505,correct,hs_code_lookup,1,2692,83788,82992,0,57,0.031558,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-002,hs_hierarchy,7216,7216,correct,hs_code_lookup,1,2088,83811,82992,0,57,0.031788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-003,hs_hierarchy,3915,3915,correct,hs_code_lookup,1,2423,83766,82992,0,57,0.031338,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-004,hs_hierarchy,8443,8443,correct,hs_code_lookup,1,5245,83970,82992,0,57,0.033378,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-005,hs_hierarchy,5105,5105,correct,hs_code_lookup,1,2157,83765,82992,0,57,0.031328,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-006,hs_hierarchy,8509,8509,correct,hs_code_lookup,1,2885,83907,82992,0,57,0.032748,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-007,hs_hierarchy,0909,0909,correct,hs_code_lookup,1,2368,83765,82992,0,57,0.031328,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-008,hs_hierarchy,8102,8102,correct,hs_code_lookup,1,2635,83782,82992,0,57,0.031498,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-009,hs_hierarchy,2701,2701,correct,hs_code_lookup,1,2849,83799,82992,0,57,0.031668,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-010,hs_hierarchy,8438,8438,correct,hs_code_lookup,1,4823,83882,82992,0,57,0.032498,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-011,hs_hierarchy,2915,2915,correct,hs_code_lookup,1,5358,83853,82992,0,57,0.032208,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-012,hs_hierarchy,2306,2306,correct,hs_code_lookup,1,2520,83910,82992,0,57,0.032778,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-013,hs_hierarchy,8504,8504,correct,hs_code_lookup,1,1831,83926,82992,0,57,0.032938,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-014,hs_hierarchy,0104,0104,correct,hs_code_lookup,1,1771,83716,82992,0,57,0.030838,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-015,hs_hierarchy,2912,2912,correct,hs_code_lookup,1,4944,83763,82992,0,57,0.031308,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-016,hs_hierarchy,0207,0207,correct,hs_code_lookup,1,2318,83824,82992,0,57,0.031918,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-017,hs_hierarchy,9010,9010,correct,hs_code_lookup,1,1944,83955,82992,0,57,0.033228,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-018,hs_hierarchy,0207,0207,correct,hs_code_lookup,1,2310,83820,82992,0,57,0.031878,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-019,hs_hierarchy,5205,5205,correct,hs_code_lookup,1,1846,83903,82992,0,57,0.032708,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-020,hs_hierarchy,0811,0811,correct,hs_code_lookup,1,5281,83870,82992,0,57,0.032378,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-021,hs_hierarchy,84,84,correct,hs_code_lookup,1,4990,83916,82992,0,56,0.032788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-022,hs_hierarchy,90,90,correct,hs_code_lookup,1,2553,83963,82992,0,56,0.033258,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-023,hs_hierarchy,97,97,correct,hs_code_lookup,1,2648,83795,82992,0,82,0.032878,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-024,hs_hierarchy,30,30,correct,hs_code_lookup,1,2722,83806,82992,0,56,0.031688,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-025,hs_hierarchy,38,38,correct,,0,1105,41627,41496,0,3,0.011834,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-026,hs_hierarchy,58,58,correct,hs_code_lookup,1,2490,83842,82992,0,56,0.032048,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-027,hs_hierarchy,95,95,correct,hs_code_lookup,1,2742,83935,82992,0,56,0.032978,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-028,hs_hierarchy,28,28,correct,hs_code_lookup,1,2767,83909,82992,0,82,0.034018,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-029,hs_hierarchy,62,62,correct,hs_code_lookup,1,2692,83836,82992,0,56,0.031988,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-030,hs_hierarchy,73,73,correct,hs_code_lookup,1,2193,83832,82992,0,56,0.031948,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-031,hs_hierarchy,84,84,correct,hs_code_lookup,1,2404,83900,82992,0,56,0.032628,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-032,hs_hierarchy,28,28,correct,hs_code_lookup,1,7706,83811,82992,0,56,0.031738,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-033,hs_hierarchy,29,29,correct,hs_code_lookup,1,5272,83959,82992,0,56,0.033218,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-034,hs_hierarchy,44,44,correct,hs_code_lookup,1,2008,83870,82992,0,56,0.032328,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-035,hs_hierarchy,84,84,correct,hs_code_lookup,1,5355,83950,82992,0,56,0.033128,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-036,hs_hierarchy,48,48,correct,hs_code_lookup,1,5117,83896,82992,0,56,0.032588,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-037,hs_hierarchy,61,61,correct,hs_code_lookup,1,4758,84335,82992,0,56,0.036978,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-038,hs_hierarchy,19,19,correct,hs_code_lookup,1,1747,84295,82992,0,56,0.036578,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-039,hs_hierarchy,55,55,correct,hs_code_lookup,1,1812,85710,82992,0,56,0.050728,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-040,hs_hierarchy,84,84,correct,hs_code_lookup,1,1930,84440,82992,0,56,0.038028,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-041,hs_hierarchy,75,75,correct,hs_code_lookup,1,4787,83849,82992,0,56,0.032118,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-042,hs_hierarchy,71,71,correct,hs_code_lookup,1,1811,84362,82992,0,56,0.037248,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-043,hs_hierarchy,28,28,correct,hs_code_lookup,1,5898,83936,82992,0,84,0.034388,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-044,hs_hierarchy,60,60,correct,hs_code_lookup,1,5017,84029,82992,0,56,0.033918,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-045,hs_hierarchy,70,70,correct,hs_code_lookup,1,1919,84078,82992,0,56,0.034408,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-046,hs_hierarchy,72,72,correct,hs_code_lookup,1,3013,84859,82992,0,56,0.042218,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-047,hs_hierarchy,87,87,correct,hs_code_lookup,1,2594,85143,82992,0,56,0.045058,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-048,hs_hierarchy,86,86,correct,hs_code_lookup,1,2121,83925,82992,0,56,0.032878,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-049,hs_hierarchy,96,96,correct,hs_code_lookup,1,1908,83817,82992,0,56,0.031798,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,hs_hierarchy-050,hs_hierarchy,81,81,correct,hs_code_lookup,1,3421,84073,82992,0,56,0.034358,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-001,identifiers,S7,S7,correct,airline_lookup,1,5362,84711,82992,0,56,0.040738,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-002,identifiers,NH,NH,correct,airline_lookup,1,2313,84647,82992,0,56,0.040098,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-003,identifiers,RJ,RJ,correct,airline_lookup,1,2318,84770,82992,0,57,0.041378,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-004,identifiers,CI,CI,correct,airline_lookup,1,1963,84603,82992,0,56,0.039658,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-005,identifiers,EY,EY,correct,airline_lookup,1,5729,84574,82992,0,56,0.039368,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-006,identifiers,7L,7L,correct,airline_lookup,1,5242,84694,82992,0,56,0.040568,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-007,identifiers,AT,AT,correct,airline_lookup,1,2296,84899,82992,0,56,0.042618,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-008,identifiers,OZ,OZ,correct,airline_lookup,1,4970,84774,82992,0,57,0.041418,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-009,identifiers,DL,DL,correct,airline_lookup,1,2857,84682,82992,0,56,0.040448,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-010,identifiers,3U,3U,correct,airline_lookup,1,4828,84812,82992,0,56,0.041748,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-011,identifiers,YP,YP,correct,airline_lookup,1,2499,84600,82992,0,56,0.039628,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-012,identifiers,MF,MF,correct,airline_lookup,1,5946,84883,82992,0,56,0.042458,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-013,identifiers,PO,PO,correct,airline_lookup,1,2272,84594,82992,0,56,0.039568,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-014,identifiers,CX,CX,correct,airline_lookup,1,2511,84683,82992,0,56,0.040458,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-015,identifiers,F9,F9,correct,airline_lookup,1,4453,84682,82992,0,56,0.040448,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-016,identifiers,UPS,UPS,correct,airline_lookup,1,1832,84889,82992,0,57,0.042568,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-017,identifiers,AJT,AJT,correct,airline_lookup,1,2475,84641,82992,0,57,0.040088,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-018,identifiers,CRL,CRL,correct,airline_lookup,1,2090,84758,82992,0,57,0.041258,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-019,identifiers,CJT,CJT,correct,airline_lookup,1,2511,84482,82992,0,57,0.038498,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-020,identifiers,TGZ,TGZ,correct,airline_lookup,1,5055,84690,82992,0,58,0.040628,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-021,identifiers,CMP,CMP,correct,airline_lookup,1,2715,84640,82992,0,57,0.040078,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-022,identifiers,SJX,SJX,correct,airline_lookup,1,5428,85711,82992,0,57,0.050788,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-023,identifiers,VIR,VIR,correct,airline_lookup,1,5690,84764,82992,0,57,0.041318,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-024,identifiers,ANG,ANG,correct,airline_lookup,1,4727,84610,82992,0,57,0.039778,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-025,identifiers,THY,THY,correct,airline_lookup,1,4717,84673,82992,0,56,0.040358,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-026,identifiers,Y4,Y4,correct,airline_lookup,1,2631,84737,82992,0,58,0.041098,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-027,identifiers,O3,O3,correct,airline_lookup,1,2805,84654,82992,0,57,0.040218,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-028,identifiers,TG,TG,correct,airline_lookup,1,2544,84478,82992,0,56,0.038408,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-029,identifiers,BR,BR,correct,airline_lookup,1,1969,84785,82992,0,57,0.041528,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-030,identifiers,UO,UO,correct,airline_lookup,1,2693,84721,82992,0,57,0.040888,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-031,identifiers,Delevan,Delevan,correct,unlocode_lookup,1,2697,83602,82992,0,61,0.029898,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-032,identifiers,Ihota,Ihota,correct,unlocode_lookup,1,2348,83574,82992,0,62,0.029668,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-033,identifiers,River Grove,River Grove,correct,unlocode_lookup,1,5920,83599,82992,0,61,0.029868,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-034,identifiers,Torino,Torino,correct,unlocode_lookup,1,2385,83593,82992,0,61,0.029808,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-035,identifiers,Meeruse,Meeruse,correct,unlocode_lookup,1,2841,83605,82992,0,63,0.030028,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-036,identifiers,Tarifa,Tarifa,correct,unlocode_lookup,1,2156,83577,82992,0,63,0.029748,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-037,identifiers,Yoshiase,Yoshiase,correct,unlocode_lookup,1,2276,83580,82992,0,64,0.029828,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-038,identifiers,Dezhou,Dezhou,correct,unlocode_lookup,1,2550,83611,82992,0,64,0.030138,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-039,identifiers,Fox,Fox,correct,unlocode_lookup,1,5181,83586,82992,0,60,0.029688,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-040,identifiers,Kihara,Kihara,correct,unlocode_lookup,1,2721,83574,82992,0,62,0.029668,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-041,identifiers,244,244,correct,container_lookup,1,1875,85421,82992,0,59,0.047988,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-042,identifiers,259,259,correct,container_lookup,1,2692,85158,82992,0,57,0.045258,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-043,identifiers,1219,1219,correct,container_lookup,1,2548,85129,82992,0,58,0.045018,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-044,identifiers,244,244,correct,container_lookup,1,2144,84962,82992,0,58,0.043348,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-045,identifiers,244,244,correct,container_lookup,1,2365,85048,82992,0,58,0.044208,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-046,identifiers,290,290,correct,container_lookup,1,2765,85550,82992,0,59,0.049278,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-047,identifiers,259,259,correct,container_lookup,1,1829,84740,82992,0,58,0.041128,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-048,identifiers,244,244,correct,container_lookup,1,2236,85428,82992,0,58,0.048008,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-049,identifiers,1219,1219,correct,container_lookup,1,2560,84962,82992,0,59,0.043398,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-050,identifiers,259,259,correct,container_lookup,1,2403,84962,82992,0,58,0.043348,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-051,identifiers,1225,1225,correct,uld_lookup,1,7061,90272,82992,0,56,0.096348,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-052,identifiers,606,606,correct,uld_lookup,1,2790,92398,82992,0,55,0.117558,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-053,identifiers,224,224,correct,uld_lookup,1,3987,93336,82992,0,55,0.126938,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-054,identifiers,318,318,correct,uld_lookup,1,2287,92669,82992,0,55,0.120268,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-055,identifiers,153,153,correct,uld_lookup,1,2796,90191,82992,0,55,0.095488,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-056,identifiers,153,153,correct,uld_lookup,1,2309,91489,82992,0,55,0.108468,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-057,identifiers,318,318,correct,uld_lookup,1,2441,91489,82992,0,58,0.108618,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-058,identifiers,224,224,correct,uld_lookup,1,5501,94405,82992,0,56,0.137678,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-059,identifiers,318,318,correct,uld_lookup,1,2337,90448,82992,0,56,0.098108,,b-all-300-B-fable
+c-all-340-B-fable,anthropic,claude-fable-5-1,B,1,identifiers-060,identifiers,153,153,correct,uld_lookup,1,2366,91649,82992,0,55,0.110068,,b-all-300-B-fable

@@ -1,0 +1,183 @@
+{
+  "run": "a-fable-A",
+  "overall": {
+    "claude-fable-5-1 / A": {
+      "n": 40,
+      "errors": 0,
+      "accuracy": 0.85,
+      "unknown_rate": 0.15,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 0,
+      "mean_latency_ms": 2830,
+      "input_tokens": 7579,
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 5077,
+      "usd": 0.32963999999999993
+    }
+  },
+  "overall_excluding_adr_2027_delta": {
+    "claude-fable-5-1 / A": {
+      "n": 40,
+      "errors": 0,
+      "accuracy": 0.85,
+      "unknown_rate": 0.15,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 0,
+      "mean_latency_ms": 2830,
+      "input_tokens": 7579,
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 5077,
+      "usd": 0.32963999999999993
+    }
+  },
+  "by_family": {
+    "claude-fable-5-1 / A": {
+      "adr_2027_delta": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_code_meaning": {
+        "n": 40,
+        "errors": 0,
+        "accuracy": 0.85,
+        "unknown_rate": 0.15,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": 2830,
+        "input_tokens": 7579,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 5077,
+        "usd": 0.32963999999999993
+      },
+      "adr_exemption": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_table_a": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "freight_arithmetic": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "hs_hierarchy": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "identifiers": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      }
+    }
+  },
+  "per_question_tokens": {
+    "anthropic/claude-fable-5-1/A": {
+      "n": 40,
+      "input": 189.475,
+      "cachedInput": 0,
+      "cacheWrite": 0,
+      "output": 126.925,
+      "searches": 0,
+      "usd": 0.008240999999999998,
+      "first": {
+        "input": 176,
+        "cachedInput": 0,
+        "cacheWrite": 0,
+        "output": 42,
+        "searches": 0,
+        "usd": 0.00386
+      },
+      "steady": {
+        "input": 189.82051282051282,
+        "cachedInput": 0,
+        "cacheWrite": 0,
+        "output": 129.10256410256412,
+        "searches": 0,
+        "usd": 0.008353333333333332
+      }
+    }
+  },
+  "spend": {
+    "total_usd": 0.32963999999999993,
+    "spent_before_run_usd": 0,
+    "this_run_usd": 0.32963999999999993,
+    "by_provider": {
+      "anthropic": 0.32963999999999993
+    },
+    "cap_usd": 15,
+    "stopped_at_cap": false,
+    "carried_rows_usd_not_counted": 0
+  },
+  "rows_carried_and_new": {
+    "anthropic/A": {
+      "carried": 0,
+      "new": 40
+    }
+  },
+  "complete": true,
+  "providers_stopped": {}
+}

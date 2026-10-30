@@ -81,6 +81,18 @@ if (process.argv.includes('--check')) {
       },
       scoring_aliases: { file: 'questions/aliases.json', sha256: sha(fs.readFileSync('questions/aliases.json', 'utf8').replace(/\r\n/g, '\n')) },
     } : {}),
+    ...(VERSION === 'v0.5' ? {
+      generator: 'generator/v0_5.mjs (from questions/v0.4, plus the adr_code_meaning family from the FreightUtils ADR code registry)',
+      seed: 'freightutils-eval-v0.5-adr_code_meaning (the UN draw of the new family; the other six families are v0.4 byte-identical)',
+      data_source: { repository: 'SoapyRED/freighttools (FreightUtils ADR code registry, lib/data/adr-codes/, and lib/data/adr-2025.json)', commit: dataCommit },
+      changes_from: {
+        version: 'v0.4',
+        added: 'adr_code_meaning (40): one value a Table A code\'s meaning fixes — packing instruction limits (10), special provision thresholds (10), the 1.1.3.6.3 maximum per transport unit by transport category (4, one under note a), tank code calculation pressures (6) and letters (2), portable tank instruction test pressures (5) and shell thicknesses (3). Expected values from the registry\'s parameters (paraphrase, cited to volume and PDF page of ECE/TRANS/352; unreviewed on 2026-10-30) and the 1.1.3.6.3 owner table (Vol. I, PDF p. 30). Condition B tool: adr_lookup with { un_number, include_codes: "compact" }; check.stated_in_compact says whether the compact answer states the value (24) or only the full answer carries it (16).',
+        scoring: 'No change and no new rule: the new family uses numeric (exact) and code. The six v0.4 family files and questions/aliases.json are byte-identical; v0.4 results remain valid.',
+      },
+      registry_records: JSON.parse(fs.readFileSync(path.resolve('questions', VERSION, 'adr_code_meaning.json'), 'utf8').replace(/\r\n/g, '\n')).map((q) => ({ id: q.id, registry_record: q.source.registry_record, citation: q.source.citation, stated_in_compact: q.check.stated_in_compact })),
+      scoring_aliases: { file: 'questions/aliases.json', sha256: sha(fs.readFileSync('questions/aliases.json', 'utf8').replace(/\r\n/g, '\n')) },
+    } : {}),
     total: Object.values(counts).reduce((a, b) => a + b, 0),
     counts,
     files: perFile,

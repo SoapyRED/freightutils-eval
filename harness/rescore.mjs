@@ -6,6 +6,7 @@
 // (those rows go to held.jsonl beside the checkpoint, to put back if the re-run is cut short).
 // Usage: node harness/rescore.mjs --from results/raw/<old run> --to results/raw/<new run>
 //   --questions v0.2.1 [--hold openai/A] [--keep anthropic/A,anthropic/B] [--csv results/<old run>/per-question.csv]
+//   [--manifest results/<dir>/<old run>/manifest.json]
 import fs from 'node:fs';
 import path from 'node:path';
 import { scoreAnswer } from './score.mjs';
@@ -48,7 +49,9 @@ if (CSV) {
 }
 
 // The prompts of the old set, to spot a question that changed between the sets.
-const oldManifest = JSON.parse(fs.readFileSync(path.join('results', oldRun, 'manifest.json'), 'utf8'));
+// --manifest PATH: the old run's results manifest when it is not results/<run>/manifest.json (v0.4's runs sit
+// under results/2026-10-30-v0.4/<run>/).
+const oldManifest = JSON.parse(fs.readFileSync(flag('manifest', path.join('results', oldRun, 'manifest.json')), 'utf8'));
 const oldQdir = `questions/${oldManifest.question_set.version}`;
 const oldQs = new Map(fs.readdirSync(oldQdir).filter((f) => f !== 'manifest.json').flatMap((f) => JSON.parse(fs.readFileSync(path.join(oldQdir, f), 'utf8'))).map((q) => [q.id, q]));
 

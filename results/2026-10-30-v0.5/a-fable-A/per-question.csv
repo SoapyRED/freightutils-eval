@@ -1,0 +1,69 @@
+provider,model,condition,repeat,id,family,expected,answer,outcome,tools_used,tool_calls,latency_ms,input_tokens,cached_tokens,cache_write_tokens,output_tokens,usd,error,carried_from
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-001,adr_code_meaning,10,"Under P001, combination packagings: inner packagings glass 10 L, plastics 30 L, metal 40 L.
+
+10",correct,,0,2818,176,0,0,42,0.00386,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-002,adr_code_meaning,30,30,correct,,0,1662,184,0,0,48,0.00424,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-003,adr_code_meaning,40,"Under P001, combination packagings: inner packagings glass 10 L, plastics 30 L, metal 40 L.
+
+40",correct,,0,983,174,0,0,42,0.00384,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-004,adr_code_meaning,10,10,correct,,0,1924,172,0,0,136,0.00852,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-005,adr_code_meaning,50,50,correct,,0,4076,186,0,0,174,0.01056,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-006,adr_code_meaning,10,10,correct,,0,7208,186,0,0,525,0.02811,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-007,adr_code_meaning,450,"P203 requirements for open cryogenic receptacles: ""Open cryogenic receptacles shall have a maximum water capacity of 450 litres.""
+
+450",correct,,0,1375,180,0,0,52,0.0044,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-008,adr_code_meaning,1,1,correct,,0,4266,174,0,0,224,0.01294,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-009,adr_code_meaning,1,1,correct,,0,3595,173,0,0,243,0.01388,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-010,adr_code_meaning,3,3,correct,,0,2188,158,0,0,150,0.00908,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-011,adr_code_meaning,20,20,correct,,0,982,181,0,0,3,0.00196,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-012,adr_code_meaning,100,"Special provision 188 of ADR: lithium ion cells max 20 Wh, lithium ion batteries max 100 Wh.
+
+100",correct,,0,959,227,0,0,47,0.00462,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-013,adr_code_meaning,1,1,correct,,0,2328,223,0,0,3,0.00238,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-014,adr_code_meaning,2,2,correct,,0,1262,180,0,0,3,0.00195,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-015,adr_code_meaning,30,30,correct,,0,1960,182,0,0,129,0.00827,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-016,adr_code_meaning,5,"Special provision 375: liquids ≤ 5 L per single or inner packaging; solids ≤ 5 kg.
+
+5",correct,,0,2757,199,0,0,43,0.00414,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-017,adr_code_meaning,50,50,correct,,0,2485,177,0,0,171,0.01032,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-018,adr_code_meaning,2,2,correct,,0,4832,209,0,0,351,0.01964,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-019,adr_code_meaning,24,"Special provision 144: ""An aqueous solution containing not more than 24% alcohol by volume is not subject to ADR.""
+
+24",correct,,0,2627,194,0,0,43,0.00409,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-020,adr_code_meaning,50,50,correct,,0,3886,170,0,0,169,0.01015,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-021,adr_code_meaning,20,,unknown,,0,3576,184,0,0,95,0.00659,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-022,adr_code_meaning,50,,unknown,,0,596,191,0,0,0,0.00191,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-023,adr_code_meaning,333,"UN 3415 Sodium fluoride solution, Class 6.1, PG III, transport category 2 → max total quantity 333.
+
+333",correct,,0,2714,188,0,0,47,0.00423,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-024,adr_code_meaning,1000,"Transport category 3 → 1000 kg.
+
+1000",correct,,0,799,193,0,0,20,0.00293,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-025,adr_code_meaning,1.5,"Tank code L1.5BN: L = tank for liquids, 1.5 = minimum calculation pressure 1.5 bar, B = bottom filling/discharge with 3 closures, N = no safety valve, not hermetically closed.
+
+1.5",correct,,0,3032,217,0,0,83,0.00632,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-026,adr_code_meaning,4,"Tank code L4BH: L = liquid, 4 = minimum calculation pressure 4 bar, B = bottom filling/discharge openings with 3 closures, H = hermetically closed.
+
+4",correct,,0,2982,168,0,0,67,0.00503,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-027,adr_code_meaning,10,10,correct,,0,797,197,0,0,3,0.00212,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-028,adr_code_meaning,15,"Tank code L15CH: L = liquid, 15 = minimum calculation pressure in bar, C = top filling/discharge, H = hermetically closed.
+
+15",correct,,0,3917,229,0,0,55,0.00504,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-029,adr_code_meaning,21,,unknown,,0,1267,191,0,0,0,0.00191,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-030,adr_code_meaning,10,10,correct,,0,4015,178,0,0,158,0.00968,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-031,adr_code_meaning,B,"ADR tank code third character: A = bottom filling or discharge openings with two closures; B = bottom with three closures; C = top filling/discharge openings with three closures only above the liquid; D = top with three closures and cleaning openings below liquid... Actually for ADR 4.3.4.1.1: Part 3 (openings): A = tank with bottom filling or discharge openings with 2 closures; B = bottom with 3 closures; C = top filling and discharge openings with only cleaning openings below surface of liquid; D = top openings with no openings below the surface.
+
+B",correct,,0,4012,184,0,0,185,0.01109,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-032,adr_code_meaning,H,,unknown,,0,650,176,0,0,0,0.00176,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-033,adr_code_meaning,1.5,1.5,correct,,0,2443,181,0,0,5,0.00206,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-034,adr_code_meaning,2.65,"T4 portable tank instruction: minimum test pressure 2.65 bar, minimum shell thickness 6 mm, bottom opening requirements 4.3.2.3 (or similar), pressure-relief requirements normal.
+
+2.65",correct,,0,3441,165,0,0,80,0.00565,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-035,adr_code_meaning,4,4,correct,,0,7543,199,0,0,670,0.03549,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-036,adr_code_meaning,6,6,correct,,0,2338,193,0,0,144,0.00913,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-037,adr_code_meaning,10,"T20 portable tank instruction: minimum test pressure 10 bar, minimum shell thickness 8 mm, bottom openings not allowed, pressure relief requirements per 6.7.2.8.3.
+
+10",correct,,0,3124,176,0,0,72,0.00536,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-038,adr_code_meaning,6,6,correct,,0,9379,194,0,0,795,0.04169,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-039,adr_code_meaning,8,,unknown,,0,1232,261,0,0,0,0.00261,,
+anthropic,claude-fable-5-1,A,1,adr_code_meaning-040,adr_code_meaning,10,,unknown,,0,1177,209,0,0,0,0.00209,,

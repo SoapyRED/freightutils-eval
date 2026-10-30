@@ -11,7 +11,13 @@ points of a load, a chargeable weight or a loading-metre figure, an HS heading, 
 or a UN/LOCODE. Each question has one value as its answer, so the scoring is deterministic: no
 model grades another model.
 
-- **Question set v0.4** (current, 30 October 2026): v0.2.1 with the 30 `adr_2027_delta` questions given
+- **Question set v0.5** (current, 30 October 2026): 340 questions — v0.4 plus one new family,
+  `adr_code_meaning` (40): one value that the meaning of an ADR 2025 Table A code fixes (a packing
+  instruction's limit, a special provision's threshold, a transport category's 1.1.3.6.3 maximum, a tank
+  code's calculation pressure or letter, a portable tank instruction's test pressure or shell thickness),
+  drawn from the FreightUtils ADR code registry (`questions/v0.5/manifest.json`, set sha256
+  `b15cccd9ed8de154…`). The six v0.4 family files are byte-identical.
+- **Question set v0.4** (30 October 2026): v0.2.1 with the 30 `adr_2027_delta` questions given
   a tool — `adr_lookup` with `edition: "2027"` — now that FreightUtils serves ADR 2027; ids, prompts,
   expected values and scoring are v0.2.1's (`questions/v0.4/manifest.json`, set sha256
   `94de434d013a8c26…`). The ADR 2027 change index (`finding-aid/adr-2027-change-index/`) is a finding
@@ -26,11 +32,29 @@ model grades another model.
   the same as v0.2.
 - **Harness**: Node, no framework, one adapter per provider over its own HTTP API.
 - **Results**: one directory per run under `results/` with the scored tables. The latest is
-  [v0.4](results/2026-10-30-v0.4/); before it the
+  [v0.5](results/2026-10-30-v0.5/); before it [v0.4](results/2026-10-30-v0.4/) and the
   [v0.3 web-search run](results/2026-10-28-web-search/); the full A/B pass
   is the [v0.2 full pass](results/2026-10-21-full-pass/) (see "Results" below).
 
 ## Results
+
+**[v0.5: what a code means, and the answer mode, 30 October 2026](results/2026-10-30-v0.5/README.md)** — the 40
+`adr_code_meaning` questions, `claude-fable-5-1`, condition A and condition B with `include_codes` none / compact
+/ full:
+
+| Mode | Correct | Confident wrong | Refused by the API | Mean tool calls | Cost per correct answer (USD) |
+|---|---:|---:|---:|---:|---:|
+| A, alone | 34 of 40 (85.0%) | 0 | 6 | 0 | 0.0097 |
+| B, `none` | 38 of 40 (95.0%) | 0 | 2 | 1.55 | 0.0835 |
+| B, `compact` (the default) | 38 of 40 (95.0%) | 0 | 2 | 1.10 | 0.0853 |
+| B, `full` | 38 of 40 (95.0%) | 0 | 2 | 1.00 | 0.1705 |
+
+Every answer the model gave was right; every miss is an answer the API blocked before the model replied
+(`stop_reason: "refusal"`: two Class 1 explosives entries in every mode, four more in A). `compact` was as
+accurate as `none` and `full` and cost 2% more than `none` per correct answer — without the meanings the model
+looked the codes up itself (`resolve_reference` 29 times in 40 answers, 11 with `compact`) — while `full` cost
+twice as much for no accuracy gain. All 340, condition B (the v0.4 answers to the 300 carried): 338 of 340,
+0 confident-wrong. Gemini and Grok not run (the $15 cap; $13.22 spent).
 
 **[v0.4: ADR 2027 with the tools, 30 October 2026](results/2026-10-30-v0.4/README.md)**, condition B on
 question set v0.4. (a) The 30 ADR 2027 questions with `adr_lookup` serving ADR 2027: `claude-fable-5-1`,
@@ -121,6 +145,7 @@ outside content: text in them that reads as an instruction is flagged in the res
 | `adr_exemption` | 30 | the 1.1.3.6 points of a load described in words (18), or whether it exceeds 1,000 points (12) | a number, or YES / NO | `adr_exemption_calculator` |
 | `freight_arithmetic` | 60 | chargeable weight with the divisor stated (15), CBM (12), loading metres (12), pallet floor positions when double-stacked (9), sea W/M revenue tonnes (12) | a number | the matching calculator |
 | `hs_hierarchy` | 50 | structure only: the 4-digit heading of a 6-digit subheading (20), the 2-digit chapter of a subheading (15) and of a heading (15). No wording, and no classification questions (which code fits a product): that is judgement, not reference | digits | `hs_code_lookup` |
+| `adr_code_meaning` (v0.5) | 40 | one value a Table A code's meaning fixes: packing instruction limits (10), special provision thresholds (10), the 1.1.3.6.3 maximum by transport category (4), tank code calculation pressures (6) and letters (2), portable tank test pressures (5) and shell thicknesses (3) | a number, or a letter | `adr_lookup` (`include_codes: "compact"`, the default; 24 values are in the compact summary, 16 only in the full answer's parameters) |
 | `identifiers` | 60 | AWB prefix to carrier (15), IATA to ICAO (10) and back (5), UN/LOCODE to place (10), container external dimension (10), ULD base dimension (10) | a code, name or number | `airline_lookup`, `unlocode_lookup`, `container_lookup`, `uld_lookup` |
 
 Every question carries: `id`, `family`, `prompt` (plain English, one fact, the answer format
@@ -158,6 +183,7 @@ How the set was drawn (`generator/generate.mjs --version v0.2`, seed `freightuti
   No question changed: v0.3 runs on question set v0.2.
 - v0.2.1 (2026-10-29) — 15 adr_2027_delta match sentences re-anchored to the reworded UN-page phrase; no question, expected value or scoring change; results scored against v0.2 remain valid.
 - v0.4 (2026-10-30) — the 30 adr_2027_delta questions gain `tool` = `adr_lookup` with `edition: "2027"` and a check on the API answer (`tool_field_delta`); no prompt, expected value or scoring change. The harness gains `--adr-include-codes none|compact|full`. Release v0.4.0 adds the ADR 2027 change index (`finding-aid/`).
+- v0.5 (2026-10-30) — v0.4 plus the `adr_code_meaning` family (40), generated by `generator/v0_5.mjs` from the FreightUtils ADR code registry (expected values from the records' `parameters`, cited to volume and PDF page; the 1.1.3.6.3 maxima from the site's owner table, Vol. I PDF p. 30); a new live-lint check (`tool_code`) reads each value from `resolved_codes` of the full answer and checks whether the compact answer states it. No existing question, expected value or scoring rule changes; no new rule. `harness/rescore.mjs` gains `--manifest`.
 
 ### v0.1: what changed from v0
 
@@ -207,7 +233,8 @@ pages for the ADR 2027 family. It compares every expected value with what the si
 strictly: text must match exactly after normalisation, not just be similar. A mismatch is a bug
 in the generator, not in the site. At the v0.1 freeze it checked 300 values with zero mismatches
 (`QUESTIONS_DIR` picks the set; the default is `questions/v0.2.1`). At the v0.2 freeze it again
-checked 300 values with zero mismatches, and at the v0.2.1 freeze (29 October 2026) again.
+checked 300 values with zero mismatches, and at the v0.2.1 freeze (29 October 2026) again. At the v0.5
+freeze (30 October 2026) it checked 340 values with zero mismatches.
 For an ADR 2027 question whose answer is NO CHANGE it looks for the UN page's no-change
 sentence ("no Table A change for this entry" since v0.2.1), and fails a question that quotes
 any other sentence.
@@ -256,7 +283,7 @@ node harness/run.mjs --models openai,xai --conditions B            # the full 30
 - `--conditions C` (v0.3) needs a `web_search` block for the provider in `harness/models.json`
   (only `anthropic` has one); the per-search fee is added to the cost. `--ids a,b,c` asks exactly
   those questions (a smoke); `--first-per-family N` asks the first N ids of each family in the
-  frozen order. `harness/rescore.mjs --keep anthropic/A,anthropic/B` carries only those
+  frozen order. `harness/rescore.mjs --keep anthropic/A,anthropic/B` carries only those (`--manifest PATH` when the old run's manifest is not `results/<run>/manifest.json`)
   provider/condition rows into a new run.
 - `--sample N` is stratified by family (largest remainder, in proportion to family size) and
   deterministic by `--seed`.
@@ -318,6 +345,14 @@ price. That overestimates the cost.
   source", not as "the truth". The values come from the publishers each question names; where
   the site might be wrong, the lint cannot tell (it checks the set against the site, not the
   site against the regulation).
+- **The code meanings are the registry's (v0.5).** The `adr_code_meaning` expected values are the
+  FreightUtils ADR code registry's paraphrased parameters, cited to page and unreviewed on 30 October 2026
+  (0 of 964 records reviewed). The numbers are facts the ADR text states, but the family measures whether a
+  model gets the number the registry serves; where a record is wrong, the lint cannot tell. The manifest
+  lists each question's registry record, so a review that changes a record flips its question.
+- **API refusals score as unknown.** An answer the provider blocks before the model replies is empty, and
+  the scorer counts an empty answer as unknown. In v0.5 every `claude-fable-5-1` miss on `adr_code_meaning`
+  was such a block (the v0.5 results README names them).
 - **The prompts are fixed.** Different wording, or a different system prompt, would give
   different numbers.
 - **Models change.** A run measures the model IDs in its manifest, on its date.

@@ -1,0 +1,986 @@
+{
+  "question_set": "v0.5",
+  "runs": {
+    "a-fable-A": {
+      "manifest": {
+        "conditions": [
+          "A"
+        ],
+        "adr_include_codes": null,
+        "sample": 40,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {},
+        "carried_from": []
+      },
+      "overall": {
+        "claude-fable-5-1 / A": {
+          "n": 40,
+          "errors": 0,
+          "accuracy": 0.85,
+          "unknown_rate": 0.15,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 0,
+          "mean_latency_ms": 2830,
+          "input_tokens": 7579,
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 5077,
+          "usd": 0.32963999999999993
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / A": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_code_meaning": {
+            "n": 40,
+            "errors": 0,
+            "accuracy": 0.85,
+            "unknown_rate": 0.15,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": 2830,
+            "input_tokens": 7579,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 5077,
+            "usd": 0.32963999999999993
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "a-fable-B-compact": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": "compact",
+        "sample": 40,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {},
+        "carried_from": []
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 40,
+          "errors": 0,
+          "accuracy": 0.95,
+          "unknown_rate": 0.05,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1.1,
+          "mean_latency_ms": 5420,
+          "input_tokens": 3738975,
+          "cached_tokens": 3548244,
+          "cache_write_tokens": 0,
+          "output_tokens": 8907,
+          "usd": 3.239721000000001
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_code_meaning": {
+            "n": 40,
+            "errors": 0,
+            "accuracy": 0.95,
+            "unknown_rate": 0.05,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.1,
+            "mean_latency_ms": 5420,
+            "input_tokens": 3738975,
+            "cached_tokens": 3548244,
+            "cache_write_tokens": 0,
+            "output_tokens": 8907,
+            "usd": 3.239721000000001
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "a-fable-B-full": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": "full",
+        "sample": 40,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {},
+        "carried_from": []
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 40,
+          "errors": 0,
+          "accuracy": 0.95,
+          "unknown_rate": 0.05,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1,
+          "mean_latency_ms": 4684,
+          "input_tokens": 3866819,
+          "cached_tokens": 3337039,
+          "cache_write_tokens": 0,
+          "output_tokens": 6920,
+          "usd": 6.478059749999999
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_code_meaning": {
+            "n": 40,
+            "errors": 0,
+            "accuracy": 0.95,
+            "unknown_rate": 0.05,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 4684,
+            "input_tokens": 3866819,
+            "cached_tokens": 3337039,
+            "cache_write_tokens": 0,
+            "output_tokens": 6920,
+            "usd": 6.478059749999999
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "a-fable-B-none": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": "none",
+        "sample": 40,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {},
+        "carried_from": []
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 40,
+          "errors": 0,
+          "accuracy": 0.95,
+          "unknown_rate": 0.05,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1.55,
+          "mean_latency_ms": 5702,
+          "input_tokens": 4423832,
+          "cached_tokens": 4266341,
+          "cache_write_tokens": 42241,
+          "output_tokens": 8535,
+          "usd": 3.1738477500000006
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_code_meaning": {
+            "n": 40,
+            "errors": 0,
+            "accuracy": 0.95,
+            "unknown_rate": 0.05,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.55,
+            "mean_latency_ms": 5702,
+            "input_tokens": 4423832,
+            "cached_tokens": 4266341,
+            "cache_write_tokens": 42241,
+            "output_tokens": 8535,
+            "usd": 3.1738477500000006
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "c-all-340-B-fable": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": null,
+        "sample": 340,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {},
+        "carried_from": [
+          "b-all-300-B-fable",
+          "2026-10-30-v0.5/a-fable-B-compact"
+        ]
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 340,
+          "errors": 0,
+          "accuracy": 0.9941176470588236,
+          "unknown_rate": 0.0058823529411764705,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1.0529411764705883,
+          "mean_latency_ms": 3730,
+          "input_tokens": 29064328,
+          "cached_tokens": 28362852,
+          "cache_write_tokens": 41496,
+          "output_tokens": 39915,
+          "usd": 16.204962999999992
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.5,
+            "mean_latency_ms": 4051,
+            "input_tokens": 2551717,
+            "cached_tokens": 2448264,
+            "cache_write_tokens": 41496,
+            "output_tokens": 4923,
+            "usd": 1.996486
+          },
+          "adr_code_meaning": {
+            "n": 40,
+            "errors": 0,
+            "accuracy": 0.95,
+            "unknown_rate": 0.05,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.1,
+            "mean_latency_ms": 5420,
+            "input_tokens": 3738975,
+            "cached_tokens": 3548244,
+            "cache_write_tokens": 0,
+            "output_tokens": 8907,
+            "usd": 3.239721000000001
+          },
+          "adr_exemption": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 4454,
+            "input_tokens": 2529411,
+            "cached_tokens": 2489760,
+            "cache_write_tokens": 0,
+            "output_tokens": 4761,
+            "usd": 1.257
+          },
+          "adr_table_a": {
+            "n": 70,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3380,
+            "input_tokens": 5904672,
+            "cached_tokens": 5809440,
+            "cache_write_tokens": 0,
+            "output_tokens": 5955,
+            "usd": 2.7024300000000006
+          },
+          "freight_arithmetic": {
+            "n": 60,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3468,
+            "input_tokens": 5034632,
+            "cached_tokens": 4979520,
+            "cache_write_tokens": 0,
+            "output_tokens": 9066,
+            "usd": 2.2493000000000003
+          },
+          "hs_hierarchy": {
+            "n": 50,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 0.98,
+            "mean_latency_ms": 3156,
+            "input_tokens": 4157473,
+            "cached_tokens": 4108104,
+            "cache_write_tokens": 0,
+            "output_tokens": 2847,
+            "usd": 1.6630660000000002
+          },
+          "identifiers": {
+            "n": 60,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3230,
+            "input_tokens": 5147448,
+            "cached_tokens": 4979520,
+            "cache_write_tokens": 0,
+            "output_tokens": 3456,
+            "usd": 3.0969599999999997
+          }
+        }
+      }
+    }
+  },
+  "adr_code_meaning_mode_table": [
+    {
+      "run": "a-fable-A",
+      "condition": "A",
+      "mode": "A (alone)",
+      "model": "claude-fable-5-1",
+      "n": 40,
+      "correct": 34,
+      "unknown": 6,
+      "wrong": 0,
+      "accuracy": 0.85,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 0,
+      "usd": 0.32963999999999993,
+      "usd_per_answer": 0.008240999999999998,
+      "usd_per_correct": 0.009695294117647057,
+      "refused": 6,
+      "answered_not_refused": {
+        "n": 34,
+        "correct": 34,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 0,
+        "usd": 0.31276999999999994,
+        "usd_per_answer": 0.009199117647058821,
+        "usd_per_correct": 0.009199117647058821
+      },
+      "stated_in_compact": {
+        "n": 24,
+        "correct": 19,
+        "unknown": 5,
+        "wrong": 0,
+        "accuracy": 0.7916666666666666,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 0,
+        "usd": 0.19481,
+        "usd_per_answer": 0.008117083333333334,
+        "usd_per_correct": 0.010253157894736842
+      },
+      "full_only": {
+        "n": 16,
+        "correct": 15,
+        "unknown": 1,
+        "wrong": 0,
+        "accuracy": 0.9375,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 0,
+        "usd": 0.13483,
+        "usd_per_answer": 0.008426875,
+        "usd_per_correct": 0.008988666666666667
+      },
+      "tools_used": {}
+    },
+    {
+      "run": "a-fable-B-none",
+      "condition": "B",
+      "mode": "none",
+      "model": "claude-fable-5-1",
+      "n": 40,
+      "correct": 38,
+      "unknown": 2,
+      "wrong": 0,
+      "accuracy": 0.95,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1.55,
+      "usd": 3.1738600000000003,
+      "usd_per_answer": 0.07934650000000001,
+      "usd_per_correct": 0.08352263157894738,
+      "refused": 2,
+      "answered_not_refused": {
+        "n": 38,
+        "correct": 38,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.631578947368421,
+        "usd": 3.14879,
+        "usd_per_answer": 0.08286289473684211,
+        "usd_per_correct": 0.08286289473684211
+      },
+      "stated_in_compact": {
+        "n": 24,
+        "correct": 22,
+        "unknown": 2,
+        "wrong": 0,
+        "accuracy": 0.9166666666666666,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.375,
+        "usd": 1.449312,
+        "usd_per_answer": 0.060388,
+        "usd_per_correct": 0.06587781818181818
+      },
+      "full_only": {
+        "n": 16,
+        "correct": 16,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.8125,
+        "usd": 1.7245480000000002,
+        "usd_per_answer": 0.10778425000000001,
+        "usd_per_correct": 0.10778425000000001
+      },
+      "tools_used": {
+        "adr_lookup": 33,
+        "resolve_reference": 29
+      }
+    },
+    {
+      "run": "a-fable-B-compact",
+      "condition": "B",
+      "mode": "compact",
+      "model": "claude-fable-5-1",
+      "n": 40,
+      "correct": 38,
+      "unknown": 2,
+      "wrong": 0,
+      "accuracy": 0.95,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1.1,
+      "usd": 3.2397370000000003,
+      "usd_per_answer": 0.08099342500000001,
+      "usd_per_correct": 0.08525623684210527,
+      "refused": 2,
+      "answered_not_refused": {
+        "n": 38,
+        "correct": 38,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.1578947368421053,
+        "usd": 3.2146670000000004,
+        "usd_per_answer": 0.0845965,
+        "usd_per_correct": 0.0845965
+      },
+      "stated_in_compact": {
+        "n": 24,
+        "correct": 22,
+        "unknown": 2,
+        "wrong": 0,
+        "accuracy": 0.9166666666666666,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 0.9166666666666666,
+        "usd": 1.702801,
+        "usd_per_answer": 0.07095004166666667,
+        "usd_per_correct": 0.07740004545454546
+      },
+      "full_only": {
+        "n": 16,
+        "correct": 16,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.375,
+        "usd": 1.5369360000000003,
+        "usd_per_answer": 0.09605850000000002,
+        "usd_per_correct": 0.09605850000000002
+      },
+      "tools_used": {
+        "adr_lookup": 32,
+        "resolve_reference": 11,
+        "adr_exemption_calculator": 1
+      }
+    },
+    {
+      "run": "a-fable-B-full",
+      "condition": "B",
+      "mode": "full",
+      "model": "claude-fable-5-1",
+      "n": 40,
+      "correct": 38,
+      "unknown": 2,
+      "wrong": 0,
+      "accuracy": 0.95,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1,
+      "usd": 6.478077000000002,
+      "usd_per_answer": 0.16195192500000005,
+      "usd_per_correct": 0.17047571052631583,
+      "refused": 2,
+      "answered_not_refused": {
+        "n": 38,
+        "correct": 38,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.0526315789473684,
+        "usd": 6.453007000000002,
+        "usd_per_answer": 0.16981597368421059,
+        "usd_per_correct": 0.16981597368421059
+      },
+      "stated_in_compact": {
+        "n": 24,
+        "correct": 22,
+        "unknown": 2,
+        "wrong": 0,
+        "accuracy": 0.9166666666666666,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 0.9166666666666666,
+        "usd": 3.6847619999999996,
+        "usd_per_answer": 0.15353175,
+        "usd_per_correct": 0.16748918181818181
+      },
+      "full_only": {
+        "n": 16,
+        "correct": 16,
+        "unknown": 0,
+        "wrong": 0,
+        "accuracy": 1,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1.125,
+        "usd": 2.7933150000000007,
+        "usd_per_answer": 0.17458218750000004,
+        "usd_per_correct": 0.17458218750000004
+      },
+      "tools_used": {
+        "resolve_reference": 5,
+        "adr_lookup": 35
+      }
+    }
+  ],
+  "refusals": [
+    {
+      "run": "a-fable-A",
+      "id": "adr_code_meaning-021",
+      "condition": "A",
+      "category": "cyber"
+    },
+    {
+      "run": "a-fable-A",
+      "id": "adr_code_meaning-022",
+      "condition": "A",
+      "category": "cyber"
+    },
+    {
+      "run": "a-fable-A",
+      "id": "adr_code_meaning-029",
+      "condition": "A",
+      "category": "cyber"
+    },
+    {
+      "run": "a-fable-A",
+      "id": "adr_code_meaning-032",
+      "condition": "A",
+      "category": "cyber"
+    },
+    {
+      "run": "a-fable-A",
+      "id": "adr_code_meaning-039",
+      "condition": "A",
+      "category": "cyber"
+    },
+    {
+      "run": "a-fable-A",
+      "id": "adr_code_meaning-040",
+      "condition": "A",
+      "category": "cyber"
+    },
+    {
+      "run": "a-fable-B-compact",
+      "id": "adr_code_meaning-021",
+      "condition": "B",
+      "category": "general_harms"
+    },
+    {
+      "run": "a-fable-B-compact",
+      "id": "adr_code_meaning-022",
+      "condition": "B",
+      "category": "general_harms"
+    },
+    {
+      "run": "a-fable-B-full",
+      "id": "adr_code_meaning-021",
+      "condition": "B",
+      "category": "general_harms"
+    },
+    {
+      "run": "a-fable-B-full",
+      "id": "adr_code_meaning-022",
+      "condition": "B",
+      "category": "general_harms"
+    },
+    {
+      "run": "a-fable-B-none",
+      "id": "adr_code_meaning-021",
+      "condition": "B",
+      "category": "general_harms"
+    },
+    {
+      "run": "a-fable-B-none",
+      "id": "adr_code_meaning-022",
+      "condition": "B",
+      "category": "general_harms"
+    }
+  ],
+  "spend_usd": {
+    "by_run": {
+      "a-fable-A": 0.32963999999999993,
+      "a-fable-B-compact": 3.2397209999999994,
+      "a-fable-B-full": 6.47805975,
+      "a-fable-B-none": 3.1738477500000006,
+      "c-all-340-B-fable": 0
+    },
+    "total": 13.221268499999999,
+    "cap": 15
+  }
+}

@@ -3,3 +3,4 @@ node_modules/
 results/raw/
 scratch/
 *.log
+results/*/raw/
