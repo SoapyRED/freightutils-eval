@@ -340,8 +340,7 @@ version. Cite the version you used:
 
 > Cristoiu, M. (2026). *freightutils-eval: frontier language models on 300 freight reference
 > questions — alone, with the FreightUtils tools, and with web search* (v0.4.0) [Data set].
-> Zenodo. (The v0.4.0 version DOI is in `CITATION.cff` once Zenodo has archived the release; v0.3.0:
-> https://doi.org/10.5281/zenodo.23743609.)
+> Zenodo. https://doi.org/10.5281/zenodo.23801448
 
 All versions: https://doi.org/10.5281/zenodo.23743608. `CITATION.cff` carries the same record for
 GitHub's "Cite this repository" button.
