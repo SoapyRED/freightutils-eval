@@ -17,6 +17,21 @@ const OUT_DIR = 'finding-aid/adr-2027-change-index';
 const OUT = path.join(OUT_DIR, 'index.json');
 const CHECK = process.argv.includes('--check');
 const lf = (p) => fs.readFileSync(path.join(DATA_ROOT, p), 'utf8').replace(/\r\n/g, '\n');
+// CI has no FreightUtils checkout: --check then verifies the committed index on its own terms (the
+// record shape, the counts it states, no value field) and says so; a fresh rebuild needs the inputs.
+if (CHECK && !fs.existsSync(path.join(DATA_ROOT, 'docs/audit/adr-2027/table-a-amendments.json'))) {
+  const j = JSON.parse(fs.readFileSync(OUT, 'utf8'));
+  const KEYS = new Set(['un_number', 'entry', 'column', 'kind', 'document', 'page', 'corrigendum_item']);
+  const bad = j.table_a.filter((r) => Object.keys(r).some((k) => !KEYS.has(k)) || !['value changed', 'entry added', 'entry deleted', 'entry renamed'].includes(r.kind));
+  const kinds = {};
+  for (const r of j.table_a) kinds[r.kind] = (kinds[r.kind] ?? 0) + 1;
+  if (bad.length || j.counts.table_a_records !== j.table_a.length || j.counts.sections_amended !== j.sections.length || JSON.stringify(kinds) !== JSON.stringify(j.counts.by_kind)) {
+    console.error(`${OUT}: structure check failed (${bad.length} bad records, or counts disagree)`);
+    process.exit(1);
+  }
+  console.log(`${OUT}: ${j.table_a.length} Table A records, ${j.sections.length} sections — structure checked (no FreightUtils checkout at ${DATA_ROOT}, so no fresh rebuild)`);
+  process.exit(0);
+}
 const amendText = lf('docs/audit/adr-2027/table-a-amendments.json');
 const amend = JSON.parse(amendText);
 const SYMBOL = { '274': 'ECE/TRANS/WP.15/274', '274/Add.1': 'ECE/TRANS/WP.15/274/Add.1', '274/Corr.1': 'ECE/TRANS/WP.15/274/Corr.1' };
