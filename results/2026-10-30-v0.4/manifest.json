@@ -1,0 +1,201 @@
+{
+  "run": "2026-10-30-v0.4",
+  "question_set": {
+    "version": "v0.4",
+    "sha256": "94de434d013a8c26a0c4117fe88de76a2344e07cf5c4683538194d8a619c70d4"
+  },
+  "verified_live": {
+    "against": "https://www.freightutils.com",
+    "checked": 300,
+    "mismatches": 0,
+    "date": "2026-10-30"
+  },
+  "runs": {
+    "a-adr-2027-delta-B": {
+      "started": "2026-10-30",
+      "conditions": [
+        "B"
+      ],
+      "adr_include_codes": null,
+      "sample": 30,
+      "models": [
+        "gpt-6-astra",
+        "claude-fable-5-1",
+        "gemini-4-argon",
+        "grok-4.7"
+      ],
+      "tools": {
+        "count": 24,
+        "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+      },
+      "providers_stopped": {
+        "openai": "out of credit at B adr_2027_delta-001: openai HTTP 429: You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+      },
+      "skipped": [],
+      "complete": true,
+      "spend": {
+        "total_usd": 7.505245999999998,
+        "spent_before_run_usd": 0,
+        "this_run_usd": 7.505245999999998,
+        "by_provider": {
+          "openai": 0,
+          "anthropic": 1.9479260000000003,
+          "google": 1.76325,
+          "xai": 3.79407
+        },
+        "cap_usd": 60,
+        "stopped_at_cap": false,
+        "carried_rows_usd_not_counted": 0
+      }
+    },
+    "b-all-300-B-fable": {
+      "started": "2026-10-30",
+      "conditions": [
+        "B"
+      ],
+      "adr_include_codes": null,
+      "sample": 300,
+      "models": [
+        "claude-fable-5-1"
+      ],
+      "tools": {
+        "count": 24,
+        "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+      },
+      "providers_stopped": {},
+      "skipped": [],
+      "complete": true,
+      "spend": {
+        "total_usd": 20.465241999999993,
+        "spent_before_run_usd": 7.5,
+        "this_run_usd": 12.965241999999993,
+        "by_provider": {
+          "anthropic": 12.96524199999999
+        },
+        "cap_usd": 60,
+        "stopped_at_cap": false,
+        "carried_rows_usd_not_counted": 0
+      }
+    },
+    "c-mode-none": {
+      "started": "2026-10-30",
+      "conditions": [
+        "B"
+      ],
+      "adr_include_codes": "none",
+      "sample": 100,
+      "models": [
+        "claude-fable-5-1"
+      ],
+      "tools": {
+        "count": 24,
+        "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+      },
+      "providers_stopped": {},
+      "skipped": [
+        {
+          "provider": "google",
+          "reason": "monthly spending cap reached (HTTP 429 at the first mode-table question)"
+        }
+      ],
+      "complete": true,
+      "spend": {
+        "total_usd": 24.450329999999997,
+        "spent_before_run_usd": 20.4705,
+        "this_run_usd": 3.979829999999996,
+        "by_provider": {
+          "anthropic": 3.9798300000000006
+        },
+        "cap_usd": 60,
+        "stopped_at_cap": false,
+        "carried_rows_usd_not_counted": 0
+      }
+    },
+    "c-mode-compact": {
+      "started": "2026-10-30",
+      "conditions": [
+        "B"
+      ],
+      "adr_include_codes": "compact",
+      "sample": 100,
+      "models": [
+        "claude-fable-5-1",
+        "gemini-4-argon"
+      ],
+      "tools": {
+        "count": 24,
+        "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+      },
+      "providers_stopped": {
+        "google": "out of credit at B adr_exemption-001: google HTTP 429: Your project has exceeded its monthly spending cap. Please go to AI Studio at https://ai.studio/spend to manage your project spend cap. Learn m"
+      },
+      "skipped": [],
+      "complete": true,
+      "spend": {
+        "total_usd": 30.152940000000008,
+        "spent_before_run_usd": 24.376,
+        "this_run_usd": 5.776940000000007,
+        "by_provider": {
+          "anthropic": 5.776940000000003,
+          "google": 0
+        },
+        "cap_usd": 60,
+        "stopped_at_cap": false,
+        "carried_rows_usd_not_counted": 0
+      }
+    },
+    "c-mode-full": {
+      "started": "2026-10-30",
+      "conditions": [
+        "B"
+      ],
+      "adr_include_codes": "full",
+      "sample": 100,
+      "models": [
+        "claude-fable-5-1"
+      ],
+      "tools": {
+        "count": 24,
+        "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+      },
+      "providers_stopped": {},
+      "skipped": [
+        {
+          "provider": "google",
+          "reason": "monthly spending cap reached (HTTP 429 at the first mode-table question)"
+        }
+      ],
+      "complete": true,
+      "spend": {
+        "total_usd": 41.46511,
+        "spent_before_run_usd": 30.1529,
+        "this_run_usd": 11.312210000000004,
+        "by_provider": {
+          "anthropic": 11.312210000000002
+        },
+        "cap_usd": 60,
+        "stopped_at_cap": false,
+        "carried_rows_usd_not_counted": 0
+      }
+    }
+  },
+  "dry_run_estimate_usd": {
+    "a": 8.14,
+    "b": 13.16,
+    "c_per_mode": 10.75,
+    "total": 53.55
+  },
+  "cap_usd": 60,
+  "spend_usd": {
+    "by_run": {
+      "a-adr-2027-delta-B": 7.505245999999998,
+      "b-all-300-B-fable": 12.965241999999993,
+      "c-mode-compact": 5.776940000000007,
+      "c-mode-full": 11.312210000000004,
+      "c-mode-none": 3.979829999999996
+    },
+    "total": 41.539468,
+    "cap": 60
+  },
+  "retries": "Network failures (\"fetch failed\", $0): 3 in (b), 2 each in (c) none and full — their error rows removed from the checkpoint and asked once more; all answered."
+}

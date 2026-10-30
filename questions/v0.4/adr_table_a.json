@@ -1,0 +1,2242 @@
+[
+  {
+    "id": "adr_table_a-001",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 3325 (RADIOACTIVE MATERIAL, LOW SPECIFIC ACTIVITY (LSA-III), FISSILE)? Answer with the value only, e.g. 3.",
+    "expected": "7",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3325_0",
+      "field": "class",
+      "site_citation": "UN 3325 RADIOACTIVE MATERIAL, LOW SPECIFIC ACTIVITY (LSA-III), FISSILE — Class 7, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3325"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-002",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 1431 (SODIUM METHYLATE)? Answer with the value only, e.g. 3.",
+    "expected": "4.2",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1431_0",
+      "field": "class",
+      "site_citation": "UN 1431 SODIUM METHYLATE — Class 4.2 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1431"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-003",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 3549 (MEDICAL WASTE, CATEGORY A, AFFECTING HUMANS, solid or MEDICAL WASTE, CATEGORY A, AFFECT...)? Answer with the value only, e.g. 3.",
+    "expected": "6.2",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3549_0",
+      "field": "class",
+      "site_citation": "UN 3549 MEDICAL WASTE, CATEGORY A, AFFECTING HUMANS, solid or MEDICAL WASTE, CATEGORY A, AFFECTING ANIMALS only, solid — Class 6.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3549"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-004",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 2990 (LIFE-SAVING APPLIANCES, SELF-INFLATING)? Answer with the value only, e.g. 3.",
+    "expected": "9",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2990_0",
+      "field": "class",
+      "site_citation": "UN 2990 LIFE-SAVING APPLIANCES, SELF-INFLATING — Class 9, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2990"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-005",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 3347, packing group III (PHENOXYACETIC ACID DERIVATIVE PESTICIDE, LIQUID, TOXIC, FLAMMABLE, flash-point not less...)? Answer with the value only, e.g. 3.",
+    "expected": "6.1",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3347_2",
+      "field": "class",
+      "site_citation": "UN 3347 PHENOXYACETIC ACID DERIVATIVE PESTICIDE, LIQUID, TOXIC, FLAMMABLE, flash-point not less than 23 °C — Class 6.1, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3347"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 2
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-006",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 1481, packing group III (PERCHLORATES, INORGANIC, N.O.S.)? Answer with the value only, e.g. 3.",
+    "expected": "5.1",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1481_1",
+      "field": "class",
+      "site_citation": "UN 1481 PERCHLORATES, INORGANIC, N.O.S. — Class 5.1, 2 ADR Table A variants (packing groups II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1481"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 1
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-007",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 1077 (PROPYLENE)? Answer with the value only, e.g. 3.",
+    "expected": "2",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1077_0",
+      "field": "class",
+      "site_citation": "UN 1077 PROPYLENE — Class 2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1077"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-008",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 3103 (ORGANIC PEROXIDE TYPE C, LIQUID)? Answer with the value only, e.g. 3.",
+    "expected": "5.2",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3103_0",
+      "field": "class",
+      "site_citation": "UN 3103 ORGANIC PEROXIDE TYPE C, LIQUID — Class 5.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3103"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-009",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 3380 (DESENSITIZED EXPLOSIVE, SOLID, N.O.S.)? Answer with the value only, e.g. 3.",
+    "expected": "4.1",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3380_0",
+      "field": "class",
+      "site_citation": "UN 3380 DESENSITIZED EXPLOSIVE, SOLID, N.O.S. — Class 4.1 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3380"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-010",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR class (Table A column 3a) for UN 0353 (ARTICLES, EXPLOSIVE, N.O.S.)? Answer with the value only, e.g. 3.",
+    "expected": "1",
+    "accept": {
+      "rule": "adr_class"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "0353_0",
+      "field": "class",
+      "site_citation": "UN 0353 ARTICLES, EXPLOSIVE, N.O.S. — Class 1, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "0353"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].class"
+    }
+  },
+  {
+    "id": "adr_table_a-011",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 3320, packing group III (SODIUM BOROHYDRIDE AND SODIUM HYDROXIDE SOLUTION, with not more than 12 % sodium borohy...)? Answer with the value only, e.g. F1.",
+    "expected": "C5",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3320_1",
+      "field": "classification_code",
+      "site_citation": "UN 3320 SODIUM BOROHYDRIDE AND SODIUM HYDROXIDE SOLUTION, with not more than 12 % sodium borohydride and not more than 40 % sodium hydroxide by mass — Class 8, 2 ADR Table A variants (packing groups II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3320"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 1
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-012",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 1164 (DIMETHYL SULPHIDE)? Answer with the value only, e.g. F1.",
+    "expected": "F1",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1164_0",
+      "field": "classification_code",
+      "site_citation": "UN 1164 DIMETHYL SULPHIDE — Class 3 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1164"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-013",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 3526 (HYDROGEN SELENIDE, ADSORBED)? Answer with the value only, e.g. F1.",
+    "expected": "9TF",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3526_0",
+      "field": "classification_code",
+      "site_citation": "UN 3526 HYDROGEN SELENIDE, ADSORBED — Class 2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3526"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-014",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 3342, packing group II (XANTHATES)? Answer with the value only, e.g. F1.",
+    "expected": "S2",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3342_0",
+      "field": "classification_code",
+      "site_citation": "UN 3342 XANTHATES — Class 4.2, 2 ADR Table A variants (packing groups II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3342"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-015",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 1183 (ETHYLDICHLOROSILANE)? Answer with the value only, e.g. F1.",
+    "expected": "WFC",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1183_0",
+      "field": "classification_code",
+      "site_citation": "UN 1183 ETHYLDICHLOROSILANE — Class 4.3 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1183"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-016",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 1990 (BENZALDEHYDE)? Answer with the value only, e.g. F1.",
+    "expected": "M11",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1990_0",
+      "field": "classification_code",
+      "site_citation": "UN 1990 BENZALDEHYDE — Class 9 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1990"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-017",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 1309, packing group II (ALUMINIUM POWDER, COATED)? Answer with the value only, e.g. F1.",
+    "expected": "F3",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1309_0",
+      "field": "classification_code",
+      "site_citation": "UN 1309 ALUMINIUM POWDER, COATED — Class 4.1, 2 ADR Table A variants (packing groups II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1309"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-018",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 1453 (CALCIUM CHLORITE)? Answer with the value only, e.g. F1.",
+    "expected": "O2",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1453_0",
+      "field": "classification_code",
+      "site_citation": "UN 1453 CALCIUM CHLORITE — Class 5.1 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1453"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-019",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 1579 (4-CHLORO-o-TOLUIDINE HYDROCHLORIDE, SOLID)? Answer with the value only, e.g. F1.",
+    "expected": "T2",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1579_0",
+      "field": "classification_code",
+      "site_citation": "UN 1579 4-CHLORO-o-TOLUIDINE HYDROCHLORIDE, SOLID — Class 6.1 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1579"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-020",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the ADR classification code (Table A column 3b) for UN 3118 (ORGANIC PEROXIDE TYPE E, SOLID, TEMPERATURE CONTROLLED)? Answer with the value only, e.g. F1.",
+    "expected": "P2",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3118_0",
+      "field": "classification_code",
+      "site_citation": "UN 3118 ORGANIC PEROXIDE TYPE E, SOLID, TEMPERATURE CONTROLLED — Class 5.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3118"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].classification_code"
+    }
+  },
+  {
+    "id": "adr_table_a-021",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 2383 (DIPROPYLAMINE)? Answer with the value only, e.g. II.",
+    "expected": "II",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2383_0",
+      "field": "packing_group",
+      "site_citation": "UN 2383 DIPROPYLAMINE — Class 3 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2383"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-022",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 2879 (SELENIUM OXYCHLORIDE)? Answer with the value only, e.g. II.",
+    "expected": "I",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2879_0",
+      "field": "packing_group",
+      "site_citation": "UN 2879 SELENIUM OXYCHLORIDE — Class 8 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2879"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-023",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 1320 (DINITROPHENOL, WETTED with not less than 15 % water, by mass)? Answer with the value only, e.g. II.",
+    "expected": "I",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1320_0",
+      "field": "packing_group",
+      "site_citation": "UN 1320 DINITROPHENOL, WETTED with not less than 15 % water, by mass — Class 4.1 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1320"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-024",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 1714 (ZINC PHOSPHIDE)? Answer with the value only, e.g. II.",
+    "expected": "I",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1714_0",
+      "field": "packing_group",
+      "site_citation": "UN 1714 ZINC PHOSPHIDE — Class 4.3 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1714"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-025",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 2464 (BERYLLIUM NITRATE)? Answer with the value only, e.g. II.",
+    "expected": "II",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2464_0",
+      "field": "packing_group",
+      "site_citation": "UN 2464 BERYLLIUM NITRATE — Class 5.1 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2464"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-026",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 2742 (CHLOROFORMATES, TOXIC, CORROSIVE, FLAMMABLE, N.O.S.)? Answer with the value only, e.g. II.",
+    "expected": "II",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2742_0",
+      "field": "packing_group",
+      "site_citation": "UN 2742 CHLOROFORMATES, TOXIC, CORROSIVE, FLAMMABLE, N.O.S. — Class 6.1 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2742"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-027",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 3151 (POLYHALOGENATED BIPHENYLS, LIQUID or HALOGENATED MONOMETHYLDIPHENYLMETHANES, LIQUID or ...)? Answer with the value only, e.g. II.",
+    "expected": "II",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3151_0",
+      "field": "packing_group",
+      "site_citation": "UN 3151 POLYHALOGENATED BIPHENYLS, LIQUID or HALOGENATED MONOMETHYLDIPHENYLMETHANES, LIQUID or POLYHALOGENATED TERPHENYLS, LIQUID — Class 9 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3151"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-028",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 1384 (SODIUM DITHIONITE (SODIUM HYDROSULPHITE))? Answer with the value only, e.g. II.",
+    "expected": "II",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1384_0",
+      "field": "packing_group",
+      "site_citation": "UN 1384 SODIUM DITHIONITE (SODIUM HYDROSULPHITE) — Class 4.2 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1384"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-029",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 2234 (CHLOROBENZOTRI-FLUORIDES)? Answer with the value only, e.g. II.",
+    "expected": "III",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2234_0",
+      "field": "packing_group",
+      "site_citation": "UN 2234 CHLOROBENZOTRI-FLUORIDES — Class 3 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2234"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-030",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the packing group (Table A column 4) for UN 1813 (POTASSIUM HYDROXIDE, SOLID)? Answer with the value only, e.g. II.",
+    "expected": "II",
+    "accept": {
+      "rule": "packing_group"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1813_0",
+      "field": "packing_group",
+      "site_citation": "UN 1813 POTASSIUM HYDROXIDE, SOLID — Class 8 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1813"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].packing_group"
+    }
+  },
+  {
+    "id": "adr_table_a-031",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 1330 (MANGANESE RESINATE)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1330_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 1330 MANGANESE RESINATE — Class 4.1 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1330"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-032",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 1362 (CARBON, ACTIVATED)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1362_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 1362 CARBON, ACTIVATED — Class 4.2 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1362"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-033",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 0131 (LIGHTERS, FUSE)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "0131_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 0131 LIGHTERS, FUSE — Class 1, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "0131"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-034",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 1848 (PROPIONIC ACID with not less than 10 % and less than 90 % acid by mass)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1848_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 1848 PROPIONIC ACID with not less than 10 % and less than 90 % acid by mass — Class 8 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1848"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-035",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 3330 (RADIOACTIVE MATERIAL, TYPE C PACKAGE, FISSILE)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3330_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 3330 RADIOACTIVE MATERIAL, TYPE C PACKAGE, FISSILE — Class 7, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3330"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-036",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 1602, packing group III (DYE, LIQUID, TOXIC, N.O.S. or DYE INTERMEDIATE, LIQUID, TOXIC, N.O.S.)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1602_2",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 1602 DYE, LIQUID, TOXIC, N.O.S. or DYE INTERMEDIATE, LIQUID, TOXIC, N.O.S. — Class 6.1, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1602"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 2
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-037",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 2336 (ALLYL FORMATE)? Answer with the value only, e.g. D/E.",
+    "expected": "(C/E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2336_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 2336 ALLYL FORMATE — Class 3 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2336"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-038",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 3120 (ORGANIC PEROXIDE TYPE F, SOLID, TEMPERATURE CONTROLLED)? Answer with the value only, e.g. D/E.",
+    "expected": "(D)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3120_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 3120 ORGANIC PEROXIDE TYPE F, SOLID, TEMPERATURE CONTROLLED — Class 5.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3120"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-039",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 1418, packing group I (MAGNESIUM POWDER or MAGNESIUM ALLOYS POWDER)? Answer with the value only, e.g. D/E.",
+    "expected": "(E)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1418_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 1418 MAGNESIUM POWDER or MAGNESIUM ALLOYS POWDER — Class 4.3, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1418"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-040",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the tunnel restriction code (Table A column 15) for UN 3374 (ACETYLENE, SOLVENT FREE)? Answer with the value only, e.g. D/E.",
+    "expected": "(D)",
+    "accept": {
+      "rule": "tunnel"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3374_0",
+      "field": "tunnel_restriction_code",
+      "site_citation": "UN 3374 ACETYLENE, SOLVENT FREE — Class 2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3374"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].tunnel_restriction_code"
+    }
+  },
+  {
+    "id": "adr_table_a-041",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 0104 (CORD (FUSE), DETONATING, MILD EFFECT, metal clad)? Answer with the value only, e.g. 1 L.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "0104_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 0104 CORD (FUSE), DETONATING, MILD EFFECT, metal clad — Class 1, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "0104"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-042",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 2881, packing group I (METAL CATALYST, DRY)? Answer with the value only, e.g. 1 L.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2881_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 2881 METAL CATALYST, DRY — Class 4.2, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2881"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-043",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 1841 (ACETALDEHYDE AMMONIA)? Answer with the value only, e.g. 1 L.",
+    "expected": "5 kg",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1841_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 1841 ACETALDEHYDE AMMONIA — Class 9 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1841"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-044",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 1418, packing group II (MAGNESIUM POWDER or MAGNESIUM ALLOYS POWDER)? Answer with the value only, e.g. 1 L.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1418_1",
+      "field": "limited_quantity",
+      "site_citation": "UN 1418 MAGNESIUM POWDER or MAGNESIUM ALLOYS POWDER — Class 4.3, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1418"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 1
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-045",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 1313 (CALCIUM RESINATE)? Answer with the value only, e.g. 1 L.",
+    "expected": "5 kg",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1313_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 1313 CALCIUM RESINATE — Class 4.1 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1313"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-046",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 2305 (NITROBENZENE-SULPHONIC ACID)? Answer with the value only, e.g. 1 L.",
+    "expected": "1 kg",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2305_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 2305 NITROBENZENE-SULPHONIC ACID — Class 8 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2305"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-047",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 1188 (ETHYLENE GLYCOL MONOMETHYL ETHER)? Answer with the value only, e.g. 1 L.",
+    "expected": "5 L",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1188_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 1188 ETHYLENE GLYCOL MONOMETHYL ETHER — Class 3 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1188"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-048",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 3111 (ORGANIC PEROXIDE TYPE B, LIQUID, TEMPERATURE CONTROLLED)? Answer with the value only, e.g. 1 L.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3111_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 3111 ORGANIC PEROXIDE TYPE B, LIQUID, TEMPERATURE CONTROLLED — Class 5.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3111"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-049",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 3382 (TOXIC BY INHALATION LIQUID, N.O.S. with an LC₅₀ lower than or equal to 1000 ml/m³ and s...)? Answer with the value only, e.g. 1 L.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3382_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 3382 TOXIC BY INHALATION LIQUID, N.O.S. with an LC₅₀ lower than or equal to 1000 ml/m³ and saturated vapour concentration greater than or equal to 10 LC₅₀ — Class 6.1 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3382"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-050",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the limited quantity (Table A column 7a); answer 0 if limited quantity is not permitted for UN 3326 (RADIOACTIVE MATERIAL, SURFACE CONTAMINATED OBJECTS (SCO-I or SCO-II), FISSILE)? Answer with the value only, e.g. 1 L.",
+    "expected": "0",
+    "accept": {
+      "rule": "limited_quantity"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3326_0",
+      "field": "limited_quantity",
+      "site_citation": "UN 3326 RADIOACTIVE MATERIAL, SURFACE CONTAMINATED OBJECTS (SCO-I or SCO-II), FISSILE — Class 7, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3326"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].limited_quantity"
+    }
+  },
+  {
+    "id": "adr_table_a-051",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 3397, packing group III (ORGANOMETALLIC SUBSTANCE, SOLID, WATER-REACTIVE, SELF-HEATING)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "4.3 +4.2",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3397_2",
+      "field": "labels",
+      "site_citation": "UN 3397 ORGANOMETALLIC SUBSTANCE, SOLID, WATER-REACTIVE, SELF-HEATING — Class 4.3, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3397"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 2
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-052",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 3102 (ORGANIC PEROXIDE TYPE B, SOLID)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "5.2 +1",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3102_0",
+      "field": "labels",
+      "site_citation": "UN 3102 ORGANIC PEROXIDE TYPE B, SOLID — Class 5.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3102"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-053",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 3536 (LITHIUM BATTERIES INSTALLED IN CARGO TRANSPORT UNIT lithium ion batteries or lithium me...)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "9",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3536_0",
+      "field": "labels",
+      "site_citation": "UN 3536 LITHIUM BATTERIES INSTALLED IN CARGO TRANSPORT UNIT lithium ion batteries or lithium metal batteries — Class 9, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3536"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-054",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 2922, packing group III (CORROSIVE LIQUID, TOXIC, N.O.S.)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "8 +6.1",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2922_2",
+      "field": "labels",
+      "site_citation": "UN 2922 CORROSIVE LIQUID, TOXIC, N.O.S. — Class 8, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2922"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 2
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-055",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 1326 (HAFNIUM POWDER, WETTED with not less than 25 % water)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "4.1",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1326_0",
+      "field": "labels",
+      "site_citation": "UN 1326 HAFNIUM POWDER, WETTED with not less than 25 % water — Class 4.1 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1326"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-056",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 0241 (EXPLOSIVE, BLASTING, TYPE E)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "1",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "0241_0",
+      "field": "labels",
+      "site_citation": "UN 0241 EXPLOSIVE, BLASTING, TYPE E — Class 1, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "0241"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-057",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 3324 (RADIOACTIVE MATERIAL, LOW SPECIFIC ACTIVITY (LSA-II), FISSILE)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "7X +7E",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3324_0",
+      "field": "labels",
+      "site_citation": "UN 3324 RADIOACTIVE MATERIAL, LOW SPECIFIC ACTIVITY (LSA-II), FISSILE — Class 7, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3324"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-058",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 2329 (TRIMETHYL PHOSPHITE)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "3",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2329_0",
+      "field": "labels",
+      "site_citation": "UN 2329 TRIMETHYL PHOSPHITE — Class 3 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2329"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-059",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 3128, packing group II (SELF-HEATING SOLID, TOXIC, ORGANIC, N.O.S.)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "4.2 +6.1",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3128_0",
+      "field": "labels",
+      "site_citation": "UN 3128 SELF-HEATING SOLID, TOXIC, ORGANIC, N.O.S. — Class 4.2, 2 ADR Table A variants (packing groups II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3128"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-060",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the danger label(s) (Table A column 5), primary first, joined with + for UN 2993, packing group II (ARSENICAL PESTICIDE, LIQUID, TOXIC, FLAMMABLE, flash-point not less than 23 °C)? Answer with the value only, e.g. 2.3+2.1.",
+    "expected": "6.1 +3",
+    "accept": {
+      "rule": "labels"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2993_1",
+      "field": "labels",
+      "site_citation": "UN 2993 ARSENICAL PESTICIDE, LIQUID, TOXIC, FLAMMABLE, flash-point not less than 23 °C — Class 6.1, 3 ADR Table A variants (packing groups I, II, III); packing group, transport category and limited quantity differ by variant, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2993"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 1
+      },
+      "path": "result.results[].labels"
+    }
+  },
+  {
+    "id": "adr_table_a-061",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 1428 (SODIUM)? Answer with the value only, e.g. 33.",
+    "expected": "X423",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1428_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 1428 SODIUM — Class 4.3 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1428"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-062",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 3253 (DISODIUM TRIOXOSILICATE)? Answer with the value only, e.g. 33.",
+    "expected": "80",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3253_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 3253 DISODIUM TRIOXOSILICATE — Class 8 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3253"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-063",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 3240 (SELF-REACTIVE SOLID TYPE F, TEMPERATURE CONTROLLED)? Answer with the value only, e.g. 33.",
+    "expected": "40",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3240_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 3240 SELF-REACTIVE SOLID TYPE F, TEMPERATURE CONTROLLED — Class 4.1, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3240"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-064",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 2913 (RADIOACTIVE MATERIAL, SURFACE CONTAMINATED OBJECTS (SCO-I, SCO-II or SCO-III), non fiss...)? Answer with the value only, e.g. 33.",
+    "expected": "70",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2913_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 2913 RADIOACTIVE MATERIAL, SURFACE CONTAMINATED OBJECTS (SCO-I, SCO-II or SCO-III), non fissile or fissile-excepted — Class 7, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2913"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-065",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 1553 (ARSENIC ACID, LIQUID)? Answer with the value only, e.g. 33.",
+    "expected": "66",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1553_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 1553 ARSENIC ACID, LIQUID — Class 6.1 PG I, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1553"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-066",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 1363 (COPRA)? Answer with the value only, e.g. 33.",
+    "expected": "40",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1363_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 1363 COPRA — Class 4.2 PG III, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1363"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-067",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 2454 (METHYL FLUORIDE (REFRIGERANT GAS R 41))? Answer with the value only, e.g. 33.",
+    "expected": "23",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2454_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 2454 METHYL FLUORIDE (REFRIGERANT GAS R 41) — Class 2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2454"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-068",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 1282 (PYRIDINE)? Answer with the value only, e.g. 33.",
+    "expected": "33",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1282_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 1282 PYRIDINE — Class 3 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "1282"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-069",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 2212 (ASBESTOS, AMPHIBOLE (amosite, tremolite, actinolite, anthophyllite, crocidolite))? Answer with the value only, e.g. 33.",
+    "expected": "90",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2212_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 2212 ASBESTOS, AMPHIBOLE (amosite, tremolite, actinolite, anthophyllite, crocidolite) — Class 9 PG II, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "2212"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  },
+  {
+    "id": "adr_table_a-070",
+    "family": "adr_table_a",
+    "prompt": "Under ADR 2025, what is the hazard identification number (Kemler code, Table A column 20) for UN 3119 (ORGANIC PEROXIDE TYPE F, LIQUID, TEMPERATURE CONTROLLED)? Answer with the value only, e.g. 33.",
+    "expected": "539",
+    "accept": {
+      "rule": "code"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3119_0",
+      "field": "hazard_identification_number",
+      "site_citation": "UN 3119 ORGANIC PEROXIDE TYPE F, LIQUID, TEMPERATURE CONTROLLED — Class 5.2, UNECE ADR 2025."
+    },
+    "tool": {
+      "name": "adr_lookup",
+      "arguments": {
+        "un_number": "3119"
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "select": {
+        "variant_index": 0
+      },
+      "path": "result.results[].hazard_identification_number"
+    }
+  }
+]

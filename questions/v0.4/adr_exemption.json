@@ -1,0 +1,1132 @@
+[
+  {
+    "id": "adr_exemption-001",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 235 litres of UN 1190 ETHYL FORMATE, packing group II, in 1A1 steel drums. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 705,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1190_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 235 × 3 = 705 = 705",
+      "site_citation": "ADR 1.1.3.6: 705 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1190",
+            "quantity": 235,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-002",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 120 litres of UN 2493 HEXAMETHYLENEIMINE, packing group II, in 4G boxes with inner bottles. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 360,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2493_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 120 × 3 = 360 = 360",
+      "site_citation": "ADR 1.1.3.6: 360 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2493",
+            "quantity": 120,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-003",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 85 kg net mass of UN 1823 SODIUM HYDROXIDE, SOLID, packing group II, in 1G fibre drums; and 205 kg net mass of UN 1447 BARIUM PERCHLORATE, SOLID, packing group II, in 5H4 plastic bags in a 4G box. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 870,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1823_0 + 1447_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 85 × 3 = 255 + 205 × 3 = 615 = 870",
+      "site_citation": "ADR 1.1.3.6: 870 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1823",
+            "quantity": 85,
+            "unit": "kg"
+          },
+          {
+            "un_number": "1447",
+            "quantity": 205,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-004",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 145 kg net mass of UN 3531 POLYMERIZING SUBSTANCE, SOLID, STABILIZED, N.O.S., packing group III, in 1G fibre drums. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3531_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 145 × 3 = 435 = 435",
+      "site_citation": "ADR 1.1.3.6: 435 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "3531",
+            "quantity": 145,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-005",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 445 kg net mass of UN 2018 CHLOROANILINES, SOLID, packing group II, in 1A2 steel drums. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "YES",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2018_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 445 × 3 = 1335 = 1335",
+      "site_citation": "ADR 1.1.3.6: 1335 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2018",
+            "quantity": 445,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-006",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 265 litres of UN 1128 n-BUTYL FORMATE, packing group II, in 31HA1 IBCs; and 775 litres of UN 2238 CHLOROTOLUENES, packing group III, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1570,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1128_0 + 2238_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 265 × 3 = 795 + 775 × 1 = 775 = 1570",
+      "site_citation": "ADR 1.1.3.6: 1570 transport point(s) vs 1000 threshold — full ADR compliance required (Total points exceed 1,000 threshold — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1128",
+            "quantity": 265,
+            "unit": "L"
+          },
+          {
+            "un_number": "2238",
+            "quantity": 775,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-007",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 445 litres of UN 1175 ETHYLBENZENE, packing group II, in 1A1 steel drums. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1335,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1175_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 445 × 3 = 1335 = 1335",
+      "site_citation": "ADR 1.1.3.6: 1335 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1175",
+            "quantity": 445,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-008",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 490 litres of UN 2535 4-METHYLMORPHOLINE (N-METHYLMORPHOLINE), packing group II, in 1A1 steel drums. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1470,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2535_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 490 × 3 = 1470 = 1470",
+      "site_citation": "ADR 1.1.3.6: 1470 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2535",
+            "quantity": 490,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-009",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 135 kg net mass of UN 3451 TOLUIDINES, SOLID, packing group II, in 1G fibre drums; and 185 litres of UN 2934 ISOPROPYL 2-CHLOROPROPIONATE, packing group III, in 31HA1 IBCs. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3451_0 + 2934_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 135 × 3 = 405 + 185 × 1 = 185 = 590",
+      "site_citation": "ADR 1.1.3.6: 590 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "3451",
+            "quantity": 135,
+            "unit": "kg"
+          },
+          {
+            "un_number": "2934",
+            "quantity": 185,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-010",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 560 litres of UN 2243 CYCLOHEXYL ACETATE, packing group III, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2243_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 560 × 1 = 560 = 560",
+      "site_citation": "ADR 1.1.3.6: 560 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2243",
+            "quantity": 560,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-011",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 1160 litres of UN 2934 ISOPROPYL 2-CHLOROPROPIONATE, packing group III, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1160,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2934_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 1160 × 1 = 1160 = 1160",
+      "site_citation": "ADR 1.1.3.6: 1160 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2934",
+            "quantity": 1160,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-012",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 755 litres of UN 2053 METHYL ISOBUTYL CARBINOL, packing group III, in 3H1 plastic jerricans; and 170 litres of UN 2526 FURFURYLAMINE, packing group III, in 4G boxes with inner bottles. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 925,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2053_0 + 2526_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 755 × 1 = 755 + 170 × 1 = 170 = 925",
+      "site_citation": "ADR 1.1.3.6: 925 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2053",
+            "quantity": 755,
+            "unit": "L"
+          },
+          {
+            "un_number": "2526",
+            "quantity": 170,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-013",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 17 litres of UN 1553 ARSENIC ACID, LIQUID, packing group I, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 850,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1553_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 17 × 50 = 850 = 850",
+      "site_citation": "ADR 1.1.3.6: 850 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1553",
+            "quantity": 17,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-014",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 160 litres of UN 2242 CYCLOHEPTENE, packing group II, in 1A1 steel drums. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2242_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 160 × 3 = 480 = 480",
+      "site_citation": "ADR 1.1.3.6: 480 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2242",
+            "quantity": 160,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-015",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 140 kg net mass of UN 1447 BARIUM PERCHLORATE, SOLID, packing group II, in 4G fibreboard boxes; and 125 litres of UN 2014 HYDROGEN PEROXIDE, AQUEOUS SOLUTION with not less than 20 % but not..., packing group II, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1447_0 + 2014_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 140 × 3 = 420 + 125 × 3 = 375 = 795",
+      "site_citation": "ADR 1.1.3.6: 795 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1447",
+            "quantity": 140,
+            "unit": "kg"
+          },
+          {
+            "un_number": "2014",
+            "quantity": 125,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-016",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 385 litres of UN 3227 SELF-REACTIVE LIQUID TYPE E, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1155,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3227_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 385 × 3 = 1155 = 1155",
+      "site_citation": "ADR 1.1.3.6: 1155 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "3227",
+            "quantity": 385,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-017",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 240 kg net mass of UN 1574 CALCIUM ARSENATE AND CALCIUM ARSENITE MIXTURE, SOLID, packing group II, in 1G fibre drums. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 720,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1574_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 240 × 3 = 720 = 720",
+      "site_citation": "ADR 1.1.3.6: 720 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1574",
+            "quantity": 240,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-018",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 70 litres of UN 1230 METHANOL, packing group II, in 31HA1 IBCs; and 615 litres of UN 1299 TURPENTINE, packing group III, in 4G boxes with inner bottles. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 825,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1230_0 + 1299_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 70 × 3 = 210 + 615 × 1 = 615 = 825",
+      "site_citation": "ADR 1.1.3.6: 825 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1230",
+            "quantity": 70,
+            "unit": "L"
+          },
+          {
+            "un_number": "1299",
+            "quantity": 615,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-019",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 305 litres of UN 2493 HEXAMETHYLENEIMINE, packing group II, in 1A1 steel drums. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2493_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 305 × 3 = 915 = 915",
+      "site_citation": "ADR 1.1.3.6: 915 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2493",
+            "quantity": 305,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-020",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 24 litres of UN 1280 PROPYLENE OXIDE, packing group I, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "YES",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1280_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 24 × 50 = 1200 = 1200",
+      "site_citation": "ADR 1.1.3.6: 1200 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1280",
+            "quantity": 24,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-021",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 11 litres of UN 1921 PROPYLENEIMINE, STABILIZED, packing group I, in 31HA1 IBCs; and 215 litres of UN 2414 THIOPHENE, packing group II, in 31HA1 IBCs. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1195,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1921_0 + 2414_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 11 × 50 = 550 + 215 × 3 = 645 = 1195",
+      "site_citation": "ADR 1.1.3.6: 1195 transport point(s) vs 1000 threshold — full ADR compliance required (Total points exceed 1,000 threshold — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1921",
+            "quantity": 11,
+            "unit": "L"
+          },
+          {
+            "un_number": "2414",
+            "quantity": 215,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-022",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 400 litres of UN 2236 3-CHLORO-4-METHYLPHENYL ISOCYANATE, LIQUID, packing group II, in 1A1 steel drums. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1200,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2236_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 400 × 3 = 1200 = 1200",
+      "site_citation": "ADR 1.1.3.6: 1200 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2236",
+            "quantity": 400,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-023",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 1530 litres of UN 1157 DIISOBUTYL KETONE, packing group III, in 31HA1 IBCs. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1530,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1157_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 1530 × 1 = 1530 = 1530",
+      "site_citation": "ADR 1.1.3.6: 1530 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1157",
+            "quantity": 1530,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-024",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 240 litres of UN 1090 ACETONE, packing group II, in 3H1 plastic jerricans; and 180 litres of UN 2904 CHLOROPHENOLATES, LIQUID or PHENOLATES, LIQUID, packing group III, in 4G boxes with inner bottles. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1090_0 + 2904_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 240 × 3 = 720 + 180 × 1 = 180 = 900",
+      "site_citation": "ADR 1.1.3.6: 900 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1090",
+            "quantity": 240,
+            "unit": "L"
+          },
+          {
+            "un_number": "2904",
+            "quantity": 180,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-025",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 240 litres of UN 2461 METHYLPENTADIENE, packing group II, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2461_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 240 × 3 = 720 = 720",
+      "site_citation": "ADR 1.1.3.6: 720 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2461",
+            "quantity": 240,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-026",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 1490 litres of UN 2227 n-BUTYL METHACRYLATE, STABILIZED, packing group III, in 3H1 plastic jerricans. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 1490,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2227_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 1490 × 1 = 1490 = 1490",
+      "site_citation": "ADR 1.1.3.6: 1490 transport point(s) vs 1000 threshold — full ADR compliance required (Per-substance quantity limit exceeded — full ADR compliance required)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2227",
+            "quantity": 1490,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-027",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 145 litres of UN 1173 ETHYL ACETATE, packing group II, in 31HA1 IBCs; and 265 litres of UN 2219 ALLYL GLYCIDYL ETHER, packing group III, in 31HA1 IBCs. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 700,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "1173_0 + 2219_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 145 × 3 = 435 + 265 × 1 = 265 = 700",
+      "site_citation": "ADR 1.1.3.6: 700 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "1173",
+            "quantity": 145,
+            "unit": "L"
+          },
+          {
+            "un_number": "2219",
+            "quantity": 265,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-028",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 18 kg net mass of UN 3232 SELF-REACTIVE SOLID TYPE B, TEMPERATURE CONTROLLED, in 4G fibreboard boxes. Using ADR 2025 1.1.3.6.4, what is the total of the 1.1.3.6 points for the load? Answer with the number only, e.g. 750.",
+    "expected": 900,
+    "accept": {
+      "rule": "numeric",
+      "tolerance_pct": 0
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3232_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 18 × 50 = 900 = 900",
+      "site_citation": "ADR 1.1.3.6: 900 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "3232",
+            "quantity": 18,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_field",
+      "path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-029",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 16 litres of UN 3237 SELF-REACTIVE LIQUID TYPE E, TEMPERATURE CONTROLLED, in 31HA1 IBCs. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "3237_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 16 × 50 = 800 = 800",
+      "site_citation": "ADR 1.1.3.6: 800 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "3237",
+            "quantity": 16,
+            "unit": "L"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  },
+  {
+    "id": "adr_exemption-030",
+    "family": "adr_exemption",
+    "prompt": "One transport unit carries 555 litres of UN 2283 ISOBUTYL METHACRYLATE, STABILIZED, packing group III, in 1A1 steel drums; and 140 kg net mass of UN 1671 PHENOL, SOLID, packing group II, in 4G fibreboard boxes. Using ADR 2025 1.1.3.6, does the load's points total exceed 1,000 (so the 1.1.3.6 small-load exemption does not apply)? Answer YES or NO only.",
+    "expected": "NO",
+    "accept": {
+      "rule": "yes_no"
+    },
+    "source": {
+      "dataset": "ADR 2025 Table A (3.2.1)",
+      "edition": "ADR 2025 (ECE/TRANS/352)",
+      "publisher": "UNECE",
+      "citation": "UNECE ADR 2025 (ECE/TRANS/352), Table A",
+      "url": "https://unece.org/adr-2025-files",
+      "record": "2283_0 + 1671_0",
+      "method": "ADR 1.1.3.6.3/1.1.3.6.4: points = quantity × multiplier (transport category 1: ×50, 2: ×3, 3: ×1); 555 × 1 = 555 + 140 × 3 = 420 = 975",
+      "site_citation": "ADR 1.1.3.6: 975 transport point(s) vs 1000 threshold — exemption applies (1.1.3.6 exemption applies)."
+    },
+    "tool": {
+      "name": "adr_exemption_calculator",
+      "arguments": {
+        "items": [
+          {
+            "un_number": "2283",
+            "quantity": 555,
+            "unit": "L"
+          },
+          {
+            "un_number": "1671",
+            "quantity": 140,
+            "unit": "kg"
+          }
+        ]
+      }
+    },
+    "check": {
+      "kind": "tool_exceeds",
+      "path": "result.exempt",
+      "total_path": "result.total_points"
+    }
+  }
+]

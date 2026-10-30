@@ -69,6 +69,16 @@ async function checkOne(q) {
   const sc = r.structuredContent;
   const cite = sc?.citation?.text || null;
   let value;
+  if (c.kind === 'tool_field_delta') {
+    // v0.4: the ADR 2027 answer's column, or NO CHANGE when it equals the ADR 2025 value the question states.
+    const [arrPath, field] = c.path.split('[].');
+    const item = (at(sc, arrPath) || []).find((x) => Object.entries(c.select || {}).every(([k, v]) => x[k] === v));
+    if (sc?.edition?.name !== 'ADR 2027') return { ok: false, site: `answer edition ${JSON.stringify(sc?.edition?.name)}, not ADR 2027`, cite };
+    if (!item) return { ok: false, site: `no row at ${c.path}`, cite };
+    const norm = (s) => String(s ?? '').replace(/\s+/g, ' ').trim();
+    value = norm(item[field]) === norm(q.source.adr_2025_value) ? 'NO CHANGE' : item[field];
+    return { ok: strict(q.expected, value, q.accept), site: value, cite };
+  }
   if (c.kind === 'tool_field' && c.path.includes('[]')) {
     const [arrPath, field] = c.path.split('[].');
     const arr = at(sc, arrPath) || [];

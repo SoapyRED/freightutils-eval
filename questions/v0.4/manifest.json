@@ -1,0 +1,40 @@
+{
+  "version": "v0.4",
+  "frozen_at": "2026-10-30",
+  "generator": "generator/v0_4.mjs (from questions/v0.2.1)",
+  "seed": "freightutils-eval-v0",
+  "data_source": {
+    "repository": "SoapyRED/freighttools (FreightUtils reference data)",
+    "commit": "9264d1012bab80ec9e19a146039f607023b19d5b",
+    "note": "carried over from v0.2.1: no question is regenerated"
+  },
+  "verified_against": "https://www.freightutils.com (generator/verify-live.mjs, keyed, zero mismatches at freeze)",
+  "changes_from": {
+    "version": "v0.2.1",
+    "changed": "The 30 adr_2027_delta questions gain tool = adr_lookup with { un_number, edition: \"2027\" } and the column: FreightUtils serves ADR 2027 Table A from 2026-10-30. Their check reads the ADR 2027 answer (tool_field_delta: the column value, or NO CHANGE when it equals the stated ADR 2025 value), with the v0.2.1 page check kept beside it (check.page).",
+    "scoring": "No change. Ids, prompts, expected values, accept rules and questions/aliases.json are byte-identical to v0.2.1; results scored against v0.2.1 remain comparable.",
+    "note": "The other five family files are byte-identical to v0.2.1."
+  },
+  "scoring_aliases": {
+    "file": "questions/aliases.json",
+    "sha256": "aabef32eed5383c14afb1f8b95f172b5c65cb92074cf0352d48a2d994655940b"
+  },
+  "total": 300,
+  "counts": {
+    "adr_2027_delta": 30,
+    "adr_exemption": 30,
+    "adr_table_a": 70,
+    "freight_arithmetic": 60,
+    "hs_hierarchy": 50,
+    "identifiers": 60
+  },
+  "files": {
+    "adr_2027_delta.json": "d7dc5c78be07bd9cdeb99ceaa2cd448466906d86a368cc0482ac34d325fe757b",
+    "adr_exemption.json": "db45302a8ed3591f0243ecf48d9ffe2d9492e3def9e03fde6e7d0338162320b5",
+    "adr_table_a.json": "ab11f4883cb93dff320f63687dbecab5516bd67f96281a0321cdb79ee4f8f7d1",
+    "freight_arithmetic.json": "834c3142a0c7d0d4757d9a43ec7aa7d731f11ba9aafbaea1d7f2eafe9a7519f9",
+    "hs_hierarchy.json": "d5f9dba0dd2c9e1298c9be5cbd1135118fea0d7f3af48c1bfb9b0a1fff15d407",
+    "identifiers.json": "67b7363573ccf8f8af48ba48c8dd855498ed57ba87332a851407519b53a9a639"
+  },
+  "sha256": "94de434d013a8c26a0c4117fe88de76a2344e07cf5c4683538194d8a619c70d4"
+}

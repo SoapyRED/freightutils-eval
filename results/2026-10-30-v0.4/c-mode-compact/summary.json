@@ -1,0 +1,286 @@
+{
+  "run": "c-mode-compact",
+  "overall": {
+    "claude-fable-5-1 / B": {
+      "n": 100,
+      "errors": 0,
+      "accuracy": 1,
+      "unknown_rate": 0,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1,
+      "mean_latency_ms": 3573,
+      "input_tokens": 8614219,
+      "cached_tokens": 8299200,
+      "cache_write_tokens": 0,
+      "output_tokens": 11039,
+      "usd": 5.776940000000003
+    },
+    "gemini-4-argon / B": {
+      "n": 0,
+      "errors": 0,
+      "accuracy": null,
+      "unknown_rate": null,
+      "confident_wrong_rate": null,
+      "mean_tool_calls": 0,
+      "mean_latency_ms": null,
+      "input_tokens": 0,
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 0,
+      "usd": 0
+    }
+  },
+  "overall_excluding_adr_2027_delta": {
+    "claude-fable-5-1 / B": {
+      "n": 100,
+      "errors": 0,
+      "accuracy": 1,
+      "unknown_rate": 0,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1,
+      "mean_latency_ms": 3573,
+      "input_tokens": 8614219,
+      "cached_tokens": 8299200,
+      "cache_write_tokens": 0,
+      "output_tokens": 11039,
+      "usd": 5.776940000000003
+    },
+    "gemini-4-argon / B": {
+      "n": 0,
+      "errors": 0,
+      "accuracy": null,
+      "unknown_rate": null,
+      "confident_wrong_rate": null,
+      "mean_tool_calls": 0,
+      "mean_latency_ms": null,
+      "input_tokens": 0,
+      "cached_tokens": 0,
+      "cache_write_tokens": 0,
+      "output_tokens": 0,
+      "usd": 0
+    }
+  },
+  "by_family": {
+    "claude-fable-5-1 / B": {
+      "adr_2027_delta": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_exemption": {
+        "n": 30,
+        "errors": 0,
+        "accuracy": 1,
+        "unknown_rate": 0,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1,
+        "mean_latency_ms": 3956,
+        "input_tokens": 2529456,
+        "cached_tokens": 2489760,
+        "cache_write_tokens": 0,
+        "output_tokens": 4802,
+        "usd": 1.2595
+      },
+      "adr_table_a": {
+        "n": 70,
+        "errors": 0,
+        "accuracy": 1,
+        "unknown_rate": 0,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 1,
+        "mean_latency_ms": 3410,
+        "input_tokens": 6084763,
+        "cached_tokens": 5809440,
+        "cache_write_tokens": 0,
+        "output_tokens": 6237,
+        "usd": 4.517440000000001
+      },
+      "freight_arithmetic": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "hs_hierarchy": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "identifiers": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      }
+    },
+    "gemini-4-argon / B": {
+      "adr_2027_delta": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_exemption": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_table_a": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "freight_arithmetic": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "hs_hierarchy": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "identifiers": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      }
+    }
+  },
+  "per_question_tokens": {
+    "anthropic/claude-fable-5-1/B": {
+      "n": 100,
+      "input": 86142.19,
+      "cachedInput": 82992,
+      "cacheWrite": 0,
+      "output": 110.39,
+      "searches": 0,
+      "usd": 0.05776940000000003,
+      "first": {
+        "input": 84153,
+        "cachedInput": 82992,
+        "cacheWrite": 0,
+        "output": 152,
+        "searches": 0,
+        "usd": 0.039958
+      },
+      "steady": {
+        "input": 86162.28282828283,
+        "cachedInput": 82992,
+        "cacheWrite": 0,
+        "output": 109.96969696969697,
+        "searches": 0,
+        "usd": 0.057949313131313164
+      }
+    }
+  },
+  "spend": {
+    "total_usd": 30.152940000000008,
+    "spent_before_run_usd": 24.376,
+    "this_run_usd": 5.776940000000007,
+    "by_provider": {
+      "anthropic": 5.776940000000003,
+      "google": 0
+    },
+    "cap_usd": 60,
+    "stopped_at_cap": false,
+    "carried_rows_usd_not_counted": 0
+  },
+  "rows_carried_and_new": {
+    "anthropic/B": {
+      "carried": 0,
+      "new": 100
+    }
+  },
+  "complete": true,
+  "providers_stopped": {
+    "google": "out of credit at B adr_exemption-001: google HTTP 429: Your project has exceeded its monthly spending cap. Please go to AI Studio at https://ai.studio/spend to manage your project spend cap. Learn m"
+  }
+}

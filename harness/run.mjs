@@ -38,6 +38,10 @@ const ASSUME_FROM = flag('assume-from', null);
 const BACKOFF_S = [20, 60, 120];
 const MAX_MIN = Number(flag('max-minutes', 0)) || null;
 const DIR_NAME = flag('dir-name', null);
+// v0.4, the answer-mode measurement: --adr-include-codes none|compact|full sets include_codes on every
+// adr_lookup call the model makes (the model never sees it: neither the prompt nor the tool list changes).
+const ADR_INCLUDE_CODES = flag('adr-include-codes', null);
+if (ADR_INCLUDE_CODES && !['none', 'compact', 'full'].includes(ADR_INCLUDE_CODES)) throw new Error('--adr-include-codes must be none, compact or full');
 const T_START = Date.now();
 // An account out of credit answers 429 (OpenAI insufficient_quota), 403 (xAI) or 400 (Anthropic
 // "credit balance"): no backoff fixes that, so the provider is stopped and the reason recorded.
@@ -181,7 +185,7 @@ fs.writeFileSync(path.join(RAW, 'tools-list.json'), JSON.stringify(servedTools, 
 // Tool results go back verbatim: the text content the hosted MCP returned (an error included).
 async function runTool(name, args) {
   try {
-    const r = await callTool(name, args);
+    const r = await callTool(name, name === 'adr_lookup' && ADR_INCLUDE_CODES ? { ...args, include_codes: ADR_INCLUDE_CODES } : args);
     return (r.content || []).filter((c) => c.type === 'text').map((c) => c.text).join('\n') || JSON.stringify(r.structuredContent ?? r);
   } catch (e) {
     return `Tool call failed: ${e.message}`;
@@ -344,7 +348,7 @@ rows.sort((a, b) => a.provider.localeCompare(b.provider) || a.condition.localeCo
 fs.writeFileSync(path.join(OUT, 'per-question.csv'), [cols.join(','), ...rows.map((r) => cols.map((c) => csvCell(r[c])).join(','))].join('\n') + '\n');
 
 fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
-  run: RUN_ID, started: date, sample: questions.length, seed: SAMPLE && !IDS.length && !FIRST_N ? SEED : null, first_per_family: FIRST_N, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
+  run: RUN_ID, started: date, sample: questions.length, adr_include_codes: ADR_INCLUDE_CODES, seed: SAMPLE && !IDS.length && !FIRST_N ? SEED : null, first_per_family: FIRST_N, conditions: CONDITIONS, repeats: REPEATS, max_tool_calls: MAX_TOOL_CALLS,
   order: 'providers one after another, cheapest first by the estimate; questions one at a time', backoff_s: BACKOFF_S,
   estimate: { assume_from: ASSUME_FROM, by_provider: estimate },
   question_set: { version: qManifest.version, sha256: qManifest.sha256, ids: questions.map((q) => q.id) },
@@ -361,7 +365,7 @@ fs.writeFileSync(path.join(OUT, 'manifest.json'), JSON.stringify({
 }, null, 2) + '\n');
 
 const pct = (x) => (x === null ? 'n/a' : `${(x * 100).toFixed(0)}%`);
-const lines = [`# Run ${RUN_ID}`, '', `${questions.length} questions (${SAMPLE ? 'stratified sample of ' : ''}question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', `Each count and rate is given overall and, after the slash, excluding \`${EXCL}\` (no FreightUtils tool serves ADR 2027).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
+const lines = [`# Run ${RUN_ID}`, '', `${questions.length} questions (${SAMPLE ? 'stratified sample of ' : ''}question set ${qManifest.version}, sha256 \`${qManifest.sha256.slice(0, 12)}…\`), conditions ${CONDITIONS.join(' and ')}, ${REPEATS} repeat(s). Scored deterministically (see the repository README).`, '', `Each count and rate is given overall and, after the slash, excluding \`${EXCL}\` (${qManifest.version < "v0.4" ? "no FreightUtils tool served ADR 2027" : "the FreightUtils tools serve ADR 2027 from question set v0.4: adr_lookup with edition 2027"}).`, '', '| Model | Condition | n | Accuracy | Unknown | Confident wrong | Mean tool calls | Mean latency | Cost (USD) |', '|---|---|---:|---:|---:|---:|---:|---:|---:|'];
 for (const [k, s] of Object.entries(summary.overall)) { const x = summary.overall_excluding_adr_2027_delta[k]; const [m, c] = k.split(' / '); lines.push(`| ${m} | ${c} | ${s.n} / ${x.n} | ${pct(s.accuracy)} / ${pct(x.accuracy)} | ${pct(s.unknown_rate)} / ${pct(x.unknown_rate)} | ${pct(s.confident_wrong_rate)} / ${pct(x.confident_wrong_rate)} | ${s.mean_tool_calls.toFixed(1)} | ${s.mean_latency_ms === null ? 'n/a' : `${(s.mean_latency_ms / 1000).toFixed(1)} s`} | ${s.usd.toFixed(2)} |`); }
 lines.push('', '## Accuracy by family', '', `| Model / condition | ${families.join(' | ')} |`, `|---|${families.map(() => '---:').join('|')}|`);
 for (const [k, fam] of Object.entries(summary.by_family)) lines.push(`| ${k} | ${families.map((f) => `${pct(fam[f].accuracy)} (${fam[f].n})`).join(' | ')} |`);

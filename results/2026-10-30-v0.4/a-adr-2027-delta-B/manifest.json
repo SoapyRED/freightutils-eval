@@ -1,0 +1,262 @@
+{
+  "run": "a-adr-2027-delta-B",
+  "started": "2026-10-30",
+  "sample": 30,
+  "adr_include_codes": null,
+  "seed": null,
+  "first_per_family": null,
+  "conditions": [
+    "B"
+  ],
+  "repeats": 1,
+  "max_tool_calls": 5,
+  "order": "providers one after another, cheapest first by the estimate; questions one at a time",
+  "backoff_s": [
+    20,
+    60,
+    120
+  ],
+  "estimate": {
+    "assume_from": "results/2026-10-21-full-pass/summary.json",
+    "by_provider": [
+      {
+        "provider": "openai",
+        "model": "gpt-6-astra",
+        "per": [
+          {
+            "c": "B",
+            "n": 30,
+            "usd": 1.6691222993311037,
+            "measured": true
+          }
+        ],
+        "usd": 1.6691222993311037
+      },
+      {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "per": [
+          {
+            "c": "B",
+            "n": 30,
+            "usd": 1.7802493762541811,
+            "measured": true
+          }
+        ],
+        "usd": 1.7802493762541811
+      },
+      {
+        "provider": "google",
+        "model": "gemini-4-argon",
+        "per": [
+          {
+            "c": "B",
+            "n": 30,
+            "usd": 1.808331059531773,
+            "measured": true
+          }
+        ],
+        "usd": 1.808331059531773
+      },
+      {
+        "provider": "xai",
+        "model": "grok-4.7",
+        "per": [
+          {
+            "c": "B",
+            "n": 30,
+            "usd": 2.8800000000000003,
+            "measured": false
+          }
+        ],
+        "usd": 2.8800000000000003
+      }
+    ]
+  },
+  "question_set": {
+    "version": "v0.4",
+    "sha256": "94de434d013a8c26a0c4117fe88de76a2344e07cf5c4683538194d8a619c70d4",
+    "ids": [
+      "adr_2027_delta-001",
+      "adr_2027_delta-002",
+      "adr_2027_delta-003",
+      "adr_2027_delta-004",
+      "adr_2027_delta-005",
+      "adr_2027_delta-006",
+      "adr_2027_delta-007",
+      "adr_2027_delta-008",
+      "adr_2027_delta-009",
+      "adr_2027_delta-010",
+      "adr_2027_delta-011",
+      "adr_2027_delta-012",
+      "adr_2027_delta-013",
+      "adr_2027_delta-014",
+      "adr_2027_delta-015",
+      "adr_2027_delta-016",
+      "adr_2027_delta-017",
+      "adr_2027_delta-018",
+      "adr_2027_delta-019",
+      "adr_2027_delta-020",
+      "adr_2027_delta-021",
+      "adr_2027_delta-022",
+      "adr_2027_delta-023",
+      "adr_2027_delta-024",
+      "adr_2027_delta-025",
+      "adr_2027_delta-026",
+      "adr_2027_delta-027",
+      "adr_2027_delta-028",
+      "adr_2027_delta-029",
+      "adr_2027_delta-030"
+    ]
+  },
+  "system_prompts": {
+    "A": "You are answering a freight reference question. Answer from your own knowledge; if you do not know, say UNKNOWN. Give the answer in the format the question asks for, with nothing else.",
+    "B": "You are answering a freight reference question. Use the FreightUtils tools provided to look the answer up or compute it before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the tools do not give you the answer and you do not know it, say UNKNOWN.",
+    "C": "You are answering a freight reference question. Use web search to look the answer up before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the search does not give you the answer and you do not know it, say UNKNOWN."
+  },
+  "tools": {
+    "source": "hosted FreightUtils MCP tools/list (get_subscribe_link excluded)",
+    "count": 24,
+    "names": [
+      "cbm_calculator",
+      "chargeable_weight_calculator",
+      "ldm_calculator",
+      "adr_lookup",
+      "adr_exemption_calculator",
+      "airline_lookup",
+      "airport_lookup",
+      "nearest_airport",
+      "resolve_reference",
+      "container_lookup",
+      "hs_code_lookup",
+      "incoterms_lookup",
+      "pallet_fitting_calculator",
+      "unit_converter",
+      "consignment_calculator",
+      "unlocode_lookup",
+      "uk_duty_calculator",
+      "shipment_summary",
+      "uld_lookup",
+      "vehicle_lookup",
+      "adr_lq_eq_check",
+      "emissions_calculator",
+      "validate",
+      "ics2_check"
+    ],
+    "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+  },
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-6-astra",
+      "api": "Responses API (POST https://api.openai.com/v1/responses)",
+      "settings": {},
+      "settings_note": "temperature is refused by gpt-6-astra (HTTP 400 \"Unsupported parameter: 'temperature' is not supported with this model\"), so it runs at the provider default; reasoning effort left at the default.",
+      "price_usd_per_mtok": {
+        "input": 10,
+        "cached_input": 1,
+        "output": 50,
+        "search": 0
+      },
+      "pricing_url": "https://developers.openai.com/api/docs/pricing",
+      "docs": [
+        "https://developers.openai.com/api/docs/models",
+        "https://developers.openai.com/api/docs/guides/function-calling"
+      ]
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-fable-5-1",
+      "api": "Messages API (POST https://api.anthropic.com/v1/messages)",
+      "settings": {},
+      "settings_note": "temperature is refused by claude-fable-5-1 (HTTP 400 \"`temperature` is deprecated for this model\"), so it runs at the provider default; adaptive thinking is always on and effort is left at the default (high).",
+      "price_usd_per_mtok": {
+        "input": 10,
+        "cached_input": 0.25,
+        "cache_write": 12.5,
+        "output": 50,
+        "search": 0.01
+      },
+      "price_note": "Cache writes at the 5-minute rate ($12.50); cache hits $0.25.",
+      "pricing_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "docs": [
+        "https://platform.claude.com/docs/en/about-claude/models/overview"
+      ]
+    },
+    {
+      "provider": "google",
+      "model": "gemini-4-argon",
+      "api": "generateContent (POST https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent)",
+      "settings": {
+        "temperature": 0
+      },
+      "price_usd_per_mtok": {
+        "input": 2,
+        "cached_input": 0.1,
+        "output": 10,
+        "search": 0
+      },
+      "price_note": "$2.00 input / $0.10 context caching (implicit only) / $10.00 output through 30 Nov 2026 ($4.00 / $0.20 / $20.00 from 1 Dec 2026), standard paid tier.",
+      "pricing_url": "https://ai.google.dev/gemini-api/docs/pricing",
+      "docs": [
+        "https://ai.google.dev/gemini-api/docs/models",
+        "https://ai.google.dev/gemini-api/docs/function-calling"
+      ]
+    },
+    {
+      "provider": "xai",
+      "model": "grok-4.7",
+      "api": "Responses API (POST https://api.x.ai/v1/responses)",
+      "settings": {
+        "temperature": 0
+      },
+      "price_usd_per_mtok": {
+        "input": 2,
+        "cached_input": 2,
+        "output": 6,
+        "search": 0
+      },
+      "price_note": "Prompts under 200k tokens; cached input billed at the input price here (the models page gives no cached price), an overestimate.",
+      "pricing_url": "https://docs.x.ai/docs/models",
+      "docs": [
+        "https://docs.x.ai/docs/models",
+        "https://docs.x.ai/docs/guides/function-calling"
+      ]
+    }
+  ],
+  "prices_read_on": "2026-10-20",
+  "skipped": [],
+  "providers_stopped": {
+    "openai": "out of credit at B adr_2027_delta-001: openai HTTP 429: You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+  },
+  "complete": true,
+  "spend": {
+    "total_usd": 7.505245999999998,
+    "spent_before_run_usd": 0,
+    "this_run_usd": 7.505245999999998,
+    "by_provider": {
+      "openai": 0,
+      "anthropic": 1.9479260000000003,
+      "google": 1.76325,
+      "xai": 3.79407
+    },
+    "cap_usd": 60,
+    "stopped_at_cap": false,
+    "carried_rows_usd_not_counted": 0
+  },
+  "rows_carried_and_new": {
+    "anthropic/B": {
+      "carried": 0,
+      "new": 30
+    },
+    "google/B": {
+      "carried": 0,
+      "new": 30
+    },
+    "xai/B": {
+      "carried": 0,
+      "new": 30
+    }
+  },
+  "carried_from": []
+}
