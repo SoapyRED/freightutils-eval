@@ -1,0 +1,1075 @@
+{
+  "question_set": "v0.4",
+  "runs": {
+    "a-adr-2027-delta-B": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": null,
+        "sample": 30,
+        "models": [
+          "gpt-6-astra",
+          "claude-fable-5-1",
+          "gemini-4-argon",
+          "grok-4.7"
+        ],
+        "complete": true,
+        "providers_stopped": {
+          "openai": "out of credit at B adr_2027_delta-001: openai HTTP 429: You have no credits remaining. Add credits to continue using the API at https://platform.openai.com/settings/organization/billing/."
+        }
+      },
+      "overall": {
+        "gpt-6-astra / B": {
+          "n": 0,
+          "errors": 0,
+          "accuracy": null,
+          "unknown_rate": null,
+          "confident_wrong_rate": null,
+          "mean_tool_calls": 0,
+          "mean_latency_ms": null,
+          "input_tokens": 0,
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 0,
+          "usd": 0
+        },
+        "claude-fable-5-1 / B": {
+          "n": 30,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1.4,
+          "mean_latency_ms": 3932,
+          "input_tokens": 2548546,
+          "cached_tokens": 2448264,
+          "cache_write_tokens": 41496,
+          "output_tokens": 4586,
+          "usd": 1.9479260000000003
+        },
+        "gemini-4-argon / B": {
+          "n": 30,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1,
+          "mean_latency_ms": 14066,
+          "input_tokens": 1724843,
+          "cached_tokens": 894840,
+          "cache_write_tokens": 0,
+          "output_tokens": 1376,
+          "usd": 1.76325
+        },
+        "grok-4.7 / B": {
+          "n": 30,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1.2666666666666666,
+          "mean_latency_ms": 8320,
+          "input_tokens": 1877709,
+          "cached_tokens": 1678208,
+          "cache_write_tokens": 0,
+          "output_tokens": 6442,
+          "usd": 3.79407
+        }
+      },
+      "by_family": {
+        "gpt-6-astra / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        },
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.4,
+            "mean_latency_ms": 3932,
+            "input_tokens": 2548546,
+            "cached_tokens": 2448264,
+            "cache_write_tokens": 41496,
+            "output_tokens": 4586,
+            "usd": 1.9479260000000003
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        },
+        "gemini-4-argon / B": {
+          "adr_2027_delta": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 14066,
+            "input_tokens": 1724843,
+            "cached_tokens": 894840,
+            "cache_write_tokens": 0,
+            "output_tokens": 1376,
+            "usd": 1.76325
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        },
+        "grok-4.7 / B": {
+          "adr_2027_delta": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.2666666666666666,
+            "mean_latency_ms": 8320,
+            "input_tokens": 1877709,
+            "cached_tokens": 1678208,
+            "cache_write_tokens": 0,
+            "output_tokens": 6442,
+            "usd": 3.79407
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "b-all-300-B-fable": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": null,
+        "sample": 300,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {}
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 300,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1.0466666666666666,
+          "mean_latency_ms": 3505,
+          "input_tokens": 25325353,
+          "cached_tokens": 24814608,
+          "cache_write_tokens": 41496,
+          "output_tokens": 31008,
+          "usd": 12.96524199999999
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1.5,
+            "mean_latency_ms": 4051,
+            "input_tokens": 2551717,
+            "cached_tokens": 2448264,
+            "cache_write_tokens": 41496,
+            "output_tokens": 4923,
+            "usd": 1.996486
+          },
+          "adr_exemption": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 4454,
+            "input_tokens": 2529411,
+            "cached_tokens": 2489760,
+            "cache_write_tokens": 0,
+            "output_tokens": 4761,
+            "usd": 1.257
+          },
+          "adr_table_a": {
+            "n": 70,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3380,
+            "input_tokens": 5904672,
+            "cached_tokens": 5809440,
+            "cache_write_tokens": 0,
+            "output_tokens": 5955,
+            "usd": 2.7024300000000006
+          },
+          "freight_arithmetic": {
+            "n": 60,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3468,
+            "input_tokens": 5034632,
+            "cached_tokens": 4979520,
+            "cache_write_tokens": 0,
+            "output_tokens": 9066,
+            "usd": 2.2493000000000003
+          },
+          "hs_hierarchy": {
+            "n": 50,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 0.98,
+            "mean_latency_ms": 3156,
+            "input_tokens": 4157473,
+            "cached_tokens": 4108104,
+            "cache_write_tokens": 0,
+            "output_tokens": 2847,
+            "usd": 1.6630660000000002
+          },
+          "identifiers": {
+            "n": 60,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3230,
+            "input_tokens": 5147448,
+            "cached_tokens": 4979520,
+            "cache_write_tokens": 0,
+            "output_tokens": 3456,
+            "usd": 3.0969599999999997
+          }
+        }
+      }
+    },
+    "c-mode-compact": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": "compact",
+        "sample": 100,
+        "models": [
+          "claude-fable-5-1",
+          "gemini-4-argon"
+        ],
+        "complete": true,
+        "providers_stopped": {
+          "google": "out of credit at B adr_exemption-001: google HTTP 429: Your project has exceeded its monthly spending cap. Please go to AI Studio at https://ai.studio/spend to manage your project spend cap. Learn m"
+        }
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 100,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1,
+          "mean_latency_ms": 3573,
+          "input_tokens": 8614219,
+          "cached_tokens": 8299200,
+          "cache_write_tokens": 0,
+          "output_tokens": 11039,
+          "usd": 5.776940000000003
+        },
+        "gemini-4-argon / B": {
+          "n": 0,
+          "errors": 0,
+          "accuracy": null,
+          "unknown_rate": null,
+          "confident_wrong_rate": null,
+          "mean_tool_calls": 0,
+          "mean_latency_ms": null,
+          "input_tokens": 0,
+          "cached_tokens": 0,
+          "cache_write_tokens": 0,
+          "output_tokens": 0,
+          "usd": 0
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_exemption": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3956,
+            "input_tokens": 2529456,
+            "cached_tokens": 2489760,
+            "cache_write_tokens": 0,
+            "output_tokens": 4802,
+            "usd": 1.2595
+          },
+          "adr_table_a": {
+            "n": 70,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3410,
+            "input_tokens": 6084763,
+            "cached_tokens": 5809440,
+            "cache_write_tokens": 0,
+            "output_tokens": 6237,
+            "usd": 4.517440000000001
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        },
+        "gemini-4-argon / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_exemption": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_table_a": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "c-mode-full": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": "full",
+        "sample": 100,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {}
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 100,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1,
+          "mean_latency_ms": 3700,
+          "input_tokens": 9167661,
+          "cached_tokens": 8299200,
+          "cache_write_tokens": 0,
+          "output_tokens": 11056,
+          "usd": 11.312210000000002
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_exemption": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3780,
+            "input_tokens": 2529309,
+            "cached_tokens": 2489760,
+            "cache_write_tokens": 0,
+            "output_tokens": 4752,
+            "usd": 1.2555299999999998
+          },
+          "adr_table_a": {
+            "n": 70,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3666,
+            "input_tokens": 6638352,
+            "cached_tokens": 5809440,
+            "cache_write_tokens": 0,
+            "output_tokens": 6304,
+            "usd": 10.056680000000002
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    },
+    "c-mode-none": {
+      "manifest": {
+        "conditions": [
+          "B"
+        ],
+        "adr_include_codes": "none",
+        "sample": 100,
+        "models": [
+          "claude-fable-5-1"
+        ],
+        "complete": true,
+        "providers_stopped": {}
+      },
+      "overall": {
+        "claude-fable-5-1 / B": {
+          "n": 100,
+          "errors": 0,
+          "accuracy": 1,
+          "unknown_rate": 0,
+          "confident_wrong_rate": 0,
+          "mean_tool_calls": 1,
+          "mean_latency_ms": 3506,
+          "input_tokens": 8434748,
+          "cached_tokens": 8299200,
+          "cache_write_tokens": 0,
+          "output_tokens": 10991,
+          "usd": 3.9798300000000006
+        }
+      },
+      "by_family": {
+        "claude-fable-5-1 / B": {
+          "adr_2027_delta": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "adr_exemption": {
+            "n": 30,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3772,
+            "input_tokens": 2529168,
+            "cached_tokens": 2489760,
+            "cache_write_tokens": 0,
+            "output_tokens": 4615,
+            "usd": 1.2472699999999999
+          },
+          "adr_table_a": {
+            "n": 70,
+            "errors": 0,
+            "accuracy": 1,
+            "unknown_rate": 0,
+            "confident_wrong_rate": 0,
+            "mean_tool_calls": 1,
+            "mean_latency_ms": 3392,
+            "input_tokens": 5905580,
+            "cached_tokens": 5809440,
+            "cache_write_tokens": 0,
+            "output_tokens": 6376,
+            "usd": 2.7325600000000003
+          },
+          "freight_arithmetic": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "hs_hierarchy": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          },
+          "identifiers": {
+            "n": 0,
+            "errors": 0,
+            "accuracy": null,
+            "unknown_rate": null,
+            "confident_wrong_rate": null,
+            "mean_tool_calls": 0,
+            "mean_latency_ms": null,
+            "input_tokens": 0,
+            "cached_tokens": 0,
+            "cache_write_tokens": 0,
+            "output_tokens": 0,
+            "usd": 0
+          }
+        }
+      }
+    }
+  },
+  "answer_mode_table": [
+    {
+      "run": "c-mode-none",
+      "mode": "none",
+      "model": "claude-fable-5-1",
+      "n": 100,
+      "errors": 0,
+      "accuracy": 1,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1,
+      "input_tokens": 8434748,
+      "output_tokens": 10991,
+      "mean_latency_ms": 3506,
+      "usd": 3.9798300000000006,
+      "usd_per_answer": 0.03979830000000001,
+      "correct": 100,
+      "usd_per_correct": 0.03979830000000001
+    },
+    {
+      "run": "c-mode-compact",
+      "mode": "compact",
+      "model": "claude-fable-5-1",
+      "n": 100,
+      "errors": 0,
+      "accuracy": 1,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1,
+      "input_tokens": 8614219,
+      "output_tokens": 11039,
+      "mean_latency_ms": 3573,
+      "usd": 5.776940000000003,
+      "usd_per_answer": 0.05776940000000003,
+      "correct": 100,
+      "usd_per_correct": 0.05776940000000003
+    },
+    {
+      "run": "c-mode-full",
+      "mode": "full",
+      "model": "claude-fable-5-1",
+      "n": 100,
+      "errors": 0,
+      "accuracy": 1,
+      "confident_wrong_rate": 0,
+      "mean_tool_calls": 1,
+      "input_tokens": 9167661,
+      "output_tokens": 11056,
+      "mean_latency_ms": 3700,
+      "usd": 11.312210000000002,
+      "usd_per_answer": 0.11312210000000002,
+      "correct": 100,
+      "usd_per_correct": 0.11312210000000002
+    }
+  ],
+  "answer_mode_unrun": [
+    {
+      "run": "c-mode-compact",
+      "mode": "compact",
+      "model": "gemini-4-argon",
+      "reason": "out of credit at B adr_exemption-001: google HTTP 429: Your project has exceeded its monthly spending cap. Please go to AI Studio at https://ai.studio/spend to manage your project spend cap. Learn m"
+    }
+  ],
+  "spend_usd": {
+    "by_run": {
+      "a-adr-2027-delta-B": 7.505245999999998,
+      "b-all-300-B-fable": 12.965241999999993,
+      "c-mode-compact": 5.776940000000007,
+      "c-mode-full": 11.312210000000004,
+      "c-mode-none": 3.979829999999996
+    },
+    "total": 41.539468,
+    "cap": 60
+  }
+}

@@ -70,6 +70,17 @@ if (process.argv.includes('--check')) {
       },
       scoring_aliases: { file: 'questions/aliases.json', sha256: sha(fs.readFileSync('questions/aliases.json', 'utf8').replace(/\r\n/g, '\n')) },
     } : {}),
+    ...(VERSION === 'v0.4' ? {
+      generator: 'generator/v0_4.mjs (from questions/v0.2.1)',
+      data_source: { repository: 'SoapyRED/freighttools (FreightUtils reference data)', commit: '9264d1012bab80ec9e19a146039f607023b19d5b', note: 'carried over from v0.2.1: no question is regenerated' },
+      changes_from: {
+        version: 'v0.2.1',
+        changed: 'The 30 adr_2027_delta questions gain tool = adr_lookup with { un_number, edition: "2027" } and the column: FreightUtils serves ADR 2027 Table A from 2026-10-30. Their check reads the ADR 2027 answer (tool_field_delta: the column value, or NO CHANGE when it equals the stated ADR 2025 value), with the v0.2.1 page check kept beside it (check.page).',
+        scoring: 'No change. Ids, prompts, expected values, accept rules and questions/aliases.json are byte-identical to v0.2.1; results scored against v0.2.1 remain comparable.',
+        note: 'The other five family files are byte-identical to v0.2.1.',
+      },
+      scoring_aliases: { file: 'questions/aliases.json', sha256: sha(fs.readFileSync('questions/aliases.json', 'utf8').replace(/\r\n/g, '\n')) },
+    } : {}),
     total: Object.values(counts).reduce((a, b) => a + b, 0),
     counts,
     files: perFile,

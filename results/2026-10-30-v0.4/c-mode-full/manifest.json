@@ -1,0 +1,227 @@
+{
+  "run": "c-mode-full",
+  "started": "2026-10-30",
+  "sample": 100,
+  "adr_include_codes": "full",
+  "seed": null,
+  "first_per_family": null,
+  "conditions": [
+    "B"
+  ],
+  "repeats": 1,
+  "max_tool_calls": 5,
+  "order": "providers one after another, cheapest first by the estimate; questions one at a time",
+  "backoff_s": [
+    20,
+    60,
+    120
+  ],
+  "estimate": {
+    "assume_from": "results/2026-10-21-full-pass/summary.json",
+    "by_provider": [
+      {
+        "provider": "anthropic",
+        "model": "claude-fable-5-1",
+        "per": [
+          {
+            "c": "B",
+            "n": 2,
+            "usd": 0.5999665819397993,
+            "measured": true
+          }
+        ],
+        "usd": 0.5999665819397993
+      }
+    ]
+  },
+  "question_set": {
+    "version": "v0.4",
+    "sha256": "94de434d013a8c26a0c4117fe88de76a2344e07cf5c4683538194d8a619c70d4",
+    "ids": [
+      "adr_exemption-001",
+      "adr_exemption-002",
+      "adr_exemption-003",
+      "adr_exemption-004",
+      "adr_exemption-005",
+      "adr_exemption-006",
+      "adr_exemption-007",
+      "adr_exemption-008",
+      "adr_exemption-009",
+      "adr_exemption-010",
+      "adr_exemption-011",
+      "adr_exemption-012",
+      "adr_exemption-013",
+      "adr_exemption-014",
+      "adr_exemption-015",
+      "adr_exemption-016",
+      "adr_exemption-017",
+      "adr_exemption-018",
+      "adr_exemption-019",
+      "adr_exemption-020",
+      "adr_exemption-021",
+      "adr_exemption-022",
+      "adr_exemption-023",
+      "adr_exemption-024",
+      "adr_exemption-025",
+      "adr_exemption-026",
+      "adr_exemption-027",
+      "adr_exemption-028",
+      "adr_exemption-029",
+      "adr_exemption-030",
+      "adr_table_a-001",
+      "adr_table_a-002",
+      "adr_table_a-003",
+      "adr_table_a-004",
+      "adr_table_a-005",
+      "adr_table_a-006",
+      "adr_table_a-007",
+      "adr_table_a-008",
+      "adr_table_a-009",
+      "adr_table_a-010",
+      "adr_table_a-011",
+      "adr_table_a-012",
+      "adr_table_a-013",
+      "adr_table_a-014",
+      "adr_table_a-015",
+      "adr_table_a-016",
+      "adr_table_a-017",
+      "adr_table_a-018",
+      "adr_table_a-019",
+      "adr_table_a-020",
+      "adr_table_a-021",
+      "adr_table_a-022",
+      "adr_table_a-023",
+      "adr_table_a-024",
+      "adr_table_a-025",
+      "adr_table_a-026",
+      "adr_table_a-027",
+      "adr_table_a-028",
+      "adr_table_a-029",
+      "adr_table_a-030",
+      "adr_table_a-031",
+      "adr_table_a-032",
+      "adr_table_a-033",
+      "adr_table_a-034",
+      "adr_table_a-035",
+      "adr_table_a-036",
+      "adr_table_a-037",
+      "adr_table_a-038",
+      "adr_table_a-039",
+      "adr_table_a-040",
+      "adr_table_a-041",
+      "adr_table_a-042",
+      "adr_table_a-043",
+      "adr_table_a-044",
+      "adr_table_a-045",
+      "adr_table_a-046",
+      "adr_table_a-047",
+      "adr_table_a-048",
+      "adr_table_a-049",
+      "adr_table_a-050",
+      "adr_table_a-051",
+      "adr_table_a-052",
+      "adr_table_a-053",
+      "adr_table_a-054",
+      "adr_table_a-055",
+      "adr_table_a-056",
+      "adr_table_a-057",
+      "adr_table_a-058",
+      "adr_table_a-059",
+      "adr_table_a-060",
+      "adr_table_a-061",
+      "adr_table_a-062",
+      "adr_table_a-063",
+      "adr_table_a-064",
+      "adr_table_a-065",
+      "adr_table_a-066",
+      "adr_table_a-067",
+      "adr_table_a-068",
+      "adr_table_a-069",
+      "adr_table_a-070"
+    ]
+  },
+  "system_prompts": {
+    "A": "You are answering a freight reference question. Answer from your own knowledge; if you do not know, say UNKNOWN. Give the answer in the format the question asks for, with nothing else.",
+    "B": "You are answering a freight reference question. Use the FreightUtils tools provided to look the answer up or compute it before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the tools do not give you the answer and you do not know it, say UNKNOWN.",
+    "C": "You are answering a freight reference question. Use web search to look the answer up before you answer. Answer with the value only, in the format the question asks for, with nothing else. If the search does not give you the answer and you do not know it, say UNKNOWN."
+  },
+  "tools": {
+    "source": "hosted FreightUtils MCP tools/list (get_subscribe_link excluded)",
+    "count": 24,
+    "names": [
+      "cbm_calculator",
+      "chargeable_weight_calculator",
+      "ldm_calculator",
+      "adr_lookup",
+      "adr_exemption_calculator",
+      "airline_lookup",
+      "airport_lookup",
+      "nearest_airport",
+      "resolve_reference",
+      "container_lookup",
+      "hs_code_lookup",
+      "incoterms_lookup",
+      "pallet_fitting_calculator",
+      "unit_converter",
+      "consignment_calculator",
+      "unlocode_lookup",
+      "uk_duty_calculator",
+      "shipment_summary",
+      "uld_lookup",
+      "vehicle_lookup",
+      "adr_lq_eq_check",
+      "emissions_calculator",
+      "validate",
+      "ics2_check"
+    ],
+    "sha256": "0a66707addd9a58313a07803aa4c2a9f2e43a22f3d4930ca9dda6a7bfe5fa753"
+  },
+  "models": [
+    {
+      "provider": "anthropic",
+      "model": "claude-fable-5-1",
+      "api": "Messages API (POST https://api.anthropic.com/v1/messages)",
+      "settings": {},
+      "settings_note": "temperature is refused by claude-fable-5-1 (HTTP 400 \"`temperature` is deprecated for this model\"), so it runs at the provider default; adaptive thinking is always on and effort is left at the default (high).",
+      "price_usd_per_mtok": {
+        "input": 10,
+        "cached_input": 0.25,
+        "cache_write": 12.5,
+        "output": 50,
+        "search": 0.01
+      },
+      "price_note": "Cache writes at the 5-minute rate ($12.50); cache hits $0.25.",
+      "pricing_url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "docs": [
+        "https://platform.claude.com/docs/en/about-claude/models/overview"
+      ]
+    }
+  ],
+  "prices_read_on": "2026-10-20",
+  "skipped": [
+    {
+      "provider": "google",
+      "reason": "monthly spending cap reached (HTTP 429 at the first mode-table question)"
+    }
+  ],
+  "providers_stopped": {},
+  "complete": true,
+  "spend": {
+    "total_usd": 41.46511,
+    "spent_before_run_usd": 30.1529,
+    "this_run_usd": 11.312210000000004,
+    "by_provider": {
+      "anthropic": 11.312210000000002
+    },
+    "cap_usd": 60,
+    "stopped_at_cap": false,
+    "carried_rows_usd_not_counted": 0
+  },
+  "rows_carried_and_new": {
+    "anthropic/B": {
+      "carried": 0,
+      "new": 100
+    }
+  },
+  "carried_from": []
+}
