@@ -9,6 +9,9 @@ authors:
 doi: 10.5281/zenodo.23743608
 identifiers:
   - type: doi
+    value: 10.5281/zenodo.23820777
+    description: "Version DOI for v0.5.0"
+  - type: doi
     value: 10.5281/zenodo.23801448
     description: "Version DOI for v0.4.0"
   - type: doi

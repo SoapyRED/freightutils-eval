@@ -373,9 +373,9 @@ price. That overestimates the cost.
 Each GitHub release is archived on Zenodo with its own DOI; the concept DOI resolves to the latest
 version. Cite the version you used:
 
-> Cristoiu, M. (2026). *freightutils-eval: frontier language models on 300 freight reference
-> questions — alone, with the FreightUtils tools, and with web search* (v0.4.0) [Data set].
-> Zenodo. https://doi.org/10.5281/zenodo.23801448
+> Cristoiu, M. (2026). *freightutils-eval: frontier language models on 340 freight reference
+> questions — alone, with the FreightUtils tools, and with web search* (v0.5.0) [Data set].
+> Zenodo. https://doi.org/10.5281/zenodo.23820777
 
 All versions: https://doi.org/10.5281/zenodo.23743608. `CITATION.cff` carries the same record for
 GitHub's "Cite this repository" button.
