@@ -38,6 +38,13 @@ model grades another model.
 
 ## Results
 
+**[v0.3.1: web search re-run, 18 November 2026](results/2026-11-18-web-search-rerun/README.md)** — condition C
+again on `claude-fable-5-1` (`web_search_20260318`, unchanged), the 100 `adr_table_a` and `adr_2027_delta`
+questions of v0.2, against the same 100 from 28 October. Correct: Table A 69 of 70 (as before), ADR 2027
+30 of 30 (28 October: 23). freightutils.com reached the model on 4 of 70 Table A answers (28 October: 5) and
+3 of 30 ADR 2027 answers (2), and was among the results on 14 of the 100 (9); UN pages reached it on 4 answers
+(0). Spend: $11.16 (cap $12), $152.76 across all runs.
+
 **[v0.5: what a code means, and the answer mode, 30 October 2026](results/2026-10-30-v0.5/README.md)** — the 40
 `adr_code_meaning` questions, `claude-fable-5-1`, condition A and condition B with `include_codes` none / compact
 / full:

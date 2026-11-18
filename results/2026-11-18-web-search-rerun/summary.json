@@ -1,0 +1,1847 @@
+{
+  "run": "2026-11-18-web-search-rerun",
+  "overall": {
+    "claude-fable-5-1 / C": {
+      "n": 100,
+      "errors": 0,
+      "accuracy": 0.99,
+      "unknown_rate": 0,
+      "confident_wrong_rate": 0.01,
+      "mean_tool_calls": 1.93,
+      "mean_latency_ms": 12200,
+      "input_tokens": 2750899,
+      "cached_tokens": 2297154,
+      "cache_write_tokens": 436166,
+      "output_tokens": 60552,
+      "usd": 11.159753499999999,
+      "mean_searches": 1.93,
+      "share_citing_freightutils": 0,
+      "share_consulting_freightutils": 0.14,
+      "share_citing_any": 0,
+      "share_reading_freightutils": 0.07,
+      "share_searching": 1
+    }
+  },
+  "overall_excluding_adr_2027_delta": {
+    "claude-fable-5-1 / C": {
+      "n": 70,
+      "errors": 0,
+      "accuracy": 0.9857142857142858,
+      "unknown_rate": 0,
+      "confident_wrong_rate": 0.014285714285714285,
+      "mean_tool_calls": 1.2571428571428571,
+      "mean_latency_ms": 9705,
+      "input_tokens": 1474208,
+      "cached_tokens": 1250088,
+      "cache_write_tokens": 212663,
+      "output_tokens": 30026,
+      "usd": 5.466679499999999,
+      "mean_searches": 1.2571428571428571,
+      "share_citing_freightutils": 0,
+      "share_consulting_freightutils": 0.12857142857142856,
+      "share_citing_any": 0,
+      "share_reading_freightutils": 0.05714285714285714,
+      "share_searching": 1
+    }
+  },
+  "by_family": {
+    "claude-fable-5-1 / C": {
+      "adr_2027_delta": {
+        "n": 30,
+        "errors": 0,
+        "accuracy": 1,
+        "unknown_rate": 0,
+        "confident_wrong_rate": 0,
+        "mean_tool_calls": 3.5,
+        "mean_latency_ms": 18020,
+        "input_tokens": 1276691,
+        "cached_tokens": 1047066,
+        "cache_write_tokens": 223503,
+        "output_tokens": 30526,
+        "usd": 5.693074000000001,
+        "mean_searches": 3.5,
+        "share_citing_freightutils": 0,
+        "share_consulting_freightutils": 0.16666666666666666,
+        "share_citing_any": 0,
+        "share_reading_freightutils": 0.1,
+        "share_searching": 1
+      },
+      "adr_exemption": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "adr_table_a": {
+        "n": 70,
+        "errors": 0,
+        "accuracy": 0.9857142857142858,
+        "unknown_rate": 0,
+        "confident_wrong_rate": 0.014285714285714285,
+        "mean_tool_calls": 1.2571428571428571,
+        "mean_latency_ms": 9705,
+        "input_tokens": 1474208,
+        "cached_tokens": 1250088,
+        "cache_write_tokens": 212663,
+        "output_tokens": 30026,
+        "usd": 5.466679499999999,
+        "mean_searches": 1.2571428571428571,
+        "share_citing_freightutils": 0,
+        "share_consulting_freightutils": 0.12857142857142856,
+        "share_citing_any": 0,
+        "share_reading_freightutils": 0.05714285714285714,
+        "share_searching": 1
+      },
+      "freight_arithmetic": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "hs_hierarchy": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      },
+      "identifiers": {
+        "n": 0,
+        "errors": 0,
+        "accuracy": null,
+        "unknown_rate": null,
+        "confident_wrong_rate": null,
+        "mean_tool_calls": 0,
+        "mean_latency_ms": null,
+        "input_tokens": 0,
+        "cached_tokens": 0,
+        "cache_write_tokens": 0,
+        "output_tokens": 0,
+        "usd": 0
+      }
+    }
+  },
+  "per_question_tokens": {
+    "anthropic/claude-fable-5-1/C": {
+      "n": 100,
+      "input": 27508.99,
+      "cachedInput": 22971.54,
+      "cacheWrite": 4361.66,
+      "output": 605.52,
+      "searches": 1.93,
+      "usd": 0.11159753499999998,
+      "first": {
+        "input": 67571,
+        "cachedInput": 50428,
+        "cacheWrite": 16914,
+        "output": 1473,
+        "searches": 4,
+        "usd": 0.339972
+      },
+      "steady": {
+        "input": 27104.323232323233,
+        "cachedInput": 22694.20202020202,
+        "cacheWrite": 4234.868686868687,
+        "output": 596.7575757575758,
+        "searches": 1.9090909090909092,
+        "usd": 0.10929072222222222
+      }
+    }
+  },
+  "cited_domains": {
+    "claude-fable-5-1 / C": []
+  },
+  "consulted_domains": {
+    "claude-fable-5-1 / C": [
+      {
+        "domain": "en.wikipedia.org",
+        "answers": 88,
+        "share": 0.88
+      },
+      {
+        "domain": "adrdangerousgoods.com",
+        "answers": 78,
+        "share": 0.78
+      },
+      {
+        "domain": "adr-tool.com",
+        "answers": 77,
+        "share": 0.77
+      },
+      {
+        "domain": "unece.org",
+        "answers": 54,
+        "share": 0.54
+      },
+      {
+        "domain": "hazmattool.com",
+        "answers": 45,
+        "share": 0.45
+      },
+      {
+        "domain": "cameochemicals.noaa.gov",
+        "answers": 38,
+        "share": 0.38
+      },
+      {
+        "domain": "nextsds.com",
+        "answers": 35,
+        "share": 0.35
+      },
+      {
+        "domain": "fortitude21.com",
+        "answers": 32,
+        "share": 0.32
+      },
+      {
+        "domain": "labeline.com",
+        "answers": 30,
+        "share": 0.3
+      },
+      {
+        "domain": "vektorgroup.eu",
+        "answers": 30,
+        "share": 0.3
+      },
+      {
+        "domain": "adrbook.com",
+        "answers": 28,
+        "share": 0.28
+      },
+      {
+        "domain": "dgg.bam.de",
+        "answers": 26,
+        "share": 0.26
+      },
+      {
+        "domain": "ups.com",
+        "answers": 18,
+        "share": 0.18
+      },
+      {
+        "domain": "trans.info",
+        "answers": 17,
+        "share": 0.17
+      },
+      {
+        "domain": "dgsa.net",
+        "answers": 15,
+        "share": 0.15
+      },
+      {
+        "domain": "hseblog.com",
+        "answers": 15,
+        "share": 0.15
+      },
+      {
+        "domain": "freightutils.com",
+        "answers": 14,
+        "share": 0.14
+      },
+      {
+        "domain": "chemicalbook.com",
+        "answers": 12,
+        "share": 0.12
+      },
+      {
+        "domain": "federalregister.gov",
+        "answers": 12,
+        "share": 0.12
+      },
+      {
+        "domain": "labeline.eu",
+        "answers": 11,
+        "share": 0.11
+      },
+      {
+        "domain": "phmsa.dot.gov",
+        "answers": 11,
+        "share": 0.11
+      },
+      {
+        "domain": "govinfo.gov",
+        "answers": 10,
+        "share": 0.1
+      },
+      {
+        "domain": "cantell.dk",
+        "answers": 9,
+        "share": 0.09
+      },
+      {
+        "domain": "environmentalchemistry.com",
+        "answers": 9,
+        "share": 0.09
+      },
+      {
+        "domain": "totalcompliance.co.uk",
+        "answers": 9,
+        "share": 0.09
+      },
+      {
+        "domain": "digitallibrary.un.org",
+        "answers": 8,
+        "share": 0.08
+      },
+      {
+        "domain": "fishersci.com",
+        "answers": 8,
+        "share": 0.08
+      },
+      {
+        "domain": "spectrumchemical.com",
+        "answers": 8,
+        "share": 0.08
+      },
+      {
+        "domain": "adr-calculator.com",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "adr.exportsy.pl",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "civac.de",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "dgair.com.au",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "ghspictograms.com",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "astra.admin.ch",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "certifico.com",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "lobachemie.com",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "sigmaaldrich.com",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "allfirefighter.com",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "americanchemistry.com",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "ecfr.gov",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "petereast.com",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "safetyadr.com",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "www-pub.iaea.org",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "bmv.de",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "gclabels.net",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "health-safety-signs.uk.com",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "iata.org",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "ntc.gov.au",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "otsl.pl",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "adr.plus",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "adrbog.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "carlroth.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "chemical-logistics.org",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "chemos.de",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "chemradar.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "dcfinechemicals.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "echa.europa.eu",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "laws-lois.justice.gc.ca",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "mydg.shop",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "otif.org",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "adr-online.eu",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "aldebaransistemas.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "buyersguidechem.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "chemydata.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "data.consilium.europa.eu",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "datasheets.scbt.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "documents.un.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "download.basf.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "ereztech.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "ericards.net",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "fishersci.co.uk",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "hogs.live",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "hse.gov.uk",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "inchem.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "labbox.es",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "labchem-wako.fujifilm.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "labelmaster.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "law.cornell.edu",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "m.cameochemicals.noaa.gov",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "m.likumi.lv",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "pim-resources.coleparmer.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "produkte.linde-gas.at",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "pubchem.ncbi.nlm.nih.gov",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "rechargebatteries.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "redox.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "spillnerd.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "symbioflows.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "trasegro.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "tt2.co.uk",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "webapps.ilo.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "wikidata.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "accustandard.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "adr-digitaal.nl",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "adr-tanacsado.hu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "airgas.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "alkalimetals.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "americanelements.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "amp.generalair.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "api.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "app.croneri.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "arpansa.gov.au",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.fishersci.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.greenbook.net",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.publishing.service.gov.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.thermofisher.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "aurechem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "biochareurope.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "cargotrack.ro",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "cdn11.bigcommerce.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chemicalsafety.ilo.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chemsavers.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chesar.echa.europa.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "college.specialcargo.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dangerous-goods.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dangerousgoods.info",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dgassistant.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dgtraining.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "docs.alliancechemical.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dpp.oysi.gmbh",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "draeger.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dsv.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "echemi.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ecomed-storck.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "efbs.admin.ch",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "emsdiasum.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "epa.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "eur-lex.europa.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fedex.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "file-eu.clickdimensions.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fishersci.ca",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fluorochem.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fmslondon.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "freightfile.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fscimage.fishersci.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gazette.gc.ca",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gefahrgutbrumme.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gefahrgutshop.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gestis.dguv.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "globalsecurity.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "goodhopefreight.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gov.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gpcgateway.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "grokipedia.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gsdma.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "guidechem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hcpctraining.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "himedialabs.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hopiglobal.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hsa.ie",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "imdg-course.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "industrie-fachwissen.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ineos.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "labbox.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "labbox.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "law.resource.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "lerem.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "lion.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "logifie.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "lookchem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "materie-prime.farmalabor.it",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "materion.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "mit.gov.it",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "morphisto.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "mubychem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "myonu.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "narodne-novine.nn.hr",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "nj.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ntp.niehs.nih.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "nucleus.iaea.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "palen-adr.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "pentachemicals.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "polymerchem.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "radship.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "reflexfolie.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "researchgate.net",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "restrikt.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ricardo.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "rowe.com.au",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "rrma-global.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "samaterials.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "scbt.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "shashikallada.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "shippingandfreightresource.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "shop.wf-education.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "srlchem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "static1.squarespace.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "stoffenjournaal.nl",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "store.apolloscientific.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "supremecourt.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "synerzine.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "tadiranbatteries.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "tc.canada.ca",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "tdgtoolbox.ca",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "tgl-group.net",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "timstar.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "tollgas.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "transportsfriend.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "treitelonline.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "uccaribe.edu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "un-ilibrary.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "uni-muenster.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "uscodeweb1.house.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "vestnesis.lv",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "vigon.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "wikiwand.com",
+        "answers": 1,
+        "share": 0.01
+      }
+    ]
+  },
+  "read_domains": {
+    "claude-fable-5-1 / C": [
+      {
+        "domain": "adr-tool.com",
+        "answers": 64,
+        "share": 0.64
+      },
+      {
+        "domain": "adrdangerousgoods.com",
+        "answers": 53,
+        "share": 0.53
+      },
+      {
+        "domain": "en.wikipedia.org",
+        "answers": 46,
+        "share": 0.46
+      },
+      {
+        "domain": "unece.org",
+        "answers": 32,
+        "share": 0.32
+      },
+      {
+        "domain": "labeline.com",
+        "answers": 30,
+        "share": 0.3
+      },
+      {
+        "domain": "nextsds.com",
+        "answers": 30,
+        "share": 0.3
+      },
+      {
+        "domain": "vektorgroup.eu",
+        "answers": 30,
+        "share": 0.3
+      },
+      {
+        "domain": "fortitude21.com",
+        "answers": 27,
+        "share": 0.27
+      },
+      {
+        "domain": "hazmattool.com",
+        "answers": 27,
+        "share": 0.27
+      },
+      {
+        "domain": "cameochemicals.noaa.gov",
+        "answers": 26,
+        "share": 0.26
+      },
+      {
+        "domain": "dgg.bam.de",
+        "answers": 22,
+        "share": 0.22
+      },
+      {
+        "domain": "trans.info",
+        "answers": 17,
+        "share": 0.17
+      },
+      {
+        "domain": "ups.com",
+        "answers": 15,
+        "share": 0.15
+      },
+      {
+        "domain": "hseblog.com",
+        "answers": 11,
+        "share": 0.11
+      },
+      {
+        "domain": "federalregister.gov",
+        "answers": 10,
+        "share": 0.1
+      },
+      {
+        "domain": "chemicalbook.com",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "freightutils.com",
+        "answers": 7,
+        "share": 0.07
+      },
+      {
+        "domain": "adrbook.com",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "certifico.com",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "civac.de",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "environmentalchemistry.com",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "labeline.eu",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "phmsa.dot.gov",
+        "answers": 6,
+        "share": 0.06
+      },
+      {
+        "domain": "dgair.com.au",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "govinfo.gov",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "totalcompliance.co.uk",
+        "answers": 5,
+        "share": 0.05
+      },
+      {
+        "domain": "astra.admin.ch",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "dgsa.net",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "lobachemie.com",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "petereast.com",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "safetyadr.com",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "sigmaaldrich.com",
+        "answers": 4,
+        "share": 0.04
+      },
+      {
+        "domain": "americanchemistry.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "cantell.dk",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "carlroth.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "chemical-logistics.org",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "chemos.de",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "ecfr.gov",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "fishersci.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "iata.org",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "spectrumchemical.com",
+        "answers": 3,
+        "share": 0.03
+      },
+      {
+        "domain": "aldebaransistemas.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "allfirefighter.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "download.basf.com",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "echa.europa.eu",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "inchem.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "labbox.es",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "laws-lois.justice.gc.ca",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "m.cameochemicals.noaa.gov",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "ntc.gov.au",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "otif.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "otsl.pl",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "produkte.linde-gas.at",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "pubchem.ncbi.nlm.nih.gov",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "rechargebatteries.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "tt2.co.uk",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "www-pub.iaea.org",
+        "answers": 2,
+        "share": 0.02
+      },
+      {
+        "domain": "adr-calculator.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "adr-tanacsado.hu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "app.croneri.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "arpansa.gov.au",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.fishersci.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.greenbook.net",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "assets.publishing.service.gov.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "bmv.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "buyersguidechem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chemicalsafety.ilo.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chemradar.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chemsavers.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "chesar.echa.europa.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dcfinechemicals.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dgassistant.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "draeger.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "dsv.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "efbs.admin.ch",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "emsdiasum.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "epa.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ereztech.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fedex.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "file-eu.clickdimensions.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fishersci.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "fscimage.fishersci.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gazette.gc.ca",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gclabels.net",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gefahrgutshop.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gestis.dguv.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ghspictograms.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "gpcgateway.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "grokipedia.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "health-safety-signs.uk.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "himedialabs.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hogs.live",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hopiglobal.eu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hsa.ie",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "hse.gov.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "labbox.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "labchem-wako.fujifilm.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "law.cornell.edu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "law.resource.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "lion.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "m.likumi.lv",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "materie-prime.farmalabor.it",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "mit.gov.it",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "morphisto.de",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "mubychem.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "mydg.shop",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "ntp.niehs.nih.gov",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "nucleus.iaea.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "redox.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "rrma-global.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "shashikallada.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "shippingandfreightresource.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "shop.wf-education.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "store.apolloscientific.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "tc.canada.ca",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "timstar.co.uk",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "trasegro.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "treitelonline.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "uccaribe.edu",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "un-ilibrary.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "vigon.com",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "webapps.ilo.org",
+        "answers": 1,
+        "share": 0.01
+      },
+      {
+        "domain": "wikidata.org",
+        "answers": 1,
+        "share": 0.01
+      }
+    ]
+  },
+  "injection_flags": {
+    "claude-fable-5-1 / C": []
+  },
+  "spend": {
+    "total_usd": 11.159753499999999,
+    "spent_before_run_usd": 0,
+    "this_run_usd": 11.159753499999999,
+    "by_provider": {
+      "anthropic": 11.159753499999999
+    },
+    "cap_usd": 12,
+    "stopped_at_cap": false,
+    "carried_rows_usd_not_counted": 0
+  },
+  "rows_carried_and_new": {
+    "anthropic/C": {
+      "carried": 0,
+      "new": 100
+    }
+  },
+  "complete": true,
+  "providers_stopped": {}
+}
